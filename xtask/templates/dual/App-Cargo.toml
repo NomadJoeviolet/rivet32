@@ -22,7 +22,7 @@ defmt-rtt = "1.0.0"
 panic-probe = { version = "1.0.0", features = ["print-defmt"] }
 
 [build-dependencies]
-stm32-metapac = { git = "https://github.com/embassy-rs/stm32-data-generated", tag = "stm32-data-caa36afd62510b0e6315ee0dccd1f9c65fbcac83", default-features = false, features = ["metadata", "@CHIP@"] }
+stm32-metapac = { path = "../../Framework/vendor/stm32-metapac", default-features = false, features = ["metadata", "@CHIP@"] }
 
 [[bin]]
 name = "firmware-@CORE@"

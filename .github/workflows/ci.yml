@@ -55,6 +55,8 @@ jobs:
           rustup target add --toolchain 1.98.1 thumbv6m-none-eabi thumbv7m-none-eabi thumbv7em-none-eabihf thumbv8m.main-none-eabihf
       - name: Compile, link and inspect minimal App
         run: cargo xtask build --chip ${{ matrix.chip }}
+      - name: Fetch all locked dependencies for offline helper projects
+        run: cargo fetch --locked
       - name: Link actual peripheral constructors with the reviewed clock profiles
         run: |
           python3 xtask/scripts/fetch_source_documents.py

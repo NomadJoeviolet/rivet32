@@ -275,8 +275,8 @@ def prepare_dual_projects(directory, owner, pair, recipes, bank):
         path = project / "Cargo.toml"
         manifest = path.read_text(encoding="utf-8").replace('[features]\n', f'[features]\ndefault = ["{feature}"]\n{feature} = []\n')
         manifest += ('\n[build-dependencies]\n'
-                     'stm32-metapac = { git = "https://github.com/embassy-rs/stm32-data-generated", '
-                     f'tag = "stm32-data-caa36afd62510b0e6315ee0dccd1f9c65fbcac83", default-features = false, features = ["metadata", "{feature}"] }}\n')
+                     f'stm32-metapac = {{ path = {json.dumps((ROOT / "vendor/stm32-metapac").as_posix())}, '
+                     f'default-features = false, features = ["metadata", "{feature}"] }}\n')
         path.write_text(manifest, encoding="utf-8")
         build = (ROOT / "App/build.rs").read_text(encoding="utf-8")
         if build.count("cargo:rustc-link-arg-bin=minimal=") != 1:
