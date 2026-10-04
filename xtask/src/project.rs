@@ -98,7 +98,7 @@ pub fn write_project(
     } else {
         ("\"App\", \"Framework/crates/*\"", "\"App\"")
     };
-    let manifest = format!("[workspace]\nresolver = \"3\"\nmembers = [{members}]\nexclude = [\"Framework/vendor/*\"]\ndefault-members = [{defaults}]\n\n[workspace.package]{inherited}")
+    let manifest = format!("[workspace]\nresolver = \"3\"\nmembers = [{members}]\nexclude = [\"Framework/vendor/embassy-stm32\", \"Framework/vendor/stm32-metapac\"]\ndefault-members = [{defaults}]\n\n[workspace.package]{inherited}")
         .replace("path = \"crates/", "path = \"Framework/crates/")
         .replace("path = \"vendor/", "path = \"Framework/vendor/");
     files.insert("Cargo.toml".into(), manifest.into_bytes());

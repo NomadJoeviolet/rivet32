@@ -27,17 +27,20 @@ flowchart TD
 
 ## What daily CI checks
 
-ci.yml defines seven job types. A job can repeat for several operating systems, chips or boards. GitHub Actions calls these parameter sets a matrix, so the total number of runners, the environments executing jobs, exceeds seven.
+ci.yml defines eight job types. A job can repeat for several operating systems, chips or boards. GitHub Actions calls these parameter sets a matrix, so the total number of runners, the environments executing jobs, exceeds eight.
 
 | Job | Checks performed |
 |---|---|
 | workflow-lint | Uses actionlint to check workflow syntax, expressions and action inputs; verifies the tool download's SHA |
 | host | Checks formatting, documentation links, workspace compilation and USB feature compilation on Ubuntu and Windows, then runs Clippy |
-| firmware | Links minimal firmware, inspects ELF files and constructs seven peripheral types for 26 representative configurations |
+| peripheral-smoke | Checks minimal firmware and seven peripheral types on H723 first, covering dependency preparation, builds and the ELF inspection tool on Linux |
+| firmware | Links minimal firmware, inspects ELF files and constructs seven peripheral types for the remaining 25 representative configurations |
 | reference-boards | Links release firmware and runs ARM Clippy for five reference boards |
 | dual-core | Builds separate H745BG/H747XI core images and compares their shared-memory layouts |
 | generated-project | Generates an independent G474 project, checks formatting, builds and links it, runs Clippy and checks that the build did not change generated sources or the lockfile |
 | generated-dual-project | Generates two independent paired projects, checks formatting, builds both cores, runs per-core Clippy and verifies sources and lockfiles |
+
+The firmware matrix starts only after peripheral-smoke and both generated-dual-project jobs succeed. If a shared build tool fails, fix the prerequisite job first; skipped jobs do not count as passed checks. H723 plus the 25 matrix configurations still cover the original 26 representative configurations. Before running offline helper projects, CI runs cargo fetch --locked to download the full set of locked dependencies.
 
 Clippy is Rust's static code analysis tool. These jobs check compilation, linking, code patterns and source integrity. They do not run phase-specific unit tests, C/C++ comparison projects or dedicated test firmware, so they cannot substitute for behavioral regression tests.
 

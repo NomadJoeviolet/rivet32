@@ -27,17 +27,20 @@ flowchart TD
 
 ## 日常 CI 会检查哪些内容
 
-ci.yml 定义了 7 类作业（job）。一类作业可以针对多个系统、芯片或板卡重复运行；GitHub Actions 把这组参数称为矩阵，因此实际执行的 runner（运行环境）数量会超过 7。
+ci.yml 定义了 8 类作业（job）。一类作业可以针对多个系统、芯片或板卡重复运行；GitHub Actions 把这组参数称为矩阵，因此实际执行的 runner（运行环境）数量会超过 8。
 
 | 作业名 | 执行的检查 |
 |---|---|
 | workflow-lint | 用 actionlint 检查工作流语法、表达式和 action 参数；安装工具时校验下载文件的 SHA |
 | host | 在 Ubuntu 和 Windows 上检查代码格式、文档链接、整个 workspace 的编译、USB feature 编译，并运行 Clippy |
-| firmware | 为 26 个代表配置链接最小固件、检查 ELF，并构造七类外设 |
+| peripheral-smoke | 先用 H723 检查最小固件和七类外设，确认 Linux 上的依赖准备、构建和 ELF 检查工具可用 |
+| firmware | 为其余 25 个代表配置链接最小固件、检查 ELF，并构造七类外设 |
 | reference-boards | 为五块参考板链接 release 固件，并针对 ARM 运行 Clippy |
 | dual-core | 分别构建 H745BG/H747XI 的两个内核固件，检查共享内存区布局是否一致 |
 | generated-project | 生成独立 G474 工程，检查格式、构建链接、运行 Clippy，并核对生成源码和锁文件是否被构建修改 |
 | generated-dual-project | 生成两组独立双核工程，检查格式、成对构建、逐核运行 Clippy，并核对源码和锁文件 |
+
+firmware 矩阵在 peripheral-smoke 和两组 generated-dual-project 都成功后才启动。公共构建工具出错时，先修复前置作业；后面的跳过状态不表示检查通过。H723 加上矩阵中的 25 个配置，仍覆盖原来的 26 个代表配置。离线辅助工程运行前，CI 会执行 cargo fetch --locked，下载完整的锁定依赖。
 
 Clippy 是 Rust 的静态代码检查工具。这些作业检查编译、链接、代码写法和源码完整性，不运行阶段单元测试、C/C++ 对照工程或专用测试固件，因此不能用其结果代替功能行为的回归测试。
 

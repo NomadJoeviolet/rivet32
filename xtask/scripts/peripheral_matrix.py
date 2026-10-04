@@ -316,7 +316,8 @@ serde_json = "1"
         # replace the inspector while this invocation is checking ARM images.
         executable = base / "inspectors" / (uuid.uuid4().hex + (".exe" if os.name == "nt" else ""))
         executable.parent.mkdir(exist_ok=True)
-        shutil.copyfile(matches[0]["executable"], executable)
+        # The private copy must retain the executable bit on Linux runners.
+        shutil.copy2(matches[0]["executable"], executable)
         return executable
 
 
@@ -595,6 +596,8 @@ def main():
                                         ensure_snapshot(project_saved)
                                         write_json(report_path, result)
                                         print(feature, category, row["status"], flush=True)
+                                        if row["status"] == "failed":
+                                            print(row["reason"], file=sys.stderr, flush=True)
                             result["status"] = ("planned" if args.plan_only else "constructor-matrix-passed") if all(r["status"] in {"constructor-linked", "not-present", "planned" if args.plan_only else "not-present"} for r in result["categories"].values()) else "incomplete"
                         except Exception as error:
                             result.update(status="failed", error=str(error))

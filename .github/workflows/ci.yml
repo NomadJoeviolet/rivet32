@@ -41,12 +41,47 @@ jobs:
       - run: cargo check --workspace --locked
       - run: cargo check -p embodied-stm32 --features usb --locked
       - run: cargo clippy --workspace --lib --bins --locked -- -D warnings
-  firmware:
+  peripheral-smoke:
+    needs: workflow-lint
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
-        chip: [stm32f042c4, stm32f070c6, stm32f072rb, stm32f103c8, stm32f105r8, stm32f207zg, stm32f303re, stm32f407vg, stm32f723rc, stm32f723re, stm32f767zi, stm32g071rb, stm32g071eb, stm32g081eb, stm32g0b0ke, stm32g474re, stm32h503kb, stm32h563zi, stm32h563li, stm32h573li, stm32h5e4ak, stm32h5e5lk, stm32h5f4aj, stm32h5f5lj, stm32h723vg, stm32h7b3zi]
+        chip: [stm32h723vg]
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install pinned compiler and targets
+        run: |
+          rustup toolchain install 1.98.1 --profile minimal
+          rustup target add --toolchain 1.98.1 thumbv6m-none-eabi thumbv7m-none-eabi thumbv7em-none-eabihf thumbv8m.main-none-eabihf
+      - name: Compile, link and inspect minimal App
+        run: cargo xtask build --chip ${{ matrix.chip }}
+      - name: Fetch all locked dependencies for offline helper projects
+        run: cargo fetch --locked
+      - name: Link actual peripheral constructors with the reviewed clock profiles
+        run: |
+          python3 xtask/scripts/fetch_source_documents.py
+          cargo xtask peripherals --chip ${{ matrix.chip }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-${{ matrix.chip }}
+          path: |
+            target/reports/${{ matrix.chip }}/
+            target/artifacts/${{ matrix.chip }}/
+            target/peripheral-probes/reports/${{ matrix.chip }}/
+            target/peripheral-probes/projects/${{ matrix.chip }}/
+            target/peripheral-probes/source-snapshots/
+            target/peripheral-probes/summary-*.json
+          if-no-files-found: error
+          retention-days: 14
+  firmware:
+    needs: [peripheral-smoke, generated-dual-project]
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        chip: [stm32f042c4, stm32f070c6, stm32f072rb, stm32f103c8, stm32f105r8, stm32f207zg, stm32f303re, stm32f407vg, stm32f723rc, stm32f723re, stm32f767zi, stm32g071rb, stm32g071eb, stm32g081eb, stm32g0b0ke, stm32g474re, stm32h503kb, stm32h563zi, stm32h563li, stm32h573li, stm32h5e4ak, stm32h5e5lk, stm32h5f4aj, stm32h5f5lj, stm32h7b3zi]
     steps:
       - uses: actions/checkout@v6
       - name: Install pinned compiler and targets
