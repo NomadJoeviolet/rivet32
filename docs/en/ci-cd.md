@@ -42,6 +42,8 @@ ci.yml defines eight job types. A job can repeat for several operating systems, 
 
 The firmware matrix starts only after peripheral-smoke and both generated-dual-project jobs succeed. If a shared build tool fails, fix the prerequisite job first; skipped jobs do not count as passed checks. H723 plus the 25 matrix configurations still cover the original 26 representative configurations. Before running offline helper projects, CI runs cargo fetch --locked to download the full set of locked dependencies.
 
+Generated dual-core projects use `cargo fmt --check -p ...` for both App packages and their build tool; the host job checks framework source formatting. Using `--all` here would also follow local path dependencies and demand changes to the pinned PAC sources in `Framework/vendor/`.
+
 Clippy is Rust's static code analysis tool. These jobs check compilation, linking, code patterns and source integrity. They do not run phase-specific unit tests, C/C++ comparison projects or dedicated test firmware, so they cannot substitute for behavioral regression tests.
 
 ## What to run locally before submitting code

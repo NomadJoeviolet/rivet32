@@ -205,7 +205,8 @@ jobs:
       - name: Build the pair and check each core independently
         working-directory: target/generated-dual-project
         run: |
-          cargo fmt --all --check
+          # Framework formatting is checked by host; --all would also recurse into the pinned PAC.
+          cargo fmt --check -p robot-pair-cm7 -p robot-pair-cm4 -p robot-pair-builder
           cargo app-build
           cargo clippy -p robot-pair-cm7 --bin firmware-cm7 --locked --target thumbv7em-none-eabihf --target-dir target/pair-cache/cm7 -- -D warnings
           cargo clippy -p robot-pair-cm4 --bin firmware-cm4 --locked --target thumbv7em-none-eabihf --target-dir target/pair-cache/cm4 -- -D warnings

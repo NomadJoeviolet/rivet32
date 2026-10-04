@@ -9,6 +9,8 @@ cargo fetch --locked
 cargo app-build
 ```
 
+To check the format of both App packages and their build tool, run `cargo fmt --check -p @NAME@-cm7 -p @NAME@-cm4 -p @NAME@-builder`. Avoid `cargo fmt --all` here: it also follows local path dependencies into the pinned PAC sources in `Framework/vendor/`.
+
 The build compiles each package separately into `target/pair-cache/cm7` and `target/pair-cache/cm4`. It checks each ELF executable firmware file, then compares the two shared-memory layouts. Firmware images, map files describing their memory layout, linker scripts, logs and `result.json` are copied into `target/pair/`.
 
 Use `cargo app-check` to check compilation without linking or updating the pair's build report. To build one image, use `cargo cm7-build` or `cargo cm4-build`. These commands use separate caches and do not compare the two images. Do not run `cargo build --workspace` or build both App packages in one Cargo command: the two chip features cannot be enabled together.
