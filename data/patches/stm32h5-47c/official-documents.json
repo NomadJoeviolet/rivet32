@@ -1,0 +1,51 @@
+{
+  "schema": "stm32-h5-47c-official-web-verification-v1",
+  "checked_on": "2026-09-30",
+  "documents": [
+    {
+      "id": "DS15168",
+      "revision": "1",
+      "printed_date": "July 2026",
+      "url": "https://www.st.com/resource/en/datasheet/stm32h543cg.pdf",
+      "web_read": true,
+      "pages": 238,
+      "verified_pages_one_based": [1, 2],
+      "facts": ["Table 1 identifies all nine H543 base parts", "Up to 1 MiB dual-bank flash", "304 KiB SRAM plus 2 KiB backup SRAM", "PKA and three ADCs exist"]
+    },
+    {
+      "id": "DS15167",
+      "revision": "1",
+      "printed_date": "July 2026",
+      "url": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf",
+      "web_read": true,
+      "pages": 241,
+      "verified_pages_one_based": [1, 2],
+      "facts": ["Table 1 identifies all five H553 base parts", "1 MiB flash and 304 KiB SRAM plus 2 KiB backup SRAM", "AES, SAES, PKA and OTFDEC capability"]
+    },
+    {
+      "id": "ES0683",
+      "revision": "1",
+      "printed_date": "June 2026",
+      "url": "https://www.st.com/resource/en/errata_sheet/es0683-stm32h543xx-stm32h553xx-device-errata-stmicroelectronics.pdf",
+      "web_read": true,
+      "pages": 24,
+      "verified_pages_one_based": [1, 2],
+      "facts": ["All fourteen parts are in Table 1", "Silicon revision A has REV_ID 0x1000"],
+      "conflict": "First page references RM0539, while the current official device documentation index links RM0481 Rev5. Not silently corrected."
+    },
+    {
+      "id": "RM0481",
+      "revision": "5.0 (official index only)",
+      "index_date": "2026-07-07",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0481-stm32h523533xx-stm32h543553xx-stm32h562xx-and-stm32h563573xx-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "index_url": "https://www.st.com/en/microcontrollers-microprocessors/stm32h5-series/documentation.html",
+      "device_index_url": "https://www.st.com/en/microcontrollers-microprocessors/stm32h543-h553/documentation.html",
+      "web_read": false,
+      "web_error": "Content length too large: 22139766 bytes",
+      "facts": ["Official index explicitly includes STM32H543/553xx in the RM0481 title"],
+      "limitation": "No register semantics, reset values or timings claimed from the unread Rev5 body. Older Rev4 URLs do not establish new-device support."
+    }
+  ],
+  "direct_download_status": "All four PDF requests returned HTTP 567; exact attempts recorded in sources.json. No local PDF SHA-256 is fabricated.",
+  "ordering_source_priority": ["Exact datasheet part tables", "Pinned exact package XML with CMSIS cross-check", "Marketing summaries are not capacity evidence"]
+}

@@ -1,0 +1,86 @@
+{
+  "block/OTFDEC_REGION": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "REG_CONFIGR",
+        "name": "REG_CONFIGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "name": "REG_START_ADDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "name": "REG_END_ADDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "name": "REG_NONCER0"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "name": "REG_NONCER1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "name": "REG_KEYR0"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "name": "REG_KEYR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "name": "REG_KEYR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "name": "REG_KEYR3"
+      }
+    ]
+  },
+  "fieldset/REG_CONFIGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "REG_EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CONFIGLOCK"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "KEYLOCK"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "MODE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "KEYCRC"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "VERSION"
+      }
+    ]
+  }
+}

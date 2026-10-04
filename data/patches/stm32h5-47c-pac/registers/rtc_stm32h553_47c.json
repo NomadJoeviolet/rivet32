@@ -1,0 +1,1061 @@
+{
+  "block/RTC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "TR",
+        "name": "TR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "DR",
+        "name": "DR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 8,
+        "fieldset": "SSR",
+        "name": "SSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "ICSR",
+        "name": "ICSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "PRER",
+        "name": "PRER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "WUTR",
+        "name": "WUTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "PRIVCFGR",
+        "name": "PRIVCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "SECCFGR",
+        "name": "SECCFGR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 36,
+        "fieldset": "WPR",
+        "name": "WPR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "CALR",
+        "name": "CALR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 44,
+        "fieldset": "SHIFTR",
+        "name": "SHIFTR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 48,
+        "fieldset": "TSTR",
+        "name": "TSTR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 52,
+        "fieldset": "TSDR",
+        "name": "TSDR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 56,
+        "fieldset": "TSSSR",
+        "name": "TSSSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "ALRMAR",
+        "name": "ALRMAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "fieldset": "ALRMASSR",
+        "name": "ALRMASSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "ALRMBR",
+        "name": "ALRMBR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "fieldset": "ALRMBSSR",
+        "name": "ALRMBSSR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 80,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 84,
+        "fieldset": "MISR",
+        "name": "MISR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 88,
+        "fieldset": "SMISR",
+        "name": "SMISR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 92,
+        "fieldset": "SCR",
+        "name": "SCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 96,
+        "fieldset": "OR",
+        "name": "OR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 112,
+        "fieldset": "ALRABINR",
+        "name": "ALRABINR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 116,
+        "fieldset": "ALRBBINR",
+        "name": "ALRBBINR"
+      }
+    ]
+  },
+  "fieldset/ALRABINR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "SS"
+      }
+    ]
+  },
+  "fieldset/ALRBBINR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "SS"
+      }
+    ]
+  },
+  "fieldset/ALRMAR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "SU"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 3,
+        "name": "ST"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "MSK1"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "MNU"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 3,
+        "name": "MNT"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "MSK2"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "HU"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "HT"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "PM"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "MSK3"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "DU"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "DT"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "WDSEL"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "MSK4"
+      }
+    ]
+  },
+  "fieldset/ALRMASSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 15,
+        "name": "SS"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 6,
+        "name": "MASKSS"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "SSCLR"
+      }
+    ]
+  },
+  "fieldset/ALRMBR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "SU"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 3,
+        "name": "ST"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "MSK1"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "MNU"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 3,
+        "name": "MNT"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "MSK2"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "HU"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "HT"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "PM"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "MSK3"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "DU"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "DT"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "WDSEL"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "MSK4"
+      }
+    ]
+  },
+  "fieldset/ALRMBSSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 15,
+        "name": "SS"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 6,
+        "name": "MASKSS"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "SSCLR"
+      }
+    ]
+  },
+  "fieldset/CALR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 9,
+        "name": "CALM"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "LPCAL"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CALW16"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "CALW8"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "CALP"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "WUCKSEL"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TSEDGE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "REFCKON"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "BYPSHAD"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FMT"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "SSRUIE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "ALRAE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "ALRBE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "WUTE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "TSE"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "ALRAIE"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "ALRBIE"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "WUTIE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TSIE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "ADD1H"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "SUB1H"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "BKP"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "COSEL"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "POL"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 2,
+        "name": "OSEL"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "COE"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "ITSE"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "TAMPTS"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "TAMPOE"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "ALRAFCLR"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "ALRBFCLR"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "TAMPALRM_PU"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "TAMPALRM_TYPE"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "OUT2EN"
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "DU"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "DT"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "MU"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "MT"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 3,
+        "name": "WDU"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "YU"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 4,
+        "name": "YT"
+      }
+    ]
+  },
+  "fieldset/ICSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ALRAWF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ALRBWF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WUTWF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SHPF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "INITS"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RSF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "INITF"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "INIT"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "BIN"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 3,
+        "name": "BCDU"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "RECALPF"
+      }
+    ]
+  },
+  "fieldset/MISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ALRAMF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ALRBMF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WUTMF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TSMF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TSOVMF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "ITSMF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SSRUMF"
+      }
+    ]
+  },
+  "fieldset/OR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "OUT2_RMP"
+      }
+    ]
+  },
+  "fieldset/PRER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 15,
+        "name": "PREDIV_S"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 7,
+        "name": "PREDIV_A"
+      }
+    ]
+  },
+  "fieldset/PRIVCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ALRAPRIV"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ALRBPRIV"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WUTPRIV"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TSPRIV"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CALPRIV"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "INITPRIV"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "PRIV"
+      }
+    ]
+  },
+  "fieldset/SCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CALRAF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CALRBF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CWUTF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CTSF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "CTSOVF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "CITSF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "CSSRUF"
+      }
+    ]
+  },
+  "fieldset/SECCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ALRASEC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ALRBSEC"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WUTSEC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TSSEC"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CALSEC"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "INITSEC"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "SEC"
+      }
+    ]
+  },
+  "fieldset/SHIFTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 15,
+        "name": "SUBFS"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "ADD1S"
+      }
+    ]
+  },
+  "fieldset/SMISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ALRAMF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ALRBMF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WUTMF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TSMF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TSOVMF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "ITSMF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SSRUMF"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ALRAF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ALRBF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WUTF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TSF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TSOVF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "ITSF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SSRUF"
+      }
+    ]
+  },
+  "fieldset/SSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "SS"
+      }
+    ]
+  },
+  "fieldset/TR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "SU"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 3,
+        "name": "ST"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "MNU"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 3,
+        "name": "MNT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "HU"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "HT"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "PM"
+      }
+    ]
+  },
+  "fieldset/TSDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "DU"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "DT"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "MU"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "MT"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 3,
+        "name": "WDU"
+      }
+    ]
+  },
+  "fieldset/TSSSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "SS"
+      }
+    ]
+  },
+  "fieldset/TSTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "SU"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 3,
+        "name": "ST"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "MNU"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 3,
+        "name": "MNT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "HU"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "HT"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "PM"
+      }
+    ]
+  },
+  "fieldset/WPR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "KEY"
+      }
+    ]
+  },
+  "fieldset/WUTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "WUT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "WUTOCLR"
+      }
+    ]
+  }
+}

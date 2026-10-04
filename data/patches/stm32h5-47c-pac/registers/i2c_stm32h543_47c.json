@@ -1,0 +1,546 @@
+{
+  "block/I2C": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR1",
+        "name": "CR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CR2",
+        "name": "CR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "OAR1",
+        "name": "OAR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "OAR2",
+        "name": "OAR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "TIMINGR",
+        "name": "TIMINGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "TIMEOUTR",
+        "name": "TIMEOUTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 28,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 32,
+        "fieldset": "PECR",
+        "name": "PECR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 36,
+        "fieldset": "RXDR",
+        "name": "RXDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "TXDR",
+        "name": "TXDR"
+      }
+    ]
+  },
+  "fieldset/CR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "PE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RXIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ADDRIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "NACKIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "STOPIE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TCIE"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "ERRIE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "DNF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "ANFOFF"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SWRST"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TXDMAEN"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "RXDMAEN"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "SBC"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "NOSTRETCH"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "WUPEN"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "GCEN"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "SMBHEN"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "SMBDEN"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "ALERTEN"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "PECEN"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "FMP"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "ADDRACLR"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "STOPFACLR"
+      }
+    ]
+  },
+  "fieldset/CR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 10,
+        "name": "SADD"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RD_WRN"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ADD10"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "HEAD10R"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "START"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "STOP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "NACK"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "NBYTES"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "RELOAD"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "AUTOEND"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "PECBYTE"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ADDRCF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "NACKCF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "STOPCF"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "BERRCF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "ARLOCF"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "OVRCF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "PECCF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TIMOUTCF"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "ALERTCF"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "TXE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXIS"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RXNE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ADDR"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "NACKF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "STOPF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TC"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "TCR"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "BERR"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "ARLO"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "OVR"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "PECERR"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TIMEOUT"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "ALERT"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "BUSY"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "DIR"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 7,
+        "name": "ADDCODE"
+      }
+    ]
+  },
+  "fieldset/OAR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 10,
+        "name": "OA1"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "OA1MODE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "OA1EN"
+      }
+    ]
+  },
+  "fieldset/OAR2": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 7,
+        "name": "OA2"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 3,
+        "name": "OA2MASK07"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 3,
+        "name": "OA2MSK"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "OA2MASK03"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "OA2MASK01"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 2,
+        "name": "OA2MASK06"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "OA2MASK02"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "OA2MASK04"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "OA2EN"
+      }
+    ]
+  },
+  "fieldset/PECR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "PEC"
+      }
+    ]
+  },
+  "fieldset/RXDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "RXDATA"
+      }
+    ]
+  },
+  "fieldset/TIMEOUTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "TIMEOUTA"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TIDLE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TIMOUTEN"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 12,
+        "name": "TIMEOUTB"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "TEXTEN"
+      }
+    ]
+  },
+  "fieldset/TIMINGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "SCLL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "SCLH"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "SDADEL"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 4,
+        "name": "SCLDEL"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 4,
+        "name": "PRESC"
+      }
+    ]
+  },
+  "fieldset/TXDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "TXDATA"
+      }
+    ]
+  }
+}

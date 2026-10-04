@@ -1,0 +1,45 @@
+{
+  "completed": true,
+  "deterministic_replays": 2,
+  "documentation": {
+    "PLAN.md": "7671d5b7f11d8797e0148d88ccaca4849c842ceac8e141672aa4330b4ef133e1",
+    "README.md": "f12e6c0ec9315dfeebb595c9093c232b482dfc8232811dee62ac3dcce193ecd0",
+    "generator-inputs.json": "71154a05a8b4a5607798b40fdd2739991b470fe4378ac63178aa6ad3f565eaf7",
+    "integer-audit.json": "7bdbfc744848d207079b8829efe0165999a79aa29fe8f06a0a0e30433918b018",
+    "integration-decisions.json": "d4c84beaba265869b28acd748c965dcf75bee5e8d255eda77160c048654ddada",
+    "official-documents.json": "e3b14957505f75e57d4accd93c6dcb56a5c429e68f6941508fdf1497afa41c71"
+  },
+  "gcc": "gcc (Rev13, Built by MSYS2 project) 15.2.0",
+  "hal_integrated": false,
+  "outputs": {
+    "chip-inputs/STM32H543CE.json": "d22ac75d79fd571d67b597da966c1e9382ca634a509576a41567a26afc0aece7",
+    "chip-inputs/STM32H543CG.json": "56a5ae18413efa6713863787fafe86aba795fbf9d325e2574721952554812848",
+    "chip-inputs/STM32H543RE.json": "c122a120ab4301e70455b91ff15b7381952640d410eaa6b8f48ecfdab8fccde9",
+    "chip-inputs/STM32H543RG.json": "1a441a7672c4d8da3e34606604b88dc987d4eb7b10ad13d9538602bf5d07c7d9",
+    "chip-inputs/STM32H543UG.json": "aa16c2dce4c37a02a335fdc3f82adabec095ebb25d1269b85b259b76001e5ef3",
+    "chip-inputs/STM32H543VE.json": "c1bffd11165cc38b669b6409560f81ccf176fd286de57f1a35bfc5e822513afb",
+    "chip-inputs/STM32H543VG.json": "fd450176c5deb3ceb475e29a9354e99970101f3f7b2b7d11f25b87f7518bc178",
+    "chip-inputs/STM32H543ZE.json": "dddce5810f58779a0c46e459fe262ab4d27dfa6dd3c8d1793fd10c8d3699c5b3",
+    "chip-inputs/STM32H543ZG.json": "f4f300faf4eaba201a23ae3ea1757df0d712b9565fbf2035bbbb746c46358838",
+    "chip-inputs/STM32H553CG.json": "bb27362488b8daf4c99725906580eb5cd8e9c29b488ed73160728635bf44a5d7",
+    "chip-inputs/STM32H553RG.json": "450687ec9b03f319783c288668b9fe87fe11f0c8b08c1dd0ff25df1433d8bcb9",
+    "chip-inputs/STM32H553UG.json": "8f3876c6a2892f269938260e253bd54c18ba580f92ed9d298f54393209d5f555",
+    "chip-inputs/STM32H553VG.json": "681bc6669358052205f45eb8048ffac9376b03a32f2aec31c96291f429840877",
+    "chip-inputs/STM32H553ZG.json": "2a510c210e606c16f4e7abd25c98bb2fe14e8be2a15cb2ab8311c1be2866f55c",
+    "evidence.json": "6d6ddcb0ecf44614c819340bd8b454b1dfbcb55b1ba0434ecbfe3b670e6c5b7a",
+    "register-inputs/STM32H543.json": "6128a63d74c721b0c28e3aa3b18c82721dc046d37a75c58869b25512694f53b2",
+    "register-inputs/STM32H553.json": "30517276f863291f0815a05d1e9318f6aa81e2a172da967be1a445c1b721d13b"
+  },
+  "pac_generated": false,
+  "python": "3.13.5",
+  "scripts": {
+    "capture_sources.py": "07e6102ee5f554756d5b78b81dc46c1bf085aad4c0137ba666d887cbf19eb47c",
+    "prepare.py": "f5a962d2d70a3b76f8205f3eb95e40264c2056c04e8a9d17bb1dac0d828d6b61",
+    "test_preparation.py": "1e66d9e32e03ab48d85199d74cec0c9de00aa517369ce0b52f411e2c52a13200",
+    "verify.py": "c2f95f38c91eed3f7b63b219295d1d433339d48213ff69081cf12767dc5f61cc"
+  },
+  "sources": 45,
+  "sources_lock_sha256": "8efda0e140252cb56b3bb3bf20defd013622158810fce510279227dec312b43b",
+  "test_output": "test_c_integer_suffix_alias_shift_and_cast (test_preparation.Constants.test_c_integer_suffix_alias_shift_and_cast) ... ok\ntest_typedef_parser_does_not_cross_unrelated_structs (test_preparation.Constants.test_typedef_parser_does_not_cross_unrelated_structs) ... ok\ntest_unknown_function_and_cycle_fail_closed (test_preparation.Constants.test_unknown_function_and_cycle_fail_closed) ... ok\ntest_width_sensitive_expressions_are_rejected (test_preparation.Constants.test_width_sensitive_expressions_are_rejected) ... ok\ntest_accurate_flash_and_sram_not_h563_memory (test_preparation.Evidence.test_accurate_flash_and_sram_not_h563_memory) ... ok\ntest_all_exposed_pointer_types_have_measured_layouts (test_preparation.Evidence.test_all_exposed_pointer_types_have_measured_layouts) ... ok\ntest_all_fourteen_parts_and_twenty_nine_packages (test_preparation.Evidence.test_all_fourteen_parts_and_twenty_nine_packages) ... ok\ntest_dma_exact_requests_and_upstream_validator_conflict (test_preparation.Evidence.test_dma_exact_requests_and_upstream_validator_conflict) ... ok\ntest_integer_facts_exclude_host_preprocessor_builtins (test_preparation.Evidence.test_integer_facts_exclude_host_preprocessor_builtins) ... ok\ntest_integration_scope_and_rng_v4_mismatch_are_supported (test_preparation.Evidence.test_integration_scope_and_rng_v4_mismatch_are_supported) ... ok\ntest_new_rcc_and_flash_are_not_marked_reusable (test_preparation.Evidence.test_new_rcc_and_flash_are_not_marked_reusable) ... ok\ntest_package_af_is_bonded_and_not_copied_from_h563 (test_preparation.Evidence.test_package_af_is_bonded_and_not_copied_from_h563) ... ok\ntest_real_irq_numbers_and_security_difference (test_preparation.Evidence.test_real_irq_numbers_and_security_difference) ... ok\ntest_removed_pll3_and_new_clock_mux_evidence (test_preparation.Evidence.test_removed_pll3_and_new_clock_mux_evidence) ... ok\ntest_source_inputs_have_hashes_and_explicit_urls (test_preparation.Evidence.test_source_inputs_have_hashes_and_explicit_urls) ... ok\ntest_explicit_workspace_precedes_ancestor_discovery (test_preparation.Integrity.test_explicit_workspace_precedes_ancestor_discovery) ... ok\ntest_stale_output_is_rejected (test_preparation.Integrity.test_stale_output_is_rejected) ... ok\ntest_unlocked_input_is_rejected (test_preparation.Integrity.test_unlocked_input_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.589s\n\nOK",
+  "tests_returncode": 0
+}

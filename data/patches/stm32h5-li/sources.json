@@ -1,0 +1,52 @@
+{
+  "st_revision": "7d1f1514ed5583ec5007ad91236b4e1d377295b1",
+  "pac_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "generator_revision": "caa36afd62510b0e6315ee0dccd1f9c65fbcac83",
+  "generator_archive_sha256": "8b56ac7e2969e0b651662d047ae994afb5e008526425ceb8d7e8b70a03ca3071",
+  "files": {
+    "STM32H563LIHxQ.xml": {
+      "sha256": "f1c9e934aee71eb9a17260a21a46a4f8e2dfe016eecadb98b0c86a31cf0b1026",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H563LIHxQ.xml"
+    },
+    "STM32H573LIHxQ.xml": {
+      "sha256": "2a6fa42cec986e5887d752314cc4e8aa17a2a9235ea31e06a6a453e1654097d7",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H573LIHxQ.xml"
+    },
+    "STM32H563ZITx.xml": {
+      "sha256": "ae05cd73463d96df790ae2e6252dc4d3298255fe7f4fd646e50571b72cd6e4ac",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H563ZITx.xml"
+    },
+    "STM32H573ZITx.xml": {
+      "sha256": "c9ac7f916833e8ec9bc9df862daa858251ca4a837efd4e56ef0de9d204288134",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H573ZITx.xml"
+    },
+    "GPIO-STM32H56x_gpio_v1_0_Modes.xml": {
+      "sha256": "e5f4a604cf6c8980aef2b8ec210b50181f4691f57a8d1b089488414d835fa7c3",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/IP/GPIO-STM32H56x_gpio_v1_0_Modes.xml"
+    },
+    "ST-LICENSE": {
+      "sha256": "2e80479026d27db007f8bdd190860e4b0452ca30d622ef4c04084b064418a096",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/LICENSE"
+    },
+    "STM32H563ZITxQ.xml": {
+      "sha256": "f89f7653a21c5b4b2a4bb7a0d115ccd5331d158a24ca56347e071ae83cf3c9c6",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H563ZITxQ.xml"
+    },
+    "STM32H573ZITxQ.xml": {
+      "sha256": "b4adbda42e41c37c70704adb0d1dee43dc6defceb85e564fbcfa027b4d431511",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H573ZITxQ.xml"
+    },
+    "STM32H5-extra.yaml": {
+      "sha256": "e3d192d67a215f18e6d1c02ca27e398484a7870b7c190022fe366d4ebf580185",
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/caa36afd62510b0e6315ee0dccd1f9c65fbcac83/data/extra/STM32H5.yaml"
+    },
+    "LICENSE-MIT": {
+      "sha256": "ac59f2b9077719f3ef8de5e20b10c5ceb5206693d2ed42573f9de56752898834",
+      "url": "https://raw.githubusercontent.com/embassy-rs/embassy/ae9e6f0672af84cec8e200a94c574041844396f0/LICENSE-MIT"
+    },
+    "LICENSE-APACHE": {
+      "sha256": "5299622e84aeae35539a7b08ec1c81f1a952f92221a298e5acbcf77936ec048b",
+      "url": "https://raw.githubusercontent.com/embassy-rs/embassy/ae9e6f0672af84cec8e200a94c574041844396f0/LICENSE-APACHE"
+    }
+  }
+}

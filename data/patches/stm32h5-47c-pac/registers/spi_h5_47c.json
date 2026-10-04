@@ -1,0 +1,1295 @@
+{
+  "block/SPI": {
+    "description": "Serial peripheral interface",
+    "items": [
+      {
+        "byte_offset": 0,
+        "description": "control register 1",
+        "fieldset": "CR1",
+        "name": "CR1"
+      },
+      {
+        "byte_offset": 4,
+        "description": "control register 2",
+        "fieldset": "CR2",
+        "name": "CR2"
+      },
+      {
+        "byte_offset": 8,
+        "description": "configuration register 1",
+        "fieldset": "CFG1",
+        "name": "CFG1"
+      },
+      {
+        "byte_offset": 12,
+        "description": "configuration register 2",
+        "fieldset": "CFG2",
+        "name": "CFG2"
+      },
+      {
+        "byte_offset": 16,
+        "description": "Interrupt Enable Register",
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 20,
+        "description": "Status Register",
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 24,
+        "description": "Interrupt/Status Flags Clear Register",
+        "fieldset": "IFCR",
+        "name": "IFCR"
+      },
+      {
+        "access": "Write",
+        "bit_size": 16,
+        "byte_offset": 32,
+        "description": "Transmit Data Register - half-word sized",
+        "name": "TXDR16"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 32,
+        "description": "Transmit Data Register",
+        "name": "TXDR32"
+      },
+      {
+        "access": "Write",
+        "bit_size": 8,
+        "byte_offset": 32,
+        "description": "Transmit Data Register - byte sized",
+        "name": "TXDR8"
+      },
+      {
+        "access": "Read",
+        "bit_size": 16,
+        "byte_offset": 48,
+        "description": "Receive Data Register - half-word sized",
+        "name": "RXDR16"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 48,
+        "description": "Receive Data Register",
+        "name": "RXDR32"
+      },
+      {
+        "access": "Read",
+        "bit_size": 8,
+        "byte_offset": 48,
+        "description": "Receive Data Register - byte sized",
+        "name": "RXDR8"
+      },
+      {
+        "byte_offset": 64,
+        "description": "Polynomial Register",
+        "fieldset": "CRCPOLY",
+        "name": "CRCPOLY"
+      },
+      {
+        "byte_offset": 68,
+        "description": "Transmitter CRC Register",
+        "fieldset": "TXCRC",
+        "name": "TXCRC"
+      },
+      {
+        "byte_offset": 72,
+        "description": "Receiver CRC Register",
+        "fieldset": "RXCRC",
+        "name": "RXCRC"
+      },
+      {
+        "byte_offset": 76,
+        "description": "Underrun Data Register",
+        "fieldset": "UDRDR",
+        "name": "UDRDR"
+      },
+      {
+        "byte_offset": 80,
+        "description": "I2S Configuration Register",
+        "fieldset": "I2SCFGR",
+        "name": "I2SCFGR"
+      }
+    ]
+  },
+  "enum/CHLEN": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "16 bits per channel",
+        "name": "Bits16",
+        "value": 0
+      },
+      {
+        "description": "32 bits per channel",
+        "name": "Bits32",
+        "value": 1
+      }
+    ]
+  },
+  "enum/CKPOL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "CK idle Level is Low. Signals are sampled on rising and changed on falling clock edges",
+        "name": "IdleLow",
+        "value": 0
+      },
+      {
+        "description": "CK idle level is High. Signals are sampled on falling and changed on rising clock edges",
+        "name": "IdleHigh",
+        "value": 1
+      }
+    ]
+  },
+  "enum/COMM": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "Full duplex",
+        "name": "FullDuplex",
+        "value": 0
+      },
+      {
+        "description": "Simplex transmitter only",
+        "name": "Transmitter",
+        "value": 1
+      },
+      {
+        "description": "Simplex receiver only",
+        "name": "Receiver",
+        "value": 2
+      },
+      {
+        "description": "Half duplex",
+        "name": "HalfDuplex",
+        "value": 3
+      }
+    ]
+  },
+  "enum/CPHA": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "The first clock transition is the first data capture edge",
+        "name": "FirstEdge",
+        "value": 0
+      },
+      {
+        "description": "The second clock transition is the first data capture edge",
+        "name": "SecondEdge",
+        "value": 1
+      }
+    ]
+  },
+  "enum/CPOL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "SCK to 0 when idle",
+        "name": "IdleLow",
+        "value": 0
+      },
+      {
+        "description": "SCK to 1 when idle",
+        "name": "IdleHigh",
+        "value": 1
+      }
+    ]
+  },
+  "enum/DATFMT": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "The data inside RXDR and TXDR are right aligned",
+        "name": "RightAligned",
+        "value": 0
+      },
+      {
+        "description": "The data inside RXDR and TXDR are left aligned",
+        "name": "LeftAligned",
+        "value": 1
+      }
+    ]
+  },
+  "enum/DATLEN": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "16-bit data length",
+        "name": "Bits16",
+        "value": 0
+      },
+      {
+        "description": "24-bit data length",
+        "name": "Bits24",
+        "value": 1
+      },
+      {
+        "description": "32-bit data length",
+        "name": "Bits32",
+        "value": 2
+      }
+    ]
+  },
+  "enum/FIXCH": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "The channel length in slave mode is different from 16 or 32 bits (CHLEN not taken into account)",
+        "name": "NotFixed",
+        "value": 0
+      },
+      {
+        "description": "The channel length in slave mode is supposed to be 16 or 32 bits (according to CHLEN)",
+        "name": "Fixed",
+        "value": 1
+      }
+    ]
+  },
+  "enum/FTHLV": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "description": "1 frame",
+        "name": "OneFrame",
+        "value": 0
+      },
+      {
+        "description": "2 frames",
+        "name": "TwoFrames",
+        "value": 1
+      },
+      {
+        "description": "3 frames",
+        "name": "ThreeFrames",
+        "value": 2
+      },
+      {
+        "description": "4 frames",
+        "name": "FourFrames",
+        "value": 3
+      },
+      {
+        "description": "5 frames",
+        "name": "FiveFrames",
+        "value": 4
+      },
+      {
+        "description": "6 frames",
+        "name": "SixFrames",
+        "value": 5
+      },
+      {
+        "description": "7 frames",
+        "name": "SevenFrames",
+        "value": 6
+      },
+      {
+        "description": "8 frames",
+        "name": "EightFrames",
+        "value": 7
+      },
+      {
+        "description": "9 frames",
+        "name": "NineFrames",
+        "value": 8
+      },
+      {
+        "description": "10 frames",
+        "name": "TenFrames",
+        "value": 9
+      },
+      {
+        "description": "11 frames",
+        "name": "ElevenFrames",
+        "value": 10
+      },
+      {
+        "description": "12 frames",
+        "name": "TwelveFrames",
+        "value": 11
+      },
+      {
+        "description": "13 frames",
+        "name": "ThirteenFrames",
+        "value": 12
+      },
+      {
+        "description": "14 frames",
+        "name": "FourteenFrames",
+        "value": 13
+      },
+      {
+        "description": "15 frames",
+        "name": "FifteenFrames",
+        "value": 14
+      },
+      {
+        "description": "16 frames",
+        "name": "SixteenFrames",
+        "value": 15
+      }
+    ]
+  },
+  "enum/HDDIR": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Receiver in half duplex mode",
+        "name": "Receiver",
+        "value": 0
+      },
+      {
+        "description": "Transmitter in half duplex mode",
+        "name": "Transmitter",
+        "value": 1
+      }
+    ]
+  },
+  "enum/I2SCFG": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "description": "Slave, transmit",
+        "name": "SlaveTx",
+        "value": 0
+      },
+      {
+        "description": "Slave, receive",
+        "name": "SlaveRx",
+        "value": 1
+      },
+      {
+        "description": "Master, transmit",
+        "name": "MasterTx",
+        "value": 2
+      },
+      {
+        "description": "Master, receive",
+        "name": "MasterRx",
+        "value": 3
+      },
+      {
+        "description": "Slave, full duplex",
+        "name": "SlaveFullDuplex",
+        "value": 4
+      },
+      {
+        "description": "Master, full duplex",
+        "name": "MasterFullDuplex",
+        "value": 5
+      }
+    ]
+  },
+  "enum/I2SSTD": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "I2S Philips standard",
+        "name": "Philips",
+        "value": 0
+      },
+      {
+        "description": "MSB/left justified standard",
+        "name": "MSB",
+        "value": 1
+      },
+      {
+        "description": "LSB/right justified standard",
+        "name": "LSB",
+        "value": 2
+      },
+      {
+        "description": "PCM standard",
+        "name": "PCM",
+        "value": 3
+      }
+    ]
+  },
+  "enum/LSBFIRST": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Data is transmitted/received with the MSB first",
+        "name": "MSBFirst",
+        "value": 0
+      },
+      {
+        "description": "Data is transmitted/received with the LSB first",
+        "name": "LSBFirst",
+        "value": 1
+      }
+    ]
+  },
+  "enum/MASTER": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Slave configuration",
+        "name": "Slave",
+        "value": 0
+      },
+      {
+        "description": "Master configuration",
+        "name": "Master",
+        "value": 1
+      }
+    ]
+  },
+  "enum/MBR": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "description": "f_spi_ker_ck / 2",
+        "name": "Div2",
+        "value": 0
+      },
+      {
+        "description": "f_spi_ker_ck / 4",
+        "name": "Div4",
+        "value": 1
+      },
+      {
+        "description": "f_spi_ker_ck / 8",
+        "name": "Div8",
+        "value": 2
+      },
+      {
+        "description": "f_spi_ker_ck / 16",
+        "name": "Div16",
+        "value": 3
+      },
+      {
+        "description": "f_spi_ker_ck / 32",
+        "name": "Div32",
+        "value": 4
+      },
+      {
+        "description": "f_spi_ker_ck / 64",
+        "name": "Div64",
+        "value": 5
+      },
+      {
+        "description": "f_spi_ker_ck / 128",
+        "name": "Div128",
+        "value": 6
+      },
+      {
+        "description": "f_spi_ker_ck / 256",
+        "name": "Div256",
+        "value": 7
+      }
+    ]
+  },
+  "enum/ODD": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Real divider value is I2SDIV*2",
+        "name": "Even",
+        "value": 0
+      },
+      {
+        "description": "Real divider value is I2SDIV*2 + 1",
+        "name": "Odd",
+        "value": 1
+      }
+    ]
+  },
+  "enum/PCMSYNC": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Short PCM frame synchronization",
+        "name": "Short",
+        "value": 0
+      },
+      {
+        "description": "Long PCM frame synchronization",
+        "name": "Long",
+        "value": 1
+      }
+    ]
+  },
+  "enum/RCRCINI": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "All zeros RX CRC initialization pattern",
+        "name": "AllZeros",
+        "value": 0
+      },
+      {
+        "description": "All ones RX CRC initialization pattern",
+        "name": "AllOnes",
+        "value": 1
+      }
+    ]
+  },
+  "enum/RDIOM": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "RDY signal is defined internally fixed as permanently active (RDIOP setting has no effect)",
+        "name": "PermanentlyActive",
+        "value": 0
+      },
+      {
+        "description": "RDY signal is overtaken from alternate function input (at master case) or output (at slave case) of the dedicated pin (RDIOP setting takes effect)",
+        "name": "FromInput",
+        "value": 1
+      }
+    ]
+  },
+  "enum/RDIOP": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "high level of the signal means the slave is ready for communication",
+        "name": "ReadyHigh",
+        "value": 0
+      },
+      {
+        "description": "low level of the signal means the slave is ready for communication",
+        "name": "ReadyLow",
+        "value": 1
+      }
+    ]
+  },
+  "enum/RXPLVL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "Zero frames beyond packing ratio available",
+        "name": "ZeroFrames",
+        "value": 0
+      },
+      {
+        "description": "One frame beyond packing ratio available",
+        "name": "OneFrame",
+        "value": 1
+      },
+      {
+        "description": "Two frame beyond packing ratio available",
+        "name": "TwoFrames",
+        "value": 2
+      },
+      {
+        "description": "Three frame beyond packing ratio available",
+        "name": "ThreeFrames",
+        "value": 3
+      }
+    ]
+  },
+  "enum/RXWNE": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Less than 32-bit data frame received",
+        "name": "LessThan32",
+        "value": 0
+      },
+      {
+        "description": "At least 32-bit data frame received",
+        "name": "AtLeast32",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SP": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "description": "Motorola SPI protocol",
+        "name": "Motorola",
+        "value": 0
+      },
+      {
+        "description": "TI SPI protocol",
+        "name": "TI",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SSIOP": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Low level is active for SS signal",
+        "name": "ActiveLow",
+        "value": 0
+      },
+      {
+        "description": "High level is active for SS signal",
+        "name": "ActiveHigh",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SSOM": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "SS is asserted until data transfer complete",
+        "name": "Asserted",
+        "value": 0
+      },
+      {
+        "description": "Data frames interleaved with SS not asserted during MIDI",
+        "name": "NotAsserted",
+        "value": 1
+      }
+    ]
+  },
+  "enum/TCRCINI": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "All zeros TX CRC initialization pattern",
+        "name": "AllZeros",
+        "value": 0
+      },
+      {
+        "description": "All ones TX CRC initialization pattern",
+        "name": "AllOnes",
+        "value": 1
+      }
+    ]
+  },
+  "enum/UDRCFG": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "Slave sends a constant underrun pattern",
+        "name": "Constant",
+        "value": 0
+      },
+      {
+        "description": "Slave repeats last received data frame from master",
+        "name": "RepeatReceived",
+        "value": 1
+      },
+      {
+        "description": "Slave repeats last transmitted data frame",
+        "name": "RepeatTransmitted",
+        "value": 2
+      }
+    ]
+  },
+  "fieldset/CFG1": {
+    "description": "configuration register 1",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "description": "Number of bits in at single SPI data frame",
+        "name": "DSIZE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 4,
+        "description": "threshold level",
+        "enum": "FTHLV",
+        "name": "FTHLV"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 2,
+        "description": "Behavior of slave transmitter at underrun condition",
+        "enum": "UDRCFG",
+        "name": "UDRCFG"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "description": "Rx DMA stream enable",
+        "name": "RXDMAEN"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "description": "Tx DMA stream enable",
+        "name": "TXDMAEN"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 5,
+        "description": "Length of CRC frame to be transacted and compared",
+        "name": "CRCSIZE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "description": "Hardware CRC computation enable",
+        "name": "CRCEN"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "description": "Delay Read Data Sampling",
+        "name": "DRDS"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 3,
+        "description": "Master baud rate",
+        "enum": "MBR",
+        "name": "MBR"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "description": "bypass of the prescaler at master baud rate clock generator",
+        "name": "BPASS"
+      }
+    ]
+  },
+  "fieldset/CFG2": {
+    "description": "configuration register 2",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "description": "Master SS Idleness",
+        "name": "MSSI"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "description": "Master Inter-Data Idleness",
+        "name": "MIDI"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "description": "RDY signal input/output management\n Note: When DSIZE at the CFG1 register is configured shorter than 8-bit, the RDIOM bit has to be kept at zero.",
+        "enum": "RDIOM",
+        "name": "RDIOM"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "description": "RDY signal input/output polarity",
+        "enum": "RDIOP",
+        "name": "RDIOP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "description": "Swap functionality of MISO and MOSI pins",
+        "name": "IOSWP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 2,
+        "description": "SPI Communication Mode",
+        "enum": "COMM",
+        "name": "COMM"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 3,
+        "description": "Serial Protocol",
+        "enum": "SP",
+        "name": "SP"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "description": "SPI Master",
+        "enum": "MASTER",
+        "name": "MASTER"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "description": "Data frame format",
+        "enum": "LSBFIRST",
+        "name": "LSBFIRST"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "description": "Clock phase",
+        "enum": "CPHA",
+        "name": "CPHA"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "description": "Clock polarity",
+        "enum": "CPOL",
+        "name": "CPOL"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "description": "Software management of SS signal input",
+        "name": "SSM"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "description": "SS input/output polarity",
+        "enum": "SSIOP",
+        "name": "SSIOP"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "description": "SS output enable",
+        "name": "SSOE"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "description": "SS output management in master mode",
+        "enum": "SSOM",
+        "name": "SSOM"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "description": "Alternate function always control GPIOs",
+        "name": "AFCNTR"
+      }
+    ]
+  },
+  "fieldset/CR1": {
+    "description": "control register 1",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "description": "Serial Peripheral Enable",
+        "name": "SPE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "description": "Master automatic SUSP in Receive mode",
+        "name": "MASRX"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "description": "Master transfer start",
+        "name": "CSTART"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "description": "Master SUSPend request",
+        "name": "CSUSP"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "description": "Rx/Tx direction at Half-duplex mode",
+        "enum": "HDDIR",
+        "name": "HDDIR"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "description": "Internal SS signal input level",
+        "name": "SSI"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "description": "Full size (33-bit or 17-bit) CRC polynomial is used",
+        "name": "CRC33_17"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "description": "CRC calculation initialization pattern control for receiver",
+        "enum": "RCRCINI",
+        "name": "RCRCINI"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "description": "CRC calculation initialization pattern control for transmitter",
+        "enum": "TCRCINI",
+        "name": "TCRCINI"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "description": "Locking the AF configuration of associated IOs",
+        "name": "IOLOCK"
+      }
+    ]
+  },
+  "fieldset/CR2": {
+    "description": "control register 2",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "description": "Number of data at current transfer",
+        "name": "TSIZE"
+      }
+    ]
+  },
+  "fieldset/CRCPOLY": {
+    "description": "Polynomial Register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "description": "CRC polynomial register",
+        "name": "CRCPOLY"
+      }
+    ]
+  },
+  "fieldset/I2SCFGR": {
+    "description": "I2S Configuration Register",
+    "fields": [
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "description": "Master clock output enable",
+        "name": "MCKOE"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "description": "Odd factor for the prescaler",
+        "enum": "ODD",
+        "name": "ODD"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "description": "I2S linear prescaler",
+        "name": "I2SDIV"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "description": "Data format",
+        "enum": "DATFMT",
+        "name": "DATFMT"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "description": "Word select inversion",
+        "name": "WSINV"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "description": "Fixed channel length in slave",
+        "enum": "FIXCH",
+        "name": "FIXCH"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "description": "Serial audio clock polarity",
+        "enum": "CKPOL",
+        "name": "CKPOL"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "description": "Channel length (number of bits per audio channel)",
+        "enum": "CHLEN",
+        "name": "CHLEN"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "description": "Data length to be transferred",
+        "enum": "DATLEN",
+        "name": "DATLEN"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "description": "PCM frame synchronization",
+        "enum": "PCMSYNC",
+        "name": "PCMSYNC"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "description": "I2S standard selection",
+        "enum": "I2SSTD",
+        "name": "I2SSTD"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 3,
+        "description": "I2S configuration mode",
+        "enum": "I2SCFG",
+        "name": "I2SCFG"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "description": "I2S mode selection",
+        "name": "I2SMOD"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "description": "Interrupt Enable Register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "description": "RXP Interrupt Enable",
+        "name": "RXPIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "description": "TXP interrupt enable",
+        "name": "TXPIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "description": "DXP interrupt enabled",
+        "name": "DXPIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "description": "EOT, SUSP and TXC interrupt enable",
+        "name": "EOTIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "description": "TXTFIE interrupt enable",
+        "name": "TXTFIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "description": "UDR interrupt enable",
+        "name": "UDRIE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "description": "OVR interrupt enable",
+        "name": "OVRIE"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "description": "CRC Interrupt enable",
+        "name": "CRCEIE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "description": "TIFRE interrupt enable",
+        "name": "TIFREIE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "description": "Mode Fault interrupt enable",
+        "name": "MODFIE"
+      }
+    ]
+  },
+  "fieldset/IFCR": {
+    "description": "Interrupt/Status Flags Clear Register",
+    "fields": [
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "description": "End Of Transfer flag clear",
+        "name": "EOTC"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "description": "Transmission Transfer Filled flag clear",
+        "name": "TXTFC"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "description": "Underrun flag clear",
+        "name": "UDRC"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "description": "Overrun flag clear",
+        "name": "OVRC"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "description": "CRC Error flag clear",
+        "name": "CRCEC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "description": "TI frame format error flag clear",
+        "name": "TIFREC"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "description": "Mode Fault flag clear",
+        "name": "MODFC"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "description": "SUSPend flag clear",
+        "name": "SUSPC"
+      }
+    ]
+  },
+  "fieldset/RXCRC": {
+    "description": "Receiver CRC Register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "description": "CRC register for receiver",
+        "name": "RXCRC"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "description": "Status Register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "description": "Rx-Packet available",
+        "name": "RXP"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "description": "Tx-Packet space available",
+        "name": "TXP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "description": "Duplex Packet",
+        "name": "DXP"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "description": "End Of Transfer",
+        "name": "EOT"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "description": "Transmission Transfer Filled",
+        "name": "TXTF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "description": "Underrun at slave transmission mode",
+        "name": "UDR"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "description": "Overrun",
+        "name": "OVR"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "description": "CRC Error",
+        "name": "CRCE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "description": "TI frame format error",
+        "name": "TIFRE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "description": "Mode Fault",
+        "name": "MODF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "description": "SUSPend",
+        "name": "SUSP"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "description": "TxFIFO transmission complete",
+        "name": "TXC"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 2,
+        "description": "RxFIFO Packing LeVeL",
+        "enum": "RXPLVL",
+        "name": "RXPLVL"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "description": "RxFIFO Word Not Empty",
+        "enum": "RXWNE",
+        "name": "RXWNE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "description": "Number of data frames remaining in current TSIZE session",
+        "name": "CTSIZE"
+      }
+    ]
+  },
+  "fieldset/TXCRC": {
+    "description": "Transmitter CRC Register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "description": "CRC register for transmitter",
+        "name": "TXCRC"
+      }
+    ]
+  },
+  "fieldset/UDRDR": {
+    "description": "Underrun Data Register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "description": "Data at slave underrun condition",
+        "name": "UDRDR"
+      }
+    ]
+  }
+}

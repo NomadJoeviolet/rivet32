@@ -1,0 +1,27 @@
+name: Paired App firmware
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  firmware:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Install pinned compiler
+        run: |
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          rustup target add --toolchain 1.98.1 @TARGET@
+      - run: cargo fetch --locked
+      - run: cargo fmt --all --check
+      - name: Link and validate both independent images
+        run: cargo app-build
+      - run: cargo clippy -p @NAME@-cm7 --bin firmware-cm7 --locked --target @TARGET@ --target-dir target/cm7 -- -D warnings
+      - run: cargo clippy -p @NAME@-cm4 --bin firmware-cm4 --locked --target @TARGET@ --target-dir target/cm4 -- -D warnings
+      - uses: actions/upload-artifact@v4
+        with:
+          name: @PART@-paired-firmware
+          path: target/pair/
+          if-no-files-found: error

@@ -1,0 +1,10 @@
+[alias]
+app-build = "build --release --locked --bin firmware --target @TARGET@"
+app-check = "check --locked --bin firmware --target @TARGET@"
+
+[net]
+git-fetch-with-cli = true
+
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+# A scalar overrides ancestor config instead of concatenating linker scripts.
+rustflags = "-C link-arg=-Tlink.x -C link-arg=-Tdefmt.x"

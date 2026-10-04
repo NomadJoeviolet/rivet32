@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "base_revision": "ae9e6f0672af84cec8e200a94c574041844396f0",
+  "purpose": "Initialize dual-core SharedConfig, preserve early/late startup HSEM notification, allocate distinct H7 time drivers. Full system reset and non-cacheable SharedData required; no HIL claim. Explicit time-driver-TIMx overrides any fallback for board resource ownership; conflicting explicit drivers are rejected. Correct DMA/BDMA priority argument order and avoid secondary H7 AHB4ENR RMW during primary initialization.",
+  "files": [
+    {
+      "path": "src/lib.rs",
+      "upstream_sha256": "8d5656fe4d153fe64cf2c1fc790a94a3f365a6e1d4fbcc4378ddc8088b65382a",
+      "patched_sha256": "020532c75924e168aa5f1b58a54a2202677624b1cdc7fca3121f3f3df4481ba3",
+      "replacements": [
+        {
+          "old": "        rcc::set_freqs_ptr(shared_data.clocks.get());\n        #[cfg(feature = \"low-power\")]\n        rcc::set_rcc_config_ptr(shared_data.rcc_config.get());\n        let p = init_hw(config);\n\n        hsem::get_hsem(1).blocking_notify();\n\n        p\n",
+          "new": "        rcc::set_freqs_ptr(shared_data.clocks.get());\n        #[cfg(feature = \"low-power\")]\n        rcc::set_rcc_config_ptr(shared_data.rcc_config.get());\n        // The secondary reads this after the HSEM publication. In the pinned\n        // upstream revision the field was never initialized.\n        unsafe { (*shared_data.config.get()).write(SharedConfig::from(config)); }\n        let p = init_hw(config);\n\n        // Publish all shared RAM writes before releasing the semaphore. The\n        // region must be non-cacheable, or the primary's D-cache must be off.\n        core::sync::atomic::compiler_fence(core::sync::atomic::Ordering::Release);\n        hsem::get_hsem(1).blocking_notify();\n\n        p\n"
+        },
+        {
+          "old": "            rcc::enable_with_cs_no_refcount::<peripherals::HSEM>(cs);\n        });\n\n        // Wait for the semaphore to be unlocked by the primary core\n        hsem::get_hsem(1).blocking_listen();\n\n        let shared_data = unsafe { shared_data.assume_init_ref() };\n\n",
+          "new": "            rcc::enable_with_cs_no_refcount::<peripherals::HSEM>(cs);\n        });\n\n        // A full system reset clears HSEM flags. Do not clear before observing:\n        // the primary may have finished before this core reaches this function.\n        // HSEM logical channel 1 (hardware bit 0) is reserved for startup; no other handler may consume\n        // this core's notification. Individual-core warm reset is unsupported.\n        let core_index = super::cpu::CoreId::current().to_index() as usize;\n        if !pac::HSEM.isr(core_index).read().isf(0) {\n            return None;\n        }\n        pac::HSEM.icr(core_index).write(|w| w.set_isc(0, true));\n        cortex_m::asm::dmb();\n        core::sync::atomic::compiler_fence(core::sync::atomic::Ordering::Acquire);\n\n        let shared_data = unsafe { shared_data.assume_init_ref() };\n\n"
+        },
+        {
+          "old": "                    #[cfg(bdma)]\n                    config.bdma_interrupt_priority,\n                    #[cfg(dma)]\n                    config.dma_interrupt_priority,",
+          "new": "                    #[cfg(dma)]\n                    config.dma_interrupt_priority,\n                    #[cfg(bdma)]\n                    config.bdma_interrupt_priority,"
+        },
+        {
+          "old": "                #[cfg(bdma)]\n                config.bdma_interrupt_priority,\n                #[cfg(dma)]\n                config.dma_interrupt_priority,",
+          "new": "                #[cfg(dma)]\n                config.dma_interrupt_priority,\n                #[cfg(bdma)]\n                config.bdma_interrupt_priority,"
+        },
+        {
+          "old": "    pub fn try_init_secondary(shared_data: &'static MaybeUninit<SharedData>) -> Option<Peripherals> {\n        critical_section::with(|cs| {\n            rcc::enable_with_cs_no_refcount::<peripherals::HSEM>(cs);\n        });\n\n",
+          "new": "    pub fn try_init_secondary(shared_data: &'static MaybeUninit<SharedData>) -> Option<Peripherals> {\n        #[cfg(not(stm32h7))]\n        critical_section::with(|cs| {\n            rcc::enable_with_cs_no_refcount::<peripherals::HSEM>(cs);\n        });\n        #[cfg(stm32h7)]\n        {\n            // The primary enables HSEM before any shared RAM publication. A\n            // secondary RMW of AHB4ENR can lose the primary's concurrent GPIO/\n            // BDMA enables: core-local interrupt masking does not serialize RCC.\n            if !pac::RCC.ahb4enr().read().hsemen() {\n                return None;\n            }\n            cortex_m::asm::dsb();\n        }\n\n"
+        }
+      ]
+    },
+    {
+      "path": "build.rs",
+      "upstream_sha256": "43078e9ea607067f7144d7385255ec04601be25781d93ac4b5cc293a37626f86",
+      "patched_sha256": "287064556bf7077fe0a34d8db592ea7a8cc1db9642dca890aa53bf3d081a9225",
+      "replacements": [
+        {
+          "old": "\n    let time_driver_singleton: String = match time_driver.as_deref() {\n        None => String::new(),\n        Some(\"any\") => {\n            // The driver uses CC1 for the halfway-point interrupt and CC2 for the alarm,\n            // so basic and 1-channel timers are out. Rank the rest:\n",
+          "new": "\n    let time_driver_singleton: String = match time_driver.as_deref() {\n        None => String::new(),\n        Some(\"any\") if cfg!(feature = \"_dual-core\") && METADATA.family == \"STM32H7\" => {\n            // Two independently linked images must never initialize the same\n            // physical timebase. These H7 parts expose both 32-bit timers.\n            let timer = if cfg!(feature = \"_core-cm7\") { \"TIM5\" } else { \"TIM2\" };\n            assert!(METADATA.peripherals.iter().any(|p| p.name == timer\n                && p.registers.as_ref().is_some_and(|r| r.kind == \"timer\" && r.block == \"TIM_GP32\")),\n                \"dual-core H7 requires its assigned 32-bit time driver {timer}\");\n            timer.to_string()\n        }\n        Some(\"any\") => {\n            // The driver uses CC1 for the halfway-point interrupt and CC2 for the alarm,\n            // so basic and 1-channel timers are out. Rank the rest:\n"
+        },
+        {
+          "old": "    let time_driver = match env::vars()\n        .map(|(a, _)| a)\n        .filter(|x| x.starts_with(\"CARGO_FEATURE_TIME_DRIVER_\"))\n        .get_one()\n",
+          "new": "    // Framework defaults request `any`; a board may reserve a specific timer.\n    // One explicit timer overrides that fallback. Two explicit timers still\n    // fail through get_one(), so Cargo feature unification cannot pick silently.\n    let explicit_time_driver = env::vars().any(|(key, _)|\n        key.starts_with(\"CARGO_FEATURE_TIME_DRIVER_\") && key != \"CARGO_FEATURE_TIME_DRIVER_ANY\");\n    let time_driver = match env::vars()\n        .map(|(a, _)| a)\n        .filter(|x| x.starts_with(\"CARGO_FEATURE_TIME_DRIVER_\"))\n        .filter(|x| !explicit_time_driver || x != \"CARGO_FEATURE_TIME_DRIVER_ANY\")\n        .get_one()\n"
+        },
+        {
+          "old": "    let time_driver_irq_decl = if !time_driver_singleton.is_empty() {",
+          "new": "    // Enforce the framework's fixed dual-core resource plan here as well:\n    // direct dependency features must not bypass the application's policy.\n    if cfg!(feature = \"_dual-core\") && METADATA.family == \"STM32H7\" && !time_driver_singleton.is_empty() {\n        let assigned = if cfg!(feature = \"_core-cm7\") { \"TIM5\" } else { \"TIM2\" };\n        assert_eq!(time_driver_singleton, assigned,\n            \"dual-core H7 time driver conflicts with the fixed per-core resource plan\");\n    }\n\n    let time_driver_irq_decl = if !time_driver_singleton.is_empty() {"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1011 @@
+{
+  "block/ADC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "CFGR",
+        "name": "CFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "CFGR2",
+        "name": "CFGR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "SMPR1",
+        "name": "SMPR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "SMPR2",
+        "name": "SMPR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "TR1",
+        "name": "TR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "TR2",
+        "name": "TR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "TR3",
+        "name": "TR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 48,
+        "fieldset": "SQR1",
+        "name": "SQR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 52,
+        "fieldset": "SQR2",
+        "name": "SQR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 56,
+        "fieldset": "SQR3",
+        "name": "SQR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 60,
+        "fieldset": "SQR4",
+        "name": "SQR4"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 64,
+        "fieldset": "DR",
+        "name": "DR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "fieldset": "JSQR",
+        "name": "JSQR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 96,
+        "fieldset": "OFR1",
+        "name": "OFR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 100,
+        "fieldset": "OFR2",
+        "name": "OFR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 104,
+        "fieldset": "OFR3",
+        "name": "OFR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 108,
+        "fieldset": "OFR4",
+        "name": "OFR4"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 128,
+        "fieldset": "JDR1",
+        "name": "JDR1"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 132,
+        "fieldset": "JDR2",
+        "name": "JDR2"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 136,
+        "fieldset": "JDR3",
+        "name": "JDR3"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 140,
+        "fieldset": "JDR4",
+        "name": "JDR4"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 160,
+        "fieldset": "AWD2CR",
+        "name": "AWD2CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 164,
+        "fieldset": "AWD3CR",
+        "name": "AWD3CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 176,
+        "fieldset": "DIFSEL",
+        "name": "DIFSEL"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 180,
+        "fieldset": "CALFACT",
+        "name": "CALFACT"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 200,
+        "fieldset": "OR",
+        "name": "OR"
+      }
+    ]
+  },
+  "fieldset/AWD2CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 20,
+        "name": "AWD2CH"
+      }
+    ]
+  },
+  "fieldset/AWD3CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 20,
+        "name": "AWD3CH"
+      }
+    ]
+  },
+  "fieldset/CALFACT": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "CALFACT_S"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 7,
+        "name": "CALFACT_D"
+      }
+    ]
+  },
+  "fieldset/CFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DMAEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DMACFG"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 2,
+        "name": "RES"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 5,
+        "name": "EXTSEL"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 2,
+        "name": "EXTEN"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "OVRMOD"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CONT"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "AUTDLY"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "ALIGN"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "DISCEN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 3,
+        "name": "DISCNUM"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "JDISCEN"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "JQM"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "AWD1SGL"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "AWD1EN"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "JAWD1EN"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "JAUTO"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 5,
+        "name": "AWD1CH"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "JQDIS"
+      }
+    ]
+  },
+  "fieldset/CFGR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ROVSE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "JOVSE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 3,
+        "name": "OVSR"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 4,
+        "name": "OVSS"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "TROVS"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "ROVSM"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "SWTRIG"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "BULB"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "SMPTRIG"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ADEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ADDIS"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ADSTART"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "JADSTART"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ADSTP"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "JADSTP"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "ADVREGEN"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "DEEPPWD"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "ADCALDIF"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "ADCAL"
+      }
+    ]
+  },
+  "fieldset/DIFSEL": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 20,
+        "name": "DIFSEL"
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "RDATA"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ADRDYIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "EOSMPIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EOCIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "EOSIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "OVRIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "JEOCIE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "JEOSIE"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "AWD1IE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "AWD2IE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "AWD3IE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "JQOVFIE"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ADRDY"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "EOSMP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EOC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "EOS"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "OVR"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "JEOC"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "JEOS"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "AWD1"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "AWD2"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "AWD3"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "JQOVF"
+      }
+    ]
+  },
+  "fieldset/JDR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "JDATA"
+      }
+    ]
+  },
+  "fieldset/JDR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "JDATA"
+      }
+    ]
+  },
+  "fieldset/JDR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "JDATA"
+      }
+    ]
+  },
+  "fieldset/JDR4": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "JDATA"
+      }
+    ]
+  },
+  "fieldset/JSQR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "JL"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 5,
+        "name": "JEXTSEL"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 2,
+        "name": "JEXTEN"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 5,
+        "name": "JSQ1"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 5,
+        "name": "JSQ2"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 5,
+        "name": "JSQ3"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 5,
+        "name": "JSQ4"
+      }
+    ]
+  },
+  "fieldset/OFR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "OFFSET1"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "OFFSETPOS"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "SATEN"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 5,
+        "name": "OFFSET1_CH"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "OFFSET1_EN"
+      }
+    ]
+  },
+  "fieldset/OFR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "OFFSET2"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "OFFSETPOS"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "SATEN"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 5,
+        "name": "OFFSET2_CH"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "OFFSET2_EN"
+      }
+    ]
+  },
+  "fieldset/OFR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "OFFSET3"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "OFFSETPOS"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "SATEN"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 5,
+        "name": "OFFSET3_CH"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "OFFSET3_EN"
+      }
+    ]
+  },
+  "fieldset/OFR4": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "OFFSET4"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "OFFSETPOS"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "SATEN"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 5,
+        "name": "OFFSET4_CH"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "OFFSET4_EN"
+      }
+    ]
+  },
+  "fieldset/OR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "OP0"
+      }
+    ]
+  },
+  "fieldset/SMPR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "SMP0"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 3,
+        "name": "SMP1"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 3,
+        "name": "SMP2"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 3,
+        "name": "SMP3"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 3,
+        "name": "SMP4"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 3,
+        "name": "SMP5"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 3,
+        "name": "SMP6"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 3,
+        "name": "SMP7"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 3,
+        "name": "SMP8"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 3,
+        "name": "SMP9"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "SMPPLUS"
+      }
+    ]
+  },
+  "fieldset/SMPR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "SMP10"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 3,
+        "name": "SMP11"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 3,
+        "name": "SMP12"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 3,
+        "name": "SMP13"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 3,
+        "name": "SMP14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 3,
+        "name": "SMP15"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 3,
+        "name": "SMP16"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 3,
+        "name": "SMP17"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 3,
+        "name": "SMP18"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 3,
+        "name": "SMP19"
+      }
+    ]
+  },
+  "fieldset/SQR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "L"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 5,
+        "name": "SQ1"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 5,
+        "name": "SQ2"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 5,
+        "name": "SQ3"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 5,
+        "name": "SQ4"
+      }
+    ]
+  },
+  "fieldset/SQR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "SQ5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 5,
+        "name": "SQ6"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 5,
+        "name": "SQ7"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 5,
+        "name": "SQ8"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 5,
+        "name": "SQ9"
+      }
+    ]
+  },
+  "fieldset/SQR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "SQ10"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 5,
+        "name": "SQ11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 5,
+        "name": "SQ12"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 5,
+        "name": "SQ13"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 5,
+        "name": "SQ14"
+      }
+    ]
+  },
+  "fieldset/SQR4": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "SQ15"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 5,
+        "name": "SQ16"
+      }
+    ]
+  },
+  "fieldset/TR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "LT1"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 3,
+        "name": "AWDFILT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 12,
+        "name": "HT1"
+      }
+    ]
+  },
+  "fieldset/TR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "LT2"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "HT2"
+      }
+    ]
+  },
+  "fieldset/TR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "LT3"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "HT3"
+      }
+    ]
+  }
+}

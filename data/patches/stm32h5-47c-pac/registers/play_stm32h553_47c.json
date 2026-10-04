@@ -1,0 +1,1503 @@
+{
+  "block/PLAY": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CFGCR",
+        "name": "CFGCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "SECCFGR",
+        "name": "SECCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "PRIVCFGR",
+        "name": "PRIVCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 5,
+          "stride": 4
+        },
+        "byte_offset": 12,
+        "name": "reserved1"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 16,
+          "stride": 4
+        },
+        "byte_offset": 32,
+        "name": "FILTCFG"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 16,
+          "stride": 4
+        },
+        "byte_offset": 96,
+        "name": "LECFG1"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 16,
+          "stride": 4
+        },
+        "byte_offset": 160,
+        "name": "LECFG2"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 8,
+          "stride": 4
+        },
+        "byte_offset": 224,
+        "name": "reserved2"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 16,
+          "stride": 4
+        },
+        "byte_offset": 256,
+        "name": "OUTCFG"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 48,
+          "stride": 4
+        },
+        "byte_offset": 320,
+        "name": "reserved3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 512,
+        "fieldset": "SWIN",
+        "name": "SWIN"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 516,
+        "fieldset": "SWINSET",
+        "name": "SWINSET"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 520,
+        "fieldset": "SWINCLR",
+        "name": "SWINCLR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 524,
+        "name": "reserved4"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 528,
+        "fieldset": "OSR",
+        "name": "OSR"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 3,
+          "stride": 4
+        },
+        "byte_offset": 532,
+        "name": "reserved5"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 544,
+        "fieldset": "FLSTAT",
+        "name": "FLSTAT"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 548,
+        "fieldset": "FLSET",
+        "name": "FLSET"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 552,
+        "fieldset": "FLCLR",
+        "name": "FLCLR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 556,
+        "fieldset": "FLIER",
+        "name": "FLIER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 560,
+        "fieldset": "FLCTL",
+        "name": "FLCTL"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 564,
+        "fieldset": "MSR",
+        "name": "MSR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 568,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 572,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 576,
+        "fieldset": "IER",
+        "name": "IER"
+      }
+    ]
+  },
+  "fieldset/CFGCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "UNLOCK"
+      }
+    ]
+  },
+  "fieldset/FLCLR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FLAGD_CLR0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLAGD_CLR1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FLAGD_CLR2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "FLAGD_CLR3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FLAGD_CLR4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "FLAGD_CLR5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FLAGD_CLR6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "FLAGD_CLR7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "FLAGD_CLR8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FLAGD_CLR9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "FLAGD_CLR10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "FLAGD_CLR11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "FLAGD_CLR12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "FLAGD_CLR13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FLAGD_CLR14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FLAGD_CLR15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "FLAGR_CLR0"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "FLAGR_CLR1"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "FLAGR_CLR2"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "FLAGR_CLR3"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "FLAGR_CLR4"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "FLAGR_CLR5"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "FLAGR_CLR6"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "FLAGR_CLR7"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "FLAGR_CLR8"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "FLAGR_CLR9"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "FLAGR_CLR10"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "FLAGR_CLR11"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "FLAGR_CLR12"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "FLAGR_CLR13"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "FLAGR_CLR14"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "FLAGR_CLR15"
+      }
+    ]
+  },
+  "fieldset/FLCTL": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FLAGD_EDGE15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE0"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE1"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE2"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE3"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE4"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE5"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE6"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE7"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE8"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE9"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE10"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE11"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE12"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE13"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE14"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "FLAGR_EDGE15"
+      }
+    ]
+  },
+  "fieldset/FLIER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FLAGD_IEN0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLAGD_IEN1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FLAGD_IEN2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "FLAGD_IEN3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FLAGD_IEN4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "FLAGD_IEN5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FLAGD_IEN6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "FLAGD_IEN7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "FLAGD_IEN8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FLAGD_IEN9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "FLAGD_IEN10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "FLAGD_IEN11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "FLAGD_IEN12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "FLAGD_IEN13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FLAGD_IEN14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FLAGD_IEN15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "FLAGR_IEN0"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "FLAGR_IEN1"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "FLAGR_IEN2"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "FLAGR_IEN3"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "FLAGR_IEN4"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "FLAGR_IEN5"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "FLAGR_IEN6"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "FLAGR_IEN7"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "FLAGR_IEN8"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "FLAGR_IEN9"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "FLAGR_IEN10"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "FLAGR_IEN11"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "FLAGR_IEN12"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "FLAGR_IEN13"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "FLAGR_IEN14"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "FLAGR_IEN15"
+      }
+    ]
+  },
+  "fieldset/FLSET": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FLAGD_SET0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLAGD_SET1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FLAGD_SET2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "FLAGD_SET3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FLAGD_SET4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "FLAGD_SET5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FLAGD_SET6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "FLAGD_SET7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "FLAGD_SET8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FLAGD_SET9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "FLAGD_SET10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "FLAGD_SET11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "FLAGD_SET12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "FLAGD_SET13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FLAGD_SET14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FLAGD_SET15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "FLAGR_SET0"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "FLAGR_SET1"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "FLAGR_SET2"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "FLAGR_SET3"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "FLAGR_SET4"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "FLAGR_SET5"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "FLAGR_SET6"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "FLAGR_SET7"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "FLAGR_SET8"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "FLAGR_SET9"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "FLAGR_SET10"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "FLAGR_SET11"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "FLAGR_SET12"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "FLAGR_SET13"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "FLAGR_SET14"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "FLAGR_SET15"
+      }
+    ]
+  },
+  "fieldset/FLSTAT": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FLAGD0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLAGD1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FLAGD2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "FLAGD3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FLAGD4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "FLAGD5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FLAGD6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "FLAGD7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "FLAGD8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FLAGD9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "FLAGD10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "FLAGD11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "FLAGD12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "FLAGD13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FLAGD14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FLAGD15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "FLAGR0"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "FLAGR1"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "FLAGR2"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "FLAGR3"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "FLAGR4"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "FLAGR5"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "FLAGR6"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "FLAGR7"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "FLAGR8"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "FLAGR9"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "FLAGR10"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "FLAGR11"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "FLAGR12"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "FLAGR13"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "FLAGR14"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "FLAGR15"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWINWC_CLR"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLCTLWC_CLR"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWINWC_IEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLCTLWC_IEN"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWINWC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLCTLWC"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FLAGS"
+      }
+    ]
+  },
+  "fieldset/MSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWINWBFS"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FLCTLWBFS"
+      }
+    ]
+  },
+  "fieldset/OSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LEOUTD0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "LEOUTD1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "LEOUTD2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "LEOUTD3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "LEOUTD4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "LEOUTD5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "LEOUTD6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "LEOUTD7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "LEOUTD8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "LEOUTD9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "LEOUTD10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "LEOUTD11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "LEOUTD12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "LEOUTD13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "LEOUTD14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "LEOUTD15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "LEOUTR0"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "LEOUTR1"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "LEOUTR2"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "LEOUTR3"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "LEOUTR4"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "LEOUTR5"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "LEOUTR6"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "LEOUTR7"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "LEOUTR8"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "LEOUTR9"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "LEOUTR10"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "LEOUTR11"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "LEOUTR12"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "LEOUTR13"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "LEOUTR14"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "LEOUTR15"
+      }
+    ]
+  },
+  "fieldset/PRIVCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "PRIV"
+      }
+    ]
+  },
+  "fieldset/SECCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "SEC"
+      }
+    ]
+  },
+  "fieldset/SWIN": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWIN0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SWIN1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SWIN2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SWIN3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "SWIN4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "SWIN5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SWIN6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "SWIN7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SWIN8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SWIN9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "SWIN10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SWIN11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "SWIN12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SWIN13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "SWIN14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "SWIN15"
+      }
+    ]
+  },
+  "fieldset/SWINCLR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWIN0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SWIN1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SWIN2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SWIN3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "SWIN4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "SWIN5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SWIN6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "SWIN7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SWIN8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SWIN9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "SWIN10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SWIN11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "SWIN12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SWIN13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "SWIN14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "SWIN15"
+      }
+    ]
+  },
+  "fieldset/SWINSET": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWIN0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SWIN1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SWIN2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SWIN3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "SWIN4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "SWIN5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SWIN6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "SWIN7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SWIN8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SWIN9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "SWIN10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SWIN11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "SWIN12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SWIN13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "SWIN14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "SWIN15"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+* text=auto eol=lf
+*.zip binary
+*.pdf binary
+*.png binary
+*.elf binary
+*.bin binary
+*.hex text eol=lf
+
+# Source manifests bind exact upstream bytes, including original CRLF licenses.
+# Git must not silently normalize these inputs.
+vendor/** -text
+data/patches/** -text
+data/sources/** -text

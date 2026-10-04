@@ -1,0 +1,426 @@
+{
+  "block/SBS": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "HDPLCR",
+        "name": "HDPLCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 20,
+        "fieldset": "HDPLSR",
+        "name": "HDPLSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "NEXTHDPLCR",
+        "name": "NEXTHDPLCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "DBGCR",
+        "name": "DBGCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "DBGLOCKR",
+        "name": "DBGLOCKR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 52,
+        "fieldset": "RSSCMDR",
+        "name": "RSSCMDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 160,
+        "fieldset": "EPOCHSELCR",
+        "name": "EPOCHSELCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 192,
+        "fieldset": "SECCFGR",
+        "name": "SECCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 256,
+        "fieldset": "PMCR",
+        "name": "PMCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 260,
+        "fieldset": "FPUIMR",
+        "name": "FPUIMR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 264,
+        "fieldset": "MESR",
+        "name": "MESR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 272,
+        "fieldset": "CCCSR",
+        "name": "CCCSR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 276,
+        "fieldset": "CCVALR",
+        "name": "CCVALR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 280,
+        "fieldset": "CCSWCR",
+        "name": "CCSWCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 288,
+        "fieldset": "CFGR2",
+        "name": "CFGR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 324,
+        "fieldset": "CNSLCKR",
+        "name": "CNSLCKR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 328,
+        "fieldset": "CSLCKR",
+        "name": "CSLCKR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 332,
+        "fieldset": "ECCNMIR",
+        "name": "ECCNMIR"
+      }
+    ]
+  },
+  "fieldset/CCCSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN1"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CS1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EN2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CS2"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RDY1"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RDY2"
+      }
+    ]
+  },
+  "fieldset/CCSWCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "SW_ANSRC1"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "SW_APSRC1"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "SW_ANSRC2"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 4,
+        "name": "SW_APSRC2"
+      }
+    ]
+  },
+  "fieldset/CCVALR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "ANSRC1"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "APSRC1"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "ANSRC2"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 4,
+        "name": "APSRC2"
+      }
+    ]
+  },
+  "fieldset/CFGR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CLL"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SEL"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "PVDL"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ECCL"
+      }
+    ]
+  },
+  "fieldset/CNSLCKR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LOCKNSVTOR"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "LOCKNSMPU"
+      }
+    ]
+  },
+  "fieldset/CSLCKR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LOCKSVTAIRCR"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "LOCKSMPU"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "LOCKSAU"
+      }
+    ]
+  },
+  "fieldset/DBGCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "AP_UNLOCK"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "DBG_UNLOCK"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "DBG_AUTH_HDPL"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "DBG_AUTH_SEC"
+      }
+    ]
+  },
+  "fieldset/DBGLOCKR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "DBGCFG_LOCK"
+      }
+    ]
+  },
+  "fieldset/ECCNMIR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ECCNMI_MASK_EN"
+      }
+    ]
+  },
+  "fieldset/EPOCHSELCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "EPOCH_SEL"
+      }
+    ]
+  },
+  "fieldset/FPUIMR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 6,
+        "name": "FPU_IE"
+      }
+    ]
+  },
+  "fieldset/HDPLCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "INCR_HDPL"
+      }
+    ]
+  },
+  "fieldset/HDPLSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "HDPL"
+      }
+    ]
+  },
+  "fieldset/MESR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "MCLR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IPMEE"
+      }
+    ]
+  },
+  "fieldset/NEXTHDPLCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "NEXTHDPL"
+      }
+    ]
+  },
+  "fieldset/PMCR": {
+    "fields": [
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "PB6_FMP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "PB7_FMP"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "PB8_FMP"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "PB9_FMP"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 3,
+        "name": "ETH_SEL_PHY"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "ETHINTPOL"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "ETHPDACK"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "ETHTXLPI"
+      }
+    ]
+  },
+  "fieldset/RSSCMDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "RSSCMD"
+      }
+    ]
+  },
+  "fieldset/SECCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SBSSEC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CLASSBSEC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "FPUSEC"
+      }
+    ]
+  }
+}

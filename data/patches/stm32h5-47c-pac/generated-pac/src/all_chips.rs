@@ -1,0 +1,16 @@
+pub static ALL_CHIPS: &[&str] = &[
+    "STM32H543CE",
+    "STM32H543CG",
+    "STM32H543RE",
+    "STM32H543RG",
+    "STM32H543UG",
+    "STM32H543VE",
+    "STM32H543VG",
+    "STM32H543ZE",
+    "STM32H543ZG",
+    "STM32H553CG",
+    "STM32H553RG",
+    "STM32H553UG",
+    "STM32H553VG",
+    "STM32H553ZG",
+];

@@ -1,0 +1,248 @@
+{
+  "STM32H543": {
+    "baseline_sources": {
+      "baseline_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+      "files": {
+        "spi_v5_i2s.json": {
+          "git_blob": "a5ddd1c4ebe2e1c614c7bf846da5838fcc8c915f",
+          "sha256": "f2e69b61cbcd8e1bb1b1b9d1d0ffafdbeb70b60d81ea5bc07468d751501cc986",
+          "source_path": "data/registers/spi_v5_i2s.json",
+          "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/spi_v5_i2s.json"
+        },
+        "timer_v2.json": {
+          "git_blob": "918d05e8974503ada4884ef5bffdbf567276bc39",
+          "sha256": "5b297e99fd132e86f5e5579b07d95ae17e5c3012c2200dea3eb51e9cb1d65cef",
+          "source_path": "data/registers/timer_v2.json",
+          "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/timer_v2.json"
+        },
+        "usb_v4.json": {
+          "git_blob": "b36a2e07d223e049173a4bc4899a8839a415075a",
+          "sha256": "3ec9c199be7044abaed9a60165fdc19e281569ff69dcbfec153fc5a105eb626d",
+          "source_path": "data/registers/usb_v4.json",
+          "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usb_v4.json"
+        },
+        "usbram_32_2048.json": {
+          "git_blob": "4e5a825776529439dca8be39bff105eacdc5d457",
+          "sha256": "44cc20b5c82f6db8238a1b66b191961f2bb06dfd928732865c1e0b1079c4f7f5",
+          "source_path": "data/registers/usbram_32_2048.json",
+          "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usbram_32_2048.json"
+        }
+      }
+    },
+    "driver_compatibility": "requires explicit HAL cfg adaptation; no HIL",
+    "family": "STM32H543",
+    "numeric_deltas": {
+      "SPI": {
+        "added": {
+          "SPI_CFG1_DRDS": 16777216,
+          "SPI_CFG1_DRDS_Msk": 16777216,
+          "SPI_CFG1_DRDS_Pos": 24
+        },
+        "changed": {},
+        "removed": {}
+      },
+      "TIM": {
+        "added": {},
+        "changed": {},
+        "removed": {
+          "TIM_OR1_RTCPREEN": 2,
+          "TIM_OR1_RTCPREEN_Msk": 2,
+          "TIM_OR1_RTCPREEN_Pos": 1
+        }
+      },
+      "USB": {
+        "added": {},
+        "changed": {},
+        "removed": {
+          "USB_CNTR_L1XACT": 64,
+          "USB_CNTR_L1XACT_Msk": 64,
+          "USB_CNTR_L1XACT_Pos": 6
+        }
+      }
+    },
+    "removed_exposed_fields": {
+      "L1XACT": 0,
+      "RTCPREEN": 0
+    },
+    "spi_instances": [
+      "SPI1",
+      "SPI2",
+      "SPI3",
+      "SPI4"
+    ],
+    "timer_predicates": {
+      "IS_TIM_32B_COUNTER_INSTANCE": [
+        "TIM2",
+        "TIM5"
+      ],
+      "IS_TIM_ADVANCED_INSTANCE": [
+        "TIM1",
+        "TIM8"
+      ],
+      "IS_TIM_BREAK_INSTANCE": [
+        "TIM1",
+        "TIM15",
+        "TIM8"
+      ],
+      "IS_TIM_CC1_INSTANCE": [
+        "TIM1",
+        "TIM12",
+        "TIM15",
+        "TIM2",
+        "TIM3",
+        "TIM4",
+        "TIM5",
+        "TIM8"
+      ],
+      "IS_TIM_CC2_INSTANCE": [
+        "TIM1",
+        "TIM12",
+        "TIM15",
+        "TIM2",
+        "TIM3",
+        "TIM4",
+        "TIM5",
+        "TIM8"
+      ],
+      "IS_TIM_CC3_INSTANCE": [
+        "TIM1",
+        "TIM2",
+        "TIM3",
+        "TIM4",
+        "TIM5",
+        "TIM8"
+      ],
+      "IS_TIM_CC4_INSTANCE": [
+        "TIM1",
+        "TIM2",
+        "TIM3",
+        "TIM4",
+        "TIM5",
+        "TIM8"
+      ]
+    }
+  },
+  "STM32H553": {
+    "baseline_sources": {
+      "baseline_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+      "files": {
+        "spi_v5_i2s.json": {
+          "git_blob": "a5ddd1c4ebe2e1c614c7bf846da5838fcc8c915f",
+          "sha256": "f2e69b61cbcd8e1bb1b1b9d1d0ffafdbeb70b60d81ea5bc07468d751501cc986",
+          "source_path": "data/registers/spi_v5_i2s.json",
+          "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/spi_v5_i2s.json"
+        },
+        "timer_v2.json": {
+          "git_blob": "918d05e8974503ada4884ef5bffdbf567276bc39",
+          "sha256": "5b297e99fd132e86f5e5579b07d95ae17e5c3012c2200dea3eb51e9cb1d65cef",
+          "source_path": "data/registers/timer_v2.json",
+          "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/timer_v2.json"
+        },
+        "usb_v4.json": {
+          "git_blob": "b36a2e07d223e049173a4bc4899a8839a415075a",
+          "sha256": "3ec9c199be7044abaed9a60165fdc19e281569ff69dcbfec153fc5a105eb626d",
+          "source_path": "data/registers/usb_v4.json",
+          "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usb_v4.json"
+        },
+        "usbram_32_2048.json": {
+          "git_blob": "4e5a825776529439dca8be39bff105eacdc5d457",
+          "sha256": "44cc20b5c82f6db8238a1b66b191961f2bb06dfd928732865c1e0b1079c4f7f5",
+          "source_path": "data/registers/usbram_32_2048.json",
+          "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usbram_32_2048.json"
+        }
+      }
+    },
+    "driver_compatibility": "requires explicit HAL cfg adaptation; no HIL",
+    "family": "STM32H553",
+    "numeric_deltas": {
+      "SPI": {
+        "added": {
+          "SPI_CFG1_DRDS": 16777216,
+          "SPI_CFG1_DRDS_Msk": 16777216,
+          "SPI_CFG1_DRDS_Pos": 24
+        },
+        "changed": {},
+        "removed": {}
+      },
+      "TIM": {
+        "added": {},
+        "changed": {},
+        "removed": {
+          "TIM_OR1_RTCPREEN": 2,
+          "TIM_OR1_RTCPREEN_Msk": 2,
+          "TIM_OR1_RTCPREEN_Pos": 1
+        }
+      },
+      "USB": {
+        "added": {},
+        "changed": {},
+        "removed": {
+          "USB_CNTR_L1XACT": 64,
+          "USB_CNTR_L1XACT_Msk": 64,
+          "USB_CNTR_L1XACT_Pos": 6
+        }
+      }
+    },
+    "removed_exposed_fields": {
+      "L1XACT": 0,
+      "RTCPREEN": 0
+    },
+    "spi_instances": [
+      "SPI1",
+      "SPI2",
+      "SPI3",
+      "SPI4"
+    ],
+    "timer_predicates": {
+      "IS_TIM_32B_COUNTER_INSTANCE": [
+        "TIM2",
+        "TIM5"
+      ],
+      "IS_TIM_ADVANCED_INSTANCE": [
+        "TIM1",
+        "TIM8"
+      ],
+      "IS_TIM_BREAK_INSTANCE": [
+        "TIM1",
+        "TIM15",
+        "TIM8"
+      ],
+      "IS_TIM_CC1_INSTANCE": [
+        "TIM1",
+        "TIM12",
+        "TIM15",
+        "TIM2",
+        "TIM3",
+        "TIM4",
+        "TIM5",
+        "TIM8"
+      ],
+      "IS_TIM_CC2_INSTANCE": [
+        "TIM1",
+        "TIM12",
+        "TIM15",
+        "TIM2",
+        "TIM3",
+        "TIM4",
+        "TIM5",
+        "TIM8"
+      ],
+      "IS_TIM_CC3_INSTANCE": [
+        "TIM1",
+        "TIM2",
+        "TIM3",
+        "TIM4",
+        "TIM5",
+        "TIM8"
+      ],
+      "IS_TIM_CC4_INSTANCE": [
+        "TIM1",
+        "TIM2",
+        "TIM3",
+        "TIM4",
+        "TIM5",
+        "TIM8"
+      ]
+    }
+  }
+}

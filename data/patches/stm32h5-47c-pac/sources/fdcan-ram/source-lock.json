@@ -1,0 +1,16 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Src/stm32h5xx_hal_fdcan.c",
+    "commit": "ba20038d938ecc31399e49d60fa6bcc8e82db5da",
+    "path": "target\\h543-fdcan-ram\\stm32h5xx_hal_fdcan.c",
+    "sha256": "a430429a327511cf96203dcebd45a1ab8491d1f09ecb19027333b718c3f35b53",
+    "bytes": 122981
+  },
+  {
+    "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_fdcan.h",
+    "commit": "ba20038d938ecc31399e49d60fa6bcc8e82db5da",
+    "path": "target\\h543-fdcan-ram\\stm32h5xx_hal_fdcan.h",
+    "sha256": "c1a5f502a56f11dbc3f263c018f40a4b8d3b3208166b3c93aaacacc5d8ed9a94",
+    "bytes": 79977
+  }
+]

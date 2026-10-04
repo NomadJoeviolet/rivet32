@@ -1,0 +1,826 @@
+{
+  "block/SDMMC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "POWER",
+        "name": "POWER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CLKCR",
+        "name": "CLKCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "ARG",
+        "name": "ARG"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "CMD",
+        "name": "CMD"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "RESPCMD",
+        "name": "RESPCMD"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "RESP1",
+        "name": "RESP1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "RESP2",
+        "name": "RESP2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "RESP3",
+        "name": "RESP3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "RESP4",
+        "name": "RESP4"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "DTIMER",
+        "name": "DTIMER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "DLEN",
+        "name": "DLEN"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "fieldset": "DCTRL",
+        "name": "DCTRL"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 48,
+        "fieldset": "DCOUNT",
+        "name": "DCOUNT"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 52,
+        "fieldset": "STA",
+        "name": "STA"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 56,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 60,
+        "fieldset": "MASK",
+        "name": "MASK"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "ACKTIME",
+        "name": "ACKTIME"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "name": "IDMACTRL"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 84,
+        "fieldset": "IDMABSIZE",
+        "name": "IDMABSIZE"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 88,
+        "name": "IDMABASER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 100,
+        "fieldset": "IDMALAR",
+        "name": "IDMALAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 104,
+        "name": "IDMABAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 128,
+        "fieldset": "FIFO",
+        "name": "FIFO"
+      }
+    ]
+  },
+  "fieldset/ACKTIME": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 25,
+        "name": "ACKTIME"
+      }
+    ]
+  },
+  "fieldset/ARG": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "CMDARG"
+      }
+    ]
+  },
+  "fieldset/CLKCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 10,
+        "name": "CLKDIV"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "PWRSAV"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 2,
+        "name": "WIDBUS"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "NEGEDGE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "HWFC_EN"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "DDR"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "BUSSPEED"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "SELCLKRX"
+      }
+    ]
+  },
+  "fieldset/CMD": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 6,
+        "name": "CMDINDEX"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "CMDTRANS"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "CMDSTOP"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "WAITRESP"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "WAITINT"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "WAITPEND"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "CPSMEN"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "DTHOLD"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "BOOTMODE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "BOOTEN"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "CMDSUSPEND"
+      }
+    ]
+  },
+  "fieldset/DCOUNT": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 25,
+        "name": "DATACOUNT"
+      }
+    ]
+  },
+  "fieldset/DCTRL": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DTEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DTDIR"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 2,
+        "name": "DTMODE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "DBLOCKSIZE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RWSTART"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RWSTOP"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RWMOD"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SDIOEN"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "BOOTACKEN"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "FIFORST"
+      }
+    ]
+  },
+  "fieldset/DLEN": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 25,
+        "name": "DATALENGTH"
+      }
+    ]
+  },
+  "fieldset/DTIMER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "DATATIME"
+      }
+    ]
+  },
+  "fieldset/FIFO": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "FIFODATA"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CCRCFAILC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DCRCFAILC"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CTIMEOUTC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DTIMEOUTC"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXUNDERRC"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RXOVERRC"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "CMDRENDC"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "CMDSENTC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "DATAENDC"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "DHOLDC"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DBCKENDC"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "DABORTC"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "BUSYD0ENDC"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "SDIOITC"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "ACKFAILC"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "ACKTIMEOUTC"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "VSWENDC"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "CKSTOPC"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "IDMATEC"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "IDMABTCC"
+      }
+    ]
+  },
+  "fieldset/IDMABSIZE": {
+    "fields": [
+      {
+        "bit_offset": 5,
+        "bit_size": 12,
+        "name": "IDMABNDT"
+      }
+    ]
+  },
+  "fieldset/IDMALAR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 14,
+        "name": "IDMALA"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "ABR"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "ULS"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "ULA"
+      }
+    ]
+  },
+  "fieldset/MASK": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CCRCFAILIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DCRCFAILIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CTIMEOUTIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DTIMEOUTIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXUNDERRIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RXOVERRIE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "CMDRENDIE"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "CMDSENTIE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "DATAENDIE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "DHOLDIE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DBCKENDIE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "DABORTIE"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TXFIFOHEIE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "RXFIFOHFIE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "RXFIFOFIE"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "TXFIFOEIE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "BUSYD0ENDIE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "SDIOITIE"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "ACKFAILIE"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "ACKTIMEOUTIE"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "VSWENDIE"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "CKSTOPIE"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "IDMABTCIE"
+      }
+    ]
+  },
+  "fieldset/POWER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "PWRCTRL"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "VSWITCH"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "VSWITCHEN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "DIRPOL"
+      }
+    ]
+  },
+  "fieldset/RESP1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "CARDSTATUS1"
+      }
+    ]
+  },
+  "fieldset/RESP2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "CARDSTATUS2"
+      }
+    ]
+  },
+  "fieldset/RESP3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "CARDSTATUS3"
+      }
+    ]
+  },
+  "fieldset/RESP4": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "CARDSTATUS4"
+      }
+    ]
+  },
+  "fieldset/RESPCMD": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 6,
+        "name": "RESPCMD"
+      }
+    ]
+  },
+  "fieldset/STA": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CCRCFAIL"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DCRCFAIL"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CTIMEOUT"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DTIMEOUT"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXUNDERR"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RXOVERR"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "CMDREND"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "CMDSENT"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "DATAEND"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "DHOLD"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DBCKEND"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "DABORT"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "DPSMACT"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CPSMACT"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TXFIFOHE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "RXFIFOHF"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "TXFIFOF"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "RXFIFOF"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "TXFIFOE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "RXFIFOE"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "BUSYD0"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "BUSYD0END"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "SDIOIT"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "ACKFAIL"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "ACKTIMEOUT"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "VSWEND"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "CKSTOP"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "IDMATE"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "IDMABTC"
+      }
+    ]
+  }
+}

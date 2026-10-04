@@ -1,0 +1,10 @@
+[alias]
+xtask = "run -p xtask --"
+
+[net]
+git-fetch-with-cli = true
+
+# No workspace-wide build.target: host tests and tooling remain native.
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+# A scalar overrides ancestor config instead of concatenating linker scripts.
+rustflags = "-C link-arg=-Tlink.x -C link-arg=-Tdefmt.x"

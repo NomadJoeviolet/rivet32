@@ -1,0 +1,29 @@
+{
+  "baseline_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "files": {
+    "timer_v2.json": {
+      "sha256": "5b297e99fd132e86f5e5579b07d95ae17e5c3012c2200dea3eb51e9cb1d65cef",
+      "git_blob": "918d05e8974503ada4884ef5bffdbf567276bc39",
+      "source_path": "data/registers/timer_v2.json",
+      "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/timer_v2.json"
+    },
+    "spi_v5_i2s.json": {
+      "sha256": "f2e69b61cbcd8e1bb1b1b9d1d0ffafdbeb70b60d81ea5bc07468d751501cc986",
+      "git_blob": "a5ddd1c4ebe2e1c614c7bf846da5838fcc8c915f",
+      "source_path": "data/registers/spi_v5_i2s.json",
+      "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/spi_v5_i2s.json"
+    },
+    "usb_v4.json": {
+      "sha256": "3ec9c199be7044abaed9a60165fdc19e281569ff69dcbfec153fc5a105eb626d",
+      "git_blob": "b36a2e07d223e049173a4bc4899a8839a415075a",
+      "source_path": "data/registers/usb_v4.json",
+      "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usb_v4.json"
+    },
+    "usbram_32_2048.json": {
+      "sha256": "44cc20b5c82f6db8238a1b66b191961f2bb06dfd928732865c1e0b1079c4f7f5",
+      "git_blob": "4e5a825776529439dca8be39bff105eacdc5d457",
+      "source_path": "data/registers/usbram_32_2048.json",
+      "url": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usbram_32_2048.json"
+    }
+  }
+}

@@ -1,0 +1,1464 @@
+{
+  "adc_stm32h543_47c": {
+    "blocks": [
+      "ADC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "ADC1",
+      "ADC2",
+      "ADC3"
+    ],
+    "kind": "adc",
+    "raw_getters": 0,
+    "source_sha256": "fa1de4fc0e2e7f3f1e8677db27168d7549b2cae6ef1a0c24b276d55201b77708",
+    "version": "stm32h543_47c"
+  },
+  "adc_stm32h553_47c": {
+    "blocks": [
+      "ADC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "ADC1",
+      "ADC2",
+      "ADC3"
+    ],
+    "kind": "adc",
+    "raw_getters": 0,
+    "source_sha256": "fa1de4fc0e2e7f3f1e8677db27168d7549b2cae6ef1a0c24b276d55201b77708",
+    "version": "stm32h553_47c"
+  },
+  "adccommon_stm32h543_47c": {
+    "blocks": [
+      "ADC_COMMON"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "ADC12_COMMON",
+      "ADC3_COMMON"
+    ],
+    "kind": "adccommon",
+    "raw_getters": 3,
+    "source_sha256": "1e01a489c4135e133e415de85b5ff11e740be9f4b41945981789d121786e5b75",
+    "version": "stm32h543_47c"
+  },
+  "adccommon_stm32h553_47c": {
+    "blocks": [
+      "ADC_COMMON"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "ADC12_COMMON",
+      "ADC3_COMMON"
+    ],
+    "kind": "adccommon",
+    "raw_getters": 3,
+    "source_sha256": "1e01a489c4135e133e415de85b5ff11e740be9f4b41945981789d121786e5b75",
+    "version": "stm32h553_47c"
+  },
+  "aes_stm32h553_47c": {
+    "blocks": [
+      "AES"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "AES",
+      "SAES"
+    ],
+    "kind": "aes",
+    "raw_getters": 8,
+    "source_sha256": "13761b0be4dfa4a0da8257b07283a61aecafe793d4995c413134ece252a7fc4c",
+    "version": "stm32h553_47c"
+  },
+  "can_fdcan_v1": {
+    "blocks": [
+      "FDCAN"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "FDCAN1",
+      "FDCAN2"
+    ],
+    "kind": "can",
+    "raw_getters": 0,
+    "source_sha256": "85178c1868cd73dd7935451194f8171d8e3da62db00bc65bdbe3f6cea0e47bc0",
+    "version": "fdcan_v1"
+  },
+  "ccb_stm32h553_47c": {
+    "blocks": [
+      "CCB"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "CCB"
+    ],
+    "kind": "ccb",
+    "raw_getters": 0,
+    "source_sha256": "152a63a16265df2b6ed45c492dcf271afd6c160d2fe27fcaa1fce3b99c2e501b",
+    "version": "stm32h553_47c"
+  },
+  "cec_stm32h543_47c": {
+    "blocks": [
+      "CEC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "CEC"
+    ],
+    "kind": "cec",
+    "raw_getters": 0,
+    "source_sha256": "2bfdfaf002fcd2b0fef8bf285028decd1c7e888fb3f633d19f52e6a609bec9c3",
+    "version": "stm32h543_47c"
+  },
+  "cec_stm32h553_47c": {
+    "blocks": [
+      "CEC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "CEC"
+    ],
+    "kind": "cec",
+    "raw_getters": 0,
+    "source_sha256": "2bfdfaf002fcd2b0fef8bf285028decd1c7e888fb3f633d19f52e6a609bec9c3",
+    "version": "stm32h553_47c"
+  },
+  "comp_stm32h543_47c": {
+    "blocks": [
+      "COMP",
+      "COMPOPT",
+      "COMP_COMMON"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "COMP1",
+      "COMP12",
+      "COMP12_COMMON",
+      "COMP2"
+    ],
+    "kind": "comp",
+    "raw_getters": 3,
+    "source_sha256": "b1334ad3f521b59219cba537962ec36b159db5ca5045a385cdf8fbb66dafc58b",
+    "version": "stm32h543_47c"
+  },
+  "comp_stm32h553_47c": {
+    "blocks": [
+      "COMP",
+      "COMPOPT",
+      "COMP_COMMON"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "COMP1",
+      "COMP12",
+      "COMP12_COMMON",
+      "COMP2"
+    ],
+    "kind": "comp",
+    "raw_getters": 3,
+    "source_sha256": "b1334ad3f521b59219cba537962ec36b159db5ca5045a385cdf8fbb66dafc58b",
+    "version": "stm32h553_47c"
+  },
+  "cordic_stm32h543_47c": {
+    "blocks": [
+      "CORDIC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "CORDIC"
+    ],
+    "kind": "cordic",
+    "raw_getters": 3,
+    "source_sha256": "28fb2319cabc1fe12ce9d6f7a23b42b69092c70800b54bc50661bcd75b98dd90",
+    "version": "stm32h543_47c"
+  },
+  "cordic_stm32h553_47c": {
+    "blocks": [
+      "CORDIC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "CORDIC"
+    ],
+    "kind": "cordic",
+    "raw_getters": 3,
+    "source_sha256": "28fb2319cabc1fe12ce9d6f7a23b42b69092c70800b54bc50661bcd75b98dd90",
+    "version": "stm32h553_47c"
+  },
+  "crc_stm32h543_47c": {
+    "blocks": [
+      "CRC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "CRC"
+    ],
+    "kind": "crc",
+    "raw_getters": 0,
+    "source_sha256": "c468137a2be06206750aff7ecc89250717398e49a8bbbb4f0cfd0b38eb16b776",
+    "version": "stm32h543_47c"
+  },
+  "crc_stm32h553_47c": {
+    "blocks": [
+      "CRC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "CRC"
+    ],
+    "kind": "crc",
+    "raw_getters": 0,
+    "source_sha256": "c468137a2be06206750aff7ecc89250717398e49a8bbbb4f0cfd0b38eb16b776",
+    "version": "stm32h553_47c"
+  },
+  "crs_v1": {
+    "blocks": [
+      "CRS"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "CRS"
+    ],
+    "kind": "crs",
+    "raw_getters": 0,
+    "source_sha256": "09ae47a87884be023ef641c7a7908281ecb26082da73de4e356afcb67fa0718c",
+    "version": "v1"
+  },
+  "dac_stm32h543_47c": {
+    "blocks": [
+      "DAC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DAC1"
+    ],
+    "kind": "dac",
+    "raw_getters": 1,
+    "source_sha256": "b168db687030796452fb88d62d12c0b95f5c57f61779e79dc776dd1531e6393c",
+    "version": "stm32h543_47c"
+  },
+  "dac_stm32h553_47c": {
+    "blocks": [
+      "DAC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DAC1"
+    ],
+    "kind": "dac",
+    "raw_getters": 1,
+    "source_sha256": "b168db687030796452fb88d62d12c0b95f5c57f61779e79dc776dd1531e6393c",
+    "version": "stm32h553_47c"
+  },
+  "dbgmcu_stm32h543_47c": {
+    "blocks": [
+      "DBGMCU"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DBGMCU"
+    ],
+    "kind": "dbgmcu",
+    "raw_getters": 3,
+    "source_sha256": "85a774144e62364571872a0e39b193edfb377ab5fe7e610cc1f2fdfbc3c66690",
+    "version": "stm32h543_47c"
+  },
+  "dbgmcu_stm32h553_47c": {
+    "blocks": [
+      "DBGMCU"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DBGMCU"
+    ],
+    "kind": "dbgmcu",
+    "raw_getters": 3,
+    "source_sha256": "85a774144e62364571872a0e39b193edfb377ab5fe7e610cc1f2fdfbc3c66690",
+    "version": "stm32h553_47c"
+  },
+  "dcache_v1": {
+    "blocks": [
+      "DCACHE"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "DCACHE1"
+    ],
+    "kind": "dcache",
+    "raw_getters": 0,
+    "source_sha256": "ddd1486cb1f90f5ab0baa7c5452a36c96c476601d14dab869ee13c36da2b84b5",
+    "version": "v1"
+  },
+  "dcmi_stm32h543_47c": {
+    "blocks": [
+      "DCMI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DCMI"
+    ],
+    "kind": "dcmi",
+    "raw_getters": 11,
+    "source_sha256": "9082b361ad54ff75cb35573a3828e8a63c17a92caf1f30cd06663ac5d5be9096",
+    "version": "stm32h543_47c"
+  },
+  "dcmi_stm32h553_47c": {
+    "blocks": [
+      "DCMI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DCMI"
+    ],
+    "kind": "dcmi",
+    "raw_getters": 11,
+    "source_sha256": "9082b361ad54ff75cb35573a3828e8a63c17a92caf1f30cd06663ac5d5be9096",
+    "version": "stm32h553_47c"
+  },
+  "dlyb_stm32h543_47c": {
+    "blocks": [
+      "DLYB"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DLYB_OCTOSPI1",
+      "DLYB_SDMMC1"
+    ],
+    "kind": "dlyb",
+    "raw_getters": 2,
+    "source_sha256": "c4413f98e316a5048f40919e33e32f65a6ca567cce6423cd128e7f3b010ba700",
+    "version": "stm32h543_47c"
+  },
+  "dlyb_stm32h553_47c": {
+    "blocks": [
+      "DLYB"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DLYB_OCTOSPI1",
+      "DLYB_SDMMC1"
+    ],
+    "kind": "dlyb",
+    "raw_getters": 2,
+    "source_sha256": "c4413f98e316a5048f40919e33e32f65a6ca567cce6423cd128e7f3b010ba700",
+    "version": "stm32h553_47c"
+  },
+  "dts_stm32h543_47c": {
+    "blocks": [
+      "DTS"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DTS"
+    ],
+    "kind": "dts",
+    "raw_getters": 0,
+    "source_sha256": "3d7d9099cd953506173a1f734123ba6d894fdec84a4b89f178b6f11fc9f8a281",
+    "version": "stm32h543_47c"
+  },
+  "dts_stm32h553_47c": {
+    "blocks": [
+      "DTS"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "DTS"
+    ],
+    "kind": "dts",
+    "raw_getters": 0,
+    "source_sha256": "3d7d9099cd953506173a1f734123ba6d894fdec84a4b89f178b6f11fc9f8a281",
+    "version": "stm32h553_47c"
+  },
+  "eth_stm32h543_47c": {
+    "blocks": [
+      "ETH"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "ETH"
+    ],
+    "kind": "eth",
+    "raw_getters": 58,
+    "source_sha256": "219804c19d86d1032f827b8eee8fd7924c133da4fa92758de558dcf5347a79b7",
+    "version": "stm32h543_47c"
+  },
+  "eth_stm32h553_47c": {
+    "blocks": [
+      "ETH"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "ETH"
+    ],
+    "kind": "eth",
+    "raw_getters": 58,
+    "source_sha256": "219804c19d86d1032f827b8eee8fd7924c133da4fa92758de558dcf5347a79b7",
+    "version": "stm32h553_47c"
+  },
+  "exti_stm32h543_47c": {
+    "blocks": [
+      "EXTI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "EXTI"
+    ],
+    "kind": "exti",
+    "raw_getters": 4,
+    "source_sha256": "78d8f90ffd320ce9b5a142dda2118bc00475a642f61692a70a6bb521adca3e4b",
+    "version": "stm32h543_47c"
+  },
+  "exti_stm32h553_47c": {
+    "blocks": [
+      "EXTI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "EXTI"
+    ],
+    "kind": "exti",
+    "raw_getters": 4,
+    "source_sha256": "78d8f90ffd320ce9b5a142dda2118bc00475a642f61692a70a6bb521adca3e4b",
+    "version": "stm32h553_47c"
+  },
+  "fdcannative_stm32h543_47c": {
+    "blocks": [
+      "FDCAN_CONFIG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FDCAN_CONFIG"
+    ],
+    "kind": "fdcannative",
+    "raw_getters": 6,
+    "source_sha256": "b597e6fbba54d3808aea3fda2f38f40d1c087b3066c518301c2b9f00e1613f4a",
+    "version": "stm32h543_47c"
+  },
+  "fdcannative_stm32h553_47c": {
+    "blocks": [
+      "FDCAN_CONFIG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FDCAN_CONFIG"
+    ],
+    "kind": "fdcannative",
+    "raw_getters": 6,
+    "source_sha256": "b597e6fbba54d3808aea3fda2f38f40d1c087b3066c518301c2b9f00e1613f4a",
+    "version": "stm32h553_47c"
+  },
+  "fdcanram_v1": {
+    "blocks": [
+      "FDCANRAM"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "FDCANRAM1",
+      "FDCANRAM2"
+    ],
+    "kind": "fdcanram",
+    "raw_getters": 0,
+    "source_sha256": "71160556da8e5ce40339cedf1c7f2b0c0a25920777078dba7e824e79426929b1",
+    "version": "v1"
+  },
+  "flash_stm32h543_47c": {
+    "blocks": [
+      "FLASH"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FLASH"
+    ],
+    "kind": "flash",
+    "raw_getters": 2,
+    "source_sha256": "f677aa2a133be31d4a5fba2bf0f7ff29b394ecfbb67dc66aa7093cef32e44dd4",
+    "version": "stm32h543_47c"
+  },
+  "flash_stm32h553_47c": {
+    "blocks": [
+      "FLASH"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FLASH"
+    ],
+    "kind": "flash",
+    "raw_getters": 2,
+    "source_sha256": "f677aa2a133be31d4a5fba2bf0f7ff29b394ecfbb67dc66aa7093cef32e44dd4",
+    "version": "stm32h553_47c"
+  },
+  "fmcbank1_stm32h543_47c": {
+    "blocks": [
+      "FMC_BANK1"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FMC_Bank1_R"
+    ],
+    "kind": "fmcbank1",
+    "raw_getters": 2,
+    "source_sha256": "58faef5110f79953c0fdaf2781229a54dd8d910c9b488f7e9aa49530b32cbecb",
+    "version": "stm32h543_47c"
+  },
+  "fmcbank1_stm32h553_47c": {
+    "blocks": [
+      "FMC_BANK1"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FMC_Bank1_R"
+    ],
+    "kind": "fmcbank1",
+    "raw_getters": 2,
+    "source_sha256": "58faef5110f79953c0fdaf2781229a54dd8d910c9b488f7e9aa49530b32cbecb",
+    "version": "stm32h553_47c"
+  },
+  "fmcbank1e_stm32h543_47c": {
+    "blocks": [
+      "FMC_BANK1E"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FMC_Bank1E_R"
+    ],
+    "kind": "fmcbank1e",
+    "raw_getters": 1,
+    "source_sha256": "681eb4758fb795ccc3b675169429b4e03caac1b00c91c0a159543a1e9737ed2a",
+    "version": "stm32h543_47c"
+  },
+  "fmcbank1e_stm32h553_47c": {
+    "blocks": [
+      "FMC_BANK1E"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FMC_Bank1E_R"
+    ],
+    "kind": "fmcbank1e",
+    "raw_getters": 1,
+    "source_sha256": "681eb4758fb795ccc3b675169429b4e03caac1b00c91c0a159543a1e9737ed2a",
+    "version": "stm32h553_47c"
+  },
+  "fmcbank3_stm32h543_47c": {
+    "blocks": [
+      "FMC_BANK3"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FMC_Bank3_R"
+    ],
+    "kind": "fmcbank3",
+    "raw_getters": 5,
+    "source_sha256": "1773fc43471cd68b5164a4c72440e9a634d35bf8da3a1b4ce3dcec45fe7eb6e9",
+    "version": "stm32h543_47c"
+  },
+  "fmcbank3_stm32h553_47c": {
+    "blocks": [
+      "FMC_BANK3"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FMC_Bank3_R"
+    ],
+    "kind": "fmcbank3",
+    "raw_getters": 5,
+    "source_sha256": "1773fc43471cd68b5164a4c72440e9a634d35bf8da3a1b4ce3dcec45fe7eb6e9",
+    "version": "stm32h553_47c"
+  },
+  "fmcbank56_stm32h543_47c": {
+    "blocks": [
+      "FMC_BANK5_6"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FMC_Bank5_6_R"
+    ],
+    "kind": "fmcbank56",
+    "raw_getters": 5,
+    "source_sha256": "c1e27c6852d306e371a1274507aed584d41f1b87078ab51b369ff90c6b5e508f",
+    "version": "stm32h543_47c"
+  },
+  "fmcbank56_stm32h553_47c": {
+    "blocks": [
+      "FMC_BANK5_6"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "FMC_Bank5_6_R"
+    ],
+    "kind": "fmcbank56",
+    "raw_getters": 5,
+    "source_sha256": "c1e27c6852d306e371a1274507aed584d41f1b87078ab51b369ff90c6b5e508f",
+    "version": "stm32h553_47c"
+  },
+  "gpdma_v1": {
+    "blocks": [
+      "GPDMA"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "GPDMA1",
+      "GPDMA2"
+    ],
+    "kind": "gpdma",
+    "raw_getters": 0,
+    "source_sha256": "b67fbfaa364bc7190d628900c8eb656bb7a05b1a0f98efba782ddf2f1618a72a",
+    "version": "v1"
+  },
+  "gpdmanative_stm32h543_47c": {
+    "blocks": [
+      "DMA_CHANNEL"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "GPDMA1_Channel0",
+      "GPDMA1_Channel1",
+      "GPDMA1_Channel2",
+      "GPDMA1_Channel3",
+      "GPDMA1_Channel4",
+      "GPDMA1_Channel5",
+      "GPDMA1_Channel6",
+      "GPDMA1_Channel7",
+      "GPDMA2_Channel0",
+      "GPDMA2_Channel1",
+      "GPDMA2_Channel2",
+      "GPDMA2_Channel3",
+      "GPDMA2_Channel4",
+      "GPDMA2_Channel5",
+      "GPDMA2_Channel6",
+      "GPDMA2_Channel7"
+    ],
+    "kind": "gpdmanative",
+    "raw_getters": 17,
+    "source_sha256": "70f19a441ad87f6cb9f3adb874a4a5c6901588dff7616d79df211b8b5a3b94ca",
+    "version": "stm32h543_47c"
+  },
+  "gpdmanative_stm32h553_47c": {
+    "blocks": [
+      "DMA_CHANNEL"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "GPDMA1_Channel0",
+      "GPDMA1_Channel1",
+      "GPDMA1_Channel2",
+      "GPDMA1_Channel3",
+      "GPDMA1_Channel4",
+      "GPDMA1_Channel5",
+      "GPDMA1_Channel6",
+      "GPDMA1_Channel7",
+      "GPDMA2_Channel0",
+      "GPDMA2_Channel1",
+      "GPDMA2_Channel2",
+      "GPDMA2_Channel3",
+      "GPDMA2_Channel4",
+      "GPDMA2_Channel5",
+      "GPDMA2_Channel6",
+      "GPDMA2_Channel7"
+    ],
+    "kind": "gpdmanative",
+    "raw_getters": 17,
+    "source_sha256": "70f19a441ad87f6cb9f3adb874a4a5c6901588dff7616d79df211b8b5a3b94ca",
+    "version": "stm32h553_47c"
+  },
+  "gpio_v2": {
+    "blocks": [
+      "GPIO"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "GPIOA",
+      "GPIOB",
+      "GPIOC",
+      "GPIOD",
+      "GPIOE",
+      "GPIOF",
+      "GPIOG",
+      "GPIOH"
+    ],
+    "kind": "gpio",
+    "raw_getters": 0,
+    "source_sha256": "db3ee387a8c663e89ec06a28ad6138fec5c364d81aa3baaab19cb664b81882a7",
+    "version": "v2"
+  },
+  "gtzcmpcbb_stm32h543_47c": {
+    "blocks": [
+      "GTZC_MPCBB"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "GTZC_MPCBB1",
+      "GTZC_MPCBB2",
+      "GTZC_MPCBB3"
+    ],
+    "kind": "gtzcmpcbb",
+    "raw_getters": 4,
+    "source_sha256": "d6a516e6119c29f4313f2adfa6af648d45c9c7909b93e3b2429e2d5871d9e861",
+    "version": "stm32h543_47c"
+  },
+  "gtzcmpcbb_stm32h553_47c": {
+    "blocks": [
+      "GTZC_MPCBB"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "GTZC_MPCBB1",
+      "GTZC_MPCBB2",
+      "GTZC_MPCBB3"
+    ],
+    "kind": "gtzcmpcbb",
+    "raw_getters": 4,
+    "source_sha256": "d6a516e6119c29f4313f2adfa6af648d45c9c7909b93e3b2429e2d5871d9e861",
+    "version": "stm32h553_47c"
+  },
+  "gtzctzic_stm32h543_47c": {
+    "blocks": [
+      "GTZC_TZIC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "GTZC_TZIC1"
+    ],
+    "kind": "gtzctzic",
+    "raw_getters": 12,
+    "source_sha256": "47f89f03f6cd2cf1b6fd6e9acd19ef916f2615c5c367d8d8ef20ff8f4c1e7ca0",
+    "version": "stm32h543_47c"
+  },
+  "gtzctzic_stm32h553_47c": {
+    "blocks": [
+      "GTZC_TZIC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "GTZC_TZIC1"
+    ],
+    "kind": "gtzctzic",
+    "raw_getters": 12,
+    "source_sha256": "47f89f03f6cd2cf1b6fd6e9acd19ef916f2615c5c367d8d8ef20ff8f4c1e7ca0",
+    "version": "stm32h553_47c"
+  },
+  "gtzctzsc_stm32h543_47c": {
+    "blocks": [
+      "GTZC_TZSC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "GTZC_TZSC1"
+    ],
+    "kind": "gtzctzsc",
+    "raw_getters": 23,
+    "source_sha256": "02ca5fea6d39afbc4f2ad5bff6b86780c23dd72412c695069e8fbb29b5f45657",
+    "version": "stm32h543_47c"
+  },
+  "gtzctzsc_stm32h553_47c": {
+    "blocks": [
+      "GTZC_TZSC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "GTZC_TZSC1"
+    ],
+    "kind": "gtzctzsc",
+    "raw_getters": 23,
+    "source_sha256": "02ca5fea6d39afbc4f2ad5bff6b86780c23dd72412c695069e8fbb29b5f45657",
+    "version": "stm32h553_47c"
+  },
+  "hashnative_stm32h543_47c": {
+    "blocks": [
+      "HASH",
+      "HASH_DIGEST"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "HASH",
+      "HASH_DIGEST"
+    ],
+    "kind": "hashnative",
+    "raw_getters": 1,
+    "source_sha256": "bd5a40a6dc0fac111201ea96a46d35389bb36ba2f7222491fc940317b5dcd2b1",
+    "version": "stm32h543_47c"
+  },
+  "hashnative_stm32h553_47c": {
+    "blocks": [
+      "HASH",
+      "HASH_DIGEST"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "HASH",
+      "HASH_DIGEST"
+    ],
+    "kind": "hashnative",
+    "raw_getters": 1,
+    "source_sha256": "bd5a40a6dc0fac111201ea96a46d35389bb36ba2f7222491fc940317b5dcd2b1",
+    "version": "stm32h553_47c"
+  },
+  "i2c_stm32h543_47c": {
+    "blocks": [
+      "I2C"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "I2C1",
+      "I2C2",
+      "I2C3"
+    ],
+    "kind": "i2c",
+    "raw_getters": 0,
+    "source_sha256": "79a8cb7da133c0fb819ed7b4188a0225ce497dd4944a516bb1f614c3e3e6b38d",
+    "version": "stm32h543_47c"
+  },
+  "i2c_stm32h553_47c": {
+    "blocks": [
+      "I2C"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "I2C1",
+      "I2C2",
+      "I2C3"
+    ],
+    "kind": "i2c",
+    "raw_getters": 0,
+    "source_sha256": "79a8cb7da133c0fb819ed7b4188a0225ce497dd4944a516bb1f614c3e3e6b38d",
+    "version": "stm32h553_47c"
+  },
+  "i3c_stm32h543_47c": {
+    "blocks": [
+      "I3C"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "I3C1",
+      "I3C2"
+    ],
+    "kind": "i3c",
+    "raw_getters": 1,
+    "source_sha256": "08fc8039a7e4040eb3fd65208c4ac807cce1cab50de1fe3efcddd8712a74628e",
+    "version": "stm32h543_47c"
+  },
+  "i3c_stm32h553_47c": {
+    "blocks": [
+      "I3C"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "I3C1",
+      "I3C2"
+    ],
+    "kind": "i3c",
+    "raw_getters": 1,
+    "source_sha256": "08fc8039a7e4040eb3fd65208c4ac807cce1cab50de1fe3efcddd8712a74628e",
+    "version": "stm32h553_47c"
+  },
+  "icache_v1_4crr": {
+    "blocks": [
+      "ICACHE"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "ICACHE"
+    ],
+    "kind": "icache",
+    "raw_getters": 0,
+    "source_sha256": "ca0d19c69d5ee6ef90fdcfc81b611ec589f4b3f3927de3a771f825fffd8c5fcb",
+    "version": "v1_4crr"
+  },
+  "iwdg_stm32h543_47c": {
+    "blocks": [
+      "IWDG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "IWDG"
+    ],
+    "kind": "iwdg",
+    "raw_getters": 0,
+    "source_sha256": "ecd5734e7d13e020425dda403142532f64016b4b524e747bf8ab866fd4d27313",
+    "version": "stm32h543_47c"
+  },
+  "iwdg_stm32h553_47c": {
+    "blocks": [
+      "IWDG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "IWDG"
+    ],
+    "kind": "iwdg",
+    "raw_getters": 0,
+    "source_sha256": "ecd5734e7d13e020425dda403142532f64016b4b524e747bf8ab866fd4d27313",
+    "version": "stm32h553_47c"
+  },
+  "lptim_stm32h543_47c": {
+    "blocks": [
+      "LPTIM"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "LPTIM1",
+      "LPTIM2"
+    ],
+    "kind": "lptim",
+    "raw_getters": 0,
+    "source_sha256": "e256fb1751c59030f9cef0e4c91796ace711536b35e2f8bd40151135e6ca488c",
+    "version": "stm32h543_47c"
+  },
+  "lptim_stm32h553_47c": {
+    "blocks": [
+      "LPTIM"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "LPTIM1",
+      "LPTIM2"
+    ],
+    "kind": "lptim",
+    "raw_getters": 0,
+    "source_sha256": "e256fb1751c59030f9cef0e4c91796ace711536b35e2f8bd40151135e6ca488c",
+    "version": "stm32h553_47c"
+  },
+  "octospi_stm32h543_47c": {
+    "blocks": [
+      "OCTOSPI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "OCTOSPI1"
+    ],
+    "kind": "octospi",
+    "raw_getters": 0,
+    "source_sha256": "735319abaae0df4e76aeccdeb1cf656cfbec6fbf31c5ac4c0fe204e2ee0ac150",
+    "version": "stm32h543_47c"
+  },
+  "octospi_stm32h553_47c": {
+    "blocks": [
+      "OCTOSPI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "OCTOSPI1"
+    ],
+    "kind": "octospi",
+    "raw_getters": 0,
+    "source_sha256": "735319abaae0df4e76aeccdeb1cf656cfbec6fbf31c5ac4c0fe204e2ee0ac150",
+    "version": "stm32h553_47c"
+  },
+  "otfdec_stm32h553_47c": {
+    "blocks": [
+      "OTFDEC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "OTFDEC1"
+    ],
+    "kind": "otfdec",
+    "raw_getters": 5,
+    "source_sha256": "228e7d4d57d84db17a242a755eff678c2a8ed0f5cbffda819014c9e815946a61",
+    "version": "stm32h553_47c"
+  },
+  "otfdecregion_stm32h553_47c": {
+    "blocks": [
+      "OTFDEC_REGION"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "OTFDEC1_REGION1",
+      "OTFDEC1_REGION2",
+      "OTFDEC1_REGION3",
+      "OTFDEC1_REGION4"
+    ],
+    "kind": "otfdecregion",
+    "raw_getters": 9,
+    "source_sha256": "e996d7a636ab7830314e45fff96af6aaf8df05f67b17741e9973df85c0dc7bc5",
+    "version": "stm32h553_47c"
+  },
+  "pka_stm32h543_47c": {
+    "blocks": [
+      "PKA"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "PKA"
+    ],
+    "kind": "pka",
+    "raw_getters": 2,
+    "source_sha256": "43b7384f0af60de013d1359c294ddb0a696870830293d8ab63136f54913960fa",
+    "version": "stm32h543_47c"
+  },
+  "pka_stm32h553_47c": {
+    "blocks": [
+      "PKA"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "PKA"
+    ],
+    "kind": "pka",
+    "raw_getters": 2,
+    "source_sha256": "43b7384f0af60de013d1359c294ddb0a696870830293d8ab63136f54913960fa",
+    "version": "stm32h553_47c"
+  },
+  "play_stm32h543_47c": {
+    "blocks": [
+      "PLAY"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "PLAY1"
+    ],
+    "kind": "play",
+    "raw_getters": 9,
+    "source_sha256": "731e092142f405c18817025678b8f8881db64d95b471057381140b6fc689adc0",
+    "version": "stm32h543_47c"
+  },
+  "play_stm32h553_47c": {
+    "blocks": [
+      "PLAY"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "PLAY1"
+    ],
+    "kind": "play",
+    "raw_getters": 9,
+    "source_sha256": "731e092142f405c18817025678b8f8881db64d95b471057381140b6fc689adc0",
+    "version": "stm32h553_47c"
+  },
+  "pssi_stm32h543_47c": {
+    "blocks": [
+      "PSSI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "PSSI"
+    ],
+    "kind": "pssi",
+    "raw_getters": 7,
+    "source_sha256": "e937472ef8961fb8ecf3053eb3771411b435c04291a57f55d837e9fcc971f32f",
+    "version": "stm32h543_47c"
+  },
+  "pssi_stm32h553_47c": {
+    "blocks": [
+      "PSSI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "PSSI"
+    ],
+    "kind": "pssi",
+    "raw_getters": 7,
+    "source_sha256": "e937472ef8961fb8ecf3053eb3771411b435c04291a57f55d837e9fcc971f32f",
+    "version": "stm32h553_47c"
+  },
+  "pwr_stm32h543_47c": {
+    "blocks": [
+      "PWR"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "PWR"
+    ],
+    "kind": "pwr",
+    "raw_getters": 1,
+    "source_sha256": "05d133633ca29d5954582ee9f59cf2f5f82027fbff92b98bb89a57081090671f",
+    "version": "stm32h543_47c"
+  },
+  "pwr_stm32h553_47c": {
+    "blocks": [
+      "PWR"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "PWR"
+    ],
+    "kind": "pwr",
+    "raw_getters": 1,
+    "source_sha256": "05d133633ca29d5954582ee9f59cf2f5f82027fbff92b98bb89a57081090671f",
+    "version": "stm32h553_47c"
+  },
+  "ramcfg_stm32h543_47c": {
+    "blocks": [
+      "RAMCFG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "RAMCFG_BKPRAM",
+      "RAMCFG_SRAM1",
+      "RAMCFG_SRAM2",
+      "RAMCFG_SRAM3"
+    ],
+    "kind": "ramcfg",
+    "raw_getters": 11,
+    "source_sha256": "7ca496ffdf67f1580f0f254f2d7830bfb7bf12272fd66a7ea4eb071b18782b49",
+    "version": "stm32h543_47c"
+  },
+  "ramcfg_stm32h553_47c": {
+    "blocks": [
+      "RAMCFG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "RAMCFG_BKPRAM",
+      "RAMCFG_SRAM1",
+      "RAMCFG_SRAM2",
+      "RAMCFG_SRAM3"
+    ],
+    "kind": "ramcfg",
+    "raw_getters": 11,
+    "source_sha256": "7ca496ffdf67f1580f0f254f2d7830bfb7bf12272fd66a7ea4eb071b18782b49",
+    "version": "stm32h553_47c"
+  },
+  "rcc_stm32h543_47c": {
+    "blocks": [
+      "RCC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "RCC"
+    ],
+    "kind": "rcc",
+    "raw_getters": 0,
+    "source_sha256": "7d3db4eaf9158df4e1063de5c82d8b6f9d10a726a7f83e4ed0aa23af9025f389",
+    "version": "stm32h543_47c"
+  },
+  "rcc_stm32h553_47c": {
+    "blocks": [
+      "RCC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "RCC"
+    ],
+    "kind": "rcc",
+    "raw_getters": 0,
+    "source_sha256": "31e165abb39b30a6aaa40ab75664efaf1247b6f5116bd321624b9709081837ba",
+    "version": "stm32h553_47c"
+  },
+  "rng_stm32h543_47c": {
+    "blocks": [
+      "RNG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "RNG"
+    ],
+    "kind": "rng",
+    "raw_getters": 4,
+    "source_sha256": "1fdf485dbdc804ba599f7b403970dcd1c51493325b0cfdd5a16f2df8eb000b8f",
+    "version": "stm32h543_47c"
+  },
+  "rng_stm32h553_47c": {
+    "blocks": [
+      "RNG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "RNG"
+    ],
+    "kind": "rng",
+    "raw_getters": 4,
+    "source_sha256": "1fdf485dbdc804ba599f7b403970dcd1c51493325b0cfdd5a16f2df8eb000b8f",
+    "version": "stm32h553_47c"
+  },
+  "rtc_stm32h543_47c": {
+    "blocks": [
+      "RTC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "RTC"
+    ],
+    "kind": "rtc",
+    "raw_getters": 0,
+    "source_sha256": "6e04305f01c99b921388c10de1a05917f94664e901ac44173f3593a019b7302d",
+    "version": "stm32h543_47c"
+  },
+  "rtc_stm32h553_47c": {
+    "blocks": [
+      "RTC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "RTC"
+    ],
+    "kind": "rtc",
+    "raw_getters": 0,
+    "source_sha256": "6e04305f01c99b921388c10de1a05917f94664e901ac44173f3593a019b7302d",
+    "version": "stm32h553_47c"
+  },
+  "sdmmc_stm32h543_47c": {
+    "blocks": [
+      "SDMMC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "SDMMC1"
+    ],
+    "kind": "sdmmc",
+    "raw_getters": 15,
+    "source_sha256": "c9bc9ee5c180f81b272c69bad6b9a5187fc8d079d7d65cf57a340ad6c49ce7af",
+    "version": "stm32h543_47c"
+  },
+  "sdmmc_stm32h553_47c": {
+    "blocks": [
+      "SDMMC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "SDMMC1"
+    ],
+    "kind": "sdmmc",
+    "raw_getters": 15,
+    "source_sha256": "c9bc9ee5c180f81b272c69bad6b9a5187fc8d079d7d65cf57a340ad6c49ce7af",
+    "version": "stm32h553_47c"
+  },
+  "spi_h5_47c": {
+    "blocks": [
+      "SPI"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "SPI1",
+      "SPI2",
+      "SPI3",
+      "SPI4"
+    ],
+    "kind": "spi",
+    "raw_getters": 0,
+    "source_sha256": "0933dd55874f4e940b50ee9b136998cb3ba25f3bafd06aeae11b7d0f50412b14",
+    "version": "h5_47c"
+  },
+  "syscfg_stm32h543_47c": {
+    "blocks": [
+      "SBS"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "SYSCFG"
+    ],
+    "kind": "syscfg",
+    "raw_getters": 0,
+    "source_sha256": "a8083f29b6c678f9d1dfe54788de3bb6f6f1cdcf4fdf1f47dbe5a1a8dc4a487f",
+    "version": "stm32h543_47c"
+  },
+  "syscfg_stm32h553_47c": {
+    "blocks": [
+      "SBS"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "SYSCFG"
+    ],
+    "kind": "syscfg",
+    "raw_getters": 0,
+    "source_sha256": "a8083f29b6c678f9d1dfe54788de3bb6f6f1cdcf4fdf1f47dbe5a1a8dc4a487f",
+    "version": "stm32h553_47c"
+  },
+  "tamp_stm32h543_47c": {
+    "blocks": [
+      "TAMP"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "TAMP"
+    ],
+    "kind": "tamp",
+    "raw_getters": 1,
+    "source_sha256": "e9970e7ba150bad6550e8cb0e08937fbdbaedf1177bb8d1531bf59ca2dfd51b7",
+    "version": "stm32h543_47c"
+  },
+  "tamp_stm32h553_47c": {
+    "blocks": [
+      "TAMP"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "TAMP"
+    ],
+    "kind": "tamp",
+    "raw_getters": 1,
+    "source_sha256": "e9970e7ba150bad6550e8cb0e08937fbdbaedf1177bb8d1531bf59ca2dfd51b7",
+    "version": "stm32h553_47c"
+  },
+  "timer_h5_47c": {
+    "blocks": [
+      "TIM_2CH",
+      "TIM_2CH_CMP",
+      "TIM_ADV",
+      "TIM_BASIC",
+      "TIM_GP16",
+      "TIM_GP32"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "TIM1",
+      "TIM12",
+      "TIM15",
+      "TIM2",
+      "TIM3",
+      "TIM4",
+      "TIM5",
+      "TIM6",
+      "TIM7",
+      "TIM8"
+    ],
+    "kind": "timer",
+    "raw_getters": 0,
+    "source_sha256": "44622ee1d1a2af37786cc179b65734736f61f7ccea31e773defb6cb732f75325",
+    "version": "h5_47c"
+  },
+  "ucpd_stm32h543_47c": {
+    "blocks": [
+      "UCPD"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "UCPD1"
+    ],
+    "kind": "ucpd",
+    "raw_getters": 9,
+    "source_sha256": "8b01826c0d9ec3dd4bf65a8fdce73a325218a2c7423115a0a2b6f07c46c761ff",
+    "version": "stm32h543_47c"
+  },
+  "ucpd_stm32h553_47c": {
+    "blocks": [
+      "UCPD"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "UCPD1"
+    ],
+    "kind": "ucpd",
+    "raw_getters": 9,
+    "source_sha256": "8b01826c0d9ec3dd4bf65a8fdce73a325218a2c7423115a0a2b6f07c46c761ff",
+    "version": "stm32h553_47c"
+  },
+  "usart_v4": {
+    "blocks": [
+      "LPUART",
+      "USART"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "LPUART1",
+      "UART4",
+      "UART5",
+      "UART7",
+      "UART8",
+      "USART1",
+      "USART2",
+      "USART3",
+      "USART6"
+    ],
+    "kind": "usart",
+    "raw_getters": 0,
+    "source_sha256": "8aa19880ecd68b04a236a2e16925df72ac1bb5330297b7dff711939eabebb472",
+    "version": "v4"
+  },
+  "usb_h5_47c": {
+    "blocks": [
+      "USB"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "USB"
+    ],
+    "kind": "usb",
+    "raw_getters": 0,
+    "source_sha256": "be14552bd0cc99f407299bc030d973c0b2f4b18cdd39c670fe2b66323017df84",
+    "version": "h5_47c"
+  },
+  "usbnative_stm32h543_47c": {
+    "blocks": [
+      "USB_PMA_DESC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "USB_DRD_PMA_BUFF"
+    ],
+    "kind": "usbnative",
+    "raw_getters": 16,
+    "source_sha256": "c1aac0811d104d28602092b4a93d239ee30830ff55d5fc388ff2b951b0051712",
+    "version": "stm32h543_47c"
+  },
+  "usbnative_stm32h553_47c": {
+    "blocks": [
+      "USB_PMA_DESC"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "USB_DRD_PMA_BUFF"
+    ],
+    "kind": "usbnative",
+    "raw_getters": 16,
+    "source_sha256": "c1aac0811d104d28602092b4a93d239ee30830ff55d5fc388ff2b951b0051712",
+    "version": "stm32h553_47c"
+  },
+  "usbram_32_2048": {
+    "blocks": [
+      "USBRAM"
+    ],
+    "driver_status": "register IP reused after evidence comparison; full backend not asserted",
+    "instances": [
+      "USBRAM"
+    ],
+    "kind": "usbram",
+    "raw_getters": 0,
+    "source_sha256": "3e8f2e815f542a082feb1c0183b0dfa48e81bfacfcd0feeba22a57726b532b50",
+    "version": "32_2048"
+  },
+  "vrefbuf_stm32h543_47c": {
+    "blocks": [
+      "VREFBUF"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "VREFBUF"
+    ],
+    "kind": "vrefbuf",
+    "raw_getters": 0,
+    "source_sha256": "532ad948da06520822a4ccdd28e374a77753888d4e1f2a0864eff489344e7bd9",
+    "version": "stm32h543_47c"
+  },
+  "vrefbuf_stm32h553_47c": {
+    "blocks": [
+      "VREFBUF"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "VREFBUF"
+    ],
+    "kind": "vrefbuf",
+    "raw_getters": 0,
+    "source_sha256": "532ad948da06520822a4ccdd28e374a77753888d4e1f2a0864eff489344e7bd9",
+    "version": "stm32h553_47c"
+  },
+  "wwdg_stm32h543_47c": {
+    "blocks": [
+      "WWDG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "WWDG"
+    ],
+    "kind": "wwdg",
+    "raw_getters": 0,
+    "source_sha256": "835f105b270e6273b85cbb91d70996e5c6fe691edcbd224ea6569bd6f1b464c2",
+    "version": "stm32h543_47c"
+  },
+  "wwdg_stm32h553_47c": {
+    "blocks": [
+      "WWDG"
+    ],
+    "driver_status": "requires explicit HAL adaptation",
+    "instances": [
+      "WWDG"
+    ],
+    "kind": "wwdg",
+    "raw_getters": 0,
+    "source_sha256": "835f105b270e6273b85cbb91d70996e5c6fe691edcbd224ea6569bd6f1b464c2",
+    "version": "stm32h553_47c"
+  }
+}

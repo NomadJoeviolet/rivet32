@@ -1,0 +1,34 @@
+{
+  "block/GTZC_MPCBB": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "name": "CFGLOCKR1"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 32,
+          "stride": 4
+        },
+        "byte_offset": 256,
+        "name": "SECCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 32,
+          "stride": 4
+        },
+        "byte_offset": 512,
+        "name": "PRIVCFGR"
+      }
+    ]
+  }
+}

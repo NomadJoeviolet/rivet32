@@ -1,0 +1,131 @@
+{
+  "block/IWDG": {
+    "items": [
+      {
+        "access": "Write",
+        "byte_offset": 0,
+        "fieldset": "KR",
+        "name": "KR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "PR",
+        "name": "PR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "RLR",
+        "name": "RLR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 12,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "WINR",
+        "name": "WINR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "EWCR",
+        "name": "EWCR"
+      }
+    ]
+  },
+  "fieldset/EWCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "EWIT"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "EWIC"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "EWIE"
+      }
+    ]
+  },
+  "fieldset/KR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "KEY"
+      }
+    ]
+  },
+  "fieldset/PR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "PR"
+      }
+    ]
+  },
+  "fieldset/RLR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "RL"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "PVU"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RVU"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WVU"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "EWU"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "ONF"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "EWIF"
+      }
+    ]
+  },
+  "fieldset/WINR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "WIN"
+      }
+    ]
+  }
+}

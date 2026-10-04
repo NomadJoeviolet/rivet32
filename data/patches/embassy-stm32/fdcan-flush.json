@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "base_revision": "ae9e6f0672af84cec8e200a94c574041844396f0",
+  "purpose": "Correct independent FDCAN mailbox flush indexing/bounds and classic CAN timestamp scaling/initialization. Timestamp TCP counts complete CAN bit times; derive it from the requested nominal configuration before hardware activation. These source corrections do not establish the remaining H7RS test TODO as fixed and make no HIL claim.",
+  "files": [
+    {
+      "path": "src/can/fdcan.rs",
+      "upstream_sha256": "942b9c73d299180fb0d241da338f79ca56beadc761567e24909995088efc8677",
+      "patched_sha256": "7b94920f261ea1c16c278c16c2778ea55f18a9ab54bc27936170b5cab88e6bcf",
+      "replacements": [
+        {
+          "old": "    /// Flush one of the TX mailboxes.\n    pub async fn flush(&self, idx: usize) {\n        poll_fn(|cx| {\n            self.info.state.lock(|s| {\n                s.borrow_mut().tx_mode.register(cx.waker());\n            });\n\n            if idx > 3 {\n                panic!(\"Bad mailbox\");\n            }\n            let idx = 1 << idx;\n            if !self.info.regs.regs.txbrp().read().trp(idx) {",
+          "new": "    /// Flush one of the configured TX mailboxes.\n    ///\n    /// # Panics\n    /// Panics if `idx` is outside `0..TX_FIFO_MAX`.\n    pub async fn flush(&self, idx: usize) {\n        assert!(idx < fd::message_ram::TX_FIFO_MAX as usize, \"Bad mailbox\");\n        poll_fn(|cx| {\n            self.info.state.lock(|s| {\n                s.borrow_mut().tx_mode.register(cx.waker());\n            });\n\n            // The PAC takes a mailbox index, not a shifted register bit mask.\n            if !self.info.regs.regs.txbrp().read().trp(idx) {"
+        },
+        {
+          "old": "fn calc_ns_per_timer_tick(\n    info: &'static Info,\n    freq: crate::time::Hertz,\n    mode: crate::can::fd::config::FrameTransmissionConfig,\n    timestamp_source: TimestampSource,\n) -> u64 {\n    match (timestamp_source, mode) {\n        // No counter, or TIM3 running at the embassy tick rate rather than the kernel clock:\n        // `calc_timestamp` either has nothing to scale or handles TIM3 itself.\n        (TimestampSource::None, _) | (TimestampSource::FromTIM3, _) => 0,\n        // Use timestamp from Rx FIFO to adjust timestamp reported to user\n        (_, crate::can::fd::config::FrameTransmissionConfig::ClassicCanOnly) => {\n            let prescale: u64 = ({ info.regs.regs.nbtp().read().nbrp() } + 1) as u64\n                * ({ info.regs.regs.tscc().read().tcp() } + 1) as u64;\n            1_000_000_000_u64 / (freq.0 as u64 * prescale)\n        }\n        // For VBR this is too hard because the FDCAN timer switches clock rate you need to configure to use\n        // timer3 instead which is too hard to do from this module.\n        _ => 0,\n    }\n}",
+          "new": "fn calc_ns_per_timer_tick(\n    nominal: NominalBitTiming,\n    freq: crate::time::Hertz,\n    mode: crate::can::fd::config::FrameTransmissionConfig,\n    timestamp_source: TimestampSource,\n) -> u64 {\n    match (timestamp_source, mode) {\n        (TimestampSource::None, _) | (TimestampSource::FromTIM3, _) => 0,\n        (TimestampSource::Prescaler(tcp), FrameTransmissionConfig::ClassicCanOnly) => {\n            // TSCC.TCP counts whole CAN bit times, including the sync segment.\n            // Use the requested config: start() has not programmed NBTP/TSCC yet.\n            let quanta_per_bit = 1 + u64::from(nominal.seg1.get()) + u64::from(nominal.seg2.get());\n            let cycles_per_tick = u64::from(nominal.prescaler.get()) * quanta_per_bit * tcp as u64;\n            1_000_000_000_u64 * cycles_per_tick / u64::from(freq.0)\n        }\n        // The internal counter has no constant period when CAN FD switches rates.\n        _ => 0,\n    }\n}"
+        },
+        {
+          "old": "        let ns_per_timer_tick = calc_ns_per_timer_tick(\n            &self.info,",
+          "new": "        let ns_per_timer_tick = calc_ns_per_timer_tick(\n            self.config.nbtr,"
+        }
+      ]
+    }
+  ]
+}

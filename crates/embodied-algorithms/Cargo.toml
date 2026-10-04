@@ -1,0 +1,10 @@
+[package]
+name = "embodied-algorithms"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Allocation-free numerical algorithms and control primitives"
+
+[dependencies]
+libm.workspace = true

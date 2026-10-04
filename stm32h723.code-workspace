@@ -1,0 +1,13 @@
+{
+  "folders": [{"path": "."}],
+  "settings": {
+    "rust-analyzer.linkedProjects": ["App/Cargo.toml"],
+    "rust-analyzer.cargo.target": "thumbv7em-none-eabihf",
+    "rust-analyzer.cargo.allFeatures": false,
+    "rust-analyzer.cargo.features": ["stm32h723vg"],
+    "rust-analyzer.check.allTargets": false,
+    "rust-analyzer.cargo.buildScripts.overrideCommand": ["cargo", "check", "-p", "embodied-app", "--bin", "minimal", "--target", "thumbv7em-none-eabihf", "--features", "stm32h723vg", "--message-format=json", "--locked"],
+    "rust-analyzer.check.overrideCommand": ["cargo", "check", "-p", "embodied-app", "--bin", "minimal", "--target", "thumbv7em-none-eabihf", "--features", "stm32h723vg", "--message-format=json", "--locked"],
+    "editor.formatOnSave": true
+  }
+}

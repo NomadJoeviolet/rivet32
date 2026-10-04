@@ -1,0 +1,2965 @@
+{
+  "pac_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "generator_revision": "caa36afd62510b0e6315ee0dccd1f9c65fbcac83",
+  "chips": {
+    "STM32H563LI": {
+      "baseline": "STM32H563ZI",
+      "baseline_sha256": "e0b43fb5e23668a21911ab2080af7156ad77dbe952edcdc223ef350f4f431a58",
+      "baseline_package_group": [
+        "STM32H563ZITx",
+        "STM32H563ZITxQ"
+      ],
+      "zi_q_omitted_ip": [
+        [
+          "ETH",
+          "ETH",
+          "ethermac110_v3_0_3"
+        ]
+      ],
+      "identical_ip_instances_versions": true,
+      "ip_instances_versions": [
+        [
+          "ADC1",
+          "ADC",
+          "aditf5_v3_0_H5_Cube"
+        ],
+        [
+          "ADC2",
+          "ADC",
+          "aditf5_v3_0_H5_Cube"
+        ],
+        [
+          "BOOTPATH",
+          "BOOTPATH",
+          "STM32xx"
+        ],
+        [
+          "CORDIC",
+          "CORDIC",
+          "cordic1_v1_0_Cube"
+        ],
+        [
+          "CORTEX_M33_NS",
+          "CORTEX_M33_NS",
+          "cortex_v1_0_Cube"
+        ],
+        [
+          "CORTEX_M33_S",
+          "CORTEX_M33_S",
+          "cortex_v1_0_Cube"
+        ],
+        [
+          "CRC",
+          "CRC",
+          "integtest1_v2_0"
+        ],
+        [
+          "DAC1",
+          "DAC",
+          "dacif_v5_0_Cube"
+        ],
+        [
+          "DCACHE1",
+          "DCACHE",
+          "STM32U5xx1_v0_0"
+        ],
+        [
+          "DCMI",
+          "DCMI",
+          "cci_v2_0_Cube"
+        ],
+        [
+          "DEBUG",
+          "DEBUG",
+          "STM32H5_sys_v1_1"
+        ],
+        [
+          "DTS",
+          "DTS",
+          "dts_v1_0_Cube"
+        ],
+        [
+          "ETH",
+          "ETH",
+          "ethermac110_v3_0_3"
+        ],
+        [
+          "FDCAN1",
+          "FDCAN",
+          "fdcan1_v1_1_Cube"
+        ],
+        [
+          "FDCAN2",
+          "FDCAN",
+          "fdcan1_v1_1_Cube"
+        ],
+        [
+          "FILEX",
+          "FileX",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "FLASH",
+          "flash",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "FMAC",
+          "FMAC",
+          "matrix1_v1_0_Cube"
+        ],
+        [
+          "FMC",
+          "FMC",
+          "nornand_fmc_v2_5"
+        ],
+        [
+          "GPDMA1",
+          "GPDMA",
+          "STM32H5_dma3_Cube"
+        ],
+        [
+          "GPDMA2",
+          "GPDMA",
+          "Instance2_STM32H5_dma3_Cube"
+        ],
+        [
+          "GPIO",
+          "GPIO",
+          "STM32H56x_gpio_v1_0"
+        ],
+        [
+          "GTZC",
+          "GTZC",
+          "tzsc1_v2_2_rc1_Mustang2M"
+        ],
+        [
+          "GTZC_NS",
+          "GTZC",
+          "tzsc1_v2_2_rc1_Mustang2M"
+        ],
+        [
+          "GTZC_S",
+          "GTZC",
+          "tzsc1_v2_2_rc1_Mustang2M"
+        ],
+        [
+          "GUI_INTERFACE",
+          "GUI_INTERFACE",
+          "guiinterface_STM32H5_v2.2.2_Cube"
+        ],
+        [
+          "HASH",
+          "HASH",
+          "hash1_v4_0_Cube"
+        ],
+        [
+          "HDMI_CEC",
+          "HDMI_CEC",
+          "hdmi_cec_v2_0_Cube"
+        ],
+        [
+          "I2C1",
+          "I2C",
+          "i2c2_v1_1U5_Cube"
+        ],
+        [
+          "I2C2",
+          "I2C",
+          "i2c2_v1_1U5_Cube"
+        ],
+        [
+          "I2C3",
+          "I2C",
+          "i2c2_v1_1U5_Cube"
+        ],
+        [
+          "I2C4",
+          "I2C",
+          "i2c2_v1_1U5_Cube"
+        ],
+        [
+          "I2S1",
+          "I2S",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "I2S2",
+          "I2S",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "I2S3",
+          "I2S",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "I3C1",
+          "I3C",
+          "i3c1_v1_0_Cube"
+        ],
+        [
+          "ICACHE",
+          "ICACHE",
+          "Icache_v1_0_0_Cube"
+        ],
+        [
+          "IWDG",
+          "IWDG",
+          "iwdg1_v3_0"
+        ],
+        [
+          "LEVELX",
+          "LevelX",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "LINKEDLIST",
+          "LINKEDLIST",
+          "STM32H5_linkedlist_v1_0"
+        ],
+        [
+          "LPTIM1",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM2",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM3",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM4",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM5",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM6",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPUART1",
+          "LPUART",
+          "sci3_v1_3_Cube"
+        ],
+        [
+          "MEMORYMAP",
+          "MEMORYMAP",
+          "STM32xx"
+        ],
+        [
+          "NETXDUO",
+          "NetXDuo",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "NVIC1",
+          "NVIC1",
+          "STM32H57"
+        ],
+        [
+          "NVIC2",
+          "NVIC2",
+          "STM32H57"
+        ],
+        [
+          "OCTOSPI1",
+          "OCTOSPI",
+          "octospi1_v5_1_Cube"
+        ],
+        [
+          "PKA",
+          "PKA",
+          "pka32_v1_0_Cube"
+        ],
+        [
+          "PSSI",
+          "PSSI",
+          "cci_v3_0_Cube"
+        ],
+        [
+          "PWR",
+          "PWR",
+          "STM32H5_pwr_v1_0"
+        ],
+        [
+          "RAMCFG",
+          "RAMCFG",
+          "v1_0_Cube"
+        ],
+        [
+          "RCC",
+          "RCC",
+          "STM32H5_rcc_v1_0"
+        ],
+        [
+          "RNG",
+          "RNG",
+          "rng1_v4_1"
+        ],
+        [
+          "RTC",
+          "RTC",
+          "rtc2_v2_U5_Cube"
+        ],
+        [
+          "SAI1",
+          "SAI",
+          "sai1_L5_Cube"
+        ],
+        [
+          "SAI2",
+          "SAI",
+          "sai1_L5_Cube"
+        ],
+        [
+          "SAU",
+          "SAU",
+          "sau_v2_0_Cube"
+        ],
+        [
+          "SBS",
+          "SBS",
+          "sbs_v1_1_Cube"
+        ],
+        [
+          "SDMMC1",
+          "SDMMC",
+          "sdmmc2_v2_1_h5_Cube"
+        ],
+        [
+          "SDMMC2",
+          "SDMMC",
+          "sdmmc2_v2_1_h5_Cube"
+        ],
+        [
+          "SPI1",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI2",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI3",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI4",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI5",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI6",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SYS",
+          "SYS",
+          "STM32U5x_sys_v1_0"
+        ],
+        [
+          "SYS_S",
+          "SYS_S",
+          "STM32U5x_sys_s_v1_0"
+        ],
+        [
+          "TAMP",
+          "TAMP",
+          "STM32L5_rtc2_v2_8_Cube"
+        ],
+        [
+          "THREADX",
+          "ThreadX",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "TIM1",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM12",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM13",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM14",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM15",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM16",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM17",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM2",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM3",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM4",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM5",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM6",
+          "TIM6_7H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM7",
+          "TIM6_7H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM8",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TRACER_EMB",
+          "TRACER_EMB",
+          "tracer_STM32H5_v1.7.1_Cube"
+        ],
+        [
+          "UART12",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART4",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART5",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART7",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART8",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART9",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UCPD1",
+          "UCPD",
+          "ucpd_v1_0_Cube"
+        ],
+        [
+          "USART1",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART10",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART11",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART2",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART3",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART6",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USB",
+          "USB",
+          "usbfs_v1.0_Cube"
+        ],
+        [
+          "USBPD",
+          "USBPD",
+          "usbpd_STM32H5_v4.1_Cube"
+        ],
+        [
+          "USBX",
+          "USBX",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "VREFBUF",
+          "VREFBUF",
+          "STM32L55_vrefbuf_v1_0"
+        ],
+        [
+          "WWDG",
+          "WWDG",
+          "wwdg1_v2_0"
+        ]
+      ],
+      "identical_die_level_metadata": true,
+      "die_level_metadata_sha256": "5cb99e3d9c6592c6c11f4dd7922981db1834b36331faa2271adfb1d97c4d6d7c",
+      "added_gpio": [
+        "PH2",
+        "PH3",
+        "PH4",
+        "PH5",
+        "PH6",
+        "PH7",
+        "PH8",
+        "PH9",
+        "PH10",
+        "PH11",
+        "PH12",
+        "PH13",
+        "PH14",
+        "PH15",
+        "PI0",
+        "PI1",
+        "PI2",
+        "PI3",
+        "PI4",
+        "PI5",
+        "PI6",
+        "PI7",
+        "PI8",
+        "PI9",
+        "PI10",
+        "PI11"
+      ],
+      "removed_gpio": [],
+      "pin_af_changes": {
+        "DCMI": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "D1",
+              "af": 13
+            },
+            {
+              "pin": "PH11",
+              "signal": "D2",
+              "af": 13
+            },
+            {
+              "pin": "PH12",
+              "signal": "D3",
+              "af": 13
+            },
+            {
+              "pin": "PH13",
+              "signal": "D3",
+              "af": 13
+            },
+            {
+              "pin": "PH14",
+              "signal": "D4",
+              "af": 13
+            },
+            {
+              "pin": "PH15",
+              "signal": "D11",
+              "af": 13
+            },
+            {
+              "pin": "PH6",
+              "signal": "D8",
+              "af": 13
+            },
+            {
+              "pin": "PH7",
+              "signal": "D9",
+              "af": 13
+            },
+            {
+              "pin": "PH8",
+              "signal": "HSYNC",
+              "af": 13
+            },
+            {
+              "pin": "PH9",
+              "signal": "D0",
+              "af": 13
+            },
+            {
+              "pin": "PI0",
+              "signal": "D13",
+              "af": 13
+            },
+            {
+              "pin": "PI1",
+              "signal": "D8",
+              "af": 13
+            },
+            {
+              "pin": "PI2",
+              "signal": "D9",
+              "af": 13
+            },
+            {
+              "pin": "PI3",
+              "signal": "D10",
+              "af": 13
+            },
+            {
+              "pin": "PI4",
+              "signal": "D5",
+              "af": 13
+            },
+            {
+              "pin": "PI5",
+              "signal": "VSYNC",
+              "af": 13
+            },
+            {
+              "pin": "PI6",
+              "signal": "D6",
+              "af": 13
+            },
+            {
+              "pin": "PI7",
+              "signal": "D7",
+              "af": 13
+            }
+          ],
+          "removed": []
+        },
+        "ETH": {
+          "added": [
+            {
+              "pin": "PB11",
+              "signal": "TX_EN",
+              "af": 11
+            },
+            {
+              "pin": "PH2",
+              "signal": "CRS",
+              "af": 11
+            },
+            {
+              "pin": "PH3",
+              "signal": "COL",
+              "af": 11
+            },
+            {
+              "pin": "PH6",
+              "signal": "RXD2",
+              "af": 11
+            },
+            {
+              "pin": "PH7",
+              "signal": "RXD3",
+              "af": 11
+            },
+            {
+              "pin": "PI10",
+              "signal": "RX_ER",
+              "af": 11
+            }
+          ],
+          "removed": []
+        },
+        "FDCAN1": {
+          "added": [
+            {
+              "pin": "PH13",
+              "signal": "TX",
+              "af": 9
+            },
+            {
+              "pin": "PH14",
+              "signal": "RX",
+              "af": 9
+            },
+            {
+              "pin": "PI10",
+              "signal": "RX",
+              "af": 9
+            },
+            {
+              "pin": "PI9",
+              "signal": "RX",
+              "af": 9
+            }
+          ],
+          "removed": []
+        },
+        "FMC": {
+          "added": [
+            {
+              "pin": "PH2",
+              "signal": "SDCKE0",
+              "af": 12
+            },
+            {
+              "pin": "PH3",
+              "signal": "SDNE0",
+              "af": 12
+            },
+            {
+              "pin": "PH5",
+              "signal": "SDNWE",
+              "af": 12
+            },
+            {
+              "pin": "PH6",
+              "signal": "SDNE1",
+              "af": 12
+            },
+            {
+              "pin": "PH7",
+              "signal": "SDCKE1",
+              "af": 12
+            }
+          ],
+          "removed": []
+        },
+        "I2C2": {
+          "added": [
+            {
+              "pin": "PH4",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PH5",
+              "signal": "SDA",
+              "af": 4
+            },
+            {
+              "pin": "PH6",
+              "signal": "SMBA",
+              "af": 4
+            }
+          ],
+          "removed": []
+        },
+        "I2C3": {
+          "added": [
+            {
+              "pin": "PH7",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PH8",
+              "signal": "SDA",
+              "af": 4
+            },
+            {
+              "pin": "PH9",
+              "signal": "SMBA",
+              "af": 4
+            }
+          ],
+          "removed": []
+        },
+        "I2C4": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "SMBA",
+              "af": 4
+            },
+            {
+              "pin": "PH11",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PH12",
+              "signal": "SDA",
+              "af": 4
+            }
+          ],
+          "removed": []
+        },
+        "I3C1": {
+          "added": [
+            {
+              "pin": "PH11",
+              "signal": "SCL",
+              "af": 5
+            },
+            {
+              "pin": "PH12",
+              "signal": "SDA",
+              "af": 5
+            }
+          ],
+          "removed": []
+        },
+        "LPTIM1": {
+          "added": [
+            {
+              "pin": "PH13",
+              "signal": "IN2",
+              "af": 1
+            },
+            {
+              "pin": "PH2",
+              "signal": "IN2",
+              "af": 1
+            }
+          ],
+          "removed": []
+        },
+        "OCTOSPI1": {
+          "added": [
+            {
+              "pin": "PH2",
+              "signal": "IO4",
+              "af": 9
+            },
+            {
+              "pin": "PH3",
+              "signal": "IO5",
+              "af": 9
+            }
+          ],
+          "removed": []
+        },
+        "PSSI": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "D1",
+              "af": 13
+            },
+            {
+              "pin": "PH11",
+              "signal": "D2",
+              "af": 13
+            },
+            {
+              "pin": "PH12",
+              "signal": "D3",
+              "af": 13
+            },
+            {
+              "pin": "PH13",
+              "signal": "D3",
+              "af": 13
+            },
+            {
+              "pin": "PH14",
+              "signal": "D4",
+              "af": 13
+            },
+            {
+              "pin": "PH15",
+              "signal": "D11",
+              "af": 13
+            },
+            {
+              "pin": "PH4",
+              "signal": "D14",
+              "af": 13
+            },
+            {
+              "pin": "PH6",
+              "signal": "D8",
+              "af": 13
+            },
+            {
+              "pin": "PH7",
+              "signal": "D9",
+              "af": 13
+            },
+            {
+              "pin": "PH8",
+              "signal": "DE",
+              "af": 13
+            },
+            {
+              "pin": "PH9",
+              "signal": "D0",
+              "af": 13
+            },
+            {
+              "pin": "PI0",
+              "signal": "D13",
+              "af": 13
+            },
+            {
+              "pin": "PI1",
+              "signal": "D8",
+              "af": 13
+            },
+            {
+              "pin": "PI10",
+              "signal": "D14",
+              "af": 13
+            },
+            {
+              "pin": "PI11",
+              "signal": "D15",
+              "af": 13
+            },
+            {
+              "pin": "PI2",
+              "signal": "D9",
+              "af": 13
+            },
+            {
+              "pin": "PI3",
+              "signal": "D10",
+              "af": 13
+            },
+            {
+              "pin": "PI4",
+              "signal": "D5",
+              "af": 13
+            },
+            {
+              "pin": "PI5",
+              "signal": "RDY",
+              "af": 13
+            },
+            {
+              "pin": "PI6",
+              "signal": "D6",
+              "af": 13
+            },
+            {
+              "pin": "PI7",
+              "signal": "D7",
+              "af": 13
+            }
+          ],
+          "removed": []
+        },
+        "PWR": {
+          "added": [
+            {
+              "pin": "PI8",
+              "signal": "WKUP3"
+            }
+          ],
+          "removed": []
+        },
+        "RTC": {
+          "added": [
+            {
+              "pin": "PI8",
+              "signal": "OUT2"
+            }
+          ],
+          "removed": []
+        },
+        "SAI2": {
+          "added": [
+            {
+              "pin": "PH2",
+              "signal": "SCK_B",
+              "af": 10
+            },
+            {
+              "pin": "PH3",
+              "signal": "MCLK_B",
+              "af": 10
+            },
+            {
+              "pin": "PI4",
+              "signal": "MCLK_A",
+              "af": 10
+            },
+            {
+              "pin": "PI5",
+              "signal": "SCK_A",
+              "af": 10
+            },
+            {
+              "pin": "PI6",
+              "signal": "SD_A",
+              "af": 10
+            },
+            {
+              "pin": "PI7",
+              "signal": "FS_A",
+              "af": 10
+            }
+          ],
+          "removed": []
+        },
+        "SPI2": {
+          "added": [
+            {
+              "pin": "PI0",
+              "signal": "I2S_WS",
+              "af": 5
+            },
+            {
+              "pin": "PI0",
+              "signal": "NSS",
+              "af": 5
+            },
+            {
+              "pin": "PI1",
+              "signal": "I2S_CK",
+              "af": 5
+            },
+            {
+              "pin": "PI1",
+              "signal": "SCK",
+              "af": 5
+            },
+            {
+              "pin": "PI2",
+              "signal": "I2S_SDI",
+              "af": 5
+            },
+            {
+              "pin": "PI2",
+              "signal": "MISO",
+              "af": 5
+            },
+            {
+              "pin": "PI3",
+              "signal": "I2S_SDO",
+              "af": 5
+            },
+            {
+              "pin": "PI3",
+              "signal": "MOSI",
+              "af": 5
+            },
+            {
+              "pin": "PI4",
+              "signal": "RDY",
+              "af": 7
+            }
+          ],
+          "removed": []
+        },
+        "SPI5": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "RDY",
+              "af": 5
+            },
+            {
+              "pin": "PH4",
+              "signal": "RDY",
+              "af": 5
+            },
+            {
+              "pin": "PH5",
+              "signal": "NSS",
+              "af": 5
+            },
+            {
+              "pin": "PH6",
+              "signal": "SCK",
+              "af": 5
+            },
+            {
+              "pin": "PH7",
+              "signal": "MISO",
+              "af": 5
+            },
+            {
+              "pin": "PH8",
+              "signal": "MOSI",
+              "af": 5
+            },
+            {
+              "pin": "PH9",
+              "signal": "NSS",
+              "af": 5
+            }
+          ],
+          "removed": []
+        },
+        "SPI6": {
+          "added": [
+            {
+              "pin": "PH4",
+              "signal": "RDY",
+              "af": 7
+            },
+            {
+              "pin": "PH5",
+              "signal": "RDY",
+              "af": 7
+            }
+          ],
+          "removed": []
+        },
+        "TAMP": {
+          "added": [
+            {
+              "pin": "PI11",
+              "signal": "IN4"
+            },
+            {
+              "pin": "PI11",
+              "signal": "OUT5"
+            },
+            {
+              "pin": "PI8",
+              "signal": "IN2"
+            },
+            {
+              "pin": "PI8",
+              "signal": "OUT3"
+            }
+          ],
+          "removed": []
+        },
+        "TIM1": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "CH1N",
+              "af": 1
+            },
+            {
+              "pin": "PH11",
+              "signal": "CH1",
+              "af": 1
+            },
+            {
+              "pin": "PH12",
+              "signal": "BKIN",
+              "af": 1
+            },
+            {
+              "pin": "PH6",
+              "signal": "CH3N",
+              "af": 1
+            },
+            {
+              "pin": "PH7",
+              "signal": "CH3",
+              "af": 1
+            },
+            {
+              "pin": "PH8",
+              "signal": "CH2N",
+              "af": 1
+            },
+            {
+              "pin": "PH9",
+              "signal": "CH2",
+              "af": 1
+            }
+          ],
+          "removed": []
+        },
+        "TIM12": {
+          "added": [
+            {
+              "pin": "PH6",
+              "signal": "CH1",
+              "af": 2
+            },
+            {
+              "pin": "PH9",
+              "signal": "CH2",
+              "af": 2
+            }
+          ],
+          "removed": []
+        },
+        "TIM5": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "CH1",
+              "af": 2
+            },
+            {
+              "pin": "PH11",
+              "signal": "CH2",
+              "af": 2
+            },
+            {
+              "pin": "PH12",
+              "signal": "CH3",
+              "af": 2
+            },
+            {
+              "pin": "PH8",
+              "signal": "ETR",
+              "af": 2
+            },
+            {
+              "pin": "PI0",
+              "signal": "CH4",
+              "af": 2
+            }
+          ],
+          "removed": []
+        },
+        "TIM8": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "CH3",
+              "af": 3
+            },
+            {
+              "pin": "PH11",
+              "signal": "CH3N",
+              "af": 3
+            },
+            {
+              "pin": "PH12",
+              "signal": "BKIN",
+              "af": 3
+            },
+            {
+              "pin": "PH12",
+              "signal": "CH4N",
+              "af": 10
+            },
+            {
+              "pin": "PH13",
+              "signal": "CH1N",
+              "af": 3
+            },
+            {
+              "pin": "PH14",
+              "signal": "CH2N",
+              "af": 3
+            },
+            {
+              "pin": "PH15",
+              "signal": "CH3N",
+              "af": 3
+            },
+            {
+              "pin": "PH6",
+              "signal": "CH1",
+              "af": 3
+            },
+            {
+              "pin": "PH7",
+              "signal": "CH1N",
+              "af": 3
+            },
+            {
+              "pin": "PH8",
+              "signal": "CH2",
+              "af": 3
+            },
+            {
+              "pin": "PH9",
+              "signal": "CH2N",
+              "af": 3
+            },
+            {
+              "pin": "PI1",
+              "signal": "BKIN2",
+              "af": 3
+            },
+            {
+              "pin": "PI2",
+              "signal": "CH4",
+              "af": 3
+            },
+            {
+              "pin": "PI3",
+              "signal": "ETR",
+              "af": 3
+            },
+            {
+              "pin": "PI4",
+              "signal": "BKIN",
+              "af": 3
+            },
+            {
+              "pin": "PI5",
+              "signal": "CH1",
+              "af": 3
+            },
+            {
+              "pin": "PI6",
+              "signal": "CH2",
+              "af": 3
+            },
+            {
+              "pin": "PI7",
+              "signal": "CH3",
+              "af": 3
+            }
+          ],
+          "removed": []
+        },
+        "UART4": {
+          "added": [
+            {
+              "pin": "PH13",
+              "signal": "TX",
+              "af": 8
+            },
+            {
+              "pin": "PH14",
+              "signal": "RX",
+              "af": 8
+            },
+            {
+              "pin": "PI9",
+              "signal": "RX",
+              "af": 8
+            }
+          ],
+          "removed": []
+        },
+        "UART8": {
+          "added": [
+            {
+              "pin": "PH13",
+              "signal": "TX",
+              "af": 7
+            }
+          ],
+          "removed": []
+        }
+      },
+      "required_supply": "smps",
+      "package_suffix": "Q",
+      "regulator_selection": "hardware_by_package",
+      "hal_supply_switch_required": false,
+      "startup_assumption": "cold_reset_with_VDDSMPS_powered_and_internal_regulator_not_bypassed",
+      "supply_source": "https://www.st.com/resource/en/application_note/an5930-guidelines-for-power-management-on-stm32h5-mcus-stmicroelectronics.pdf",
+      "supply_balls": [
+        {
+          "position": "P12",
+          "signals": [
+            "VSSSMPS"
+          ]
+        },
+        {
+          "position": "R12",
+          "signals": [
+            "VLXSMPS"
+          ]
+        },
+        {
+          "position": "R13",
+          "signals": [
+            "VDDSMPS"
+          ]
+        }
+      ],
+      "peripheral_pin_counts": {
+        "ADC1": 27,
+        "ADC2": 27,
+        "CEC": 2,
+        "CRS": 1,
+        "DAC1": 2,
+        "DCMI": 58,
+        "ETH": 34,
+        "FDCAN1": 14,
+        "FDCAN2": 6,
+        "FMC": 106,
+        "I2C1": 5,
+        "I2C2": 11,
+        "I2C3": 6,
+        "I2C4": 16,
+        "I3C1": 12,
+        "LPTIM1": 16,
+        "LPTIM2": 12,
+        "LPTIM3": 15,
+        "LPTIM4": 5,
+        "LPTIM5": 13,
+        "LPTIM6": 6,
+        "LPUART1": 7,
+        "OCTOSPI1": 51,
+        "PSSI": 65,
+        "PWR": 11,
+        "RCC": 7,
+        "RTC": 5,
+        "SAI1": 31,
+        "SAI2": 24,
+        "SDMMC1": 17,
+        "SDMMC2": 21,
+        "SPI1": 29,
+        "SPI2": 45,
+        "SPI3": 23,
+        "SPI4": 11,
+        "SPI5": 12,
+        "SPI6": 16,
+        "TAMP": 23,
+        "TIM1": 35,
+        "TIM12": 4,
+        "TIM13": 2,
+        "TIM14": 2,
+        "TIM15": 10,
+        "TIM16": 7,
+        "TIM17": 7,
+        "TIM2": 13,
+        "TIM3": 11,
+        "TIM4": 10,
+        "TIM5": 10,
+        "TIM8": 36,
+        "UART12": 12,
+        "UART4": 21,
+        "UART5": 10,
+        "UART7": 14,
+        "UART8": 7,
+        "UART9": 7,
+        "UCPD1": 8,
+        "USART1": 11,
+        "USART10": 10,
+        "USART11": 14,
+        "USART2": 14,
+        "USART3": 18,
+        "USART6": 14,
+        "USB": 3
+      }
+    },
+    "STM32H573LI": {
+      "baseline": "STM32H573ZI",
+      "baseline_sha256": "e77b101dab9aac8b2882291ab0268d4f84b9c4d3271eaa030b9dd64b998b0de8",
+      "baseline_package_group": [
+        "STM32H573ZITx",
+        "STM32H573ZITxQ"
+      ],
+      "zi_q_omitted_ip": [
+        [
+          "ETH",
+          "ETH",
+          "ethermac110_v3_0_3"
+        ]
+      ],
+      "identical_ip_instances_versions": true,
+      "ip_instances_versions": [
+        [
+          "ADC1",
+          "ADC",
+          "aditf5_v3_0_H5_Cube"
+        ],
+        [
+          "ADC2",
+          "ADC",
+          "aditf5_v3_0_H5_Cube"
+        ],
+        [
+          "AES",
+          "AES",
+          "aes3_v2_0_H5_Cube"
+        ],
+        [
+          "BOOTPATH",
+          "BOOTPATH",
+          "STM32xx"
+        ],
+        [
+          "CORDIC",
+          "CORDIC",
+          "cordic1_v1_0_Cube"
+        ],
+        [
+          "CORTEX_M33_NS",
+          "CORTEX_M33_NS",
+          "cortex_v1_0_Cube"
+        ],
+        [
+          "CORTEX_M33_S",
+          "CORTEX_M33_S",
+          "cortex_v1_0_Cube"
+        ],
+        [
+          "CRC",
+          "CRC",
+          "integtest1_v2_0"
+        ],
+        [
+          "DAC1",
+          "DAC",
+          "dacif_v5_0_Cube"
+        ],
+        [
+          "DCACHE1",
+          "DCACHE",
+          "STM32U5xx1_v0_0"
+        ],
+        [
+          "DCMI",
+          "DCMI",
+          "cci_v2_0_Cube"
+        ],
+        [
+          "DEBUG",
+          "DEBUG",
+          "STM32H5_sys_v1_1"
+        ],
+        [
+          "DTS",
+          "DTS",
+          "dts_v1_0_Cube"
+        ],
+        [
+          "ETH",
+          "ETH",
+          "ethermac110_v3_0_3"
+        ],
+        [
+          "FDCAN1",
+          "FDCAN",
+          "fdcan1_v1_1_Cube"
+        ],
+        [
+          "FDCAN2",
+          "FDCAN",
+          "fdcan1_v1_1_Cube"
+        ],
+        [
+          "FILEX",
+          "FileX",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "FLASH",
+          "flash",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "FMAC",
+          "FMAC",
+          "matrix1_v1_0_Cube"
+        ],
+        [
+          "FMC",
+          "FMC",
+          "nornand_fmc_v2_5"
+        ],
+        [
+          "GPDMA1",
+          "GPDMA",
+          "STM32H5_dma3_Cube"
+        ],
+        [
+          "GPDMA2",
+          "GPDMA",
+          "Instance2_STM32H5_dma3_Cube"
+        ],
+        [
+          "GPIO",
+          "GPIO",
+          "STM32H56x_gpio_v1_0"
+        ],
+        [
+          "GTZC",
+          "GTZC",
+          "tzsc1_v2_2_rc1_Mustang2M"
+        ],
+        [
+          "GTZC_NS",
+          "GTZC",
+          "tzsc1_v2_2_rc1_Mustang2M"
+        ],
+        [
+          "GTZC_S",
+          "GTZC",
+          "tzsc1_v2_2_rc1_Mustang2M"
+        ],
+        [
+          "GUI_INTERFACE",
+          "GUI_INTERFACE",
+          "guiinterface_STM32H5_v2.2.2_Cube"
+        ],
+        [
+          "HASH",
+          "HASH",
+          "hash1_v4_0_Cube"
+        ],
+        [
+          "HDMI_CEC",
+          "HDMI_CEC",
+          "hdmi_cec_v2_0_Cube"
+        ],
+        [
+          "I2C1",
+          "I2C",
+          "i2c2_v1_1U5_Cube"
+        ],
+        [
+          "I2C2",
+          "I2C",
+          "i2c2_v1_1U5_Cube"
+        ],
+        [
+          "I2C3",
+          "I2C",
+          "i2c2_v1_1U5_Cube"
+        ],
+        [
+          "I2C4",
+          "I2C",
+          "i2c2_v1_1U5_Cube"
+        ],
+        [
+          "I2S1",
+          "I2S",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "I2S2",
+          "I2S",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "I2S3",
+          "I2S",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "I3C1",
+          "I3C",
+          "i3c1_v1_0_Cube"
+        ],
+        [
+          "ICACHE",
+          "ICACHE",
+          "Icache_v1_0_0_Cube"
+        ],
+        [
+          "IWDG",
+          "IWDG",
+          "iwdg1_v3_0"
+        ],
+        [
+          "LEVELX",
+          "LevelX",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "LINKEDLIST",
+          "LINKEDLIST",
+          "STM32H5_linkedlist_v1_0"
+        ],
+        [
+          "LPTIM1",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM2",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM3",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM4",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM5",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPTIM6",
+          "LPTIM",
+          "H5_lptimer1_v2_2_Cube"
+        ],
+        [
+          "LPUART1",
+          "LPUART",
+          "sci3_v1_3_Cube"
+        ],
+        [
+          "MEMORYMAP",
+          "MEMORYMAP",
+          "STM32xx"
+        ],
+        [
+          "NETXDUO",
+          "NetXDuo",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "NVIC1",
+          "NVIC1",
+          "STM32H57"
+        ],
+        [
+          "NVIC2",
+          "NVIC2",
+          "STM32H57"
+        ],
+        [
+          "OCTOSPI1",
+          "OCTOSPI",
+          "octospi1_v5_1_Cube"
+        ],
+        [
+          "OTFDEC1",
+          "OTFDEC",
+          "otfdec1_v1_0_Cube"
+        ],
+        [
+          "PKA",
+          "PKA",
+          "pka32_v1_0_Cube"
+        ],
+        [
+          "PSSI",
+          "PSSI",
+          "cci_v3_0_Cube"
+        ],
+        [
+          "PWR",
+          "PWR",
+          "STM32H5_pwr_v1_0"
+        ],
+        [
+          "RAMCFG",
+          "RAMCFG",
+          "v1_0_Cube"
+        ],
+        [
+          "RCC",
+          "RCC",
+          "STM32H5_rcc_v1_0"
+        ],
+        [
+          "RNG",
+          "RNG",
+          "rng1_v4_1"
+        ],
+        [
+          "RTC",
+          "RTC",
+          "rtc2_v2_U5_Cube"
+        ],
+        [
+          "SAES",
+          "SAES",
+          "aes3_v2_0_H5_Cube"
+        ],
+        [
+          "SAI1",
+          "SAI",
+          "sai1_L5_Cube"
+        ],
+        [
+          "SAI2",
+          "SAI",
+          "sai1_L5_Cube"
+        ],
+        [
+          "SAU",
+          "SAU",
+          "sau_v2_0_Cube"
+        ],
+        [
+          "SBS",
+          "SBS",
+          "sbs_v1_1_Cube"
+        ],
+        [
+          "SDMMC1",
+          "SDMMC",
+          "sdmmc2_v2_1_h5_Cube"
+        ],
+        [
+          "SDMMC2",
+          "SDMMC",
+          "sdmmc2_v2_1_h5_Cube"
+        ],
+        [
+          "SPI1",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI2",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI3",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI4",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI5",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SPI6",
+          "SPI",
+          "spi2s3_v2_1_Cube"
+        ],
+        [
+          "SYS",
+          "SYS",
+          "STM32U5x_sys_v1_0"
+        ],
+        [
+          "SYS_S",
+          "SYS_S",
+          "STM32U5x_sys_s_v1_0"
+        ],
+        [
+          "TAMP",
+          "TAMP",
+          "STM32L5_rtc2_v2_8_Cube"
+        ],
+        [
+          "THREADX",
+          "ThreadX",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "TIM1",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM12",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM13",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM14",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM15",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM16",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM17",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM2",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM3",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM4",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM5",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM6",
+          "TIM6_7H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM7",
+          "TIM6_7H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TIM8",
+          "TIM1_8H5",
+          "gptimer2_v4_x_Cube"
+        ],
+        [
+          "TRACER_EMB",
+          "TRACER_EMB",
+          "tracer_STM32H5_v1.7.1_Cube"
+        ],
+        [
+          "UART12",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART4",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART5",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART7",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART8",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UART9",
+          "UART",
+          "sci2_v3_0_Cube"
+        ],
+        [
+          "UCPD1",
+          "UCPD",
+          "ucpd_v1_0_Cube"
+        ],
+        [
+          "USART1",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART10",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART11",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART2",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART3",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USART6",
+          "USART",
+          "sci3_v2_0_Cube"
+        ],
+        [
+          "USB",
+          "USB",
+          "usbfs_v1.0_Cube"
+        ],
+        [
+          "USBPD",
+          "USBPD",
+          "usbpd_STM32H5_v4.1_Cube"
+        ],
+        [
+          "USBX",
+          "USBX",
+          "v1.0.0_H5_Cube"
+        ],
+        [
+          "VREFBUF",
+          "VREFBUF",
+          "STM32L55_vrefbuf_v1_0"
+        ],
+        [
+          "WWDG",
+          "WWDG",
+          "wwdg1_v2_0"
+        ]
+      ],
+      "identical_die_level_metadata": true,
+      "die_level_metadata_sha256": "bb4bc1ef0b4fde258a19e3ead851f09c49252b1a819636a1b33c95a1492b4709",
+      "added_gpio": [
+        "PH2",
+        "PH3",
+        "PH4",
+        "PH5",
+        "PH6",
+        "PH7",
+        "PH8",
+        "PH9",
+        "PH10",
+        "PH11",
+        "PH12",
+        "PH13",
+        "PH14",
+        "PH15",
+        "PI0",
+        "PI1",
+        "PI2",
+        "PI3",
+        "PI4",
+        "PI5",
+        "PI6",
+        "PI7",
+        "PI8",
+        "PI9",
+        "PI10",
+        "PI11"
+      ],
+      "removed_gpio": [],
+      "pin_af_changes": {
+        "DCMI": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "D1",
+              "af": 13
+            },
+            {
+              "pin": "PH11",
+              "signal": "D2",
+              "af": 13
+            },
+            {
+              "pin": "PH12",
+              "signal": "D3",
+              "af": 13
+            },
+            {
+              "pin": "PH13",
+              "signal": "D3",
+              "af": 13
+            },
+            {
+              "pin": "PH14",
+              "signal": "D4",
+              "af": 13
+            },
+            {
+              "pin": "PH15",
+              "signal": "D11",
+              "af": 13
+            },
+            {
+              "pin": "PH6",
+              "signal": "D8",
+              "af": 13
+            },
+            {
+              "pin": "PH7",
+              "signal": "D9",
+              "af": 13
+            },
+            {
+              "pin": "PH8",
+              "signal": "HSYNC",
+              "af": 13
+            },
+            {
+              "pin": "PH9",
+              "signal": "D0",
+              "af": 13
+            },
+            {
+              "pin": "PI0",
+              "signal": "D13",
+              "af": 13
+            },
+            {
+              "pin": "PI1",
+              "signal": "D8",
+              "af": 13
+            },
+            {
+              "pin": "PI2",
+              "signal": "D9",
+              "af": 13
+            },
+            {
+              "pin": "PI3",
+              "signal": "D10",
+              "af": 13
+            },
+            {
+              "pin": "PI4",
+              "signal": "D5",
+              "af": 13
+            },
+            {
+              "pin": "PI5",
+              "signal": "VSYNC",
+              "af": 13
+            },
+            {
+              "pin": "PI6",
+              "signal": "D6",
+              "af": 13
+            },
+            {
+              "pin": "PI7",
+              "signal": "D7",
+              "af": 13
+            }
+          ],
+          "removed": []
+        },
+        "ETH": {
+          "added": [
+            {
+              "pin": "PB11",
+              "signal": "TX_EN",
+              "af": 11
+            },
+            {
+              "pin": "PH2",
+              "signal": "CRS",
+              "af": 11
+            },
+            {
+              "pin": "PH3",
+              "signal": "COL",
+              "af": 11
+            },
+            {
+              "pin": "PH6",
+              "signal": "RXD2",
+              "af": 11
+            },
+            {
+              "pin": "PH7",
+              "signal": "RXD3",
+              "af": 11
+            },
+            {
+              "pin": "PI10",
+              "signal": "RX_ER",
+              "af": 11
+            }
+          ],
+          "removed": []
+        },
+        "FDCAN1": {
+          "added": [
+            {
+              "pin": "PH13",
+              "signal": "TX",
+              "af": 9
+            },
+            {
+              "pin": "PH14",
+              "signal": "RX",
+              "af": 9
+            },
+            {
+              "pin": "PI10",
+              "signal": "RX",
+              "af": 9
+            },
+            {
+              "pin": "PI9",
+              "signal": "RX",
+              "af": 9
+            }
+          ],
+          "removed": []
+        },
+        "FMC": {
+          "added": [
+            {
+              "pin": "PH2",
+              "signal": "SDCKE0",
+              "af": 12
+            },
+            {
+              "pin": "PH3",
+              "signal": "SDNE0",
+              "af": 12
+            },
+            {
+              "pin": "PH5",
+              "signal": "SDNWE",
+              "af": 12
+            },
+            {
+              "pin": "PH6",
+              "signal": "SDNE1",
+              "af": 12
+            },
+            {
+              "pin": "PH7",
+              "signal": "SDCKE1",
+              "af": 12
+            }
+          ],
+          "removed": []
+        },
+        "I2C2": {
+          "added": [
+            {
+              "pin": "PH4",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PH5",
+              "signal": "SDA",
+              "af": 4
+            },
+            {
+              "pin": "PH6",
+              "signal": "SMBA",
+              "af": 4
+            }
+          ],
+          "removed": []
+        },
+        "I2C3": {
+          "added": [
+            {
+              "pin": "PH7",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PH8",
+              "signal": "SDA",
+              "af": 4
+            },
+            {
+              "pin": "PH9",
+              "signal": "SMBA",
+              "af": 4
+            }
+          ],
+          "removed": []
+        },
+        "I2C4": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "SMBA",
+              "af": 4
+            },
+            {
+              "pin": "PH11",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PH12",
+              "signal": "SDA",
+              "af": 4
+            }
+          ],
+          "removed": []
+        },
+        "I3C1": {
+          "added": [
+            {
+              "pin": "PH11",
+              "signal": "SCL",
+              "af": 5
+            },
+            {
+              "pin": "PH12",
+              "signal": "SDA",
+              "af": 5
+            }
+          ],
+          "removed": []
+        },
+        "LPTIM1": {
+          "added": [
+            {
+              "pin": "PH13",
+              "signal": "IN2",
+              "af": 1
+            },
+            {
+              "pin": "PH2",
+              "signal": "IN2",
+              "af": 1
+            }
+          ],
+          "removed": []
+        },
+        "OCTOSPI1": {
+          "added": [
+            {
+              "pin": "PH2",
+              "signal": "IO4",
+              "af": 9
+            },
+            {
+              "pin": "PH3",
+              "signal": "IO5",
+              "af": 9
+            }
+          ],
+          "removed": []
+        },
+        "PSSI": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "D1",
+              "af": 13
+            },
+            {
+              "pin": "PH11",
+              "signal": "D2",
+              "af": 13
+            },
+            {
+              "pin": "PH12",
+              "signal": "D3",
+              "af": 13
+            },
+            {
+              "pin": "PH13",
+              "signal": "D3",
+              "af": 13
+            },
+            {
+              "pin": "PH14",
+              "signal": "D4",
+              "af": 13
+            },
+            {
+              "pin": "PH15",
+              "signal": "D11",
+              "af": 13
+            },
+            {
+              "pin": "PH4",
+              "signal": "D14",
+              "af": 13
+            },
+            {
+              "pin": "PH6",
+              "signal": "D8",
+              "af": 13
+            },
+            {
+              "pin": "PH7",
+              "signal": "D9",
+              "af": 13
+            },
+            {
+              "pin": "PH8",
+              "signal": "DE",
+              "af": 13
+            },
+            {
+              "pin": "PH9",
+              "signal": "D0",
+              "af": 13
+            },
+            {
+              "pin": "PI0",
+              "signal": "D13",
+              "af": 13
+            },
+            {
+              "pin": "PI1",
+              "signal": "D8",
+              "af": 13
+            },
+            {
+              "pin": "PI10",
+              "signal": "D14",
+              "af": 13
+            },
+            {
+              "pin": "PI11",
+              "signal": "D15",
+              "af": 13
+            },
+            {
+              "pin": "PI2",
+              "signal": "D9",
+              "af": 13
+            },
+            {
+              "pin": "PI3",
+              "signal": "D10",
+              "af": 13
+            },
+            {
+              "pin": "PI4",
+              "signal": "D5",
+              "af": 13
+            },
+            {
+              "pin": "PI5",
+              "signal": "RDY",
+              "af": 13
+            },
+            {
+              "pin": "PI6",
+              "signal": "D6",
+              "af": 13
+            },
+            {
+              "pin": "PI7",
+              "signal": "D7",
+              "af": 13
+            }
+          ],
+          "removed": []
+        },
+        "PWR": {
+          "added": [
+            {
+              "pin": "PI8",
+              "signal": "WKUP3"
+            }
+          ],
+          "removed": []
+        },
+        "RTC": {
+          "added": [
+            {
+              "pin": "PI8",
+              "signal": "OUT2"
+            }
+          ],
+          "removed": []
+        },
+        "SAI2": {
+          "added": [
+            {
+              "pin": "PH2",
+              "signal": "SCK_B",
+              "af": 10
+            },
+            {
+              "pin": "PH3",
+              "signal": "MCLK_B",
+              "af": 10
+            },
+            {
+              "pin": "PI4",
+              "signal": "MCLK_A",
+              "af": 10
+            },
+            {
+              "pin": "PI5",
+              "signal": "SCK_A",
+              "af": 10
+            },
+            {
+              "pin": "PI6",
+              "signal": "SD_A",
+              "af": 10
+            },
+            {
+              "pin": "PI7",
+              "signal": "FS_A",
+              "af": 10
+            }
+          ],
+          "removed": []
+        },
+        "SPI2": {
+          "added": [
+            {
+              "pin": "PI0",
+              "signal": "I2S_WS",
+              "af": 5
+            },
+            {
+              "pin": "PI0",
+              "signal": "NSS",
+              "af": 5
+            },
+            {
+              "pin": "PI1",
+              "signal": "I2S_CK",
+              "af": 5
+            },
+            {
+              "pin": "PI1",
+              "signal": "SCK",
+              "af": 5
+            },
+            {
+              "pin": "PI2",
+              "signal": "I2S_SDI",
+              "af": 5
+            },
+            {
+              "pin": "PI2",
+              "signal": "MISO",
+              "af": 5
+            },
+            {
+              "pin": "PI3",
+              "signal": "I2S_SDO",
+              "af": 5
+            },
+            {
+              "pin": "PI3",
+              "signal": "MOSI",
+              "af": 5
+            },
+            {
+              "pin": "PI4",
+              "signal": "RDY",
+              "af": 7
+            }
+          ],
+          "removed": []
+        },
+        "SPI5": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "RDY",
+              "af": 5
+            },
+            {
+              "pin": "PH4",
+              "signal": "RDY",
+              "af": 5
+            },
+            {
+              "pin": "PH5",
+              "signal": "NSS",
+              "af": 5
+            },
+            {
+              "pin": "PH6",
+              "signal": "SCK",
+              "af": 5
+            },
+            {
+              "pin": "PH7",
+              "signal": "MISO",
+              "af": 5
+            },
+            {
+              "pin": "PH8",
+              "signal": "MOSI",
+              "af": 5
+            },
+            {
+              "pin": "PH9",
+              "signal": "NSS",
+              "af": 5
+            }
+          ],
+          "removed": []
+        },
+        "SPI6": {
+          "added": [
+            {
+              "pin": "PH4",
+              "signal": "RDY",
+              "af": 7
+            },
+            {
+              "pin": "PH5",
+              "signal": "RDY",
+              "af": 7
+            }
+          ],
+          "removed": []
+        },
+        "TAMP": {
+          "added": [
+            {
+              "pin": "PI11",
+              "signal": "IN4"
+            },
+            {
+              "pin": "PI11",
+              "signal": "OUT5"
+            },
+            {
+              "pin": "PI8",
+              "signal": "IN2"
+            },
+            {
+              "pin": "PI8",
+              "signal": "OUT3"
+            }
+          ],
+          "removed": []
+        },
+        "TIM1": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "CH1N",
+              "af": 1
+            },
+            {
+              "pin": "PH11",
+              "signal": "CH1",
+              "af": 1
+            },
+            {
+              "pin": "PH12",
+              "signal": "BKIN",
+              "af": 1
+            },
+            {
+              "pin": "PH6",
+              "signal": "CH3N",
+              "af": 1
+            },
+            {
+              "pin": "PH7",
+              "signal": "CH3",
+              "af": 1
+            },
+            {
+              "pin": "PH8",
+              "signal": "CH2N",
+              "af": 1
+            },
+            {
+              "pin": "PH9",
+              "signal": "CH2",
+              "af": 1
+            }
+          ],
+          "removed": []
+        },
+        "TIM12": {
+          "added": [
+            {
+              "pin": "PH6",
+              "signal": "CH1",
+              "af": 2
+            },
+            {
+              "pin": "PH9",
+              "signal": "CH2",
+              "af": 2
+            }
+          ],
+          "removed": []
+        },
+        "TIM5": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "CH1",
+              "af": 2
+            },
+            {
+              "pin": "PH11",
+              "signal": "CH2",
+              "af": 2
+            },
+            {
+              "pin": "PH12",
+              "signal": "CH3",
+              "af": 2
+            },
+            {
+              "pin": "PH8",
+              "signal": "ETR",
+              "af": 2
+            },
+            {
+              "pin": "PI0",
+              "signal": "CH4",
+              "af": 2
+            }
+          ],
+          "removed": []
+        },
+        "TIM8": {
+          "added": [
+            {
+              "pin": "PH10",
+              "signal": "CH3",
+              "af": 3
+            },
+            {
+              "pin": "PH11",
+              "signal": "CH3N",
+              "af": 3
+            },
+            {
+              "pin": "PH12",
+              "signal": "BKIN",
+              "af": 3
+            },
+            {
+              "pin": "PH12",
+              "signal": "CH4N",
+              "af": 10
+            },
+            {
+              "pin": "PH13",
+              "signal": "CH1N",
+              "af": 3
+            },
+            {
+              "pin": "PH14",
+              "signal": "CH2N",
+              "af": 3
+            },
+            {
+              "pin": "PH15",
+              "signal": "CH3N",
+              "af": 3
+            },
+            {
+              "pin": "PH6",
+              "signal": "CH1",
+              "af": 3
+            },
+            {
+              "pin": "PH7",
+              "signal": "CH1N",
+              "af": 3
+            },
+            {
+              "pin": "PH8",
+              "signal": "CH2",
+              "af": 3
+            },
+            {
+              "pin": "PH9",
+              "signal": "CH2N",
+              "af": 3
+            },
+            {
+              "pin": "PI1",
+              "signal": "BKIN2",
+              "af": 3
+            },
+            {
+              "pin": "PI2",
+              "signal": "CH4",
+              "af": 3
+            },
+            {
+              "pin": "PI3",
+              "signal": "ETR",
+              "af": 3
+            },
+            {
+              "pin": "PI4",
+              "signal": "BKIN",
+              "af": 3
+            },
+            {
+              "pin": "PI5",
+              "signal": "CH1",
+              "af": 3
+            },
+            {
+              "pin": "PI6",
+              "signal": "CH2",
+              "af": 3
+            },
+            {
+              "pin": "PI7",
+              "signal": "CH3",
+              "af": 3
+            }
+          ],
+          "removed": []
+        },
+        "UART4": {
+          "added": [
+            {
+              "pin": "PH13",
+              "signal": "TX",
+              "af": 8
+            },
+            {
+              "pin": "PH14",
+              "signal": "RX",
+              "af": 8
+            },
+            {
+              "pin": "PI9",
+              "signal": "RX",
+              "af": 8
+            }
+          ],
+          "removed": []
+        },
+        "UART8": {
+          "added": [
+            {
+              "pin": "PH13",
+              "signal": "TX",
+              "af": 7
+            }
+          ],
+          "removed": []
+        }
+      },
+      "required_supply": "smps",
+      "package_suffix": "Q",
+      "regulator_selection": "hardware_by_package",
+      "hal_supply_switch_required": false,
+      "startup_assumption": "cold_reset_with_VDDSMPS_powered_and_internal_regulator_not_bypassed",
+      "supply_source": "https://www.st.com/resource/en/application_note/an5930-guidelines-for-power-management-on-stm32h5-mcus-stmicroelectronics.pdf",
+      "supply_balls": [
+        {
+          "position": "P12",
+          "signals": [
+            "VSSSMPS"
+          ]
+        },
+        {
+          "position": "R12",
+          "signals": [
+            "VLXSMPS"
+          ]
+        },
+        {
+          "position": "R13",
+          "signals": [
+            "VDDSMPS"
+          ]
+        }
+      ],
+      "peripheral_pin_counts": {
+        "ADC1": 27,
+        "ADC2": 27,
+        "CEC": 2,
+        "CRS": 1,
+        "DAC1": 2,
+        "DCMI": 58,
+        "ETH": 34,
+        "FDCAN1": 14,
+        "FDCAN2": 6,
+        "FMC": 106,
+        "I2C1": 5,
+        "I2C2": 11,
+        "I2C3": 6,
+        "I2C4": 16,
+        "I3C1": 12,
+        "LPTIM1": 16,
+        "LPTIM2": 12,
+        "LPTIM3": 15,
+        "LPTIM4": 5,
+        "LPTIM5": 13,
+        "LPTIM6": 6,
+        "LPUART1": 7,
+        "OCTOSPI1": 51,
+        "PSSI": 65,
+        "PWR": 11,
+        "RCC": 7,
+        "RTC": 5,
+        "SAI1": 31,
+        "SAI2": 24,
+        "SDMMC1": 17,
+        "SDMMC2": 21,
+        "SPI1": 29,
+        "SPI2": 45,
+        "SPI3": 23,
+        "SPI4": 11,
+        "SPI5": 12,
+        "SPI6": 16,
+        "TAMP": 23,
+        "TIM1": 35,
+        "TIM12": 4,
+        "TIM13": 2,
+        "TIM14": 2,
+        "TIM15": 10,
+        "TIM16": 7,
+        "TIM17": 7,
+        "TIM2": 13,
+        "TIM3": 11,
+        "TIM4": 10,
+        "TIM5": 10,
+        "TIM8": 36,
+        "UART12": 12,
+        "UART4": 21,
+        "UART5": 10,
+        "UART7": 14,
+        "UART8": 7,
+        "UART9": 7,
+        "UCPD1": 8,
+        "USART1": 11,
+        "USART10": 10,
+        "USART11": 14,
+        "USART2": 14,
+        "USART3": 18,
+        "USART6": 14,
+        "USB": 3
+      }
+    }
+  }
+}

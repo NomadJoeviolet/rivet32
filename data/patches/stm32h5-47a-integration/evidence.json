@@ -1,0 +1,15 @@
+{
+  "scope": "Verified combined candidate; main publication is a separate step",
+  "hil": "not-run",
+  "minimum_images": 38,
+  "peripheral_images": 216,
+  "source_records": {
+    "target/h5-47a-composition/minimum-root-review-v1/validation.json": "9faeda5eb639030ff6273ed6142e41c60f53b80a915b076a4703960bf5c1bad1",
+    "target/h5-47a-composition/peripheral-root-review-v1/validation.json": "e06b06435dcb3760ad42dc5e3eeda4e22557eada5c8f82c7088b4e8901a8a7ad",
+    "target/h5-47a-composition/pac-portable-regeneration-v1/generation.json": "e697fdf133985990fa3aaaf26a9081bcb4dd862edb4df762809dfffdd990cdf8",
+    "target/h5-47a-composition/pac-portable-replay-v1/replay.json": "d2e79003c24ccd053dfb831e5987de310ff48d209e7804373fb392b2c71a331b",
+    "target/h5-47a-composition/hal-portable-chain-v1/replay.json": "7343c2f65a4cda8f6780d4875a2a05b1a48879b7a638f9edac4774d646a54ee3"
+  },
+  "peripheral_archive_sha256": "dbacc47082f062212d9236b23d29adbce16e040dc203351836bf7d460fcd2266",
+  "capture_script_sha256": "9770a7e86d758426a47f5acdc2f41f5cd01cf079426b6ecc0da4f796855396cb"
+}

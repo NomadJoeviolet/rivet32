@@ -1,0 +1,13 @@
+{
+  "chips": 14,
+  "generator": {
+    "archive_sha256": "8b56ac7e2969e0b651662d047ae994afb5e008526425ceb8d7e8b70a03ca3071",
+    "binary_sha256": "c5c86e7d6a35ed336ecd967da88eff5941855f8914beaab133f607bf45d123d0",
+    "method": "verified previously built binary",
+    "revision": "caa36afd62510b0e6315ee0dccd1f9c65fbcac83"
+  },
+  "generator_binary_sha256": "c5c86e7d6a35ed336ecd967da88eff5941855f8914beaab133f607bf45d123d0",
+  "generator_revision": "caa36afd62510b0e6315ee0dccd1f9c65fbcac83",
+  "hal_supported": false,
+  "raw_register_getters": 506
+}

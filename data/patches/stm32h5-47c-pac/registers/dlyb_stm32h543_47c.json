@@ -1,0 +1,56 @@
+{
+  "block/DLYB": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CFGR",
+        "name": "CFGR"
+      }
+    ]
+  },
+  "fieldset/CFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "SEL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 7,
+        "name": "UNIT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 12,
+        "name": "LNG"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "LNGF"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SEN"
+      }
+    ]
+  }
+}

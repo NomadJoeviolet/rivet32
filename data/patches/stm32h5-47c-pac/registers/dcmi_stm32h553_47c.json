@@ -1,0 +1,296 @@
+{
+  "block/DCMI": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "name": "RISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "name": "MISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "ESCR",
+        "name": "ESCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "ESUR",
+        "name": "ESUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "name": "CWSTRTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "name": "CWSIZER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "DR",
+        "name": "DR"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CAPTURE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CM"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CROP"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "JPEG"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ESS"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "PCKPOL"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "HSPOL"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "VSPOL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "FCRC"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 2,
+        "name": "EDM"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "ENABLE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "BSM"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "OEBS"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "LSM"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "OELS"
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "BYTE0"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "BYTE1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "BYTE2"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "BYTE3"
+      }
+    ]
+  },
+  "fieldset/ESCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "FSC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "LSC"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "LEC"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "FEC"
+      }
+    ]
+  },
+  "fieldset/ESUR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "FSU"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "LSU"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "LEU"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "FEU"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FRAME_ISC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OVR_ISC"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERR_ISC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "VSYNC_ISC"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "LINE_ISC"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FRAME_IE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OVR_IE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERR_IE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "VSYNC_IE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "LINE_IE"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "HSYNC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "VSYNC"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FNE"
+      }
+    ]
+  }
+}

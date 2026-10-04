@@ -1,0 +1,63 @@
+{
+  "st_revision": "7d1f1514ed5583ec5007ad91236b4e1d377295b1",
+  "cmsis_revision": "2352e888e821aa0f4fe549bd5ea81d29c67a3222",
+  "pac_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "generator_revision": "caa36afd62510b0e6315ee0dccd1f9c65fbcac83",
+  "generator_archive_sha256": "8b56ac7e2969e0b651662d047ae994afb5e008526425ceb8d7e8b70a03ca3071",
+  "files": {
+    "STM32F723RCVx.xml": {
+      "sha256": "88b7bc83af469788c5356b0ea175dc3a7e669fb0c1e82d7d0f7f79a5926f2564",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32F723RCVx.xml"
+    },
+    "STM32F723REVx.xml": {
+      "sha256": "c8fa4ee60f9b36585f642c6600196e498951336ae704a3de9090c37a45d8155d",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32F723REVx.xml"
+    },
+    "STM32F723V(C-E)Tx.xml": {
+      "sha256": "80e2cfa825c98a5b48eacf0a646b851513628eb26268b7103e262ce4fb839487",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32F723V(C-E)Tx.xml"
+    },
+    "STM32F723V(C-E)Yx.xml": {
+      "sha256": "274b263ff1b0ddf6a9b25d185aaa7eee2cd1c5d8e086d152ef3e5126dbfafd7f",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32F723V(C-E)Yx.xml"
+    },
+    "GPIO-STM32F72x_gpio_v1_0_Modes.xml": {
+      "sha256": "435dd0a314f775c2349a69e948a22d4331e0eedcb927150f1de4c3ae67d9ac26",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/IP/GPIO-STM32F72x_gpio_v1_0_Modes.xml"
+    },
+    "ST-LICENSE": {
+      "sha256": "2e80479026d27db007f8bdd190860e4b0452ca30d622ef4c04084b064418a096",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/LICENSE"
+    },
+    "stm32f723xx.h": {
+      "sha256": "f6cbe6bdfa72bf9e90de761333d3380beb3d7be5b91a89d70344cb9f96ca1c61",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-f7/2352e888e821aa0f4fe549bd5ea81d29c67a3222/Include/stm32f723xx.h"
+    },
+    "CMSIS-ST-LICENSE": {
+      "sha256": "44fd163ed2e04fe99f519f1093c2c39b21d9cc9371071de902ff0c2c8c3c57dc",
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-f7/2352e888e821aa0f4fe549bd5ea81d29c67a3222/LICENSE.md"
+    }
+  },
+  "documents": {
+    "DS11853 Rev9": {
+      "official_url": "https://www.st.com/resource/en/datasheet/stm32f723ie.pdf",
+      "cache_path": "data/sources/stm32-gaps/stm32f723-rev9.pdf",
+      "sha256": "25e8b094853890df20d8c7cb2e7fb37b780d34fbe88422aa65a113db9f908f73",
+      "evidence_pages": [
+        15,
+        16,
+        29,
+        45,
+        63,
+        80,
+        221
+      ],
+      "note": "ST-authored DS11853 Rev9; mirror URL recovered from docs/stm32-gaps.md and reverified on 2026-09-30. Its 6,678,029 bytes match the recorded SHA-256 and retain the Arrow footer. The ST endpoint currently returns different PDF bytes; the fixed evidence hash is unchanged. PDF copyright remains with ST; retrieve explicitly into the ignored local cache.",
+      "retrieved_mirror_url": "https://static.chipdip.ru/lib/694/DOC030694347.pdf"
+    },
+    "ST preliminary updates": {
+      "url": "https://community.st.com/stm32-mcus-60/stm32-mcu-datasheets-expected-preliminary-updates-127810",
+      "note": "Prior audit found DS11853 Table10 VQFPN68 column planned 2025-12 and thermal row planned 2026-03; does not settle full ordering/temperature options."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+[package]
+name = "embodied-devices"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+embodied-core.workspace = true
+embodied-algorithms.workspace = true
+heapless.workspace = true
+libm.workspace = true

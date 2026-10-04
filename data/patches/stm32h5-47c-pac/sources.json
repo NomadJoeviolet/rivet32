@@ -1,0 +1,247 @@
+{
+  "files": {
+    "DFP-LICENSE": {
+      "bytes": 11357,
+      "license": "Apache-2.0",
+      "origin": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32H5xx_DFP/f954be2f9afd93c90a2c47d6c339a67a7569ed77/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "LICENSE-APACHE": {
+      "bytes": 11048,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/embassy/ae9e6f0672af84cec8e200a94c574041844396f0/LICENSE-APACHE",
+      "sha256": "5299622e84aeae35539a7b08ec1c81f1a952f92221a298e5acbcf77936ec048b"
+    },
+    "LICENSE-MIT": {
+      "bytes": 1092,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/embassy/ae9e6f0672af84cec8e200a94c574041844396f0/LICENSE-MIT",
+      "sha256": "ac59f2b9077719f3ef8de5e20b10c5ceb5206693d2ed42573f9de56752898834"
+    },
+    "ST-LICENSE": {
+      "bytes": 1526,
+      "origin": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/LICENSE",
+      "sha256": "2e80479026d27db007f8bdd190860e4b0452ca30d622ef4c04084b064418a096"
+    },
+    "STM32H543.svd.gz": {
+      "bytes": 390518,
+      "license": "Apache-2.0",
+      "origin": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32H5xx_DFP/f954be2f9afd93c90a2c47d6c339a67a7569ed77/CMSIS/SVD/STM32H543.svd",
+      "sha256": "43c5e84c5d1330f93b6218b46a8e58833d6e6cbb29ea0be339590a0896cf8231",
+      "uncompressed_sha256": "9571acad704f57f386fee820d30d64b83986d658ca2a593701c235915c5f1265"
+    },
+    "STM32H553.svd.gz": {
+      "bytes": 400398,
+      "license": "Apache-2.0",
+      "origin": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32H5xx_DFP/f954be2f9afd93c90a2c47d6c339a67a7569ed77/CMSIS/SVD/STM32H553.svd",
+      "sha256": "caded2f61f1bacbc7efd53b41659361e789e75f4314bf77a5d72f83f8f6e479c",
+      "uncompressed_sha256": "4df1988ac977a77714bd292649301336b3fc5bd710bc8dbc0ee8dae328a8b7f7"
+    },
+    "baseline-chip.json": {
+      "bytes": 275582,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/chips/STM32H563ZI.json",
+      "sha256": "e0b43fb5e23668a21911ab2080af7156ad77dbe952edcdc223ef350f4f431a58"
+    },
+    "clock-names/stm32h5xx_hal_rcc.c": {
+      "bytes": 69250,
+      "license": "BSD-3-Clause",
+      "license_file": "fdcan-ram/LICENSE",
+      "origin": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Src/stm32h5xx_hal_rcc.c",
+      "sha256": "fdcb17dc3486b0a9c732e346dbc25954ff7943093ea95b679849b343a556ed60"
+    },
+    "clock-names/stm32h5xx_hal_rcc_ex.c": {
+      "bytes": 253548,
+      "license": "BSD-3-Clause",
+      "license_file": "fdcan-ram/LICENSE",
+      "origin": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Src/stm32h5xx_hal_rcc_ex.c",
+      "sha256": "cea9702155e6b538c985af37ee9870686f7d6fd67601499605f6898c9522ffa8"
+    },
+    "crs-audit/EVIDENCE.md": {
+      "bytes": 10607,
+      "origin": "Exact ST CMSIS/HAL GCC audit; source identities and procedure in crs-audit/provenance.json and audit.py",
+      "sha256": "54bb3e730e10396b28e93a47ec7d47163612d4d30d186c4727482f0b57826990"
+    },
+    "crs-audit/STM32H543.json": {
+      "bytes": 296062,
+      "origin": "Exact ST CMSIS/HAL GCC audit; source identities and procedure in crs-audit/provenance.json and audit.py",
+      "sha256": "457a66e4e42150b27df2f41bece74d756981b35e241043fbecf9d58b9f8c04ef"
+    },
+    "crs-audit/STM32H553.json": {
+      "bytes": 296062,
+      "origin": "Exact ST CMSIS/HAL GCC audit; source identities and procedure in crs-audit/provenance.json and audit.py",
+      "sha256": "55a4625dfd414de76d858a23bacf57a793aa58163c9e67bff4ab79b06933ada7"
+    },
+    "crs-audit/STM32H563.json": {
+      "bytes": 269066,
+      "origin": "Exact ST CMSIS/HAL GCC audit; source identities and procedure in crs-audit/provenance.json and audit.py",
+      "sha256": "09e779804f7b8d84eef0cd1b95d6c41bb56b7633bdd09ffb2511a3a450a6e01a"
+    },
+    "crs-audit/audit.py": {
+      "bytes": 7832,
+      "origin": "Exact ST CMSIS/HAL GCC audit; source identities and procedure in crs-audit/provenance.json and audit.py",
+      "sha256": "986b53d9e3805fc59a90ed6be2c2d81d32e6781f4a13bb07755134c221063b90"
+    },
+    "crs-audit/comparison.json": {
+      "bytes": 56252,
+      "origin": "Exact ST CMSIS/HAL GCC audit; source identities and procedure in crs-audit/provenance.json and audit.py",
+      "sha256": "7863a6e1efbab66e1e2f83aa58700ce2b64229cd853c9d6db210fb49d8f20a41"
+    },
+    "crs-audit/provenance.json": {
+      "bytes": 1997,
+      "origin": "Exact ST CMSIS/HAL GCC audit; source identities and procedure in crs-audit/provenance.json and audit.py",
+      "sha256": "3264630b9cab50542c03dfe1bdcb5b87c2ce65d0c402687012199af4aa3c3782"
+    },
+    "derived-inputs/sources.json": {
+      "bytes": 1614,
+      "origin": "Manifest of four exact Git blobs from e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+      "sha256": "5f00faf811afa7b639fdff1692b9a1fc60721da3858f46565ecfdafe191388e8"
+    },
+    "derived-inputs/spi_v5_i2s.json": {
+      "bytes": 29366,
+      "git_blob": "a5ddd1c4ebe2e1c614c7bf846da5838fcc8c915f",
+      "origin": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/spi_v5_i2s.json",
+      "sha256": "f2e69b61cbcd8e1bb1b1b9d1d0ffafdbeb70b60d81ea5bc07468d751501cc986"
+    },
+    "derived-inputs/timer_v2.json": {
+      "bytes": 91960,
+      "git_blob": "918d05e8974503ada4884ef5bffdbf567276bc39",
+      "origin": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/timer_v2.json",
+      "sha256": "5b297e99fd132e86f5e5579b07d95ae17e5c3012c2200dea3eb51e9cb1d65cef"
+    },
+    "derived-inputs/usb_v4.json": {
+      "bytes": 42512,
+      "git_blob": "b36a2e07d223e049173a4bc4899a8839a415075a",
+      "origin": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usb_v4.json",
+      "sha256": "3ec9c199be7044abaed9a60165fdc19e281569ff69dcbfec153fc5a105eb626d"
+    },
+    "derived-inputs/usbram_32_2048.json": {
+      "bytes": 274,
+      "git_blob": "4e5a825776529439dca8be39bff105eacdc5d457",
+      "origin": "https://github.com/embassy-rs/stm32-data-generated/blob/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usbram_32_2048.json",
+      "sha256": "44cc20b5c82f6db8238a1b66b191961f2bb06dfd928732865c1e0b1079c4f7f5"
+    },
+    "fdcan-ram/EVIDENCE.md": {
+      "bytes": 4713,
+      "origin": "Original fixed ST source investigation and four GCC cases; source paths recorded in EVIDENCE.md",
+      "sha256": "5318faa8bec0979be7d90985600e58b38daf0508b4e9b9a695de582182cad53b"
+    },
+    "fdcan-ram/LICENSE": {
+      "bytes": 1484,
+      "license": "BSD-3-Clause",
+      "origin": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/LICENSE.md",
+      "sha256": "3ef135517604c828e7e2ac60daa5d34ce90a258dd0dfbec140651ac173b45ced"
+    },
+    "fdcan-ram/source-lock.json": {
+      "bytes": 788,
+      "origin": "Original fixed ST source investigation and four GCC cases; source paths recorded in EVIDENCE.md",
+      "sha256": "97f18560ce2365b50299ccbd77b9e86353fd327a6ef720baa2e48923b0d6e9d8"
+    },
+    "fdcan-ram/stm32h5xx_hal_fdcan.c": {
+      "bytes": 122981,
+      "license": "BSD-3-Clause",
+      "origin": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Src/stm32h5xx_hal_fdcan.c",
+      "revision": "ba20038d938ecc31399e49d60fa6bcc8e82db5da",
+      "sha256": "a430429a327511cf96203dcebd45a1ab8491d1f09ecb19027333b718c3f35b53"
+    },
+    "fdcan-ram/stm32h5xx_hal_fdcan.h": {
+      "bytes": 79977,
+      "license": "BSD-3-Clause",
+      "origin": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_fdcan.h",
+      "revision": "ba20038d938ecc31399e49d60fa6bcc8e82db5da",
+      "sha256": "c1a5f502a56f11dbc3f263c018f40a4b8d3b3208166b3c93aaacacc5d8ed9a94"
+    },
+    "fdcan-ram/verified-layout.json": {
+      "bytes": 3625,
+      "origin": "Original fixed ST source investigation and four GCC cases; source paths recorded in EVIDENCE.md",
+      "sha256": "75ef825e1daafc8a9382769d7a97629b74d805701311c3542d307ba15cba4d13"
+    },
+    "fdcan-ram/verify_layout.py": {
+      "bytes": 4052,
+      "origin": "Original fixed ST source investigation and four GCC cases; source paths recorded in EVIDENCE.md",
+      "sha256": "4c7cf92929ad06c3036f7f55758c759eeb5df0a60fd691be5800b9a86fdf268e"
+    },
+    "pac-Cargo.lock": {
+      "bytes": 6623,
+      "origin": "Cargo resolution for pinned generated manifest with Rust 1.98.1; frozen before replay validation",
+      "sha256": "f65460e535b47ab77f06face2299950ba55804617f6c7b2a108e6417b8e57800"
+    },
+    "registers/can_fdcan_v1.json": {
+      "bytes": 55718,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/can_fdcan_v1.json",
+      "sha256": "aa0e23c556e7e7cf290b764d6b49a16db1f756f167c78a06a668e682b07adf0d"
+    },
+    "registers/crs_v1.json": {
+      "bytes": 5190,
+      "git_blob": "c0acdc49e5c59d6d63d9acc1ae61df6777d76fd0",
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/crs_v1.json",
+      "sha256": "aa23ad6c0be1d83babbb03fc6cde3ff5093a072a78fef5b2db1116068ae33465"
+    },
+    "registers/dcache_v1.json": {
+      "bytes": 7932,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/dcache_v1.json",
+      "sha256": "f0803678af209941e16fe6ef70e0b7d294e2a43f9a2ffc982ba401bdf312fabe"
+    },
+    "registers/fdcanram_v1.json": {
+      "bytes": 1172,
+      "git_blob": "19523c5d7c5598071083edde6a6346fc99a07e2c",
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/fdcanram_v1.json",
+      "sha256": "b7c009af84bfa8efe3c354507a50aa45b46b65475e7018364a1acc8f0d80f0d5"
+    },
+    "registers/flash_h5.json": {
+      "bytes": 72169,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/flash_h5.json",
+      "sha256": "28f79c093d3bdcd8f99b0b7eece17b5b02e9ec179e783332c3dd38bfcb661fa6"
+    },
+    "registers/gpdma_v1.json": {
+      "bytes": 44014,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/gpdma_v1.json",
+      "sha256": "aac9d75c479347e4e5c1cfc572358dcc4311d3c8a7410fb5dd0af9e6560841b3"
+    },
+    "registers/gpio_v2.json": {
+      "bytes": 7656,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/gpio_v2.json",
+      "sha256": "ca5b97f7cb10eec36190d4942d5ca0cca731b01899dc64012ef4df6ffc3f550a"
+    },
+    "registers/icache_v1_4crr.json": {
+      "bytes": 6493,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/icache_v1_4crr.json",
+      "sha256": "0eebb426cd20ea2b49dd01cc411973522bd1b0894450fcfdd48f8ef4dadb2b41"
+    },
+    "registers/pwr_h5.json": {
+      "bytes": 24143,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/pwr_h5.json",
+      "sha256": "1274dcab440fb8b2369b7c834245e735093a864d494153468e05abfa386fcbcf"
+    },
+    "registers/rcc_h5.json": {
+      "bytes": 177300,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/rcc_h5.json",
+      "sha256": "310c416e189c66a4ec73bf2fb12da75b0136a83396d9eb0089dca3ac0fd43889"
+    },
+    "registers/usart_v4.json": {
+      "bytes": 28241,
+      "origin": "https://raw.githubusercontent.com/embassy-rs/stm32-data-generated/e463add8cc54375f61c6f5f83d6b589e7fc68be2/data/registers/usart_v4.json",
+      "sha256": "ccbcba5f9976ea04e4c85b01a824cca394e81a6911ed0a31cef8246f5cde330f"
+    }
+  },
+  "frozen_inputs": {
+    "evidence.json": "6d6ddcb0ecf44614c819340bd8b454b1dfbcb55b1ba0434ecbfe3b670e6c5b7a",
+    "register-inputs/STM32H543.json": "6128a63d74c721b0c28e3aa3b18c82721dc046d37a75c58869b25512694f53b2",
+    "register-inputs/STM32H553.json": "30517276f863291f0815a05d1e9318f6aa81e2a172da967be1a445c1b721d13b",
+    "sources.json": "8efda0e140252cb56b3bb3bf20defd013622158810fce510279227dec312b43b",
+    "sources/stm32h543xx.h": "cf3492b9f8c38102e38ecbd0f7101029ae617c7041089cd49331550d71daad51",
+    "sources/stm32h553xx.h": "b0d412088d7bf0e3728e0fe0349910ca2c0aef1f42bd5a0bf422a77e3d166433",
+    "sources/stm32h563xx.h": "563aeb7a90e100821f740efedc564ff0a5d992469c43b8ed3f2b612b8878626b",
+    "sources/stm32h5xx_hal_flash.h": "ed62c21fe7d846569f7ea361e010b7df3180a96c00ba532845825e7bff623975",
+    "sources/stm32h5xx_hal_flash_ex.h": "7620baf2c3496b893169114d90d371249417e5cdb0b92719ea7debd553ca044c"
+  },
+  "generator": {
+    "archive_sha256": "8b56ac7e2969e0b651662d047ae994afb5e008526425ceb8d7e8b70a03ca3071",
+    "build_command": "cargo +1.98.1 build -p stm32-metapac-gen --locked",
+    "observed_windows_executable_sha256": "c5c86e7d6a35ed336ecd967da88eff5941855f8914beaab133f607bf45d123d0",
+    "profile": "debug",
+    "revision": "caa36afd62510b0e6315ee0dccd1f9c65fbcac83",
+    "url": "https://codeload.github.com/embassy-rs/stm32-data/zip/caa36afd62510b0e6315ee0dccd1f9c65fbcac83",
+    "verified_extracted_source_files": 788
+  },
+  "pac_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "schema": 1,
+  "svd_revision": "f954be2f9afd93c90a2c47d6c339a67a7569ed77"
+}

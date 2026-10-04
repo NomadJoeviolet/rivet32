@@ -1,0 +1,86 @@
+{
+  "dfp": {
+    "repository": "Open-CMSIS-Pack/STM32G4xx_DFP",
+    "revision": "697d2262d1986b449fbe9329882bf206171d88f9",
+    "selected": [
+      {
+        "path": "Keil.STM32G4xx_DFP.pdsc",
+        "url": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32G4xx_DFP/697d2262d1986b449fbe9329882bf206171d88f9/Keil.STM32G4xx_DFP.pdsc",
+        "sha256": "5beb24ab0827bea12fa62cb114bc48e86ee5e2e78a695a5c5f2bcbb47a279b36",
+        "bytes": 131455
+      },
+      {
+        "path": "LICENSE-Apache-2.0",
+        "url": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32G4xx_DFP/697d2262d1986b449fbe9329882bf206171d88f9/LICENSE-Apache-2.0",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      },
+      {
+        "path": "LICENSE-BSD-3-Clause",
+        "url": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32G4xx_DFP/697d2262d1986b449fbe9329882bf206171d88f9/LICENSE-BSD-3-Clause",
+        "sha256": "376c82bcef0be563bf59b93d05cfdd4b6295e4660b55b31dd8a883bf1d6637f7",
+        "bytes": 1485
+      },
+      {
+        "path": "LICENSES",
+        "url": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32G4xx_DFP/697d2262d1986b449fbe9329882bf206171d88f9/LICENSES",
+        "sha256": "75ea35e88fa430641941205aefd8c2c594e4e524b2ed0aaec5f4c8c3504e4db9",
+        "bytes": 13413
+      }
+    ]
+  },
+  "hal": {
+    "repository": "STMicroelectronics/stm32g4xx-hal-driver",
+    "revision": "a6001282dfacfff57e9710250f15e4333b578865",
+    "selected": [
+      {
+        "path": "Inc/stm32g4xx_hal_flash.h",
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Inc/stm32g4xx_hal_flash.h",
+        "sha256": "7bcce9a12e02de94e23343e696919874d5b7288fbb33e8e837b193626e49d14d",
+        "bytes": 46690
+      },
+      {
+        "path": "Inc/stm32g4xx_hal_flash_ex.h",
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Inc/stm32g4xx_hal_flash_ex.h",
+        "sha256": "6857115967b5b929054fd9416f2f65237559201d9ed2d4dad63088b5aa72fe9f",
+        "bytes": 2407
+      },
+      {
+        "path": "Inc/stm32g4xx_ll_rcc.h",
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Inc/stm32g4xx_ll_rcc.h",
+        "sha256": "bd54a7974fe8497de2138ae290b913d2b0c6e138d3272263622bc7a3f25febe6",
+        "bytes": 113531
+      },
+      {
+        "path": "LICENSE.md",
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/LICENSE.md",
+        "sha256": "1a0c3a2cf55d2d808048d452c6598d441f89890d62d0890147459ec6db61037a",
+        "bytes": 1484
+      },
+      {
+        "path": "Src/stm32g4xx_hal_flash.c",
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Src/stm32g4xx_hal_flash.c",
+        "sha256": "7894f8cf4a3bd8b214fc826cbb93aa9a20596cfc3c45760f6f775d79e28cbda4",
+        "bytes": 24008
+      },
+      {
+        "path": "Src/stm32g4xx_hal_flash_ex.c",
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Src/stm32g4xx_hal_flash_ex.c",
+        "sha256": "faa9d7ffa04c9072035273fdf1dedbfee1886a4f58d29f5d0b075263ef06bc30",
+        "bytes": 48966
+      },
+      {
+        "path": "Src/stm32g4xx_hal_pwr_ex.c",
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Src/stm32g4xx_hal_pwr_ex.c",
+        "sha256": "e86b738668581f6e1a2acf59010f5eceb236f94a0dc6a1a8554ddf24a6437bd4",
+        "bytes": 38165
+      },
+      {
+        "path": "Src/stm32g4xx_hal_rcc.c",
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Src/stm32g4xx_hal_rcc.c",
+        "sha256": "446b3b7319a22f118526a4665da8971ba48c0c31634a32a2215c6aa8b8a9ba3e",
+        "bytes": 51118
+      }
+    ]
+  }
+}

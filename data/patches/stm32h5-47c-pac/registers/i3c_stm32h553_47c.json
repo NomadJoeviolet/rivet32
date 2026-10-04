@@ -1,0 +1,1315 @@
+{
+  "block/I3C": {
+    "items": [
+      {
+        "access": "Write",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CFGR",
+        "name": "CFGR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 16,
+        "fieldset": "RDR",
+        "name": "RDR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 20,
+        "fieldset": "RDWR",
+        "name": "RDWR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 24,
+        "fieldset": "TDR",
+        "name": "TDR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 28,
+        "fieldset": "TDWR",
+        "name": "TDWR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "IBIDR",
+        "name": "IBIDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "TGTTDR",
+        "name": "TGTTDR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 48,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 52,
+        "fieldset": "SER",
+        "name": "SER"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 64,
+        "fieldset": "RMR",
+        "name": "RMR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 80,
+        "fieldset": "EVR",
+        "name": "EVR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 84,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 88,
+        "fieldset": "CEVR",
+        "name": "CEVR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 92,
+        "fieldset": "MISR",
+        "name": "MISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 96,
+        "fieldset": "DEVR0",
+        "name": "DEVR0"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 100,
+        "fieldset": "DEVRX",
+        "name": "DEVRX"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 144,
+        "fieldset": "MAXRLR",
+        "name": "MAXRLR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 148,
+        "fieldset": "MAXWLR",
+        "name": "MAXWLR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 160,
+        "fieldset": "TIMINGR0",
+        "name": "TIMINGR0"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 164,
+        "fieldset": "TIMINGR1",
+        "name": "TIMINGR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 168,
+        "fieldset": "TIMINGR2",
+        "name": "TIMINGR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 192,
+        "fieldset": "BCR",
+        "name": "BCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 196,
+        "fieldset": "DCR",
+        "name": "DCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 200,
+        "fieldset": "GETCAPR",
+        "name": "GETCAPR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 204,
+        "fieldset": "CRCAPR",
+        "name": "CRCAPR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 208,
+        "fieldset": "GETMXDSR",
+        "name": "GETMXDSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 212,
+        "fieldset": "EPIDR",
+        "name": "EPIDR"
+      }
+    ]
+  },
+  "fieldset/BCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "BCR"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BCR0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "BCR1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "BCR2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BCR3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "BCR4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "BCR5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "BCR6"
+      }
+    ]
+  },
+  "fieldset/CEVR": {
+    "fields": [
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "CFCF"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "CRXTGTENDF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "CERRF"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "CIBIF"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "CIBIENDF"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CCRF"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "CCRUPDF"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "CHJF"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "CWKPF"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "CGETF"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "CSTAF"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "CDAUPDF"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "CMWLUPDF"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "CMRLUPDF"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "CRSTF"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "CASUPDF"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "CINTUPDF"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "CDEFF"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "CGRPF"
+      }
+    ]
+  },
+  "fieldset/CFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CRINIT"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "NOARBH"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RSTPTRN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "EXITPTRN"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "HKSDAEN"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "HJACK"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RXDMAEN"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RXFLUSH"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RXTHRES"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TXDMAEN"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "TXFLUSH"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TXTHRES"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "SDMAEN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "SFLUSH"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "SMODE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "TMODE"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "CDMAEN"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "CFLUSH"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "FCFDIS"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "TSFSET"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "DCNT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "CCC"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "RNW"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 7,
+        "name": "ADD"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 4,
+        "name": "MTYPE"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "MEND"
+      }
+    ]
+  },
+  "fieldset/CRCAPR": {
+    "fields": [
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CAPDHOFF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "CAPGRP"
+      }
+    ]
+  },
+  "fieldset/DCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "DCR"
+      }
+    ]
+  },
+  "fieldset/DEVR0": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DAVAL"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 7,
+        "name": "DA"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IBIEN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CREN"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "HJEN"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "AS"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 2,
+        "name": "RSTACT"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "RSTVAL"
+      }
+    ]
+  },
+  "fieldset/DEVRX": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 7,
+        "name": "DA"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IBIACK"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CRACK"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "IBIDEN"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "SUSP"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "DIS"
+      }
+    ]
+  },
+  "fieldset/EPIDR": {
+    "fields": [
+      {
+        "bit_offset": 12,
+        "bit_size": 4,
+        "name": "MIPIID"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IDTSEL"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 15,
+        "name": "MIPIMID"
+      }
+    ]
+  },
+  "fieldset/EVR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CFEF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXFEF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CFNFF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SFNEF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXFNFF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RXFNEF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TXLASTF"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "RXLASTF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FCF"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RXTGTENDF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ERRF"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "IBIF"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IBIENDF"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CRF"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "CRUPDF"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "HJF"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "WKPF"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "GETF"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "STAF"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "DAUPDF"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "MWLUPDF"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "MRLUPDF"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "RSTF"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "ASUPDF"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "INTUPDF"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "DEFF"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "GRPF"
+      }
+    ]
+  },
+  "fieldset/GETCAPR": {
+    "fields": [
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "CAPPEND"
+      }
+    ]
+  },
+  "fieldset/GETMXDSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "HOFFAS"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "FMT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "RDTURN"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "TSCO"
+      }
+    ]
+  },
+  "fieldset/IBIDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "IBIDBx"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "IBIDB0"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "IBIDB1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "IBIDB2"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "IBIDB3"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CFNFIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SFNEIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXFNFIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RXFNEIE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FCIE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RXTGTENDIE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ERRIE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "IBIIE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IBIENDIE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CRIE"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "CRUPDIE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "HJIE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "WKPIE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "GETIE"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "STAIE"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "DAUPDIE"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "MWLUPDIE"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "MRLUPDIE"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "RSTIE"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "ASUPDIE"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "INTUPDIE"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "DEFIE"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "GRPIE"
+      }
+    ]
+  },
+  "fieldset/MAXRLR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "MRL"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 3,
+        "name": "IBIP"
+      }
+    ]
+  },
+  "fieldset/MAXWLR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "MWL"
+      }
+    ]
+  },
+  "fieldset/MISR": {
+    "fields": [
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CFNFMIS"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SFNEMIS"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXFNFMIS"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RXFNEMIS"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FCMIS"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RXTGTENDMIS"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ERRMIS"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "IBIMIS"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IBIENDMIS"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CRMIS"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "CRUPDMIS"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "HJMIS"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "WKPMIS"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "GETMIS"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "STAMIS"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "DAUPDMIS"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "MWLUPDMIS"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "MRLUPDMIS"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "RSTMIS"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "ASUPDMIS"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "INTUPDMIS"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "DEFMIS"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "GRPMIS"
+      }
+    ]
+  },
+  "fieldset/RDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "RDB0"
+      }
+    ]
+  },
+  "fieldset/RDWR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "RDBx"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "RDB0"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "RDB1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "RDB2"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "RDB3"
+      }
+    ]
+  },
+  "fieldset/RMR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "IBIRDCNT"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "RCODE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 7,
+        "name": "RADD"
+      }
+    ]
+  },
+  "fieldset/SER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "CODERR"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "PERR"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "STALL"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DOVR"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "COVR"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "ANACK"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "DNACK"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DERR"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "XDCNT"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "ABT"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "DIR"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "MID"
+      }
+    ]
+  },
+  "fieldset/TDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "TDB0"
+      }
+    ]
+  },
+  "fieldset/TDWR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "TDBx"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "TDB0"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "TDB1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "TDB2"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "TDB3"
+      }
+    ]
+  },
+  "fieldset/TGTTDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TGTTDCNT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "PRELOAD"
+      }
+    ]
+  },
+  "fieldset/TIMINGR0": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "SCLL_PP"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "SCLH_I3C"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "SCLL_OD"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "SCLH_I2C"
+      }
+    ]
+  },
+  "fieldset/TIMINGR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "AVAL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "ASNCR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 7,
+        "name": "FREE"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "SDA_HD"
+      }
+    ]
+  },
+  "fieldset/TIMINGR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "STALLT"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "STALLD"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "STALLC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "STALLA"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "STALLR"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "STALLS"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "STALLL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "STALL"
+      }
+    ]
+  }
+}

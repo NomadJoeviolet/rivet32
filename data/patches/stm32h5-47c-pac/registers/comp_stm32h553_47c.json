@@ -1,0 +1,154 @@
+{
+  "block/COMP": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "COMP_CFGR1",
+        "name": "CFGR1"
+      }
+    ]
+  },
+  "block/COMPOPT": {
+    "items": [
+      {
+        "access": "Read",
+        "byte_offset": 0,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "ICFR",
+        "name": "ICFR"
+      }
+    ]
+  },
+  "block/COMP_COMMON": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "name": "CFGR1_ODD"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "name": "CFGR1_EVEN"
+      }
+    ]
+  },
+  "fieldset/COMP_CFGR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "BRGEN"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SCALEN"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "POLARITY"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "WINMODE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "ITEN"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "HYST"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 2,
+        "name": "PWRMODE"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "WINOUT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "INMSEL"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "INPSEL0"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "INPSEL1"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "BLANKING"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "LOCK"
+      }
+    ]
+  },
+  "fieldset/ICFR": {
+    "fields": [
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "CC1IF"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CC2IF"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "C1VAL"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "C2VAL"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "C1IF"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "C2IF"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+[package]
+name = "embodied-runtime"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[features]
+default = []
+embassy = ["dep:embassy-sync", "dep:embassy-time"]
+
+[dependencies]
+embodied-core.workspace = true
+heapless.workspace = true
+critical-section.workspace = true
+embassy-sync = { git = "https://github.com/embassy-rs/embassy", rev = "ae9e6f0672af84cec8e200a94c574041844396f0", optional = true }
+embassy-time = { git = "https://github.com/embassy-rs/embassy", rev = "ae9e6f0672af84cec8e200a94c574041844396f0", optional = true }

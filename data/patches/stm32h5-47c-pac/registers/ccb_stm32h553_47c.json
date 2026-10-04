@@ -1,0 +1,90 @@
+{
+  "block/CCB": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 16,
+        "name": "REFTAGR"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "CCOP"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "IPRST"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "OPSTEP"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 6,
+        "name": "OPERR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "BUSY"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "TAMP_EVT0"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "TAMP_EVT1"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "TAMP_EVT2"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "TAMP_EVT3"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "TAMP_EVT4"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "TAMP_EVT5"
+      }
+    ]
+  }
+}

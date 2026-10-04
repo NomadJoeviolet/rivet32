@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "completed": true,
+  "chips": 38,
+  "files": {
+    "README.md": "d06310edf9b27a7ade485ebc8f2b8bbd786d31c2eeef3be9945a81ccc606d36b",
+    "baselines/embassy-stm32.json": "ddd78e5ad002a58645d6d16c61def89948f9280b67aac6359274014df916f2fd",
+    "baselines/stm32-metapac.json": "26bfbe325c518cbba761d12cc50ef09fa53089fab5e4a0c26d47f3daa4ba1538",
+    "changes.zip": "30f095e7b0f1215c246e6172d68072a61c291653ddec23524c74beb6181715a4",
+    "generator-inputs.zip": "4f94bcb764cf6a809a4bd7691308df9560224b4217eefe950a5a35b12702dc3a",
+    "overlay.json": "2501bc7545bbc417f773171eb5cfb34ce739ef8d57e02c9ac65067f99f9b94be",
+    "references.zip": "65d4524130aea6145d0b3748e13c6592174616dbda8ac3ce6e57105a577fc605",
+    "replay.py": "7e672da0f90fda46042fc1110417bc59039a05ef0a62940d3d17f4fca20f4e0e"
+  }
+}

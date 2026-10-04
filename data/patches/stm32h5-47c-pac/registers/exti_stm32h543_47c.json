@@ -1,0 +1,1390 @@
+{
+  "block/EXTI": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "RTSR1",
+        "name": "RTSR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "FTSR1",
+        "name": "FTSR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "SWIER1",
+        "name": "SWIER1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "RPR1",
+        "name": "RPR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "FPR1",
+        "name": "FPR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "name": "SECCFGR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "name": "PRIVCFGR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "RTSR2",
+        "name": "RTSR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "FTSR2",
+        "name": "FTSR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "SWIER2",
+        "name": "SWIER2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "fieldset": "RPR2",
+        "name": "RPR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 48,
+        "fieldset": "FPR2",
+        "name": "FPR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 52,
+        "name": "SECCFGR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 56,
+        "name": "PRIVCFGR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "RTSR3",
+        "name": "RTSR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "fieldset": "FTSR3",
+        "name": "FTSR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "SWIER3",
+        "name": "SWIER3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "fieldset": "RPR3",
+        "name": "RPR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "fieldset": "FPR3",
+        "name": "FPR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 84,
+        "name": "SECCFGR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 88,
+        "name": "PRIVCFGR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 100,
+        "fieldset": "EXTICR1",
+        "name": "EXTICR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 104,
+        "fieldset": "EXTICR2",
+        "name": "EXTICR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 108,
+        "fieldset": "EXTICR3",
+        "name": "EXTICR3"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 96,
+        "name": "EXTICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 112,
+        "fieldset": "LOCKR",
+        "name": "LOCKR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 128,
+        "fieldset": "IMR1",
+        "name": "IMR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 132,
+        "fieldset": "EMR1",
+        "name": "EMR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 144,
+        "fieldset": "IMR2",
+        "name": "IMR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 148,
+        "fieldset": "EMR2",
+        "name": "EMR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 160,
+        "fieldset": "IMR3",
+        "name": "IMR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 164,
+        "fieldset": "EMR3",
+        "name": "EMR3"
+      }
+    ]
+  },
+  "fieldset/EMR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 17,
+        "name": "EM"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EM0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "EM1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EM2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "EM3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "EM4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "EM5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "EM6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "EM7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "EM8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "EM9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "EM10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "EM11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "EM12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "EM13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "EM14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "EM15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "EM16"
+      }
+    ]
+  },
+  "fieldset/EMR2": {
+    "fields": [
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "EM46"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "EM49"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "EM50"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "EM53"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "EM58"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "EM59"
+      }
+    ]
+  },
+  "fieldset/EMR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EM64"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EM66"
+      }
+    ]
+  },
+  "fieldset/EXTICR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "EXTI0"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "EXTI1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "EXTI2"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "EXTI3"
+      }
+    ]
+  },
+  "fieldset/EXTICR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "EXTI4"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "EXTI5"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "EXTI6"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "EXTI7"
+      }
+    ]
+  },
+  "fieldset/EXTICR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "EXTI8"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "EXTI9"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "EXTI10"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "EXTI11"
+      }
+    ]
+  },
+  "fieldset/FPR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FPIF0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FPIF1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FPIF2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "FPIF3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FPIF4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "FPIF5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FPIF6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "FPIF7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "FPIF8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FPIF9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "FPIF10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "FPIF11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "FPIF12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "FPIF13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FPIF14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FPIF15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "FPIF16"
+      }
+    ]
+  },
+  "fieldset/FPR2": {
+    "fields": [
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FPIF46"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "FPIF49"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "FPIF50"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "FPIF53"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "FPIF58"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "FPIF59"
+      }
+    ]
+  },
+  "fieldset/FPR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FPIF64"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FPIF66"
+      }
+    ]
+  },
+  "fieldset/FTSR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FT0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FT1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FT2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "FT3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FT4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "FT5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FT6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "FT7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "FT8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "FT9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "FT10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "FT11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "FT12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "FT13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FT14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FT15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "FT16"
+      }
+    ]
+  },
+  "fieldset/FTSR2": {
+    "fields": [
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "FT46"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "FT49"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "FT50"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "FT53"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "FT58"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "FT59"
+      }
+    ]
+  },
+  "fieldset/FTSR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "FT64"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FT66"
+      }
+    ]
+  },
+  "fieldset/IMR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "IM"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "IM0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "IM1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "IM2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "IM3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "IM4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "IM5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "IM6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "IM7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "IM8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "IM9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "IM10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "IM11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "IM12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "IM13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "IM14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "IM15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IM16"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "IM17"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "IM18"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "IM19"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "IM20"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "IM21"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "IM22"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "IM23"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "IM24"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "IM25"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "IM26"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "IM27"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "IM28"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "IM29"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "IM30"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "IM31"
+      }
+    ]
+  },
+  "fieldset/IMR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "IM32"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "IM37"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "IM38"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "IM39"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "IM40"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "IM41"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "IM42"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "IM43"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "IM46"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "IM47"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IM48"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "IM49"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "IM50"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "IM51"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "IM53"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "IM58"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "IM59"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "IM61"
+      }
+    ]
+  },
+  "fieldset/IMR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "IM"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "IM64"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "IM65"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "IM66"
+      }
+    ]
+  },
+  "fieldset/LOCKR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LOCK"
+      }
+    ]
+  },
+  "fieldset/RPR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RPIF0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RPIF1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RPIF2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RPIF3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "RPIF4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RPIF5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "RPIF6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "RPIF7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RPIF8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RPIF9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RPIF10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "RPIF11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "RPIF12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "RPIF13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RPIF14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "RPIF15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "RPIF16"
+      }
+    ]
+  },
+  "fieldset/RPR2": {
+    "fields": [
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RPIF46"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "RPIF49"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "RPIF50"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "RPIF53"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "RPIF58"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "RPIF59"
+      }
+    ]
+  },
+  "fieldset/RPR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RPIF64"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RPIF66"
+      }
+    ]
+  },
+  "fieldset/RTSR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RT0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RT1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RT2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RT3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "RT4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RT5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "RT6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "RT7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RT8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RT9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RT10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "RT11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "RT12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "RT13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RT14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "RT15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "RT16"
+      }
+    ]
+  },
+  "fieldset/RTSR2": {
+    "fields": [
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RT46"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "RT49"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "RT50"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "RT53"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "RT58"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "RT59"
+      }
+    ]
+  },
+  "fieldset/RTSR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RT64"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RT66"
+      }
+    ]
+  },
+  "fieldset/SWIER1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWI0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SWI1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SWI2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SWI3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "SWI4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "SWI5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SWI6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "SWI7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SWI8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SWI9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "SWI10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SWI11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "SWI12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SWI13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "SWI14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "SWI15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "SWI16"
+      }
+    ]
+  },
+  "fieldset/SWIER2": {
+    "fields": [
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "SWIER46"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "SWIER49"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "SWIER50"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "SWIER53"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "SWIER58"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "SWIER59"
+      }
+    ]
+  },
+  "fieldset/SWIER3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWIER64"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SWIER66"
+      }
+    ]
+  }
+}

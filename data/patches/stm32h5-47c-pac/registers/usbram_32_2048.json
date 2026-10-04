@@ -1,0 +1,16 @@
+{
+  "block/USBRAM": {
+    "description": "USB Endpoint memory",
+    "items": [
+      {
+        "array": {
+          "len": 512,
+          "stride": 4
+        },
+        "byte_offset": 0,
+        "description": "USB Endpoint memory",
+        "name": "MEM"
+      }
+    ]
+  }
+}

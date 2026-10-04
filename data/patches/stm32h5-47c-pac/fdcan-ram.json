@@ -1,0 +1,118 @@
+{
+  "STM32H543": {
+    "addresses": {
+      "FDCANRAM1": 1073785856,
+      "FDCANRAM2": 1073786704
+    },
+    "evidence": {
+      "family": "STM32H543",
+      "gcc_oracle_sha256": "75ef825e1daafc8a9382769d7a97629b74d805701311c3542d307ba15cba4d13",
+      "hal_source_sha256": "a430429a327511cf96203dcebd45a1ab8491d1f09ecb19027333b718c3f35b53",
+      "regions": [
+        {
+          "bytes": 112,
+          "name": "FLSSA",
+          "offset": 0
+        },
+        {
+          "bytes": 64,
+          "name": "FLESA",
+          "offset": 112
+        },
+        {
+          "bytes": 216,
+          "name": "RXFIFO0",
+          "offset": 176
+        },
+        {
+          "bytes": 216,
+          "name": "RXFIFO1",
+          "offset": 392
+        },
+        {
+          "bytes": 24,
+          "name": "TXEFIFO",
+          "offset": 608
+        },
+        {
+          "bytes": 216,
+          "name": "TXBUF",
+          "offset": 632
+        }
+      ],
+      "security_domain": "NS"
+    },
+    "offsets": [
+      0,
+      112,
+      176,
+      392,
+      608,
+      632
+    ],
+    "size": 848,
+    "spec": {
+      "block": "FDCANRAM",
+      "kind": "fdcanram",
+      "version": "v1"
+    }
+  },
+  "STM32H553": {
+    "addresses": {
+      "FDCANRAM1": 1073785856,
+      "FDCANRAM2": 1073786704
+    },
+    "evidence": {
+      "family": "STM32H553",
+      "gcc_oracle_sha256": "75ef825e1daafc8a9382769d7a97629b74d805701311c3542d307ba15cba4d13",
+      "hal_source_sha256": "a430429a327511cf96203dcebd45a1ab8491d1f09ecb19027333b718c3f35b53",
+      "regions": [
+        {
+          "bytes": 112,
+          "name": "FLSSA",
+          "offset": 0
+        },
+        {
+          "bytes": 64,
+          "name": "FLESA",
+          "offset": 112
+        },
+        {
+          "bytes": 216,
+          "name": "RXFIFO0",
+          "offset": 176
+        },
+        {
+          "bytes": 216,
+          "name": "RXFIFO1",
+          "offset": 392
+        },
+        {
+          "bytes": 24,
+          "name": "TXEFIFO",
+          "offset": 608
+        },
+        {
+          "bytes": 216,
+          "name": "TXBUF",
+          "offset": 632
+        }
+      ],
+      "security_domain": "NS"
+    },
+    "offsets": [
+      0,
+      112,
+      176,
+      392,
+      608,
+      632
+    ],
+    "size": 848,
+    "spec": {
+      "block": "FDCANRAM",
+      "kind": "fdcanram",
+      "version": "v1"
+    }
+  }
+}

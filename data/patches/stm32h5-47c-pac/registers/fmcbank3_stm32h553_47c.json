@@ -1,0 +1,166 @@
+{
+  "block/FMC_BANK3": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "PCR",
+        "name": "PCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "PMEM",
+        "name": "PMEM"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "PATT",
+        "name": "PATT"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "name": "ECCR"
+      }
+    ]
+  },
+  "fieldset/PATT": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "ATTSET"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "ATTWAIT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "ATTHOLD"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "ATTHIZ"
+      }
+    ]
+  },
+  "fieldset/PCR": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "PWAITEN"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "PBKEN"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "PTYP"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "PWID"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "ECCEN"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 4,
+        "name": "TCLR"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 4,
+        "name": "TAR"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 3,
+        "name": "ECCPS"
+      }
+    ]
+  },
+  "fieldset/PMEM": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "MEMSET"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "MEMWAIT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "MEMHOLD"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "name": "MEMHIZ"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "IRS"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ILS"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "IFS"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "IREN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ILEN"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "IFEN"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "FEMPT"
+      }
+    ]
+  }
+}

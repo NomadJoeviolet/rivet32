@@ -1,0 +1,166 @@
+{
+  "block/ICACHE": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 12,
+        "fieldset": "FCR",
+        "name": "FCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 16,
+        "fieldset": "HMONR",
+        "name": "HMONR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 20,
+        "fieldset": "MMONR",
+        "name": "MMONR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "name": "CRR0"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "name": "CRR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "name": "CRR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "name": "CRR3"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CACHEINV"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WAYSEL"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "HITMEN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "MISSMEN"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "HITMRST"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "MISSMRST"
+      }
+    ]
+  },
+  "fieldset/FCR": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CBSYENDF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CERRF"
+      }
+    ]
+  },
+  "fieldset/HMONR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "HITMON"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "BSYENDIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERRIE"
+      }
+    ]
+  },
+  "fieldset/MMONR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "MISSMON"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BUSYF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "BSYENDF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERRF"
+      }
+    ]
+  }
+}

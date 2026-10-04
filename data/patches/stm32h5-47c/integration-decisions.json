@@ -1,0 +1,46 @@
+{
+  "schema": "stm32-h5-47c-integration-decisions-v1",
+  "status": "inputs_prepared_not_pac_or_hal_support",
+  "generated_chip_json": false,
+  "scope_regex": "STM32H5[45]3.*",
+  "must_precede_broad_h5_rules": true,
+  "headers": {
+    "STM32H543xx": ["STM32H543CE", "STM32H543CG", "STM32H543RE", "STM32H543RG", "STM32H543UG", "STM32H543VE", "STM32H543VG", "STM32H543ZE", "STM32H543ZG"],
+    "STM32H553xx": ["STM32H553CG", "STM32H553RG", "STM32H553UG", "STM32H553VG", "STM32H553ZG"]
+  },
+  "register_decisions": {
+    "RCC": {"action": "new_47c_version_and_HAL_clock_tree", "reason": "PLL3 registers absent; different mux/gate/reset set", "evidence": "evidence.json#/families/STM32H543/rcc_inputs"},
+    "PWR": {"action": "new_47c_field_variant", "reason": "PMCR SRAM power-down positions changed; SMPSEN removed despite same struct layout"},
+    "FLASH": {"action": "new_47c_layout_and_field_variant", "reason": "Block protection register count and sector/protection widths reduced"},
+    "DMA": {"action": "reuse_gpdma_v1_register_basis_with_exact_request_tables", "reason": "CMSIS register types and numeric macros identical to H563; requests independently preprocessed for each exact family"},
+    "GPIO": {"action": "reuse_register_basis_replace_package_pins_and_AF", "reason": "Register definitions match, but only actual bonded package signals may be instantiated"},
+    "USART": {"action": "reuse_compared_register_basis_exact_instances"},
+    "FDCAN": {"action": "reuse_compared_register_basis_exact_instances"},
+    "ICACHE": {"action": "reuse_compared_register_basis_add_47c_perimap_match"},
+    "DCACHE": {"action": "reuse_compared_register_basis_exact_instances"},
+    "RNG": {"action": "new_or_extended_v4_variant", "reason": "Latest rng_v4 NSCR.EN_OSC length 3 differs from six CMSIS fields; v3 register layout incompatible"},
+    "I3C": {"action": "extend_or_new_register_version", "reason": "MISR plus new fields and mask changes"},
+    "OCTOSPI": {"action": "new_v6_3_mapping_and_field_audit", "reason": "XML v6_3; CMSIS OCTOSPI type aliases XSPI type; changed field set"},
+    "GTZC": {"action": "exact_47c_field_variant_and_mapper_rules"},
+    "RAMCFG": {"action": "extend_or_new_variant", "reason": "WPR3 present"},
+    "HASH": {"action": "extend_or_new_variant", "reason": "Digest array shape changed"},
+    "PLAY": {"action": "new_register_block"},
+    "CCB": {"action": "new_register_block_H553_only", "reason": "H543 exposes RCC CCB field names but no CCB instance pointer"},
+    "ADC_SPI_TIM_USB_PKA": {"action": "audit_saved_differences_before_selecting_existing_or_new_versions"}
+  },
+  "upstream_conflicts": [
+    {"id": "st_hal_dma_adc3_range", "file": "sources/stm32h5xx_hal_dma.h", "line": 1156, "result": "IS_DMA_REQUEST(GPDMA1_REQUEST_ADC3) evaluates false although request 142 is explicitly defined", "retain_request": 142, "range_end_in_macro": 139},
+    {"id": "rng_v4_oscillator_count", "file": "generator-inputs.json#/files/data/registers/rng_v4.yaml", "fieldset": "NSCR", "field": "EN_OSC", "existing_length": 3, "cmsis_exact_fields": 6},
+    {"id": "errata_reference_manual_id", "source": "official-documents.json", "errata_printed_id": "RM0539", "official_index_id": "RM0481"},
+    {"id": "marketing_capacity_mismatch", "part": "STM32H543UG", "xml_flash_bytes": 1048576, "marketing_summary_kib": 512}
+  ],
+  "remaining": [
+    "Acquire/read exact RM0481 Rev5; resolve ES0683 RM0539 reference discrepancy",
+    "Check reset values, read/write side effects, supply/flash latency/PLL limits and secure configuration",
+    "Build normalized RCC mux/reset/gate metadata and IRQ-to-signal mappings",
+    "Acquire current CubeDB non-GPIO IP mode XML or replace it with audited source-derived metadata",
+    "Generate fourteen real stm32-data JSON/PAC features without chip aliasing",
+    "Implement Embassy HAL register-version dispatch and initialization; build fourteen ARM targets",
+    "Run appropriate hardware startup/peripheral validation"
+  ]
+}

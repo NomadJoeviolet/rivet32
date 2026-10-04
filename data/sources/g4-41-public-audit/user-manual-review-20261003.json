@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-10-03T03:34:49.458313+00:00",
+  "purpose": "用户提供资料的适用范围与现有 G474 元数据核对，不是新固件或全型号验收",
+  "source_files": [
+    {
+      "path": "C:/IncludeAll/Study/嵌入式的自我修养/STM32G474/stm32g4-serise-mucs-reference-manual.pdf",
+      "bytes": 39045335,
+      "sha256": "7f8c15bc667c46614e2c5ad0341b9eaa20e8d417f21b819b9f2dde7dfe1ae564",
+      "document": "RM0440",
+      "revision": 9,
+      "document_date": "2025-03",
+      "pages": 2140,
+      "text_review_pages": [
+        1,
+        75,
+        76,
+        77,
+        88,
+        89,
+        437,
+        438,
+        439,
+        440
+      ],
+      "full_text_search_pages": {
+        "G411": [],
+        "G414": []
+      }
+    },
+    {
+      "path": "C:/IncludeAll/Study/嵌入式的自我修养/STM32G474/stm32g474datasheet.pdf",
+      "bytes": 3062163,
+      "sha256": "b018e20dbe34b63a43e49365518b186ef0e0e8e899deeabc1c9f53a3a10c1add",
+      "document": "DS12288",
+      "revision": 6,
+      "document_date": "2021-11",
+      "pages": 236,
+      "text_review_pages": [
+        1,
+        2,
+        13,
+        14,
+        19,
+        20
+      ],
+      "full_text_search_pages": {
+        "G411": [],
+        "G414": []
+      }
+    },
+    {
+      "path": "C:/IncludeAll/Study/嵌入式的自我修养/STM32G474/stm32-cortexm4-mcus-and-mpus-programming-manual-stmicroelectronics.pdf",
+      "bytes": 2732268,
+      "sha256": "fb54012a46c674a26dee56bc8cdfa281315f78634f18998001144980b08d1b03",
+      "document": "PM0214",
+      "revision": 10,
+      "document_date": "2020-03",
+      "pages": 262,
+      "text_review_pages": [
+        1,
+        37,
+        38,
+        39,
+        40
+      ],
+      "full_text_search_pages": {
+        "G411": [],
+        "G414": []
+      }
+    }
+  ],
+  "rendered_pages_visually_reviewed": [
+    {
+      "path": "target/g4-user-manual-review-v1/ds12288-p20.png",
+      "sha256": "b4732bcf952ad1254be5fa29f41440986d4f2fe54511c9149b8185bd5eded946"
+    },
+    {
+      "path": "target/g4-user-manual-review-v1/pm0214-p39.png",
+      "sha256": "f2d46dc9bb426699a5f38a47db17b6684a7dbe704651621bed3ff5723327d31b"
+    },
+    {
+      "path": "target/g4-user-manual-review-v1/rm0440-p437.png",
+      "sha256": "1c69913013b401d75b9e6a75959e1794463ae9bae87ff31d71eec94dd595c494"
+    },
+    {
+      "path": "target/g4-user-manual-review-v1/rm0440-p438.png",
+      "sha256": "fb0fd00e190a6979b8f8ad134b95c2b4c5f3722814bc9c611d1d8bca61f9a3c6"
+    },
+    {
+      "path": "target/g4-user-manual-review-v1/rm0440-p440.png",
+      "sha256": "5a34226c7ba0410d0f4d133f012cf0f292a81a9c938edc56b8b96a4413dfd20d"
+    },
+    {
+      "path": "target/g4-user-manual-review-v1/rm0440-p75.png",
+      "sha256": "268fbe1c61282208a9b15f26c207d138ce23b2b83bc4f5ae2b49269f6ac3909a"
+    }
+  ],
+  "rm0440_table1_product_lines": [
+    "STM32G431",
+    "STM32G441",
+    "STM32G471",
+    "STM32G473",
+    "STM32G474",
+    "STM32G483",
+    "STM32G484",
+    "STM32G491",
+    "STM32G4A1"
+  ],
+  "g474_catalogue_matches_datasheet_device_summary": [
+    "stm32g474cb",
+    "stm32g474cc",
+    "stm32g474ce",
+    "stm32g474mb",
+    "stm32g474mc",
+    "stm32g474me",
+    "stm32g474pb",
+    "stm32g474pc",
+    "stm32g474pe",
+    "stm32g474qb",
+    "stm32g474qc",
+    "stm32g474qe",
+    "stm32g474rb",
+    "stm32g474rc",
+    "stm32g474re",
+    "stm32g474vb",
+    "stm32g474vc",
+    "stm32g474ve"
+  ],
+  "g474_memory_expected": {
+    "SRAM1": {
+      "address": "0x20000000",
+      "bytes": 81920
+    },
+    "SRAM2": {
+      "address": "0x20014000",
+      "bytes": 16384
+    },
+    "CCMRAM_ICODE": {
+      "address": "0x10000000",
+      "bytes": 32768
+    },
+    "CCMRAM_DCODE": {
+      "address": "0x20018000",
+      "bytes": 32768
+    }
+  },
+  "physical_ram_bytes": 131072,
+  "ccm_alias_rule": "CCMRAM_ICODE and CCMRAM_DCODE address the same 32768 bytes; do not add them twice.",
+  "memory_checks": [
+    {
+      "chip": "stm32g474cb",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474cb/metadata.rs",
+      "sha256": "4a0d27d0f6956c053002e81d75d562c8588a3ce29454aa9584fb96c7918af58d",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474cc",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474cc/metadata.rs",
+      "sha256": "525e10c7f3644c4443830a52744c79659d391cd3b9569c5ad7d81a4f52fba666",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474ce",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474ce/metadata.rs",
+      "sha256": "74f5c42d5ad5eb6ded18d2e874865fe8255b9a056f3b61869d904acc777e98f7",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474mb",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474mb/metadata.rs",
+      "sha256": "0759ba01a9a3fd4e6a6a9bda729590a5c2ac21464b0bbb99f6f084638dc45593",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474mc",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474mc/metadata.rs",
+      "sha256": "602ded5179ee1946ee15b3e07f476fea4e2ee3de0012f0e4f9ca984ae0892d7e",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474me",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474me/metadata.rs",
+      "sha256": "6b94612b3a9fc75b38c36d86e01d853e0702d328c22d094a674005fdec280d6b",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474pb",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474pb/metadata.rs",
+      "sha256": "0ab378f40159de68384f92f66d5f6be62208506b4521ce0f1334db30d791d72e",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474pc",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474pc/metadata.rs",
+      "sha256": "141f2c56d36b12b774348cc8cc86874cb372ef261a10b038817cab0460fce1cd",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474pe",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474pe/metadata.rs",
+      "sha256": "d591d1da7917a6a47b134c8094ff7b4ad3eebf811936d483b6b3abe527559c63",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474qb",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474qb/metadata.rs",
+      "sha256": "a04da2a2bc633e1fab9ec42173a27d34cb78ae061c4e85887c590a20c98e4328",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474qc",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474qc/metadata.rs",
+      "sha256": "3288296431322565a362bcdbe28856a11d6186cafc65953f692da66520e7128e",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474qe",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474qe/metadata.rs",
+      "sha256": "5c924847663444da49076cf4a90b5bb9a896f576c4f2f06a01c92926f4ce4adc",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474rb",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474rb/metadata.rs",
+      "sha256": "cc3210e69a67087ba68efd43b40334e4f93409462b6d78e4afe1cb16a789188f",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474rc",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474rc/metadata.rs",
+      "sha256": "5231cdadd3745848301f8a88ac8b58096849ff1e0242746557b5202c5c0850a0",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474re",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474re/metadata.rs",
+      "sha256": "9cad216fd9f0f596dfd55564e07e0cd755d8f32fc97a2b233c79dadca859da74",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474vb",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474vb/metadata.rs",
+      "sha256": "f2433e71d5443df1fbd24f4b8cb1af0ec371c9b52da4295445446605486f6e64",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474vc",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474vc/metadata.rs",
+      "sha256": "2977b302fd07c46450e3ef7c930da434dc64b96541c2bd63e72bca6f6ade35bf",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    },
+    {
+      "chip": "stm32g474ve",
+      "path": "vendor/stm32-metapac/src/chips/stm32g474ve/metadata.rs",
+      "sha256": "f9f5d7f3013bc2b2c8f674407a5e6f56046e2eeb663745a9faff693f0a5e4e9d",
+      "status": "matches-ds12288-rev6-p20",
+      "memory_layout_occurrences": {
+        "SRAM1": 2,
+        "SRAM2": 2,
+        "CCMRAM_ICODE": 2,
+        "CCMRAM_DCODE": 2
+      }
+    }
+  ],
+  "board_irq_checks": {
+    "board": {
+      "path": "App/src/boards/stm32g474ce.rs",
+      "sha256_at_review": "4bdc75ebdd810d13679c8f08673a484cb6db30e984912a11a02e40a559de2bd4",
+      "note": "路径已随模块重命名更新；哈希对应历史核对版本，不代表当前文件。"
+    },
+    "pac": {
+      "path": "vendor/stm32-metapac/src/chips/stm32g474ce/pac.rs",
+      "sha256": "c34fbd4fb23c92d6e6abecd8cbd7920e3f396a4a292fe8c8a680fd23f64e3bd8"
+    },
+    "count": 11,
+    "entries": [
+      {
+        "name": "USART1",
+        "pac_number": 37,
+        "rm0440_page": 438,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "USART2",
+        "pac_number": 38,
+        "rm0440_page": 438,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "DMA1_CHANNEL2",
+        "pac_number": 12,
+        "rm0440_page": 437,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "DMA1_CHANNEL3",
+        "pac_number": 13,
+        "rm0440_page": 437,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "FDCAN1_IT0",
+        "pac_number": 21,
+        "rm0440_page": 438,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "FDCAN1_IT1",
+        "pac_number": 22,
+        "rm0440_page": 438,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "FDCAN2_IT0",
+        "pac_number": 86,
+        "rm0440_page": 440,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "FDCAN2_IT1",
+        "pac_number": 87,
+        "rm0440_page": 440,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "FDCAN3_IT0",
+        "pac_number": 88,
+        "rm0440_page": 440,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "FDCAN3_IT1",
+        "pac_number": 89,
+        "rm0440_page": 440,
+        "status": "matches-visually-reviewed-position-column"
+      },
+      {
+        "name": "USB_LP",
+        "pac_number": 20,
+        "rm0440_page": 438,
+        "status": "matches-visually-reviewed-position-column"
+      }
+    ]
+  },
+  "programming_manual_limit": "PM0214 Rev 10 describes the Cortex-M4 core. Page 39 mentions IRQ0..IRQ81, while RM0440 Rev 9 Table 100 extends to position 101. Do not derive device IRQ inventory or memory sizes from that generic sentence.",
+  "decision": {
+    "g411_g414_backend_unblocked": false,
+    "remaining_backend_features": 23,
+    "reason": "RM0440 Table 1 omits G411/G414; DS12288 applies to G474 only; PM0214 does not specify device memory/cuts/electrical limits. Existing CMSIS/DFP/XML disagreements remain unresolved.",
+    "production_code_changed": false,
+    "firmware_rebuilt": false,
+    "hil": "not-run",
+    "pdf_copied_into_repository": false
+  }
+}

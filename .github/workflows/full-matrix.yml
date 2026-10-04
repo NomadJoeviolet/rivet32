@@ -1,0 +1,65 @@
+name: Full STM32 catalogue matrix
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  EMBODIED_CACHE_LIMIT_MIB: "1024"
+
+jobs:
+  all-chips:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          rustup toolchain install 1.98.1 --profile minimal
+          rustup target add --toolchain 1.98.1 thumbv6m-none-eabi thumbv7m-none-eabi thumbv7em-none-eabihf thumbv8m.main-none-eabihf
+      - name: Compile and link every in-scope row; report unexpected backend gaps
+        run: cargo xtask matrix --shard ${{ matrix.shard }}/8
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-matrix-${{ matrix.shard }}
+          path: target/reports/
+          if-no-files-found: error
+          retention-days: 30
+
+  all-peripherals:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install the pinned compiler and ARM targets
+        run: |
+          rustup toolchain install 1.98.1 --profile minimal
+          rustup target add --toolchain 1.98.1 thumbv6m-none-eabi thumbv7m-none-eabi thumbv7em-none-eabihf thumbv8m.main-none-eabihf
+      - run: cargo fetch --locked
+      - name: Restore pinned source documents required by PAC verification
+        run: python3 xtask/scripts/fetch_source_documents.py
+      - name: Link seven independent peripheral constructors for every selected chip
+        run: cargo xtask peripherals --shard ${{ matrix.shard }}/32
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: full-peripherals-${{ matrix.shard }}
+          include-hidden-files: true
+          path: |
+            target/peripheral-probes/reports/
+            target/peripheral-probes/projects/
+            target/peripheral-probes/source-snapshots/
+            target/peripheral-probes/summary-*.json
+          if-no-files-found: error
+          retention-days: 30

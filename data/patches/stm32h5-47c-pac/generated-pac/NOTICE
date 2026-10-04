@@ -1,0 +1,7 @@
+Independent STM32H543/H553 DIE47C PAC, 14 exact part selections.
+Generated with unchanged stm32-data caa36afd62510b0e6315ee0dccd1f9c65fbcac83, with explicit Raw access post-processing.
+Register layouts/masks: ST CMSIS H5 884b8dc78e41cbfca008363342b17f4a9e8641f7 (Apache-2.0).
+Supplementary corrected SVD: Open-CMSIS-Pack STM32H5xx_DFP f954be2f9afd93c90a2c47d6c339a67a7569ed77 (Apache-2.0).
+Packages/AF: ST STM32_open_pin_data 7d1f1514ed5583ec5007ad91236b4e1d377295b1 (BSD-3-Clause; ST-LICENSE).
+Baseline register IR and shared PAC: stm32-data-generated e463add8cc54375f61c6f5f83d6b589e7fc68be2 (MIT OR Apache-2.0).
+See sources.json and register-evidence.json in data/patches/stm32h5-47c-pac for precise corrections, provenance and limitations.

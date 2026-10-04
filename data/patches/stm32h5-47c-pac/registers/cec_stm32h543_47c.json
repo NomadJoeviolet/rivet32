@@ -1,0 +1,266 @@
+{
+  "block/CEC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CFGR",
+        "name": "CFGR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 8,
+        "fieldset": "TXDR",
+        "name": "TXDR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 12,
+        "fieldset": "RXDR",
+        "name": "RXDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "IER",
+        "name": "IER"
+      }
+    ]
+  },
+  "fieldset/CFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "SFT"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RXTOL"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "BRESTP"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "BREGEN"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "LBPEGEN"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "BRDNOGEN"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SFTOPT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 15,
+        "name": "OAR"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "LSTN"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CECEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXSOM"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "TXEOM"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RXBRIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RXENDIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RXOVRIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BREIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "SBPEIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "LBPEIE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "RXACKEIE"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "ARBLSTIE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TXBRIE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "TXENDIE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "TXUDRIE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "TXERRIE"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TXACKEIE"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RXBR"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RXEND"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RXOVR"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BRE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "SBPE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "LBPE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "RXACKE"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "ARBLST"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TXBR"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "TXEND"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "TXUDR"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "TXERR"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TXACKE"
+      }
+    ]
+  },
+  "fieldset/RXDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "RXD"
+      }
+    ]
+  },
+  "fieldset/TXDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "TXD"
+      }
+    ]
+  }
+}

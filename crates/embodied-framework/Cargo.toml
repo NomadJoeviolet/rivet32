@@ -1,0 +1,16 @@
+[package]
+name = "embodied-framework"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+embodied-core.workspace = true
+embodied-runtime.workspace = true
+embodied-algorithms.workspace = true
+embodied-devices.workspace = true
+embodied-stm32 = { workspace = true, optional = true }
+
+[features]
+default = []
+stm32 = ["dep:embodied-stm32", "embodied-runtime/embassy"]

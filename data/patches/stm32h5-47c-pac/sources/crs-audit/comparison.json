@@ -1,0 +1,1780 @@
+{
+  "STM32H543": {
+    "CRS": {
+      "identical": true,
+      "macro_counts": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0
+      },
+      "macros": {
+        "added": {},
+        "changed": {},
+        "removed": {}
+      },
+      "new_typedefs": [
+        "CRS_TypeDef"
+      ],
+      "typedefs": {
+        "added": {},
+        "changed": {},
+        "removed": {}
+      },
+      "typedefs_identical": true
+    },
+    "EXTI": {
+      "identical": false,
+      "macro_counts": {
+        "added": 152,
+        "changed": 6,
+        "removed": 156
+      },
+      "macros": {
+        "added": {
+          "EXTI_EMR2_EM58": 67108864,
+          "EXTI_EMR2_EM58_Msk": 67108864,
+          "EXTI_EMR2_EM58_Pos": 26,
+          "EXTI_EMR2_EM59": 134217728,
+          "EXTI_EMR2_EM59_Msk": 134217728,
+          "EXTI_EMR2_EM59_Pos": 27,
+          "EXTI_EMR3_EM": 5,
+          "EXTI_EMR3_EM64": 1,
+          "EXTI_EMR3_EM64_Msk": 1,
+          "EXTI_EMR3_EM64_Pos": 0,
+          "EXTI_EMR3_EM66": 4,
+          "EXTI_EMR3_EM66_Msk": 4,
+          "EXTI_EMR3_EM66_Pos": 2,
+          "EXTI_EMR3_EM_Msk": 5,
+          "EXTI_EMR3_EM_Pos": 0,
+          "EXTI_FPR2_FPIF49": 131072,
+          "EXTI_FPR2_FPIF49_Msk": 131072,
+          "EXTI_FPR2_FPIF49_Pos": 17,
+          "EXTI_FPR2_FPIF58": 67108864,
+          "EXTI_FPR2_FPIF58_Msk": 67108864,
+          "EXTI_FPR2_FPIF58_Pos": 26,
+          "EXTI_FPR2_FPIF59": 134217728,
+          "EXTI_FPR2_FPIF59_Msk": 134217728,
+          "EXTI_FPR2_FPIF59_Pos": 27,
+          "EXTI_FPR3_FPIF": 5,
+          "EXTI_FPR3_FPIF64": 1,
+          "EXTI_FPR3_FPIF64_Msk": 1,
+          "EXTI_FPR3_FPIF64_Pos": 0,
+          "EXTI_FPR3_FPIF66": 4,
+          "EXTI_FPR3_FPIF66_Msk": 4,
+          "EXTI_FPR3_FPIF66_Pos": 2,
+          "EXTI_FPR3_FPIF_Msk": 5,
+          "EXTI_FPR3_FPIF_Pos": 0,
+          "EXTI_FTSR2_FT49": 131072,
+          "EXTI_FTSR2_FT49_Msk": 131072,
+          "EXTI_FTSR2_FT49_Pos": 17,
+          "EXTI_FTSR2_FT58": 67108864,
+          "EXTI_FTSR2_FT58_Msk": 67108864,
+          "EXTI_FTSR2_FT58_Pos": 26,
+          "EXTI_FTSR2_FT59": 134217728,
+          "EXTI_FTSR2_FT59_Msk": 134217728,
+          "EXTI_FTSR2_FT59_Pos": 27,
+          "EXTI_FTSR3_FT64": 1,
+          "EXTI_FTSR3_FT64_Msk": 1,
+          "EXTI_FTSR3_FT64_Pos": 0,
+          "EXTI_FTSR3_FT66": 4,
+          "EXTI_FTSR3_FT66_Msk": 4,
+          "EXTI_FTSR3_FT66_Pos": 2,
+          "EXTI_IMR2_IM58": 67108864,
+          "EXTI_IMR2_IM58_Msk": 67108864,
+          "EXTI_IMR2_IM58_Pos": 26,
+          "EXTI_IMR2_IM59": 134217728,
+          "EXTI_IMR2_IM59_Msk": 134217728,
+          "EXTI_IMR2_IM59_Pos": 27,
+          "EXTI_IMR2_IM61": 536870912,
+          "EXTI_IMR2_IM61_Msk": 536870912,
+          "EXTI_IMR2_IM61_Pos": 29,
+          "EXTI_IMR3_IM": 7,
+          "EXTI_IMR3_IM64": 1,
+          "EXTI_IMR3_IM64_Msk": 1,
+          "EXTI_IMR3_IM64_Pos": 0,
+          "EXTI_IMR3_IM65": 2,
+          "EXTI_IMR3_IM65_Msk": 2,
+          "EXTI_IMR3_IM65_Pos": 1,
+          "EXTI_IMR3_IM66": 4,
+          "EXTI_IMR3_IM66_Msk": 4,
+          "EXTI_IMR3_IM66_Pos": 2,
+          "EXTI_IMR3_IM_Msk": 7,
+          "EXTI_IMR3_IM_Pos": 0,
+          "EXTI_PRIVENR2_PRIV58": 67108864,
+          "EXTI_PRIVENR2_PRIV58_Msk": 67108864,
+          "EXTI_PRIVENR2_PRIV58_Pos": 26,
+          "EXTI_PRIVENR2_PRIV59": 134217728,
+          "EXTI_PRIVENR2_PRIV59_Msk": 134217728,
+          "EXTI_PRIVENR2_PRIV59_Pos": 27,
+          "EXTI_PRIVENR2_PRIV61": 536870912,
+          "EXTI_PRIVENR2_PRIV61_Msk": 536870912,
+          "EXTI_PRIVENR2_PRIV61_Pos": 29,
+          "EXTI_PRIVENR3_PRIV64": 1,
+          "EXTI_PRIVENR3_PRIV64_Msk": 1,
+          "EXTI_PRIVENR3_PRIV64_Pos": 0,
+          "EXTI_PRIVENR3_PRIV65": 2,
+          "EXTI_PRIVENR3_PRIV65_Msk": 2,
+          "EXTI_PRIVENR3_PRIV65_Pos": 1,
+          "EXTI_PRIVENR3_PRIV66": 4,
+          "EXTI_PRIVENR3_PRIV66_Msk": 4,
+          "EXTI_PRIVENR3_PRIV66_Pos": 2,
+          "EXTI_RPR2_RPIF49": 131072,
+          "EXTI_RPR2_RPIF49_Msk": 131072,
+          "EXTI_RPR2_RPIF49_Pos": 17,
+          "EXTI_RPR2_RPIF58": 67108864,
+          "EXTI_RPR2_RPIF58_Msk": 67108864,
+          "EXTI_RPR2_RPIF58_Pos": 26,
+          "EXTI_RPR2_RPIF59": 134217728,
+          "EXTI_RPR2_RPIF59_Msk": 134217728,
+          "EXTI_RPR2_RPIF59_Pos": 27,
+          "EXTI_RPR3_RPIF": 5,
+          "EXTI_RPR3_RPIF64": 1,
+          "EXTI_RPR3_RPIF64_Msk": 1,
+          "EXTI_RPR3_RPIF64_Pos": 0,
+          "EXTI_RPR3_RPIF66": 4,
+          "EXTI_RPR3_RPIF66_Msk": 4,
+          "EXTI_RPR3_RPIF66_Pos": 2,
+          "EXTI_RPR3_RPIF_Msk": 5,
+          "EXTI_RPR3_RPIF_Pos": 0,
+          "EXTI_RTSR2_RT49": 131072,
+          "EXTI_RTSR2_RT49_Msk": 131072,
+          "EXTI_RTSR2_RT49_Pos": 17,
+          "EXTI_RTSR2_RT58": 67108864,
+          "EXTI_RTSR2_RT58_Msk": 67108864,
+          "EXTI_RTSR2_RT58_Pos": 26,
+          "EXTI_RTSR2_RT59": 134217728,
+          "EXTI_RTSR2_RT59_Msk": 134217728,
+          "EXTI_RTSR2_RT59_Pos": 27,
+          "EXTI_RTSR3_RT64": 1,
+          "EXTI_RTSR3_RT64_Msk": 1,
+          "EXTI_RTSR3_RT64_Pos": 0,
+          "EXTI_RTSR3_RT66": 4,
+          "EXTI_RTSR3_RT66_Msk": 4,
+          "EXTI_RTSR3_RT66_Pos": 2,
+          "EXTI_SECENR2_SEC58": 67108864,
+          "EXTI_SECENR2_SEC58_Msk": 67108864,
+          "EXTI_SECENR2_SEC58_Pos": 26,
+          "EXTI_SECENR2_SEC59": 134217728,
+          "EXTI_SECENR2_SEC59_Msk": 134217728,
+          "EXTI_SECENR2_SEC59_Pos": 27,
+          "EXTI_SECENR2_SEC61": 536870912,
+          "EXTI_SECENR2_SEC61_Msk": 536870912,
+          "EXTI_SECENR2_SEC61_Pos": 29,
+          "EXTI_SECENR3_SEC64": 1,
+          "EXTI_SECENR3_SEC64_Msk": 1,
+          "EXTI_SECENR3_SEC64_Pos": 0,
+          "EXTI_SECENR3_SEC65": 2,
+          "EXTI_SECENR3_SEC65_Msk": 2,
+          "EXTI_SECENR3_SEC65_Pos": 1,
+          "EXTI_SECENR3_SEC66": 4,
+          "EXTI_SECENR3_SEC66_Msk": 4,
+          "EXTI_SECENR3_SEC66_Pos": 2,
+          "EXTI_SWIER2_SWIER49": 131072,
+          "EXTI_SWIER2_SWIER49_Msk": 131072,
+          "EXTI_SWIER2_SWIER49_Pos": 17,
+          "EXTI_SWIER2_SWIER58": 67108864,
+          "EXTI_SWIER2_SWIER58_Msk": 67108864,
+          "EXTI_SWIER2_SWIER58_Pos": 26,
+          "EXTI_SWIER2_SWIER59": 134217728,
+          "EXTI_SWIER2_SWIER59_Msk": 134217728,
+          "EXTI_SWIER2_SWIER59_Pos": 27,
+          "EXTI_SWIER3_SWIER64_Msk": 1,
+          "EXTI_SWIER3_SWIER64_Pos": 0,
+          "EXTI_SWIER3_SWIER66": 4,
+          "EXTI_SWIER3_SWIER66_Msk": 4,
+          "EXTI_SWIER3_SWIER66_Pos": 2
+        },
+        "changed": {
+          "EXTI_EMR1_EM": {
+            "new": 131071,
+            "old": 4294967295
+          },
+          "EXTI_EMR1_EM_Msk": {
+            "new": 131071,
+            "old": 4294967295
+          },
+          "EXTI_EMR2_EM": {
+            "new": 203833344,
+            "old": 67108863
+          },
+          "EXTI_EMR2_EM_Msk": {
+            "new": 203833344,
+            "old": 67108863
+          },
+          "EXTI_IMR2_IM": {
+            "new": 805306367,
+            "old": 67108863
+          },
+          "EXTI_IMR2_IM_Msk": {
+            "new": 805306367,
+            "old": 67108863
+          }
+        },
+        "removed": {
+          "EXTI_EMR1_EM17": 131072,
+          "EXTI_EMR1_EM17_Msk": 131072,
+          "EXTI_EMR1_EM17_Pos": 17,
+          "EXTI_EMR1_EM18": 262144,
+          "EXTI_EMR1_EM18_Msk": 262144,
+          "EXTI_EMR1_EM18_Pos": 18,
+          "EXTI_EMR1_EM19": 524288,
+          "EXTI_EMR1_EM19_Msk": 524288,
+          "EXTI_EMR1_EM19_Pos": 19,
+          "EXTI_EMR1_EM20": 1048576,
+          "EXTI_EMR1_EM20_Msk": 1048576,
+          "EXTI_EMR1_EM20_Pos": 20,
+          "EXTI_EMR1_EM21": 2097152,
+          "EXTI_EMR1_EM21_Msk": 2097152,
+          "EXTI_EMR1_EM21_Pos": 21,
+          "EXTI_EMR1_EM22": 4194304,
+          "EXTI_EMR1_EM22_Msk": 4194304,
+          "EXTI_EMR1_EM22_Pos": 22,
+          "EXTI_EMR1_EM23": 8388608,
+          "EXTI_EMR1_EM23_Msk": 8388608,
+          "EXTI_EMR1_EM23_Pos": 23,
+          "EXTI_EMR1_EM24": 16777216,
+          "EXTI_EMR1_EM24_Msk": 16777216,
+          "EXTI_EMR1_EM24_Pos": 24,
+          "EXTI_EMR1_EM25": 33554432,
+          "EXTI_EMR1_EM25_Msk": 33554432,
+          "EXTI_EMR1_EM25_Pos": 25,
+          "EXTI_EMR1_EM26": 67108864,
+          "EXTI_EMR1_EM26_Msk": 67108864,
+          "EXTI_EMR1_EM26_Pos": 26,
+          "EXTI_EMR1_EM27": 134217728,
+          "EXTI_EMR1_EM27_Msk": 134217728,
+          "EXTI_EMR1_EM27_Pos": 27,
+          "EXTI_EMR1_EM28": 268435456,
+          "EXTI_EMR1_EM28_Msk": 268435456,
+          "EXTI_EMR1_EM28_Pos": 28,
+          "EXTI_EMR1_EM29": 536870912,
+          "EXTI_EMR1_EM29_Msk": 536870912,
+          "EXTI_EMR1_EM29_Pos": 29,
+          "EXTI_EMR1_EM30": 1073741824,
+          "EXTI_EMR1_EM30_Msk": 1073741824,
+          "EXTI_EMR1_EM30_Pos": 30,
+          "EXTI_EMR1_EM31": 2147483648,
+          "EXTI_EMR1_EM31_Msk": 2147483648,
+          "EXTI_EMR1_EM31_Pos": 31,
+          "EXTI_EMR2_EM32": 1,
+          "EXTI_EMR2_EM32_Msk": 1,
+          "EXTI_EMR2_EM32_Pos": 0,
+          "EXTI_EMR2_EM33": 2,
+          "EXTI_EMR2_EM33_Msk": 2,
+          "EXTI_EMR2_EM33_Pos": 1,
+          "EXTI_EMR2_EM34": 4,
+          "EXTI_EMR2_EM34_Msk": 4,
+          "EXTI_EMR2_EM34_Pos": 2,
+          "EXTI_EMR2_EM35": 8,
+          "EXTI_EMR2_EM35_Msk": 8,
+          "EXTI_EMR2_EM35_Pos": 3,
+          "EXTI_EMR2_EM36": 16,
+          "EXTI_EMR2_EM36_Msk": 16,
+          "EXTI_EMR2_EM36_Pos": 4,
+          "EXTI_EMR2_EM37": 32,
+          "EXTI_EMR2_EM37_Msk": 32,
+          "EXTI_EMR2_EM37_Pos": 5,
+          "EXTI_EMR2_EM38": 64,
+          "EXTI_EMR2_EM38_Msk": 64,
+          "EXTI_EMR2_EM38_Pos": 6,
+          "EXTI_EMR2_EM39": 128,
+          "EXTI_EMR2_EM39_Msk": 128,
+          "EXTI_EMR2_EM39_Pos": 7,
+          "EXTI_EMR2_EM40": 256,
+          "EXTI_EMR2_EM40_Msk": 256,
+          "EXTI_EMR2_EM40_Pos": 8,
+          "EXTI_EMR2_EM41": 512,
+          "EXTI_EMR2_EM41_Msk": 512,
+          "EXTI_EMR2_EM41_Pos": 9,
+          "EXTI_EMR2_EM42": 1024,
+          "EXTI_EMR2_EM42_Msk": 1024,
+          "EXTI_EMR2_EM42_Pos": 10,
+          "EXTI_EMR2_EM43": 2048,
+          "EXTI_EMR2_EM43_Msk": 2048,
+          "EXTI_EMR2_EM43_Pos": 11,
+          "EXTI_EMR2_EM44": 4096,
+          "EXTI_EMR2_EM44_Msk": 4096,
+          "EXTI_EMR2_EM44_Pos": 12,
+          "EXTI_EMR2_EM45": 8192,
+          "EXTI_EMR2_EM45_Msk": 8192,
+          "EXTI_EMR2_EM45_Pos": 13,
+          "EXTI_EMR2_EM47": 32768,
+          "EXTI_EMR2_EM47_Msk": 32768,
+          "EXTI_EMR2_EM47_Pos": 15,
+          "EXTI_EMR2_EM48": 65536,
+          "EXTI_EMR2_EM48_Msk": 65536,
+          "EXTI_EMR2_EM48_Pos": 16,
+          "EXTI_EMR2_EM51": 524288,
+          "EXTI_EMR2_EM51_Msk": 524288,
+          "EXTI_EMR2_EM51_Pos": 19,
+          "EXTI_EMR2_EM52": 1048576,
+          "EXTI_EMR2_EM52_Msk": 1048576,
+          "EXTI_EMR2_EM52_Pos": 20,
+          "EXTI_EMR2_EM54": 4194304,
+          "EXTI_EMR2_EM54_Msk": 4194304,
+          "EXTI_EMR2_EM54_Pos": 22,
+          "EXTI_EMR2_EM55": 8388608,
+          "EXTI_EMR2_EM55_Msk": 8388608,
+          "EXTI_EMR2_EM55_Pos": 23,
+          "EXTI_EMR2_EM56": 16777216,
+          "EXTI_EMR2_EM56_Msk": 16777216,
+          "EXTI_EMR2_EM56_Pos": 24,
+          "EXTI_EMR2_EM57": 33554432,
+          "EXTI_EMR2_EM57_Msk": 33554432,
+          "EXTI_EMR2_EM57_Pos": 25,
+          "EXTI_FPR2_FPIF": 2375680,
+          "EXTI_FPR2_FPIF_Msk": 2375680,
+          "EXTI_FPR2_FPIF_Pos": 12,
+          "EXTI_FTSR2_FT": 2375680,
+          "EXTI_FTSR2_FT_Msk": 2375680,
+          "EXTI_FTSR2_FT_Pos": 12,
+          "EXTI_IMR2_IM33": 2,
+          "EXTI_IMR2_IM33_Msk": 2,
+          "EXTI_IMR2_IM33_Pos": 1,
+          "EXTI_IMR2_IM34": 4,
+          "EXTI_IMR2_IM34_Msk": 4,
+          "EXTI_IMR2_IM34_Pos": 2,
+          "EXTI_IMR2_IM35": 8,
+          "EXTI_IMR2_IM35_Msk": 8,
+          "EXTI_IMR2_IM35_Pos": 3,
+          "EXTI_IMR2_IM36": 16,
+          "EXTI_IMR2_IM36_Msk": 16,
+          "EXTI_IMR2_IM36_Pos": 4,
+          "EXTI_IMR2_IM44": 4096,
+          "EXTI_IMR2_IM44_Msk": 4096,
+          "EXTI_IMR2_IM44_Pos": 12,
+          "EXTI_IMR2_IM45": 8192,
+          "EXTI_IMR2_IM45_Msk": 8192,
+          "EXTI_IMR2_IM45_Pos": 13,
+          "EXTI_IMR2_IM52": 1048576,
+          "EXTI_IMR2_IM52_Msk": 1048576,
+          "EXTI_IMR2_IM52_Pos": 20,
+          "EXTI_IMR2_IM54": 4194304,
+          "EXTI_IMR2_IM54_Msk": 4194304,
+          "EXTI_IMR2_IM54_Pos": 22,
+          "EXTI_IMR2_IM55": 8388608,
+          "EXTI_IMR2_IM55_Msk": 8388608,
+          "EXTI_IMR2_IM55_Pos": 23,
+          "EXTI_IMR2_IM56": 16777216,
+          "EXTI_IMR2_IM56_Msk": 16777216,
+          "EXTI_IMR2_IM56_Pos": 24,
+          "EXTI_IMR2_IM57": 33554432,
+          "EXTI_IMR2_IM57_Msk": 33554432,
+          "EXTI_IMR2_IM57_Pos": 25,
+          "EXTI_RPR2_RPIF": 2375680,
+          "EXTI_RPR2_RPIF_Msk": 2375680,
+          "EXTI_RPR2_RPIF_Pos": 12,
+          "EXTI_RTSR2_RT": 2375680,
+          "EXTI_RTSR2_RT_Msk": 2375680,
+          "EXTI_RTSR2_RT_Pos": 12
+        }
+      },
+      "new_typedefs": [
+        "EXTI_TypeDef"
+      ],
+      "typedefs": {
+        "added": {},
+        "changed": {
+          "EXTI_TypeDef": {
+            "new": {
+              "members": [
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR1",
+                  "offset": 0,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR1",
+                  "offset": 4,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER1",
+                  "offset": 8,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR1",
+                  "offset": 12,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR1",
+                  "offset": 16,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR1",
+                  "offset": 20,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR1",
+                  "offset": 24,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED1",
+                  "offset": 28,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR2",
+                  "offset": 32,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR2",
+                  "offset": 36,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER2",
+                  "offset": 40,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR2",
+                  "offset": 44,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR2",
+                  "offset": 48,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR2",
+                  "offset": 52,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR2",
+                  "offset": 56,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED2",
+                  "offset": 60,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR3",
+                  "offset": 64,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR3",
+                  "offset": 68,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER3",
+                  "offset": 72,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR3",
+                  "offset": 76,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR3",
+                  "offset": 80,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR3",
+                  "offset": 84,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR3",
+                  "offset": 88,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED3",
+                  "offset": 92,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "EXTICR",
+                  "offset": 96,
+                  "size": 16
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "LOCKR",
+                  "offset": 112,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED4",
+                  "offset": 116,
+                  "size": 12
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR1",
+                  "offset": 128,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR1",
+                  "offset": 132,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED5",
+                  "offset": 136,
+                  "size": 8
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR2",
+                  "offset": 144,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR2",
+                  "offset": 148,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED6",
+                  "offset": 152,
+                  "size": 8
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR3",
+                  "offset": 160,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR3",
+                  "offset": 164,
+                  "size": 4
+                }
+              ],
+              "size": 168
+            },
+            "old": {
+              "members": [
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR1",
+                  "offset": 0,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR1",
+                  "offset": 4,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER1",
+                  "offset": 8,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR1",
+                  "offset": 12,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR1",
+                  "offset": 16,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR1",
+                  "offset": 20,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR1",
+                  "offset": 24,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED1",
+                  "offset": 28,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR2",
+                  "offset": 32,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR2",
+                  "offset": 36,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER2",
+                  "offset": 40,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR2",
+                  "offset": 44,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR2",
+                  "offset": 48,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR2",
+                  "offset": 52,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR2",
+                  "offset": 56,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED2",
+                  "offset": 60,
+                  "size": 36
+                },
+                {
+                  "access": "__IO",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "EXTICR",
+                  "offset": 96,
+                  "size": 16
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "LOCKR",
+                  "offset": 112,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED3",
+                  "offset": 116,
+                  "size": 12
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR1",
+                  "offset": 128,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR1",
+                  "offset": 132,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED4",
+                  "offset": 136,
+                  "size": 8
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR2",
+                  "offset": 144,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR2",
+                  "offset": 148,
+                  "size": 4
+                }
+              ],
+              "size": 152
+            }
+          }
+        },
+        "removed": {}
+      },
+      "typedefs_identical": false
+    }
+  },
+  "STM32H553": {
+    "CRS": {
+      "identical": true,
+      "macro_counts": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0
+      },
+      "macros": {
+        "added": {},
+        "changed": {},
+        "removed": {}
+      },
+      "new_typedefs": [
+        "CRS_TypeDef"
+      ],
+      "typedefs": {
+        "added": {},
+        "changed": {},
+        "removed": {}
+      },
+      "typedefs_identical": true
+    },
+    "EXTI": {
+      "identical": false,
+      "macro_counts": {
+        "added": 152,
+        "changed": 6,
+        "removed": 156
+      },
+      "macros": {
+        "added": {
+          "EXTI_EMR2_EM58": 67108864,
+          "EXTI_EMR2_EM58_Msk": 67108864,
+          "EXTI_EMR2_EM58_Pos": 26,
+          "EXTI_EMR2_EM59": 134217728,
+          "EXTI_EMR2_EM59_Msk": 134217728,
+          "EXTI_EMR2_EM59_Pos": 27,
+          "EXTI_EMR3_EM": 5,
+          "EXTI_EMR3_EM64": 1,
+          "EXTI_EMR3_EM64_Msk": 1,
+          "EXTI_EMR3_EM64_Pos": 0,
+          "EXTI_EMR3_EM66": 4,
+          "EXTI_EMR3_EM66_Msk": 4,
+          "EXTI_EMR3_EM66_Pos": 2,
+          "EXTI_EMR3_EM_Msk": 5,
+          "EXTI_EMR3_EM_Pos": 0,
+          "EXTI_FPR2_FPIF49": 131072,
+          "EXTI_FPR2_FPIF49_Msk": 131072,
+          "EXTI_FPR2_FPIF49_Pos": 17,
+          "EXTI_FPR2_FPIF58": 67108864,
+          "EXTI_FPR2_FPIF58_Msk": 67108864,
+          "EXTI_FPR2_FPIF58_Pos": 26,
+          "EXTI_FPR2_FPIF59": 134217728,
+          "EXTI_FPR2_FPIF59_Msk": 134217728,
+          "EXTI_FPR2_FPIF59_Pos": 27,
+          "EXTI_FPR3_FPIF": 5,
+          "EXTI_FPR3_FPIF64": 1,
+          "EXTI_FPR3_FPIF64_Msk": 1,
+          "EXTI_FPR3_FPIF64_Pos": 0,
+          "EXTI_FPR3_FPIF66": 4,
+          "EXTI_FPR3_FPIF66_Msk": 4,
+          "EXTI_FPR3_FPIF66_Pos": 2,
+          "EXTI_FPR3_FPIF_Msk": 5,
+          "EXTI_FPR3_FPIF_Pos": 0,
+          "EXTI_FTSR2_FT49": 131072,
+          "EXTI_FTSR2_FT49_Msk": 131072,
+          "EXTI_FTSR2_FT49_Pos": 17,
+          "EXTI_FTSR2_FT58": 67108864,
+          "EXTI_FTSR2_FT58_Msk": 67108864,
+          "EXTI_FTSR2_FT58_Pos": 26,
+          "EXTI_FTSR2_FT59": 134217728,
+          "EXTI_FTSR2_FT59_Msk": 134217728,
+          "EXTI_FTSR2_FT59_Pos": 27,
+          "EXTI_FTSR3_FT64": 1,
+          "EXTI_FTSR3_FT64_Msk": 1,
+          "EXTI_FTSR3_FT64_Pos": 0,
+          "EXTI_FTSR3_FT66": 4,
+          "EXTI_FTSR3_FT66_Msk": 4,
+          "EXTI_FTSR3_FT66_Pos": 2,
+          "EXTI_IMR2_IM58": 67108864,
+          "EXTI_IMR2_IM58_Msk": 67108864,
+          "EXTI_IMR2_IM58_Pos": 26,
+          "EXTI_IMR2_IM59": 134217728,
+          "EXTI_IMR2_IM59_Msk": 134217728,
+          "EXTI_IMR2_IM59_Pos": 27,
+          "EXTI_IMR2_IM61": 536870912,
+          "EXTI_IMR2_IM61_Msk": 536870912,
+          "EXTI_IMR2_IM61_Pos": 29,
+          "EXTI_IMR3_IM": 7,
+          "EXTI_IMR3_IM64": 1,
+          "EXTI_IMR3_IM64_Msk": 1,
+          "EXTI_IMR3_IM64_Pos": 0,
+          "EXTI_IMR3_IM65": 2,
+          "EXTI_IMR3_IM65_Msk": 2,
+          "EXTI_IMR3_IM65_Pos": 1,
+          "EXTI_IMR3_IM66": 4,
+          "EXTI_IMR3_IM66_Msk": 4,
+          "EXTI_IMR3_IM66_Pos": 2,
+          "EXTI_IMR3_IM_Msk": 7,
+          "EXTI_IMR3_IM_Pos": 0,
+          "EXTI_PRIVENR2_PRIV58": 67108864,
+          "EXTI_PRIVENR2_PRIV58_Msk": 67108864,
+          "EXTI_PRIVENR2_PRIV58_Pos": 26,
+          "EXTI_PRIVENR2_PRIV59": 134217728,
+          "EXTI_PRIVENR2_PRIV59_Msk": 134217728,
+          "EXTI_PRIVENR2_PRIV59_Pos": 27,
+          "EXTI_PRIVENR2_PRIV61": 536870912,
+          "EXTI_PRIVENR2_PRIV61_Msk": 536870912,
+          "EXTI_PRIVENR2_PRIV61_Pos": 29,
+          "EXTI_PRIVENR3_PRIV64": 1,
+          "EXTI_PRIVENR3_PRIV64_Msk": 1,
+          "EXTI_PRIVENR3_PRIV64_Pos": 0,
+          "EXTI_PRIVENR3_PRIV65": 2,
+          "EXTI_PRIVENR3_PRIV65_Msk": 2,
+          "EXTI_PRIVENR3_PRIV65_Pos": 1,
+          "EXTI_PRIVENR3_PRIV66": 4,
+          "EXTI_PRIVENR3_PRIV66_Msk": 4,
+          "EXTI_PRIVENR3_PRIV66_Pos": 2,
+          "EXTI_RPR2_RPIF49": 131072,
+          "EXTI_RPR2_RPIF49_Msk": 131072,
+          "EXTI_RPR2_RPIF49_Pos": 17,
+          "EXTI_RPR2_RPIF58": 67108864,
+          "EXTI_RPR2_RPIF58_Msk": 67108864,
+          "EXTI_RPR2_RPIF58_Pos": 26,
+          "EXTI_RPR2_RPIF59": 134217728,
+          "EXTI_RPR2_RPIF59_Msk": 134217728,
+          "EXTI_RPR2_RPIF59_Pos": 27,
+          "EXTI_RPR3_RPIF": 5,
+          "EXTI_RPR3_RPIF64": 1,
+          "EXTI_RPR3_RPIF64_Msk": 1,
+          "EXTI_RPR3_RPIF64_Pos": 0,
+          "EXTI_RPR3_RPIF66": 4,
+          "EXTI_RPR3_RPIF66_Msk": 4,
+          "EXTI_RPR3_RPIF66_Pos": 2,
+          "EXTI_RPR3_RPIF_Msk": 5,
+          "EXTI_RPR3_RPIF_Pos": 0,
+          "EXTI_RTSR2_RT49": 131072,
+          "EXTI_RTSR2_RT49_Msk": 131072,
+          "EXTI_RTSR2_RT49_Pos": 17,
+          "EXTI_RTSR2_RT58": 67108864,
+          "EXTI_RTSR2_RT58_Msk": 67108864,
+          "EXTI_RTSR2_RT58_Pos": 26,
+          "EXTI_RTSR2_RT59": 134217728,
+          "EXTI_RTSR2_RT59_Msk": 134217728,
+          "EXTI_RTSR2_RT59_Pos": 27,
+          "EXTI_RTSR3_RT64": 1,
+          "EXTI_RTSR3_RT64_Msk": 1,
+          "EXTI_RTSR3_RT64_Pos": 0,
+          "EXTI_RTSR3_RT66": 4,
+          "EXTI_RTSR3_RT66_Msk": 4,
+          "EXTI_RTSR3_RT66_Pos": 2,
+          "EXTI_SECENR2_SEC58": 67108864,
+          "EXTI_SECENR2_SEC58_Msk": 67108864,
+          "EXTI_SECENR2_SEC58_Pos": 26,
+          "EXTI_SECENR2_SEC59": 134217728,
+          "EXTI_SECENR2_SEC59_Msk": 134217728,
+          "EXTI_SECENR2_SEC59_Pos": 27,
+          "EXTI_SECENR2_SEC61": 536870912,
+          "EXTI_SECENR2_SEC61_Msk": 536870912,
+          "EXTI_SECENR2_SEC61_Pos": 29,
+          "EXTI_SECENR3_SEC64": 1,
+          "EXTI_SECENR3_SEC64_Msk": 1,
+          "EXTI_SECENR3_SEC64_Pos": 0,
+          "EXTI_SECENR3_SEC65": 2,
+          "EXTI_SECENR3_SEC65_Msk": 2,
+          "EXTI_SECENR3_SEC65_Pos": 1,
+          "EXTI_SECENR3_SEC66": 4,
+          "EXTI_SECENR3_SEC66_Msk": 4,
+          "EXTI_SECENR3_SEC66_Pos": 2,
+          "EXTI_SWIER2_SWIER49": 131072,
+          "EXTI_SWIER2_SWIER49_Msk": 131072,
+          "EXTI_SWIER2_SWIER49_Pos": 17,
+          "EXTI_SWIER2_SWIER58": 67108864,
+          "EXTI_SWIER2_SWIER58_Msk": 67108864,
+          "EXTI_SWIER2_SWIER58_Pos": 26,
+          "EXTI_SWIER2_SWIER59": 134217728,
+          "EXTI_SWIER2_SWIER59_Msk": 134217728,
+          "EXTI_SWIER2_SWIER59_Pos": 27,
+          "EXTI_SWIER3_SWIER64_Msk": 1,
+          "EXTI_SWIER3_SWIER64_Pos": 0,
+          "EXTI_SWIER3_SWIER66": 4,
+          "EXTI_SWIER3_SWIER66_Msk": 4,
+          "EXTI_SWIER3_SWIER66_Pos": 2
+        },
+        "changed": {
+          "EXTI_EMR1_EM": {
+            "new": 131071,
+            "old": 4294967295
+          },
+          "EXTI_EMR1_EM_Msk": {
+            "new": 131071,
+            "old": 4294967295
+          },
+          "EXTI_EMR2_EM": {
+            "new": 203833344,
+            "old": 67108863
+          },
+          "EXTI_EMR2_EM_Msk": {
+            "new": 203833344,
+            "old": 67108863
+          },
+          "EXTI_IMR2_IM": {
+            "new": 805306367,
+            "old": 67108863
+          },
+          "EXTI_IMR2_IM_Msk": {
+            "new": 805306367,
+            "old": 67108863
+          }
+        },
+        "removed": {
+          "EXTI_EMR1_EM17": 131072,
+          "EXTI_EMR1_EM17_Msk": 131072,
+          "EXTI_EMR1_EM17_Pos": 17,
+          "EXTI_EMR1_EM18": 262144,
+          "EXTI_EMR1_EM18_Msk": 262144,
+          "EXTI_EMR1_EM18_Pos": 18,
+          "EXTI_EMR1_EM19": 524288,
+          "EXTI_EMR1_EM19_Msk": 524288,
+          "EXTI_EMR1_EM19_Pos": 19,
+          "EXTI_EMR1_EM20": 1048576,
+          "EXTI_EMR1_EM20_Msk": 1048576,
+          "EXTI_EMR1_EM20_Pos": 20,
+          "EXTI_EMR1_EM21": 2097152,
+          "EXTI_EMR1_EM21_Msk": 2097152,
+          "EXTI_EMR1_EM21_Pos": 21,
+          "EXTI_EMR1_EM22": 4194304,
+          "EXTI_EMR1_EM22_Msk": 4194304,
+          "EXTI_EMR1_EM22_Pos": 22,
+          "EXTI_EMR1_EM23": 8388608,
+          "EXTI_EMR1_EM23_Msk": 8388608,
+          "EXTI_EMR1_EM23_Pos": 23,
+          "EXTI_EMR1_EM24": 16777216,
+          "EXTI_EMR1_EM24_Msk": 16777216,
+          "EXTI_EMR1_EM24_Pos": 24,
+          "EXTI_EMR1_EM25": 33554432,
+          "EXTI_EMR1_EM25_Msk": 33554432,
+          "EXTI_EMR1_EM25_Pos": 25,
+          "EXTI_EMR1_EM26": 67108864,
+          "EXTI_EMR1_EM26_Msk": 67108864,
+          "EXTI_EMR1_EM26_Pos": 26,
+          "EXTI_EMR1_EM27": 134217728,
+          "EXTI_EMR1_EM27_Msk": 134217728,
+          "EXTI_EMR1_EM27_Pos": 27,
+          "EXTI_EMR1_EM28": 268435456,
+          "EXTI_EMR1_EM28_Msk": 268435456,
+          "EXTI_EMR1_EM28_Pos": 28,
+          "EXTI_EMR1_EM29": 536870912,
+          "EXTI_EMR1_EM29_Msk": 536870912,
+          "EXTI_EMR1_EM29_Pos": 29,
+          "EXTI_EMR1_EM30": 1073741824,
+          "EXTI_EMR1_EM30_Msk": 1073741824,
+          "EXTI_EMR1_EM30_Pos": 30,
+          "EXTI_EMR1_EM31": 2147483648,
+          "EXTI_EMR1_EM31_Msk": 2147483648,
+          "EXTI_EMR1_EM31_Pos": 31,
+          "EXTI_EMR2_EM32": 1,
+          "EXTI_EMR2_EM32_Msk": 1,
+          "EXTI_EMR2_EM32_Pos": 0,
+          "EXTI_EMR2_EM33": 2,
+          "EXTI_EMR2_EM33_Msk": 2,
+          "EXTI_EMR2_EM33_Pos": 1,
+          "EXTI_EMR2_EM34": 4,
+          "EXTI_EMR2_EM34_Msk": 4,
+          "EXTI_EMR2_EM34_Pos": 2,
+          "EXTI_EMR2_EM35": 8,
+          "EXTI_EMR2_EM35_Msk": 8,
+          "EXTI_EMR2_EM35_Pos": 3,
+          "EXTI_EMR2_EM36": 16,
+          "EXTI_EMR2_EM36_Msk": 16,
+          "EXTI_EMR2_EM36_Pos": 4,
+          "EXTI_EMR2_EM37": 32,
+          "EXTI_EMR2_EM37_Msk": 32,
+          "EXTI_EMR2_EM37_Pos": 5,
+          "EXTI_EMR2_EM38": 64,
+          "EXTI_EMR2_EM38_Msk": 64,
+          "EXTI_EMR2_EM38_Pos": 6,
+          "EXTI_EMR2_EM39": 128,
+          "EXTI_EMR2_EM39_Msk": 128,
+          "EXTI_EMR2_EM39_Pos": 7,
+          "EXTI_EMR2_EM40": 256,
+          "EXTI_EMR2_EM40_Msk": 256,
+          "EXTI_EMR2_EM40_Pos": 8,
+          "EXTI_EMR2_EM41": 512,
+          "EXTI_EMR2_EM41_Msk": 512,
+          "EXTI_EMR2_EM41_Pos": 9,
+          "EXTI_EMR2_EM42": 1024,
+          "EXTI_EMR2_EM42_Msk": 1024,
+          "EXTI_EMR2_EM42_Pos": 10,
+          "EXTI_EMR2_EM43": 2048,
+          "EXTI_EMR2_EM43_Msk": 2048,
+          "EXTI_EMR2_EM43_Pos": 11,
+          "EXTI_EMR2_EM44": 4096,
+          "EXTI_EMR2_EM44_Msk": 4096,
+          "EXTI_EMR2_EM44_Pos": 12,
+          "EXTI_EMR2_EM45": 8192,
+          "EXTI_EMR2_EM45_Msk": 8192,
+          "EXTI_EMR2_EM45_Pos": 13,
+          "EXTI_EMR2_EM47": 32768,
+          "EXTI_EMR2_EM47_Msk": 32768,
+          "EXTI_EMR2_EM47_Pos": 15,
+          "EXTI_EMR2_EM48": 65536,
+          "EXTI_EMR2_EM48_Msk": 65536,
+          "EXTI_EMR2_EM48_Pos": 16,
+          "EXTI_EMR2_EM51": 524288,
+          "EXTI_EMR2_EM51_Msk": 524288,
+          "EXTI_EMR2_EM51_Pos": 19,
+          "EXTI_EMR2_EM52": 1048576,
+          "EXTI_EMR2_EM52_Msk": 1048576,
+          "EXTI_EMR2_EM52_Pos": 20,
+          "EXTI_EMR2_EM54": 4194304,
+          "EXTI_EMR2_EM54_Msk": 4194304,
+          "EXTI_EMR2_EM54_Pos": 22,
+          "EXTI_EMR2_EM55": 8388608,
+          "EXTI_EMR2_EM55_Msk": 8388608,
+          "EXTI_EMR2_EM55_Pos": 23,
+          "EXTI_EMR2_EM56": 16777216,
+          "EXTI_EMR2_EM56_Msk": 16777216,
+          "EXTI_EMR2_EM56_Pos": 24,
+          "EXTI_EMR2_EM57": 33554432,
+          "EXTI_EMR2_EM57_Msk": 33554432,
+          "EXTI_EMR2_EM57_Pos": 25,
+          "EXTI_FPR2_FPIF": 2375680,
+          "EXTI_FPR2_FPIF_Msk": 2375680,
+          "EXTI_FPR2_FPIF_Pos": 12,
+          "EXTI_FTSR2_FT": 2375680,
+          "EXTI_FTSR2_FT_Msk": 2375680,
+          "EXTI_FTSR2_FT_Pos": 12,
+          "EXTI_IMR2_IM33": 2,
+          "EXTI_IMR2_IM33_Msk": 2,
+          "EXTI_IMR2_IM33_Pos": 1,
+          "EXTI_IMR2_IM34": 4,
+          "EXTI_IMR2_IM34_Msk": 4,
+          "EXTI_IMR2_IM34_Pos": 2,
+          "EXTI_IMR2_IM35": 8,
+          "EXTI_IMR2_IM35_Msk": 8,
+          "EXTI_IMR2_IM35_Pos": 3,
+          "EXTI_IMR2_IM36": 16,
+          "EXTI_IMR2_IM36_Msk": 16,
+          "EXTI_IMR2_IM36_Pos": 4,
+          "EXTI_IMR2_IM44": 4096,
+          "EXTI_IMR2_IM44_Msk": 4096,
+          "EXTI_IMR2_IM44_Pos": 12,
+          "EXTI_IMR2_IM45": 8192,
+          "EXTI_IMR2_IM45_Msk": 8192,
+          "EXTI_IMR2_IM45_Pos": 13,
+          "EXTI_IMR2_IM52": 1048576,
+          "EXTI_IMR2_IM52_Msk": 1048576,
+          "EXTI_IMR2_IM52_Pos": 20,
+          "EXTI_IMR2_IM54": 4194304,
+          "EXTI_IMR2_IM54_Msk": 4194304,
+          "EXTI_IMR2_IM54_Pos": 22,
+          "EXTI_IMR2_IM55": 8388608,
+          "EXTI_IMR2_IM55_Msk": 8388608,
+          "EXTI_IMR2_IM55_Pos": 23,
+          "EXTI_IMR2_IM56": 16777216,
+          "EXTI_IMR2_IM56_Msk": 16777216,
+          "EXTI_IMR2_IM56_Pos": 24,
+          "EXTI_IMR2_IM57": 33554432,
+          "EXTI_IMR2_IM57_Msk": 33554432,
+          "EXTI_IMR2_IM57_Pos": 25,
+          "EXTI_RPR2_RPIF": 2375680,
+          "EXTI_RPR2_RPIF_Msk": 2375680,
+          "EXTI_RPR2_RPIF_Pos": 12,
+          "EXTI_RTSR2_RT": 2375680,
+          "EXTI_RTSR2_RT_Msk": 2375680,
+          "EXTI_RTSR2_RT_Pos": 12
+        }
+      },
+      "new_typedefs": [
+        "EXTI_TypeDef"
+      ],
+      "typedefs": {
+        "added": {},
+        "changed": {
+          "EXTI_TypeDef": {
+            "new": {
+              "members": [
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR1",
+                  "offset": 0,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR1",
+                  "offset": 4,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER1",
+                  "offset": 8,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR1",
+                  "offset": 12,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR1",
+                  "offset": 16,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR1",
+                  "offset": 20,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR1",
+                  "offset": 24,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED1",
+                  "offset": 28,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR2",
+                  "offset": 32,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR2",
+                  "offset": 36,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER2",
+                  "offset": 40,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR2",
+                  "offset": 44,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR2",
+                  "offset": 48,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR2",
+                  "offset": 52,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR2",
+                  "offset": 56,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED2",
+                  "offset": 60,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR3",
+                  "offset": 64,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR3",
+                  "offset": 68,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER3",
+                  "offset": 72,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR3",
+                  "offset": 76,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR3",
+                  "offset": 80,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR3",
+                  "offset": 84,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR3",
+                  "offset": 88,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED3",
+                  "offset": 92,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "EXTICR",
+                  "offset": 96,
+                  "size": 16
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "LOCKR",
+                  "offset": 112,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED4",
+                  "offset": 116,
+                  "size": 12
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR1",
+                  "offset": 128,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR1",
+                  "offset": 132,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED5",
+                  "offset": 136,
+                  "size": 8
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR2",
+                  "offset": 144,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR2",
+                  "offset": 148,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED6",
+                  "offset": 152,
+                  "size": 8
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR3",
+                  "offset": 160,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR3",
+                  "offset": 164,
+                  "size": 4
+                }
+              ],
+              "size": 168
+            },
+            "old": {
+              "members": [
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR1",
+                  "offset": 0,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR1",
+                  "offset": 4,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER1",
+                  "offset": 8,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR1",
+                  "offset": 12,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR1",
+                  "offset": 16,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR1",
+                  "offset": 20,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR1",
+                  "offset": 24,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED1",
+                  "offset": 28,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RTSR2",
+                  "offset": 32,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FTSR2",
+                  "offset": 36,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SWIER2",
+                  "offset": 40,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "RPR2",
+                  "offset": 44,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "FPR2",
+                  "offset": 48,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "SECCFGR2",
+                  "offset": 52,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "PRIVCFGR2",
+                  "offset": 56,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED2",
+                  "offset": 60,
+                  "size": 36
+                },
+                {
+                  "access": "__IO",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "EXTICR",
+                  "offset": 96,
+                  "size": 16
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "LOCKR",
+                  "offset": 112,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED3",
+                  "offset": 116,
+                  "size": 12
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR1",
+                  "offset": 128,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR1",
+                  "offset": 132,
+                  "size": 4
+                },
+                {
+                  "access": "unqualified",
+                  "array": true,
+                  "ctype": "uint32_t",
+                  "name": "RESERVED4",
+                  "offset": 136,
+                  "size": 8
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "IMR2",
+                  "offset": 144,
+                  "size": 4
+                },
+                {
+                  "access": "__IO",
+                  "array": false,
+                  "ctype": "uint32_t",
+                  "name": "EMR2",
+                  "offset": 148,
+                  "size": 4
+                }
+              ],
+              "size": 152
+            }
+          }
+        },
+        "removed": {}
+      },
+      "typedefs_identical": false
+    }
+  },
+  "STM32H563": {
+    "CRS": {
+      "identical": true,
+      "macro_counts": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0
+      },
+      "macros": {
+        "added": {},
+        "changed": {},
+        "removed": {}
+      },
+      "new_typedefs": [
+        "CRS_TypeDef"
+      ],
+      "typedefs": {
+        "added": {},
+        "changed": {},
+        "removed": {}
+      },
+      "typedefs_identical": true
+    },
+    "EXTI": {
+      "identical": true,
+      "macro_counts": {
+        "added": 0,
+        "changed": 0,
+        "removed": 0
+      },
+      "macros": {
+        "added": {},
+        "changed": {},
+        "removed": {}
+      },
+      "new_typedefs": [
+        "EXTI_TypeDef"
+      ],
+      "typedefs": {
+        "added": {},
+        "changed": {},
+        "removed": {}
+      },
+      "typedefs_identical": true
+    }
+  }
+}

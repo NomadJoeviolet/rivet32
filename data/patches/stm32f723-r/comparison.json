@@ -1,0 +1,3204 @@
+{
+  "baseline_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "generator_revision": "caa36afd62510b0e6315ee0dccd1f9c65fbcac83",
+  "chips": {
+    "STM32F723RC": {
+      "baseline": "STM32F723VC",
+      "baseline_json_sha256": "dee9e1cbcc1bf41556399205f41e4706ae71885f072253d7dc177c699026f3c4",
+      "added_xml_ip": [
+        [
+          "AES",
+          "AES",
+          "aes3_v1_0_F7_Cube"
+        ]
+      ],
+      "omitted_xml_ip": [
+        [
+          "FMC",
+          "FMC",
+          "lqfp100_fmc_v2_0"
+        ],
+        [
+          "LPTIM1",
+          "LPTIM",
+          "F7_lptimer1_v1_1_Cube"
+        ],
+        [
+          "SPI4",
+          "SPI",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "UART7",
+          "UART",
+          "sci2_v2_1_Cube"
+        ],
+        [
+          "UART8",
+          "UART",
+          "sci2_v2_1_Cube"
+        ]
+      ],
+      "shared_ip_instances_versions": [
+        [
+          "ADC1",
+          "ADC",
+          "aditf2_v1_1_Cube"
+        ],
+        [
+          "ADC2",
+          "ADC",
+          "aditf2_v1_1_Cube"
+        ],
+        [
+          "ADC3",
+          "ADC",
+          "aditf2_v1_1_Cube"
+        ],
+        [
+          "CAN1",
+          "CAN",
+          "bxcan1_v1_1_F7_Cube"
+        ],
+        [
+          "CORTEX_M7",
+          "CORTEX_M7",
+          "cortex_v1_0_Cube"
+        ],
+        [
+          "CRC",
+          "CRC",
+          "integtest1_v2_0"
+        ],
+        [
+          "DAC",
+          "DAC",
+          "dacif_v1_1_Cube"
+        ],
+        [
+          "DMA",
+          "DMA",
+          "STM32F722_dma_v2_0"
+        ],
+        [
+          "FATFS",
+          "FATFS",
+          "v0.1.0_Cube"
+        ],
+        [
+          "FREERTOS",
+          "FREERTOS",
+          "v8.0.0_Cube"
+        ],
+        [
+          "GPIO",
+          "GPIO",
+          "STM32F72x_gpio_v1_0"
+        ],
+        [
+          "I2C1",
+          "I2C",
+          "i2c2_v1_1F7_Cube"
+        ],
+        [
+          "I2C2",
+          "I2C",
+          "i2c2_v1_1F7_Cube"
+        ],
+        [
+          "I2C3",
+          "I2C",
+          "i2c2_v1_1F7_Cube"
+        ],
+        [
+          "I2S1",
+          "I2S",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "I2S2",
+          "I2S",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "I2S3",
+          "I2S",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "IWDG",
+          "IWDG",
+          "iwdg1_v2_0"
+        ],
+        [
+          "LIBJPEG",
+          "LIBJPEG",
+          "v8_Cube"
+        ],
+        [
+          "MBEDTLS",
+          "MBEDTLS",
+          "v2_16_2_Cube"
+        ],
+        [
+          "NVIC",
+          "NVIC",
+          "STM32F777"
+        ],
+        [
+          "PDM2PCM",
+          "PDM2PCM",
+          "pdm2pcm_v3.2.0_Cube"
+        ],
+        [
+          "QUADSPI",
+          "QUADSPI",
+          "quadspi1_v1_0_Cube"
+        ],
+        [
+          "RCC",
+          "RCC",
+          "STM32F722_rcc_v1_0"
+        ],
+        [
+          "RNG",
+          "RNG",
+          "rng1_v1_1"
+        ],
+        [
+          "RTC",
+          "RTC",
+          "rtc2_v2_6_Cube"
+        ],
+        [
+          "SAI1",
+          "SAI",
+          "sai1_v1_2_Cube"
+        ],
+        [
+          "SAI2",
+          "SAI",
+          "sai1_v1_2_Cube"
+        ],
+        [
+          "SDMMC1",
+          "SDMMC",
+          "sdmmc_v1_3_Cube"
+        ],
+        [
+          "SPI1",
+          "SPI",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "SPI2",
+          "SPI",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "SPI3",
+          "SPI",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "SYS",
+          "SYS",
+          "STM32F7_sys_v1_0"
+        ],
+        [
+          "TIM1",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM10",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM11",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM13",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM14",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM2",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM3",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM4",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM5",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM6",
+          "TIM6_7F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM7",
+          "TIM6_7F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM8",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM9",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "UART4",
+          "UART",
+          "sci2_v2_1_Cube"
+        ],
+        [
+          "UART5",
+          "UART",
+          "sci2_v2_1_Cube"
+        ],
+        [
+          "USART1",
+          "USART",
+          "sci3_v1_1_Cube"
+        ],
+        [
+          "USART2",
+          "USART",
+          "sci3_v1_1_Cube"
+        ],
+        [
+          "USART3",
+          "USART",
+          "sci3_v1_1_Cube"
+        ],
+        [
+          "USART6",
+          "USART",
+          "sci3_v1_1_Cube"
+        ],
+        [
+          "USB_DEVICE",
+          "USB_DEVICE",
+          "v1.0_Cube"
+        ],
+        [
+          "USB_HOST",
+          "USB_HOST",
+          "v1.0_Cube"
+        ],
+        [
+          "USB_OTG_FS",
+          "USB_OTG_FS",
+          "otgfs1_v3_0_Cube"
+        ],
+        [
+          "USB_OTG_HS",
+          "USB_OTG_HS",
+          "otghs1_v3_0_Cube"
+        ],
+        [
+          "WWDG",
+          "WWDG",
+          "wwdg1_v1_0"
+        ]
+      ],
+      "peripheral_addresses": {
+        "ADC1": {
+          "macro": "ADC1_BASE",
+          "address": 1073815552
+        },
+        "ADC123_COMMON": {
+          "macro": "ADC123_COMMON",
+          "address": 1073816320
+        },
+        "ADC2": {
+          "macro": "ADC2_BASE",
+          "address": 1073815808
+        },
+        "ADC3": {
+          "macro": "ADC3_BASE",
+          "address": 1073816064
+        },
+        "CAN1": {
+          "macro": "CAN1_BASE",
+          "address": 1073767424
+        },
+        "CRC": {
+          "macro": "CRC_BASE",
+          "address": 1073885184
+        },
+        "DAC1": {
+          "macro": "DAC1",
+          "address": 1073771520
+        },
+        "DBGMCU": {
+          "macro": "DBGMCU_BASE",
+          "address": 3758366720
+        },
+        "DMA1": {
+          "macro": "DMA1_BASE",
+          "address": 1073897472
+        },
+        "DMA2": {
+          "macro": "DMA2_BASE",
+          "address": 1073898496
+        },
+        "EXTI": {
+          "macro": "EXTI_BASE",
+          "address": 1073822720
+        },
+        "FLASH": {
+          "macro": "FLASH_R_BASE",
+          "address": 1073888256
+        },
+        "GPIOA": {
+          "macro": "GPIOA_BASE",
+          "address": 1073872896
+        },
+        "GPIOB": {
+          "macro": "GPIOB_BASE",
+          "address": 1073873920
+        },
+        "GPIOC": {
+          "macro": "GPIOC_BASE",
+          "address": 1073874944
+        },
+        "GPIOD": {
+          "macro": "GPIOD_BASE",
+          "address": 1073875968
+        },
+        "GPIOE": {
+          "macro": "GPIOE_BASE",
+          "address": 1073876992
+        },
+        "GPIOF": {
+          "macro": "GPIOF_BASE",
+          "address": 1073878016
+        },
+        "GPIOG": {
+          "macro": "GPIOG_BASE",
+          "address": 1073879040
+        },
+        "GPIOH": {
+          "macro": "GPIOH_BASE",
+          "address": 1073880064
+        },
+        "GPIOI": {
+          "macro": "GPIOI_BASE",
+          "address": 1073881088
+        },
+        "I2C1": {
+          "macro": "I2C1_BASE",
+          "address": 1073763328
+        },
+        "I2C2": {
+          "macro": "I2C2_BASE",
+          "address": 1073764352
+        },
+        "I2C3": {
+          "macro": "I2C3_BASE",
+          "address": 1073765376
+        },
+        "IWDG": {
+          "macro": "IWDG_BASE",
+          "address": 1073754112
+        },
+        "PWR": {
+          "macro": "PWR_BASE",
+          "address": 1073770496
+        },
+        "QUADSPI": {
+          "macro": "QSPI_R_BASE",
+          "address": 2684358656
+        },
+        "RCC": {
+          "macro": "RCC_BASE",
+          "address": 1073887232
+        },
+        "RNG": {
+          "macro": "RNG_BASE",
+          "address": 1342572544
+        },
+        "RTC": {
+          "macro": "RTC_BASE",
+          "address": 1073752064
+        },
+        "SAI1": {
+          "macro": "SAI1_BASE",
+          "address": 1073829888
+        },
+        "SAI2": {
+          "macro": "SAI2_BASE",
+          "address": 1073830912
+        },
+        "SDMMC1": {
+          "macro": "SDMMC1_BASE",
+          "address": 1073818624
+        },
+        "SPI1": {
+          "macro": "SPI1_BASE",
+          "address": 1073819648
+        },
+        "SPI2": {
+          "macro": "SPI2_BASE",
+          "address": 1073756160
+        },
+        "SPI3": {
+          "macro": "SPI3_BASE",
+          "address": 1073757184
+        },
+        "SYSCFG": {
+          "macro": "SYSCFG_BASE",
+          "address": 1073821696
+        },
+        "TIM1": {
+          "macro": "TIM1_BASE",
+          "address": 1073807360
+        },
+        "TIM10": {
+          "macro": "TIM10_BASE",
+          "address": 1073824768
+        },
+        "TIM11": {
+          "macro": "TIM11_BASE",
+          "address": 1073825792
+        },
+        "TIM13": {
+          "macro": "TIM13_BASE",
+          "address": 1073748992
+        },
+        "TIM14": {
+          "macro": "TIM14_BASE",
+          "address": 1073750016
+        },
+        "TIM2": {
+          "macro": "TIM2_BASE",
+          "address": 1073741824
+        },
+        "TIM3": {
+          "macro": "TIM3_BASE",
+          "address": 1073742848
+        },
+        "TIM4": {
+          "macro": "TIM4_BASE",
+          "address": 1073743872
+        },
+        "TIM5": {
+          "macro": "TIM5_BASE",
+          "address": 1073744896
+        },
+        "TIM6": {
+          "macro": "TIM6_BASE",
+          "address": 1073745920
+        },
+        "TIM7": {
+          "macro": "TIM7_BASE",
+          "address": 1073746944
+        },
+        "TIM8": {
+          "macro": "TIM8_BASE",
+          "address": 1073808384
+        },
+        "TIM9": {
+          "macro": "TIM9_BASE",
+          "address": 1073823744
+        },
+        "TS_CAL1": {
+          "macro": "TEMPSENSOR_CAL1_ADDR_CMSIS",
+          "address": 535853612
+        },
+        "TS_CAL2": {
+          "macro": "TEMPSENSOR_CAL2_ADDR_CMSIS",
+          "address": 535853614
+        },
+        "UART4": {
+          "macro": "UART4_BASE",
+          "address": 1073761280
+        },
+        "UART5": {
+          "macro": "UART5_BASE",
+          "address": 1073762304
+        },
+        "UID": {
+          "macro": "UID_BASE",
+          "address": 535853584
+        },
+        "USART1": {
+          "macro": "USART1_BASE",
+          "address": 1073811456
+        },
+        "USART2": {
+          "macro": "USART2_BASE",
+          "address": 1073759232
+        },
+        "USART3": {
+          "macro": "USART3_BASE",
+          "address": 1073760256
+        },
+        "USART6": {
+          "macro": "USART6_BASE",
+          "address": 1073812480
+        },
+        "USB_OTG_FS": {
+          "macro": "USB_OTG_FS_PERIPH_BASE",
+          "address": 1342177280
+        },
+        "USB_OTG_HS": {
+          "macro": "USB_OTG_HS_PERIPH_BASE",
+          "address": 1074003968
+        },
+        "VREFINTCAL": {
+          "macro": "VREFINT_CAL_ADDR_CMSIS",
+          "address": 535853610
+        },
+        "WWDG": {
+          "macro": "WWDG_BASE",
+          "address": 1073753088
+        }
+      },
+      "rcc_gate_reset_masks": {
+        "ADC1.enable": {
+          "macro": "RCC_APB2ENR_ADC1EN",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "ADC2.enable": {
+          "macro": "RCC_APB2ENR_ADC2EN",
+          "mask": 512,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "ADC3.enable": {
+          "macro": "RCC_APB2ENR_ADC3EN",
+          "mask": 1024,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "CAN1.enable": {
+          "macro": "RCC_APB1ENR_CAN1EN",
+          "mask": 33554432,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "CAN1.reset": {
+          "macro": "RCC_APB1RSTR_CAN1RST",
+          "mask": 33554432,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "CRC.enable": {
+          "macro": "RCC_AHB1ENR_CRCEN",
+          "mask": 4096,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "CRC.reset": {
+          "macro": "RCC_AHB1RSTR_CRCRST",
+          "mask": 4096,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DAC1.enable": {
+          "macro": "RCC_APB1ENR_DACEN",
+          "mask": 536870912,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DAC1.reset": {
+          "macro": "RCC_APB1RSTR_DACRST",
+          "mask": 536870912,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DMA1.enable": {
+          "macro": "RCC_AHB1ENR_DMA1EN",
+          "mask": 2097152,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DMA1.reset": {
+          "macro": "RCC_AHB1RSTR_DMA1RST",
+          "mask": 2097152,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DMA2.enable": {
+          "macro": "RCC_AHB1ENR_DMA2EN",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DMA2.reset": {
+          "macro": "RCC_AHB1RSTR_DMA2RST",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOA.enable": {
+          "macro": "RCC_AHB1ENR_GPIOAEN",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOA.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOARST",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOB.enable": {
+          "macro": "RCC_AHB1ENR_GPIOBEN",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOB.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOBRST",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOC.enable": {
+          "macro": "RCC_AHB1ENR_GPIOCEN",
+          "mask": 4,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOC.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOCRST",
+          "mask": 4,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOD.enable": {
+          "macro": "RCC_AHB1ENR_GPIODEN",
+          "mask": 8,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOD.reset": {
+          "macro": "RCC_AHB1RSTR_GPIODRST",
+          "mask": 8,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOE.enable": {
+          "macro": "RCC_AHB1ENR_GPIOEEN",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOE.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOERST",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOF.enable": {
+          "macro": "RCC_AHB1ENR_GPIOFEN",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOF.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOFRST",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOG.enable": {
+          "macro": "RCC_AHB1ENR_GPIOGEN",
+          "mask": 64,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOG.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOGRST",
+          "mask": 64,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOH.enable": {
+          "macro": "RCC_AHB1ENR_GPIOHEN",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOH.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOHRST",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOI.enable": {
+          "macro": "RCC_AHB1ENR_GPIOIEN",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOI.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOIRST",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C1.enable": {
+          "macro": "RCC_APB1ENR_I2C1EN",
+          "mask": 2097152,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C1.reset": {
+          "macro": "RCC_APB1RSTR_I2C1RST",
+          "mask": 2097152,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C2.enable": {
+          "macro": "RCC_APB1ENR_I2C2EN",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C2.reset": {
+          "macro": "RCC_APB1RSTR_I2C2RST",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C3.enable": {
+          "macro": "RCC_APB1ENR_I2C3EN",
+          "mask": 8388608,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C3.reset": {
+          "macro": "RCC_APB1RSTR_I2C3RST",
+          "mask": 8388608,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "PWR.enable": {
+          "macro": "RCC_APB1ENR_PWREN",
+          "mask": 268435456,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "PWR.reset": {
+          "macro": "RCC_APB1RSTR_PWRRST",
+          "mask": 268435456,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "QUADSPI.enable": {
+          "macro": "RCC_AHB3ENR_QSPIEN",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "QUADSPI.reset": {
+          "macro": "RCC_AHB3RSTR_QSPIRST",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "RNG.enable": {
+          "macro": "RCC_AHB2ENR_RNGEN",
+          "mask": 64,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "RNG.reset": {
+          "macro": "RCC_AHB2RSTR_RNGRST",
+          "mask": 64,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "RTC.enable": {
+          "macro": "RCC_APB1ENR_RTCEN",
+          "mask": 1024,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SAI1.enable": {
+          "macro": "RCC_APB2ENR_SAI1EN",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SAI1.reset": {
+          "macro": "RCC_APB2RSTR_SAI1RST",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SAI2.enable": {
+          "macro": "RCC_APB2ENR_SAI2EN",
+          "mask": 8388608,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SAI2.reset": {
+          "macro": "RCC_APB2RSTR_SAI2RST",
+          "mask": 8388608,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SDMMC1.enable": {
+          "macro": "RCC_APB2ENR_SDMMC1EN",
+          "mask": 2048,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SDMMC1.reset": {
+          "macro": "RCC_APB2RSTR_SDMMC1RST",
+          "mask": 2048,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI1.enable": {
+          "macro": "RCC_APB2ENR_SPI1EN",
+          "mask": 4096,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI1.reset": {
+          "macro": "RCC_APB2RSTR_SPI1RST",
+          "mask": 4096,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI2.enable": {
+          "macro": "RCC_APB1ENR_SPI2EN",
+          "mask": 16384,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI2.reset": {
+          "macro": "RCC_APB1RSTR_SPI2RST",
+          "mask": 16384,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI3.enable": {
+          "macro": "RCC_APB1ENR_SPI3EN",
+          "mask": 32768,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI3.reset": {
+          "macro": "RCC_APB1RSTR_SPI3RST",
+          "mask": 32768,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SYSCFG.enable": {
+          "macro": "RCC_APB2ENR_SYSCFGEN",
+          "mask": 16384,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SYSCFG.reset": {
+          "macro": "RCC_APB2RSTR_SYSCFGRST",
+          "mask": 16384,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM1.enable": {
+          "macro": "RCC_APB2ENR_TIM1EN",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM1.reset": {
+          "macro": "RCC_APB2RSTR_TIM1RST",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM10.enable": {
+          "macro": "RCC_APB2ENR_TIM10EN",
+          "mask": 131072,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM10.reset": {
+          "macro": "RCC_APB2RSTR_TIM10RST",
+          "mask": 131072,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM11.enable": {
+          "macro": "RCC_APB2ENR_TIM11EN",
+          "mask": 262144,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM11.reset": {
+          "macro": "RCC_APB2RSTR_TIM11RST",
+          "mask": 262144,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM13.enable": {
+          "macro": "RCC_APB1ENR_TIM13EN",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM13.reset": {
+          "macro": "RCC_APB1RSTR_TIM13RST",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM14.enable": {
+          "macro": "RCC_APB1ENR_TIM14EN",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM14.reset": {
+          "macro": "RCC_APB1RSTR_TIM14RST",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM2.enable": {
+          "macro": "RCC_APB1ENR_TIM2EN",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM2.reset": {
+          "macro": "RCC_APB1RSTR_TIM2RST",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM3.enable": {
+          "macro": "RCC_APB1ENR_TIM3EN",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM3.reset": {
+          "macro": "RCC_APB1RSTR_TIM3RST",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM4.enable": {
+          "macro": "RCC_APB1ENR_TIM4EN",
+          "mask": 4,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM4.reset": {
+          "macro": "RCC_APB1RSTR_TIM4RST",
+          "mask": 4,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM5.enable": {
+          "macro": "RCC_APB1ENR_TIM5EN",
+          "mask": 8,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM5.reset": {
+          "macro": "RCC_APB1RSTR_TIM5RST",
+          "mask": 8,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM6.enable": {
+          "macro": "RCC_APB1ENR_TIM6EN",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM6.reset": {
+          "macro": "RCC_APB1RSTR_TIM6RST",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM7.enable": {
+          "macro": "RCC_APB1ENR_TIM7EN",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM7.reset": {
+          "macro": "RCC_APB1RSTR_TIM7RST",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM8.enable": {
+          "macro": "RCC_APB2ENR_TIM8EN",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM8.reset": {
+          "macro": "RCC_APB2RSTR_TIM8RST",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM9.enable": {
+          "macro": "RCC_APB2ENR_TIM9EN",
+          "mask": 65536,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM9.reset": {
+          "macro": "RCC_APB2RSTR_TIM9RST",
+          "mask": 65536,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "UART4.enable": {
+          "macro": "RCC_APB1ENR_UART4EN",
+          "mask": 524288,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "UART4.reset": {
+          "macro": "RCC_APB1RSTR_UART4RST",
+          "mask": 524288,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "UART5.enable": {
+          "macro": "RCC_APB1ENR_UART5EN",
+          "mask": 1048576,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "UART5.reset": {
+          "macro": "RCC_APB1RSTR_UART5RST",
+          "mask": 1048576,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART1.enable": {
+          "macro": "RCC_APB2ENR_USART1EN",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART1.reset": {
+          "macro": "RCC_APB2RSTR_USART1RST",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART2.enable": {
+          "macro": "RCC_APB1ENR_USART2EN",
+          "mask": 131072,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART2.reset": {
+          "macro": "RCC_APB1RSTR_USART2RST",
+          "mask": 131072,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART3.enable": {
+          "macro": "RCC_APB1ENR_USART3EN",
+          "mask": 262144,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART3.reset": {
+          "macro": "RCC_APB1RSTR_USART3RST",
+          "mask": 262144,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART6.enable": {
+          "macro": "RCC_APB2ENR_USART6EN",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART6.reset": {
+          "macro": "RCC_APB2RSTR_USART6RST",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USB_OTG_FS.enable": {
+          "macro": "RCC_AHB2ENR_OTGFSEN",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USB_OTG_FS.reset": {
+          "macro": "RCC_AHB2RSTR_OTGFSRST",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USB_OTG_HS.enable": {
+          "macro": "RCC_AHB1ENR_OTGHSEN",
+          "mask": 536870912,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USB_OTG_HS.reset": {
+          "macro": "RCC_AHB1RSTR_OTGHRST",
+          "mask": 536870912,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "WWDG.enable": {
+          "macro": "RCC_APB1ENR_WWDGEN",
+          "mask": 2048,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "WWDG.reset": {
+          "macro": "RCC_APB1RSTR_WWDGRST",
+          "mask": 2048,
+          "matches_pinned_rcc_bit_definition": true
+        }
+      },
+      "irq_count": 85,
+      "interrupts_identical_to_exact_cmsis": true,
+      "removed_peripherals": [
+        "FMC",
+        "LPTIM1",
+        "SPI4",
+        "UART7",
+        "UART8"
+      ],
+      "rejected_xml_ip": {
+        "AES": "No AES address or instance in exact stm32f723xx.h; follows upstream address intersection"
+      },
+      "baseline_pin_source_differences": {
+        "RTC": {
+          "only_baseline": [
+            {
+              "pin": "PC1",
+              "signal": "TS"
+            }
+          ],
+          "only_current_st_xml": []
+        }
+      },
+      "suppressed_unsupported_ulpi_signals": [
+        {
+          "pin": "PC0",
+          "signal": "ULPI_STP",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PC2",
+          "signal": "ULPI_DIR",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PC3",
+          "signal": "ULPI_NXT",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PA3",
+          "signal": "ULPI_D0",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PA5",
+          "signal": "ULPI_CK",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB0",
+          "signal": "ULPI_D1",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB1",
+          "signal": "ULPI_D2",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB10",
+          "signal": "ULPI_D3",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB11",
+          "signal": "ULPI_D4",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB12",
+          "signal": "ULPI_D5",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB13",
+          "signal": "ULPI_D6",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB5",
+          "signal": "ULPI_D7",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        }
+      ],
+      "pin_af_changes": {
+        "ADC1": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PC5",
+              "signal": "IN15"
+            }
+          ]
+        },
+        "ADC2": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PC5",
+              "signal": "IN15"
+            }
+          ]
+        },
+        "CAN1": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD0",
+              "signal": "RX",
+              "af": 9
+            },
+            {
+              "pin": "PD1",
+              "signal": "TX",
+              "af": 9
+            }
+          ]
+        },
+        "QUADSPI": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD11",
+              "signal": "BK1_IO0",
+              "af": 9
+            },
+            {
+              "pin": "PD12",
+              "signal": "BK1_IO1",
+              "af": 9
+            },
+            {
+              "pin": "PD13",
+              "signal": "BK1_IO3",
+              "af": 9
+            },
+            {
+              "pin": "PE10",
+              "signal": "BK2_IO3",
+              "af": 10
+            },
+            {
+              "pin": "PE2",
+              "signal": "BK1_IO2",
+              "af": 9
+            },
+            {
+              "pin": "PE7",
+              "signal": "BK2_IO0",
+              "af": 10
+            },
+            {
+              "pin": "PE8",
+              "signal": "BK2_IO1",
+              "af": 10
+            },
+            {
+              "pin": "PE9",
+              "signal": "BK2_IO2",
+              "af": 10
+            }
+          ]
+        },
+        "RTC": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PC1",
+              "signal": "TS"
+            }
+          ]
+        },
+        "SAI1": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD6",
+              "signal": "SD_A",
+              "af": 6
+            },
+            {
+              "pin": "PE2",
+              "signal": "MCLK_A",
+              "af": 6
+            },
+            {
+              "pin": "PE3",
+              "signal": "SD_B",
+              "af": 6
+            },
+            {
+              "pin": "PE4",
+              "signal": "FS_A",
+              "af": 6
+            },
+            {
+              "pin": "PE5",
+              "signal": "SCK_A",
+              "af": 6
+            },
+            {
+              "pin": "PE6",
+              "signal": "SD_A",
+              "af": 6
+            }
+          ]
+        },
+        "SAI2": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD11",
+              "signal": "SD_A",
+              "af": 10
+            },
+            {
+              "pin": "PD12",
+              "signal": "FS_A",
+              "af": 10
+            },
+            {
+              "pin": "PD13",
+              "signal": "SCK_A",
+              "af": 10
+            },
+            {
+              "pin": "PE0",
+              "signal": "MCLK_A",
+              "af": 10
+            },
+            {
+              "pin": "PE11",
+              "signal": "SD_B",
+              "af": 10
+            },
+            {
+              "pin": "PE12",
+              "signal": "SCK_B",
+              "af": 10
+            },
+            {
+              "pin": "PE13",
+              "signal": "FS_B",
+              "af": 10
+            },
+            {
+              "pin": "PE14",
+              "signal": "MCLK_B",
+              "af": 10
+            },
+            {
+              "pin": "PE6",
+              "signal": "MCLK_B",
+              "af": 10
+            }
+          ]
+        },
+        "SPI3": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD6",
+              "signal": "I2S_SD",
+              "af": 5
+            },
+            {
+              "pin": "PD6",
+              "signal": "MOSI",
+              "af": 5
+            }
+          ]
+        },
+        "TIM1": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PE10",
+              "signal": "CH2N",
+              "af": 1
+            },
+            {
+              "pin": "PE11",
+              "signal": "CH2",
+              "af": 1
+            },
+            {
+              "pin": "PE12",
+              "signal": "CH3N",
+              "af": 1
+            },
+            {
+              "pin": "PE13",
+              "signal": "CH3",
+              "af": 1
+            },
+            {
+              "pin": "PE14",
+              "signal": "CH4",
+              "af": 1
+            },
+            {
+              "pin": "PE15",
+              "signal": "BKIN",
+              "af": 1
+            },
+            {
+              "pin": "PE6",
+              "signal": "BKIN2",
+              "af": 1
+            },
+            {
+              "pin": "PE7",
+              "signal": "ETR",
+              "af": 1
+            },
+            {
+              "pin": "PE8",
+              "signal": "CH1N",
+              "af": 1
+            },
+            {
+              "pin": "PE9",
+              "signal": "CH1",
+              "af": 1
+            }
+          ]
+        },
+        "TIM4": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD12",
+              "signal": "CH1",
+              "af": 2
+            },
+            {
+              "pin": "PD13",
+              "signal": "CH2",
+              "af": 2
+            },
+            {
+              "pin": "PD14",
+              "signal": "CH3",
+              "af": 2
+            },
+            {
+              "pin": "PD15",
+              "signal": "CH4",
+              "af": 2
+            },
+            {
+              "pin": "PE0",
+              "signal": "ETR",
+              "af": 2
+            }
+          ]
+        },
+        "TIM9": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PE5",
+              "signal": "CH1",
+              "af": 3
+            },
+            {
+              "pin": "PE6",
+              "signal": "CH2",
+              "af": 3
+            }
+          ]
+        },
+        "USART2": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD4",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PD4",
+              "signal": "RTS",
+              "af": 7
+            },
+            {
+              "pin": "PD5",
+              "signal": "TX",
+              "af": 7
+            },
+            {
+              "pin": "PD6",
+              "signal": "RX",
+              "af": 7
+            },
+            {
+              "pin": "PD7",
+              "signal": "CK",
+              "af": 7
+            }
+          ]
+        },
+        "USART3": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD11",
+              "signal": "CTS",
+              "af": 7
+            },
+            {
+              "pin": "PD12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PD12",
+              "signal": "RTS",
+              "af": 7
+            }
+          ]
+        }
+      },
+      "gpio_count": 51,
+      "position_count": 68,
+      "retained_die_metadata_identical": true,
+      "memory_identical_to_same_capacity_f723": true,
+      "power_pins": [
+        {
+          "Name": "VBAT",
+          "Position": "1",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSSA",
+          "Position": "12",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDDA",
+          "Position": "13",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSS",
+          "Position": "18",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDD",
+          "Position": "19",
+          "Type": "Power"
+        },
+        {
+          "Name": "VCAP_1",
+          "Position": "30",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSS",
+          "Position": "31",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDD",
+          "Position": "32",
+          "Type": "Power"
+        },
+        {
+          "Name": "REXTPHYHS",
+          "Position": "35",
+          "Type": "MonoIO"
+        },
+        {
+          "Name": "VDDPHYHS",
+          "Position": "36",
+          "Type": "Power"
+        },
+        {
+          "Name": "V12_PHYHS",
+          "Position": "37",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSS",
+          "Position": "50",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDD",
+          "Position": "51",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSS",
+          "Position": "67",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDD",
+          "Position": "68",
+          "Type": "Power"
+        }
+      ],
+      "supply": "internal F7 regulator / VCAP_1; separate VDDPHYHS and V12_PHYHS for integrated HS PHY; no H5 Q/SMPS selector",
+      "ordering_status": "official ST XML; updated full 68-pin ordering/electrical table not available in audited DS11853 Rev9",
+      "hardware_validation": "not-run"
+    },
+    "STM32F723RE": {
+      "baseline": "STM32F723VE",
+      "baseline_json_sha256": "01dc8449b3c1cb3851eaf0e7a9acd23cc987d049618e1063b11f6ed9ac1c5742",
+      "added_xml_ip": [
+        [
+          "AES",
+          "AES",
+          "aes3_v1_0_F7_Cube"
+        ]
+      ],
+      "omitted_xml_ip": [
+        [
+          "FMC",
+          "FMC",
+          "lqfp100_fmc_v2_0"
+        ],
+        [
+          "LPTIM1",
+          "LPTIM",
+          "F7_lptimer1_v1_1_Cube"
+        ],
+        [
+          "SPI4",
+          "SPI",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "UART7",
+          "UART",
+          "sci2_v2_1_Cube"
+        ],
+        [
+          "UART8",
+          "UART",
+          "sci2_v2_1_Cube"
+        ]
+      ],
+      "shared_ip_instances_versions": [
+        [
+          "ADC1",
+          "ADC",
+          "aditf2_v1_1_Cube"
+        ],
+        [
+          "ADC2",
+          "ADC",
+          "aditf2_v1_1_Cube"
+        ],
+        [
+          "ADC3",
+          "ADC",
+          "aditf2_v1_1_Cube"
+        ],
+        [
+          "CAN1",
+          "CAN",
+          "bxcan1_v1_1_F7_Cube"
+        ],
+        [
+          "CORTEX_M7",
+          "CORTEX_M7",
+          "cortex_v1_0_Cube"
+        ],
+        [
+          "CRC",
+          "CRC",
+          "integtest1_v2_0"
+        ],
+        [
+          "DAC",
+          "DAC",
+          "dacif_v1_1_Cube"
+        ],
+        [
+          "DMA",
+          "DMA",
+          "STM32F722_dma_v2_0"
+        ],
+        [
+          "FATFS",
+          "FATFS",
+          "v0.1.0_Cube"
+        ],
+        [
+          "FREERTOS",
+          "FREERTOS",
+          "v8.0.0_Cube"
+        ],
+        [
+          "GPIO",
+          "GPIO",
+          "STM32F72x_gpio_v1_0"
+        ],
+        [
+          "I2C1",
+          "I2C",
+          "i2c2_v1_1F7_Cube"
+        ],
+        [
+          "I2C2",
+          "I2C",
+          "i2c2_v1_1F7_Cube"
+        ],
+        [
+          "I2C3",
+          "I2C",
+          "i2c2_v1_1F7_Cube"
+        ],
+        [
+          "I2S1",
+          "I2S",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "I2S2",
+          "I2S",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "I2S3",
+          "I2S",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "IWDG",
+          "IWDG",
+          "iwdg1_v2_0"
+        ],
+        [
+          "LIBJPEG",
+          "LIBJPEG",
+          "v8_Cube"
+        ],
+        [
+          "MBEDTLS",
+          "MBEDTLS",
+          "v2_16_2_Cube"
+        ],
+        [
+          "NVIC",
+          "NVIC",
+          "STM32F777"
+        ],
+        [
+          "PDM2PCM",
+          "PDM2PCM",
+          "pdm2pcm_v3.2.0_Cube"
+        ],
+        [
+          "QUADSPI",
+          "QUADSPI",
+          "quadspi1_v1_0_Cube"
+        ],
+        [
+          "RCC",
+          "RCC",
+          "STM32F722_rcc_v1_0"
+        ],
+        [
+          "RNG",
+          "RNG",
+          "rng1_v1_1"
+        ],
+        [
+          "RTC",
+          "RTC",
+          "rtc2_v2_6_Cube"
+        ],
+        [
+          "SAI1",
+          "SAI",
+          "sai1_v1_2_Cube"
+        ],
+        [
+          "SAI2",
+          "SAI",
+          "sai1_v1_2_Cube"
+        ],
+        [
+          "SDMMC1",
+          "SDMMC",
+          "sdmmc_v1_3_Cube"
+        ],
+        [
+          "SPI1",
+          "SPI",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "SPI2",
+          "SPI",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "SPI3",
+          "SPI",
+          "spi2s1_v3_2_Cube"
+        ],
+        [
+          "SYS",
+          "SYS",
+          "STM32F7_sys_v1_0"
+        ],
+        [
+          "TIM1",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM10",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM11",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM13",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM14",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM2",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM3",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM4",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM5",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM6",
+          "TIM6_7F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM7",
+          "TIM6_7F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM8",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "TIM9",
+          "TIM1_8F7",
+          "gptimer2_v3_x_Cube"
+        ],
+        [
+          "UART4",
+          "UART",
+          "sci2_v2_1_Cube"
+        ],
+        [
+          "UART5",
+          "UART",
+          "sci2_v2_1_Cube"
+        ],
+        [
+          "USART1",
+          "USART",
+          "sci3_v1_1_Cube"
+        ],
+        [
+          "USART2",
+          "USART",
+          "sci3_v1_1_Cube"
+        ],
+        [
+          "USART3",
+          "USART",
+          "sci3_v1_1_Cube"
+        ],
+        [
+          "USART6",
+          "USART",
+          "sci3_v1_1_Cube"
+        ],
+        [
+          "USB_DEVICE",
+          "USB_DEVICE",
+          "v1.0_Cube"
+        ],
+        [
+          "USB_HOST",
+          "USB_HOST",
+          "v1.0_Cube"
+        ],
+        [
+          "USB_OTG_FS",
+          "USB_OTG_FS",
+          "otgfs1_v3_0_Cube"
+        ],
+        [
+          "USB_OTG_HS",
+          "USB_OTG_HS",
+          "otghs1_v3_0_Cube"
+        ],
+        [
+          "WWDG",
+          "WWDG",
+          "wwdg1_v1_0"
+        ]
+      ],
+      "peripheral_addresses": {
+        "ADC1": {
+          "macro": "ADC1_BASE",
+          "address": 1073815552
+        },
+        "ADC123_COMMON": {
+          "macro": "ADC123_COMMON",
+          "address": 1073816320
+        },
+        "ADC2": {
+          "macro": "ADC2_BASE",
+          "address": 1073815808
+        },
+        "ADC3": {
+          "macro": "ADC3_BASE",
+          "address": 1073816064
+        },
+        "CAN1": {
+          "macro": "CAN1_BASE",
+          "address": 1073767424
+        },
+        "CRC": {
+          "macro": "CRC_BASE",
+          "address": 1073885184
+        },
+        "DAC1": {
+          "macro": "DAC1",
+          "address": 1073771520
+        },
+        "DBGMCU": {
+          "macro": "DBGMCU_BASE",
+          "address": 3758366720
+        },
+        "DMA1": {
+          "macro": "DMA1_BASE",
+          "address": 1073897472
+        },
+        "DMA2": {
+          "macro": "DMA2_BASE",
+          "address": 1073898496
+        },
+        "EXTI": {
+          "macro": "EXTI_BASE",
+          "address": 1073822720
+        },
+        "FLASH": {
+          "macro": "FLASH_R_BASE",
+          "address": 1073888256
+        },
+        "GPIOA": {
+          "macro": "GPIOA_BASE",
+          "address": 1073872896
+        },
+        "GPIOB": {
+          "macro": "GPIOB_BASE",
+          "address": 1073873920
+        },
+        "GPIOC": {
+          "macro": "GPIOC_BASE",
+          "address": 1073874944
+        },
+        "GPIOD": {
+          "macro": "GPIOD_BASE",
+          "address": 1073875968
+        },
+        "GPIOE": {
+          "macro": "GPIOE_BASE",
+          "address": 1073876992
+        },
+        "GPIOF": {
+          "macro": "GPIOF_BASE",
+          "address": 1073878016
+        },
+        "GPIOG": {
+          "macro": "GPIOG_BASE",
+          "address": 1073879040
+        },
+        "GPIOH": {
+          "macro": "GPIOH_BASE",
+          "address": 1073880064
+        },
+        "GPIOI": {
+          "macro": "GPIOI_BASE",
+          "address": 1073881088
+        },
+        "I2C1": {
+          "macro": "I2C1_BASE",
+          "address": 1073763328
+        },
+        "I2C2": {
+          "macro": "I2C2_BASE",
+          "address": 1073764352
+        },
+        "I2C3": {
+          "macro": "I2C3_BASE",
+          "address": 1073765376
+        },
+        "IWDG": {
+          "macro": "IWDG_BASE",
+          "address": 1073754112
+        },
+        "PWR": {
+          "macro": "PWR_BASE",
+          "address": 1073770496
+        },
+        "QUADSPI": {
+          "macro": "QSPI_R_BASE",
+          "address": 2684358656
+        },
+        "RCC": {
+          "macro": "RCC_BASE",
+          "address": 1073887232
+        },
+        "RNG": {
+          "macro": "RNG_BASE",
+          "address": 1342572544
+        },
+        "RTC": {
+          "macro": "RTC_BASE",
+          "address": 1073752064
+        },
+        "SAI1": {
+          "macro": "SAI1_BASE",
+          "address": 1073829888
+        },
+        "SAI2": {
+          "macro": "SAI2_BASE",
+          "address": 1073830912
+        },
+        "SDMMC1": {
+          "macro": "SDMMC1_BASE",
+          "address": 1073818624
+        },
+        "SPI1": {
+          "macro": "SPI1_BASE",
+          "address": 1073819648
+        },
+        "SPI2": {
+          "macro": "SPI2_BASE",
+          "address": 1073756160
+        },
+        "SPI3": {
+          "macro": "SPI3_BASE",
+          "address": 1073757184
+        },
+        "SYSCFG": {
+          "macro": "SYSCFG_BASE",
+          "address": 1073821696
+        },
+        "TIM1": {
+          "macro": "TIM1_BASE",
+          "address": 1073807360
+        },
+        "TIM10": {
+          "macro": "TIM10_BASE",
+          "address": 1073824768
+        },
+        "TIM11": {
+          "macro": "TIM11_BASE",
+          "address": 1073825792
+        },
+        "TIM13": {
+          "macro": "TIM13_BASE",
+          "address": 1073748992
+        },
+        "TIM14": {
+          "macro": "TIM14_BASE",
+          "address": 1073750016
+        },
+        "TIM2": {
+          "macro": "TIM2_BASE",
+          "address": 1073741824
+        },
+        "TIM3": {
+          "macro": "TIM3_BASE",
+          "address": 1073742848
+        },
+        "TIM4": {
+          "macro": "TIM4_BASE",
+          "address": 1073743872
+        },
+        "TIM5": {
+          "macro": "TIM5_BASE",
+          "address": 1073744896
+        },
+        "TIM6": {
+          "macro": "TIM6_BASE",
+          "address": 1073745920
+        },
+        "TIM7": {
+          "macro": "TIM7_BASE",
+          "address": 1073746944
+        },
+        "TIM8": {
+          "macro": "TIM8_BASE",
+          "address": 1073808384
+        },
+        "TIM9": {
+          "macro": "TIM9_BASE",
+          "address": 1073823744
+        },
+        "TS_CAL1": {
+          "macro": "TEMPSENSOR_CAL1_ADDR_CMSIS",
+          "address": 535853612
+        },
+        "TS_CAL2": {
+          "macro": "TEMPSENSOR_CAL2_ADDR_CMSIS",
+          "address": 535853614
+        },
+        "UART4": {
+          "macro": "UART4_BASE",
+          "address": 1073761280
+        },
+        "UART5": {
+          "macro": "UART5_BASE",
+          "address": 1073762304
+        },
+        "UID": {
+          "macro": "UID_BASE",
+          "address": 535853584
+        },
+        "USART1": {
+          "macro": "USART1_BASE",
+          "address": 1073811456
+        },
+        "USART2": {
+          "macro": "USART2_BASE",
+          "address": 1073759232
+        },
+        "USART3": {
+          "macro": "USART3_BASE",
+          "address": 1073760256
+        },
+        "USART6": {
+          "macro": "USART6_BASE",
+          "address": 1073812480
+        },
+        "USB_OTG_FS": {
+          "macro": "USB_OTG_FS_PERIPH_BASE",
+          "address": 1342177280
+        },
+        "USB_OTG_HS": {
+          "macro": "USB_OTG_HS_PERIPH_BASE",
+          "address": 1074003968
+        },
+        "VREFINTCAL": {
+          "macro": "VREFINT_CAL_ADDR_CMSIS",
+          "address": 535853610
+        },
+        "WWDG": {
+          "macro": "WWDG_BASE",
+          "address": 1073753088
+        }
+      },
+      "rcc_gate_reset_masks": {
+        "ADC1.enable": {
+          "macro": "RCC_APB2ENR_ADC1EN",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "ADC2.enable": {
+          "macro": "RCC_APB2ENR_ADC2EN",
+          "mask": 512,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "ADC3.enable": {
+          "macro": "RCC_APB2ENR_ADC3EN",
+          "mask": 1024,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "CAN1.enable": {
+          "macro": "RCC_APB1ENR_CAN1EN",
+          "mask": 33554432,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "CAN1.reset": {
+          "macro": "RCC_APB1RSTR_CAN1RST",
+          "mask": 33554432,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "CRC.enable": {
+          "macro": "RCC_AHB1ENR_CRCEN",
+          "mask": 4096,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "CRC.reset": {
+          "macro": "RCC_AHB1RSTR_CRCRST",
+          "mask": 4096,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DAC1.enable": {
+          "macro": "RCC_APB1ENR_DACEN",
+          "mask": 536870912,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DAC1.reset": {
+          "macro": "RCC_APB1RSTR_DACRST",
+          "mask": 536870912,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DMA1.enable": {
+          "macro": "RCC_AHB1ENR_DMA1EN",
+          "mask": 2097152,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DMA1.reset": {
+          "macro": "RCC_AHB1RSTR_DMA1RST",
+          "mask": 2097152,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DMA2.enable": {
+          "macro": "RCC_AHB1ENR_DMA2EN",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "DMA2.reset": {
+          "macro": "RCC_AHB1RSTR_DMA2RST",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOA.enable": {
+          "macro": "RCC_AHB1ENR_GPIOAEN",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOA.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOARST",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOB.enable": {
+          "macro": "RCC_AHB1ENR_GPIOBEN",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOB.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOBRST",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOC.enable": {
+          "macro": "RCC_AHB1ENR_GPIOCEN",
+          "mask": 4,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOC.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOCRST",
+          "mask": 4,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOD.enable": {
+          "macro": "RCC_AHB1ENR_GPIODEN",
+          "mask": 8,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOD.reset": {
+          "macro": "RCC_AHB1RSTR_GPIODRST",
+          "mask": 8,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOE.enable": {
+          "macro": "RCC_AHB1ENR_GPIOEEN",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOE.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOERST",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOF.enable": {
+          "macro": "RCC_AHB1ENR_GPIOFEN",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOF.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOFRST",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOG.enable": {
+          "macro": "RCC_AHB1ENR_GPIOGEN",
+          "mask": 64,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOG.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOGRST",
+          "mask": 64,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOH.enable": {
+          "macro": "RCC_AHB1ENR_GPIOHEN",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOH.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOHRST",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOI.enable": {
+          "macro": "RCC_AHB1ENR_GPIOIEN",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "GPIOI.reset": {
+          "macro": "RCC_AHB1RSTR_GPIOIRST",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C1.enable": {
+          "macro": "RCC_APB1ENR_I2C1EN",
+          "mask": 2097152,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C1.reset": {
+          "macro": "RCC_APB1RSTR_I2C1RST",
+          "mask": 2097152,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C2.enable": {
+          "macro": "RCC_APB1ENR_I2C2EN",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C2.reset": {
+          "macro": "RCC_APB1RSTR_I2C2RST",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C3.enable": {
+          "macro": "RCC_APB1ENR_I2C3EN",
+          "mask": 8388608,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "I2C3.reset": {
+          "macro": "RCC_APB1RSTR_I2C3RST",
+          "mask": 8388608,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "PWR.enable": {
+          "macro": "RCC_APB1ENR_PWREN",
+          "mask": 268435456,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "PWR.reset": {
+          "macro": "RCC_APB1RSTR_PWRRST",
+          "mask": 268435456,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "QUADSPI.enable": {
+          "macro": "RCC_AHB3ENR_QSPIEN",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "QUADSPI.reset": {
+          "macro": "RCC_AHB3RSTR_QSPIRST",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "RNG.enable": {
+          "macro": "RCC_AHB2ENR_RNGEN",
+          "mask": 64,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "RNG.reset": {
+          "macro": "RCC_AHB2RSTR_RNGRST",
+          "mask": 64,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "RTC.enable": {
+          "macro": "RCC_APB1ENR_RTCEN",
+          "mask": 1024,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SAI1.enable": {
+          "macro": "RCC_APB2ENR_SAI1EN",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SAI1.reset": {
+          "macro": "RCC_APB2RSTR_SAI1RST",
+          "mask": 4194304,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SAI2.enable": {
+          "macro": "RCC_APB2ENR_SAI2EN",
+          "mask": 8388608,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SAI2.reset": {
+          "macro": "RCC_APB2RSTR_SAI2RST",
+          "mask": 8388608,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SDMMC1.enable": {
+          "macro": "RCC_APB2ENR_SDMMC1EN",
+          "mask": 2048,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SDMMC1.reset": {
+          "macro": "RCC_APB2RSTR_SDMMC1RST",
+          "mask": 2048,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI1.enable": {
+          "macro": "RCC_APB2ENR_SPI1EN",
+          "mask": 4096,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI1.reset": {
+          "macro": "RCC_APB2RSTR_SPI1RST",
+          "mask": 4096,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI2.enable": {
+          "macro": "RCC_APB1ENR_SPI2EN",
+          "mask": 16384,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI2.reset": {
+          "macro": "RCC_APB1RSTR_SPI2RST",
+          "mask": 16384,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI3.enable": {
+          "macro": "RCC_APB1ENR_SPI3EN",
+          "mask": 32768,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SPI3.reset": {
+          "macro": "RCC_APB1RSTR_SPI3RST",
+          "mask": 32768,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SYSCFG.enable": {
+          "macro": "RCC_APB2ENR_SYSCFGEN",
+          "mask": 16384,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "SYSCFG.reset": {
+          "macro": "RCC_APB2RSTR_SYSCFGRST",
+          "mask": 16384,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM1.enable": {
+          "macro": "RCC_APB2ENR_TIM1EN",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM1.reset": {
+          "macro": "RCC_APB2RSTR_TIM1RST",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM10.enable": {
+          "macro": "RCC_APB2ENR_TIM10EN",
+          "mask": 131072,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM10.reset": {
+          "macro": "RCC_APB2RSTR_TIM10RST",
+          "mask": 131072,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM11.enable": {
+          "macro": "RCC_APB2ENR_TIM11EN",
+          "mask": 262144,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM11.reset": {
+          "macro": "RCC_APB2RSTR_TIM11RST",
+          "mask": 262144,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM13.enable": {
+          "macro": "RCC_APB1ENR_TIM13EN",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM13.reset": {
+          "macro": "RCC_APB1RSTR_TIM13RST",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM14.enable": {
+          "macro": "RCC_APB1ENR_TIM14EN",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM14.reset": {
+          "macro": "RCC_APB1RSTR_TIM14RST",
+          "mask": 256,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM2.enable": {
+          "macro": "RCC_APB1ENR_TIM2EN",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM2.reset": {
+          "macro": "RCC_APB1RSTR_TIM2RST",
+          "mask": 1,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM3.enable": {
+          "macro": "RCC_APB1ENR_TIM3EN",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM3.reset": {
+          "macro": "RCC_APB1RSTR_TIM3RST",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM4.enable": {
+          "macro": "RCC_APB1ENR_TIM4EN",
+          "mask": 4,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM4.reset": {
+          "macro": "RCC_APB1RSTR_TIM4RST",
+          "mask": 4,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM5.enable": {
+          "macro": "RCC_APB1ENR_TIM5EN",
+          "mask": 8,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM5.reset": {
+          "macro": "RCC_APB1RSTR_TIM5RST",
+          "mask": 8,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM6.enable": {
+          "macro": "RCC_APB1ENR_TIM6EN",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM6.reset": {
+          "macro": "RCC_APB1RSTR_TIM6RST",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM7.enable": {
+          "macro": "RCC_APB1ENR_TIM7EN",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM7.reset": {
+          "macro": "RCC_APB1RSTR_TIM7RST",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM8.enable": {
+          "macro": "RCC_APB2ENR_TIM8EN",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM8.reset": {
+          "macro": "RCC_APB2RSTR_TIM8RST",
+          "mask": 2,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM9.enable": {
+          "macro": "RCC_APB2ENR_TIM9EN",
+          "mask": 65536,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "TIM9.reset": {
+          "macro": "RCC_APB2RSTR_TIM9RST",
+          "mask": 65536,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "UART4.enable": {
+          "macro": "RCC_APB1ENR_UART4EN",
+          "mask": 524288,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "UART4.reset": {
+          "macro": "RCC_APB1RSTR_UART4RST",
+          "mask": 524288,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "UART5.enable": {
+          "macro": "RCC_APB1ENR_UART5EN",
+          "mask": 1048576,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "UART5.reset": {
+          "macro": "RCC_APB1RSTR_UART5RST",
+          "mask": 1048576,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART1.enable": {
+          "macro": "RCC_APB2ENR_USART1EN",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART1.reset": {
+          "macro": "RCC_APB2RSTR_USART1RST",
+          "mask": 16,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART2.enable": {
+          "macro": "RCC_APB1ENR_USART2EN",
+          "mask": 131072,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART2.reset": {
+          "macro": "RCC_APB1RSTR_USART2RST",
+          "mask": 131072,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART3.enable": {
+          "macro": "RCC_APB1ENR_USART3EN",
+          "mask": 262144,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART3.reset": {
+          "macro": "RCC_APB1RSTR_USART3RST",
+          "mask": 262144,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART6.enable": {
+          "macro": "RCC_APB2ENR_USART6EN",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USART6.reset": {
+          "macro": "RCC_APB2RSTR_USART6RST",
+          "mask": 32,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USB_OTG_FS.enable": {
+          "macro": "RCC_AHB2ENR_OTGFSEN",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USB_OTG_FS.reset": {
+          "macro": "RCC_AHB2RSTR_OTGFSRST",
+          "mask": 128,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USB_OTG_HS.enable": {
+          "macro": "RCC_AHB1ENR_OTGHSEN",
+          "mask": 536870912,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "USB_OTG_HS.reset": {
+          "macro": "RCC_AHB1RSTR_OTGHRST",
+          "mask": 536870912,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "WWDG.enable": {
+          "macro": "RCC_APB1ENR_WWDGEN",
+          "mask": 2048,
+          "matches_pinned_rcc_bit_definition": true
+        },
+        "WWDG.reset": {
+          "macro": "RCC_APB1RSTR_WWDGRST",
+          "mask": 2048,
+          "matches_pinned_rcc_bit_definition": true
+        }
+      },
+      "irq_count": 85,
+      "interrupts_identical_to_exact_cmsis": true,
+      "removed_peripherals": [
+        "FMC",
+        "LPTIM1",
+        "SPI4",
+        "UART7",
+        "UART8"
+      ],
+      "rejected_xml_ip": {
+        "AES": "No AES address or instance in exact stm32f723xx.h; follows upstream address intersection"
+      },
+      "baseline_pin_source_differences": {
+        "RTC": {
+          "only_baseline": [
+            {
+              "pin": "PC1",
+              "signal": "TS"
+            }
+          ],
+          "only_current_st_xml": []
+        }
+      },
+      "suppressed_unsupported_ulpi_signals": [
+        {
+          "pin": "PC0",
+          "signal": "ULPI_STP",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PC2",
+          "signal": "ULPI_DIR",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PC3",
+          "signal": "ULPI_NXT",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PA3",
+          "signal": "ULPI_D0",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PA5",
+          "signal": "ULPI_CK",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB0",
+          "signal": "ULPI_D1",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB1",
+          "signal": "ULPI_D2",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB10",
+          "signal": "ULPI_D3",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB11",
+          "signal": "ULPI_D4",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB12",
+          "signal": "ULPI_D5",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB13",
+          "signal": "ULPI_D6",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        },
+        {
+          "pin": "PB5",
+          "signal": "ULPI_D7",
+          "reason": "DS11853 Rev9 p80 footnote4"
+        }
+      ],
+      "pin_af_changes": {
+        "ADC1": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PC5",
+              "signal": "IN15"
+            }
+          ]
+        },
+        "ADC2": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PC5",
+              "signal": "IN15"
+            }
+          ]
+        },
+        "CAN1": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD0",
+              "signal": "RX",
+              "af": 9
+            },
+            {
+              "pin": "PD1",
+              "signal": "TX",
+              "af": 9
+            }
+          ]
+        },
+        "QUADSPI": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD11",
+              "signal": "BK1_IO0",
+              "af": 9
+            },
+            {
+              "pin": "PD12",
+              "signal": "BK1_IO1",
+              "af": 9
+            },
+            {
+              "pin": "PD13",
+              "signal": "BK1_IO3",
+              "af": 9
+            },
+            {
+              "pin": "PE10",
+              "signal": "BK2_IO3",
+              "af": 10
+            },
+            {
+              "pin": "PE2",
+              "signal": "BK1_IO2",
+              "af": 9
+            },
+            {
+              "pin": "PE7",
+              "signal": "BK2_IO0",
+              "af": 10
+            },
+            {
+              "pin": "PE8",
+              "signal": "BK2_IO1",
+              "af": 10
+            },
+            {
+              "pin": "PE9",
+              "signal": "BK2_IO2",
+              "af": 10
+            }
+          ]
+        },
+        "RTC": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PC1",
+              "signal": "TS"
+            }
+          ]
+        },
+        "SAI1": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD6",
+              "signal": "SD_A",
+              "af": 6
+            },
+            {
+              "pin": "PE2",
+              "signal": "MCLK_A",
+              "af": 6
+            },
+            {
+              "pin": "PE3",
+              "signal": "SD_B",
+              "af": 6
+            },
+            {
+              "pin": "PE4",
+              "signal": "FS_A",
+              "af": 6
+            },
+            {
+              "pin": "PE5",
+              "signal": "SCK_A",
+              "af": 6
+            },
+            {
+              "pin": "PE6",
+              "signal": "SD_A",
+              "af": 6
+            }
+          ]
+        },
+        "SAI2": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD11",
+              "signal": "SD_A",
+              "af": 10
+            },
+            {
+              "pin": "PD12",
+              "signal": "FS_A",
+              "af": 10
+            },
+            {
+              "pin": "PD13",
+              "signal": "SCK_A",
+              "af": 10
+            },
+            {
+              "pin": "PE0",
+              "signal": "MCLK_A",
+              "af": 10
+            },
+            {
+              "pin": "PE11",
+              "signal": "SD_B",
+              "af": 10
+            },
+            {
+              "pin": "PE12",
+              "signal": "SCK_B",
+              "af": 10
+            },
+            {
+              "pin": "PE13",
+              "signal": "FS_B",
+              "af": 10
+            },
+            {
+              "pin": "PE14",
+              "signal": "MCLK_B",
+              "af": 10
+            },
+            {
+              "pin": "PE6",
+              "signal": "MCLK_B",
+              "af": 10
+            }
+          ]
+        },
+        "SPI3": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD6",
+              "signal": "I2S_SD",
+              "af": 5
+            },
+            {
+              "pin": "PD6",
+              "signal": "MOSI",
+              "af": 5
+            }
+          ]
+        },
+        "TIM1": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PE10",
+              "signal": "CH2N",
+              "af": 1
+            },
+            {
+              "pin": "PE11",
+              "signal": "CH2",
+              "af": 1
+            },
+            {
+              "pin": "PE12",
+              "signal": "CH3N",
+              "af": 1
+            },
+            {
+              "pin": "PE13",
+              "signal": "CH3",
+              "af": 1
+            },
+            {
+              "pin": "PE14",
+              "signal": "CH4",
+              "af": 1
+            },
+            {
+              "pin": "PE15",
+              "signal": "BKIN",
+              "af": 1
+            },
+            {
+              "pin": "PE6",
+              "signal": "BKIN2",
+              "af": 1
+            },
+            {
+              "pin": "PE7",
+              "signal": "ETR",
+              "af": 1
+            },
+            {
+              "pin": "PE8",
+              "signal": "CH1N",
+              "af": 1
+            },
+            {
+              "pin": "PE9",
+              "signal": "CH1",
+              "af": 1
+            }
+          ]
+        },
+        "TIM4": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD12",
+              "signal": "CH1",
+              "af": 2
+            },
+            {
+              "pin": "PD13",
+              "signal": "CH2",
+              "af": 2
+            },
+            {
+              "pin": "PD14",
+              "signal": "CH3",
+              "af": 2
+            },
+            {
+              "pin": "PD15",
+              "signal": "CH4",
+              "af": 2
+            },
+            {
+              "pin": "PE0",
+              "signal": "ETR",
+              "af": 2
+            }
+          ]
+        },
+        "TIM9": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PE5",
+              "signal": "CH1",
+              "af": 3
+            },
+            {
+              "pin": "PE6",
+              "signal": "CH2",
+              "af": 3
+            }
+          ]
+        },
+        "USART2": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD4",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PD4",
+              "signal": "RTS",
+              "af": 7
+            },
+            {
+              "pin": "PD5",
+              "signal": "TX",
+              "af": 7
+            },
+            {
+              "pin": "PD6",
+              "signal": "RX",
+              "af": 7
+            },
+            {
+              "pin": "PD7",
+              "signal": "CK",
+              "af": 7
+            }
+          ]
+        },
+        "USART3": {
+          "added": [],
+          "removed": [
+            {
+              "pin": "PD11",
+              "signal": "CTS",
+              "af": 7
+            },
+            {
+              "pin": "PD12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PD12",
+              "signal": "RTS",
+              "af": 7
+            }
+          ]
+        }
+      },
+      "gpio_count": 51,
+      "position_count": 68,
+      "retained_die_metadata_identical": true,
+      "memory_identical_to_same_capacity_f723": true,
+      "power_pins": [
+        {
+          "Name": "VBAT",
+          "Position": "1",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSSA",
+          "Position": "12",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDDA",
+          "Position": "13",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSS",
+          "Position": "18",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDD",
+          "Position": "19",
+          "Type": "Power"
+        },
+        {
+          "Name": "VCAP_1",
+          "Position": "30",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSS",
+          "Position": "31",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDD",
+          "Position": "32",
+          "Type": "Power"
+        },
+        {
+          "Name": "REXTPHYHS",
+          "Position": "35",
+          "Type": "MonoIO"
+        },
+        {
+          "Name": "VDDPHYHS",
+          "Position": "36",
+          "Type": "Power"
+        },
+        {
+          "Name": "V12_PHYHS",
+          "Position": "37",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSS",
+          "Position": "50",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDD",
+          "Position": "51",
+          "Type": "Power"
+        },
+        {
+          "Name": "VSS",
+          "Position": "67",
+          "Type": "Power"
+        },
+        {
+          "Name": "VDD",
+          "Position": "68",
+          "Type": "Power"
+        }
+      ],
+      "supply": "internal F7 regulator / VCAP_1; separate VDDPHYHS and V12_PHYHS for integrated HS PHY; no H5 Q/SMPS selector",
+      "ordering_status": "official ST XML; updated full 68-pin ordering/electrical table not available in audited DS11853 Rev9",
+      "hardware_validation": "not-run"
+    }
+  }
+}

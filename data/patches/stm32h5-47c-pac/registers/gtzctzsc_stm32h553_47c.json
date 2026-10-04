@@ -1,0 +1,121 @@
+{
+  "block/GTZC_TZSC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "name": "SECCFGR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "name": "SECCFGR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "name": "SECCFGR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "name": "PRIVCFGR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "name": "PRIVCFGR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "name": "PRIVCFGR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "name": "MPCWM1ACFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "name": "MPCWM1AR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "name": "MPCWM1BCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "name": "MPCWM1BR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "name": "MPCWM2ACFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 84,
+        "name": "MPCWM2AR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 88,
+        "name": "MPCWM2BCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 92,
+        "name": "MPCWM2BR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 96,
+        "name": "MPCWM3ACFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 100,
+        "name": "MPCWM3AR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 104,
+        "name": "MPCWM3BCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 108,
+        "name": "MPCWM3BR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 112,
+        "name": "MPCWM4ACFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 116,
+        "name": "MPCWM4AR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 120,
+        "name": "MPCWM4BCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 124,
+        "name": "MPCWM4BR"
+      }
+    ]
+  }
+}

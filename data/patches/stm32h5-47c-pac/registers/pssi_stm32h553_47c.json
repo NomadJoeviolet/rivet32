@@ -1,0 +1,151 @@
+{
+  "block/PSSI": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "RIS",
+        "name": "RIS"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "MIS",
+        "name": "MIS"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "DR",
+        "name": "DR"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "CKPOL"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DEPOL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RDYPOL"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 2,
+        "name": "EDM"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "ENABLE"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 3,
+        "name": "DERDYCFG"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "DMAEN"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "OUTEN"
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "DR"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OVR_ISC"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OVR_IE"
+      }
+    ]
+  },
+  "fieldset/MIS": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OVR_MIS"
+      }
+    ]
+  },
+  "fieldset/RIS": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OVR_RIS"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RTT4B"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RTT1B"
+      }
+    ]
+  }
+}

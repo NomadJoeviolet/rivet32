@@ -1,0 +1,66 @@
+{
+  "block/GTZC_TZIC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "name": "IER1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "name": "IER2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "name": "IER3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "name": "IER4"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "name": "SR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "name": "SR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "name": "SR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "name": "SR4"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "name": "FCR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "name": "FCR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "name": "FCR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "name": "FCR4"
+      }
+    ]
+  }
+}

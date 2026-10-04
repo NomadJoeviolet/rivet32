@@ -1,0 +1,11 @@
+{
+  "completed": true,
+  "source_stage": "combined HAL with USB device-mode and retained RTC fixes",
+  "minimum_images": 38,
+  "minimum_review_sha256": "9faeda5eb639030ff6273ed6142e41c60f53b80a915b076a4703960bf5c1bad1",
+  "hal_composition_sha256": "2b01605bf35094b8edcf4f33dd2c0e957595e38e939a80030d0aabf434195f21",
+  "pac_composition_sha256": "188a43bf6e938307b6013e6f5fd257416d7e7a17bcd430e047eb4df63bc7068e",
+  "capture_sha256": "a2e31ebbc7f0d06a92168eb5f68898a56d3b3be64a5241ade4b78cdb93e23536",
+  "hal_integrated": false,
+  "hil": "not-run"
+}

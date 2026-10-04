@@ -1,0 +1,114 @@
+{
+  "STM32H543": {
+    "DCACHE_TypeDef": {
+      "evidence_group": "DCACHE",
+      "registers": {
+        "block": "DCACHE",
+        "kind": "dcache",
+        "version": "v1"
+      },
+      "sha256": "f0803678af209941e16fe6ef70e0b7d294e2a43f9a2ffc982ba401bdf312fabe"
+    },
+    "DMA_TypeDef": {
+      "evidence_group": "DMA",
+      "registers": {
+        "block": "GPDMA",
+        "kind": "gpdma",
+        "version": "v1"
+      },
+      "sha256": "aac9d75c479347e4e5c1cfc572358dcc4311d3c8a7410fb5dd0af9e6560841b3"
+    },
+    "FDCAN_GlobalTypeDef": {
+      "evidence_group": "FDCAN",
+      "registers": {
+        "block": "FDCAN",
+        "kind": "can",
+        "version": "fdcan_v1"
+      },
+      "sha256": "aa0e23c556e7e7cf290b764d6b49a16db1f756f167c78a06a668e682b07adf0d"
+    },
+    "GPIO_TypeDef": {
+      "evidence_group": "GPIO",
+      "registers": {
+        "block": "GPIO",
+        "kind": "gpio",
+        "version": "v2"
+      },
+      "sha256": "ca5b97f7cb10eec36190d4942d5ca0cca731b01899dc64012ef4df6ffc3f550a"
+    },
+    "ICACHE_TypeDef": {
+      "evidence_group": "ICACHE",
+      "registers": {
+        "block": "ICACHE",
+        "kind": "icache",
+        "version": "v1_4crr"
+      },
+      "sha256": "0eebb426cd20ea2b49dd01cc411973522bd1b0894450fcfdd48f8ef4dadb2b41"
+    },
+    "USART_TypeDef": {
+      "evidence_group": "USART",
+      "registers": {
+        "block": "USART",
+        "kind": "usart",
+        "version": "v4"
+      },
+      "sha256": "ccbcba5f9976ea04e4c85b01a824cca394e81a6911ed0a31cef8246f5cde330f"
+    }
+  },
+  "STM32H553": {
+    "DCACHE_TypeDef": {
+      "evidence_group": "DCACHE",
+      "registers": {
+        "block": "DCACHE",
+        "kind": "dcache",
+        "version": "v1"
+      },
+      "sha256": "f0803678af209941e16fe6ef70e0b7d294e2a43f9a2ffc982ba401bdf312fabe"
+    },
+    "DMA_TypeDef": {
+      "evidence_group": "DMA",
+      "registers": {
+        "block": "GPDMA",
+        "kind": "gpdma",
+        "version": "v1"
+      },
+      "sha256": "aac9d75c479347e4e5c1cfc572358dcc4311d3c8a7410fb5dd0af9e6560841b3"
+    },
+    "FDCAN_GlobalTypeDef": {
+      "evidence_group": "FDCAN",
+      "registers": {
+        "block": "FDCAN",
+        "kind": "can",
+        "version": "fdcan_v1"
+      },
+      "sha256": "aa0e23c556e7e7cf290b764d6b49a16db1f756f167c78a06a668e682b07adf0d"
+    },
+    "GPIO_TypeDef": {
+      "evidence_group": "GPIO",
+      "registers": {
+        "block": "GPIO",
+        "kind": "gpio",
+        "version": "v2"
+      },
+      "sha256": "ca5b97f7cb10eec36190d4942d5ca0cca731b01899dc64012ef4df6ffc3f550a"
+    },
+    "ICACHE_TypeDef": {
+      "evidence_group": "ICACHE",
+      "registers": {
+        "block": "ICACHE",
+        "kind": "icache",
+        "version": "v1_4crr"
+      },
+      "sha256": "0eebb426cd20ea2b49dd01cc411973522bd1b0894450fcfdd48f8ef4dadb2b41"
+    },
+    "USART_TypeDef": {
+      "evidence_group": "USART",
+      "registers": {
+        "block": "USART",
+        "kind": "usart",
+        "version": "v4"
+      },
+      "sha256": "ccbcba5f9976ea04e4c85b01a824cca394e81a6911ed0a31cef8246f5cde330f"
+    }
+  }
+}

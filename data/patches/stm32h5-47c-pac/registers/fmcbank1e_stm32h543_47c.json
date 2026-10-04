@@ -1,0 +1,15 @@
+{
+  "block/FMC_BANK1E": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 7,
+          "stride": 4
+        },
+        "byte_offset": 0,
+        "name": "BWTR"
+      }
+    ]
+  }
+}

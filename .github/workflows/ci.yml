@@ -1,0 +1,185 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+permissions:
+  contents: read
+env:
+  EMBODIED_CACHE_LIMIT_MIB: "1024"
+  CARGO_TERM_COLOR: always
+  CARGO_NET_GIT_FETCH_WITH_CLI: true
+jobs:
+  workflow-lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install actionlint 1.7.12 with the pinned release checksum
+        run: |
+          curl --fail --location --retry 3 https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz --output "$RUNNER_TEMP/actionlint.tar.gz"
+          printf '%s  %s\n' '8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8' "$RUNNER_TEMP/actionlint.tar.gz" | sha256sum --check -
+          tar -xzf "$RUNNER_TEMP/actionlint.tar.gz" -C "$RUNNER_TEMP" actionlint
+      - name: Check workflow syntax, expressions, matrices and action inputs
+        # ShellCheck/Pyflakes are separate tools, not dependencies of this check.
+        run: '"$RUNNER_TEMP/actionlint" -shellcheck= -pyflakes= .github/workflows/ci.yml .github/workflows/full-matrix.yml .github/workflows/release.yml'
+  host:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-2025]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install pinned compiler
+        run: rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+      - name: Toolchain evidence
+        run: rustc -Vv
+      - run: cargo fmt --all --check
+      - run: python scripts/check_docs.py
+      - run: cargo check --workspace --locked
+      - run: cargo check -p embodied-stm32 --features usb --locked
+      - run: cargo clippy --workspace --lib --bins --locked -- -D warnings
+  firmware:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        chip: [stm32f042c4, stm32f070c6, stm32f072rb, stm32f103c8, stm32f105r8, stm32f207zg, stm32f303re, stm32f407vg, stm32f723rc, stm32f723re, stm32f767zi, stm32g071rb, stm32g071eb, stm32g081eb, stm32g0b0ke, stm32g474re, stm32h503kb, stm32h563zi, stm32h563li, stm32h573li, stm32h5e4ak, stm32h5e5lk, stm32h5f4aj, stm32h5f5lj, stm32h723vg, stm32h7b3zi]
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install pinned compiler and targets
+        run: |
+          rustup toolchain install 1.98.1 --profile minimal
+          rustup target add --toolchain 1.98.1 thumbv6m-none-eabi thumbv7m-none-eabi thumbv7em-none-eabihf thumbv8m.main-none-eabihf
+      - name: Compile, link and inspect minimal App
+        run: cargo xtask build --chip ${{ matrix.chip }}
+      - name: Link actual peripheral constructors with the reviewed clock profiles
+        run: |
+          python3 xtask/scripts/fetch_source_documents.py
+          cargo xtask peripherals --chip ${{ matrix.chip }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-${{ matrix.chip }}
+          path: |
+            target/reports/${{ matrix.chip }}/
+            target/artifacts/${{ matrix.chip }}/
+            target/peripheral-probes/reports/${{ matrix.chip }}/
+            target/peripheral-probes/projects/${{ matrix.chip }}/
+            target/peripheral-probes/source-snapshots/
+            target/peripheral-probes/summary-*.json
+          if-no-files-found: error
+          retention-days: 14
+  reference-boards:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        board: [board-stm32h723vg, board-stm32g431kb, board-stm32g474ce, board-stm32f407ig, board-stm32f427ii]
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          rustup toolchain install 1.98.1 --profile minimal --component clippy
+          rustup target add --toolchain 1.98.1 thumbv7em-none-eabihf
+      - name: Link actual reference board resources
+        run: cargo build -p embodied-app --bin reference-board --release --locked --target thumbv7em-none-eabihf --features ${{ matrix.board }}
+      - run: cargo clippy -p embodied-app --bin reference-board --locked --target thumbv7em-none-eabihf --features ${{ matrix.board }} -- -D warnings
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reference-${{ matrix.board }}
+          path: target/thumbv7em-none-eabihf/release/reference-board
+          if-no-files-found: error
+  dual-core:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        chip: [stm32h745bg, stm32h747xi]
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          rustup toolchain install 1.98.1 --profile minimal
+          rustup target add --toolchain 1.98.1 thumbv7em-none-eabihf
+      - name: Link and inspect disjoint M7 and M4 images
+        run: |
+          cargo xtask build --chip ${{ matrix.chip }}-cm7
+          cargo xtask build --chip ${{ matrix.chip }}-cm4
+      - name: Inspect shared NOBITS layout and compare both core images
+        run: python3 scripts/check_dual_core.py --inspect-only ${{ matrix.chip }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dual-core-${{ matrix.chip }}
+          path: |
+            target/reports/${{ matrix.chip }}-cm*/
+            target/artifacts/${{ matrix.chip }}-cm*/
+            target/dual-core/inspected/${{ matrix.chip }}-cm*/
+          if-no-files-found: error
+  generated-project:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          rustup target add --toolchain 1.98.1 thumbv7em-none-eabihf
+      - run: cargo fetch --locked
+      - name: Generate self-contained App and framework snapshot
+        run: cargo xtask new --chip stm32g474re --path target/generated-project --name robot-app
+      - name: Verify generated source and normalized lock hashes
+        run: |
+          python3 scripts/verify_generated_project.py target/generated-project
+          cp target/generated-project/project.json "$RUNNER_TEMP/generated-project-baseline.json"
+      - name: Verify generated project independently
+        working-directory: target/generated-project
+        run: |
+          cargo fmt --all --check
+          cargo app-build
+          cargo clippy -p robot-app --bin firmware --locked --target thumbv7em-none-eabihf -- -D warnings
+      - name: Require build to preserve the generated snapshot
+        run: python3 scripts/verify_generated_project.py target/generated-project --baseline "$RUNNER_TEMP/generated-project-baseline.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: generated-g474-project-evidence
+          path: |
+            target/generated-project/project.json
+            target/generated-project/Cargo.lock
+            target/generated-project/target/thumbv7em-none-eabihf/release/firmware
+          if-no-files-found: error
+  generated-dual-project:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        chip: [stm32h745bg-cm4, stm32h747xi-cm7]
+    steps:
+      - uses: actions/checkout@v6
+      - run: |
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          rustup target add --toolchain 1.98.1 thumbv7em-none-eabihf
+      - run: cargo fetch --locked
+      - name: Generate independent paired App packages
+        run: cargo xtask new --chip ${{ matrix.chip }} --path target/generated-dual-project --name robot-pair
+      - name: Preserve independent source baseline
+        run: |
+          python3 scripts/verify_generated_project.py target/generated-dual-project
+          cp target/generated-dual-project/project.json "$RUNNER_TEMP/paired-project-baseline.json"
+      - name: Build the pair and check each core independently
+        working-directory: target/generated-dual-project
+        run: |
+          cargo fmt --all --check
+          cargo app-build
+          cargo clippy -p robot-pair-cm7 --bin firmware-cm7 --locked --target thumbv7em-none-eabihf --target-dir target/pair-cache/cm7 -- -D warnings
+          cargo clippy -p robot-pair-cm4 --bin firmware-cm4 --locked --target thumbv7em-none-eabihf --target-dir target/pair-cache/cm4 -- -D warnings
+      - name: Require paired build to preserve all sources
+        run: python3 scripts/verify_generated_project.py target/generated-dual-project --baseline "$RUNNER_TEMP/paired-project-baseline.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: generated-pair-${{ matrix.chip }}
+          path: |
+            target/generated-dual-project/project.json
+            target/generated-dual-project/Cargo.lock
+            target/generated-dual-project/target/pair/
+          if-no-files-found: error

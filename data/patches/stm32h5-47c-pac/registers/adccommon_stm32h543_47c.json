@@ -1,0 +1,201 @@
+{
+  "block/ADC_COMMON": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CSR",
+        "name": "CSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "CCR",
+        "name": "CCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "CDR",
+        "name": "CDR"
+      }
+    ]
+  },
+  "fieldset/CCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "DUAL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "DELAY"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "DMACFG"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 2,
+        "name": "MDMA"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "CKMODE"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 4,
+        "name": "PRESC"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "VREFEN"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "TSEN"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "VBATEN"
+      }
+    ]
+  },
+  "fieldset/CDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "RDATA_MST"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "RDATA_SLV"
+      }
+    ]
+  },
+  "fieldset/CSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ADRDY_MST"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "EOSMP_MST"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EOC_MST"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "EOS_MST"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "OVR_MST"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "JEOC_MST"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "JEOS_MST"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "AWD1_MST"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "AWD2_MST"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "AWD3_MST"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "JQOVF_MST"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "ADRDY_SLV"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "EOSMP_SLV"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "EOC_SLV"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "EOS_SLV"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "OVR_SLV"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "JEOC_SLV"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "JEOS_SLV"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "AWD1_SLV"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "AWD2_SLV"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "AWD3_SLV"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "JQOVF_SLV"
+      }
+    ]
+  }
+}

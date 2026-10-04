@@ -1,0 +1,591 @@
+{
+  "block/SPI": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR1",
+        "name": "CR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CR2",
+        "name": "CR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "CFG1",
+        "name": "CFG1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "CFG2",
+        "name": "CFG2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 20,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 24,
+        "fieldset": "IFCR",
+        "name": "IFCR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 32,
+        "fieldset": "TXDR",
+        "name": "TXDR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 48,
+        "fieldset": "RXDR",
+        "name": "RXDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "CRCPOLY",
+        "name": "CRCPOLY"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 68,
+        "fieldset": "TXCRC",
+        "name": "TXCRC"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 72,
+        "fieldset": "RXCRC",
+        "name": "RXCRC"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "fieldset": "UDRDR",
+        "name": "UDRDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "fieldset": "I2SCFGR",
+        "name": "I2SCFGR"
+      }
+    ]
+  },
+  "fieldset/CFG1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "DSIZE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 4,
+        "name": "FTHLV"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "UDRCFG"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RXDMAEN"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TXDMAEN"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 5,
+        "name": "CRCSIZE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "CRCEN"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "DRDS"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 3,
+        "name": "MBR"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "BPASS"
+      }
+    ]
+  },
+  "fieldset/CFG2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "MSSI"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "MIDI"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "RDIOM"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RDIOP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "IOSWP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 2,
+        "name": "COMM"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 3,
+        "name": "SP"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "MASTER"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "LSBFRST"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "CPHA"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "CPOL"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "SSM"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "SSIOP"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "SSOE"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "SSOM"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "AFCNTR"
+      }
+    ]
+  },
+  "fieldset/CR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SPE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "MASRX"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "CSTART"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "CSUSP"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "HDDIR"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "SSI"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CRC33_17"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RCRCINI"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TCRCINI"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IOLOCK"
+      }
+    ]
+  },
+  "fieldset/CR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TSIZE"
+      }
+    ]
+  },
+  "fieldset/CRCPOLY": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "CRCPOLY"
+      }
+    ]
+  },
+  "fieldset/I2SCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "I2SMOD"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 3,
+        "name": "I2SCFG"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "I2SSTD"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "PCMSYNC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "DATLEN"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "CHLEN"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "CKPOL"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "FIXCH"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "WSINV"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "DATFMT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "I2SDIV"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "ODD"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "MCKOE"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RXPIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXPIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "DXPIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "EOTIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXTFIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "UDRIE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "OVRIE"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "CRCEIE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TIFREIE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "MODFIE"
+      }
+    ]
+  },
+  "fieldset/IFCR": {
+    "fields": [
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "EOTC"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXTFC"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "UDRC"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "OVRC"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "CRCEC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TIFREC"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "MODFC"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SUSPC"
+      }
+    ]
+  },
+  "fieldset/RXCRC": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "RXCRC"
+      }
+    ]
+  },
+  "fieldset/RXDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "RXDR"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RXP"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "DXP"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "EOT"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TXTF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "UDR"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "OVR"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "CRCE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TIFRE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "MODF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SUSP"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TXC"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 2,
+        "name": "RXPLVL"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "RXWNE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "CTSIZE"
+      }
+    ]
+  },
+  "fieldset/TXCRC": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "TXCRC"
+      }
+    ]
+  },
+  "fieldset/TXDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "TXDR"
+      }
+    ]
+  },
+  "fieldset/UDRDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "UDRDR"
+      }
+    ]
+  }
+}

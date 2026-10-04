@@ -1,0 +1,65 @@
+{
+  "block/SAI": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "name": "GCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "name": "PDMCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "name": "PDMDLY"
+      }
+    ]
+  },
+  "block/SAI_BLOCK": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "name": "CR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "name": "CR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "name": "FRCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "name": "SLOTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "name": "IMR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "name": "CLRFR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "name": "DR"
+      }
+    ]
+  }
+}

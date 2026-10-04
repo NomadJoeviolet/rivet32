@@ -1,0 +1,1649 @@
+{
+  "block/FLASH": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "ACR",
+        "name": "ACR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 4,
+        "name": "NSKEYR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 8,
+        "name": "SECKEYR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 12,
+        "name": "OPTKEYR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 16,
+        "name": "NSOBKKEYR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 20,
+        "name": "SECOBKKEYR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 24,
+        "fieldset": "OPSR",
+        "name": "OPSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "OPTCR",
+        "name": "OPTCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 32,
+        "fieldset": "NSSR",
+        "name": "NSSR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 36,
+        "fieldset": "SECSR",
+        "name": "SECSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "NSCR",
+        "name": "NSCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "fieldset": "SECCR",
+        "name": "SECCR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 48,
+        "fieldset": "NSCCR",
+        "name": "NSCCR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 52,
+        "fieldset": "SECCCR",
+        "name": "SECCCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 60,
+        "fieldset": "PRIVCFGR",
+        "name": "PRIVCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "NSOBKCFGR",
+        "name": "NSOBKCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "fieldset": "SECOBKCFGR",
+        "name": "SECOBKCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "HDPEXTR",
+        "name": "HDPEXTR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 80,
+        "fieldset": "OPTSR",
+        "name": "OPTSR_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 84,
+        "fieldset": "OPTSR",
+        "name": "OPTSR_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 96,
+        "fieldset": "NSEPOCHR",
+        "name": "NSEPOCHR_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 100,
+        "fieldset": "NSEPOCHR_PRG",
+        "name": "NSEPOCHR_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 104,
+        "fieldset": "SECEPOCHR",
+        "name": "SECEPOCHR_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 108,
+        "fieldset": "SECEPOCHR_PRG",
+        "name": "SECEPOCHR_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 112,
+        "fieldset": "OPTSR2",
+        "name": "OPTSR2_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 116,
+        "fieldset": "OPTSR2",
+        "name": "OPTSR2_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 128,
+        "fieldset": "NSBOOTR",
+        "name": "NSBOOTR_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 132,
+        "fieldset": "NSBOOTR",
+        "name": "NSBOOTR_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 136,
+        "fieldset": "SECBOOTR",
+        "name": "SECBOOTR_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 140,
+        "fieldset": "BOOTR",
+        "name": "SECBOOTR_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 144,
+        "name": "OTPBLR_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 148,
+        "name": "OTPBLR_PRG"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 160,
+        "name": "SECBB1R1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 164,
+        "name": "SECBB1R2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 192,
+        "fieldset": "PRIVBB",
+        "name": "PRIVBB1R1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 196,
+        "fieldset": "PRIVBB",
+        "name": "PRIVBB1R2"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 224,
+        "fieldset": "SECWM",
+        "name": "SECWM1R_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 228,
+        "fieldset": "SECWM",
+        "name": "SECWM1R_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 232,
+        "fieldset": "WRP",
+        "name": "WRP1R_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 236,
+        "fieldset": "WRP",
+        "name": "WRP1R_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 240,
+        "fieldset": "EDATA1R",
+        "name": "EDATA1R_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 244,
+        "fieldset": "EDATA1R",
+        "name": "EDATA1R_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 248,
+        "fieldset": "HDP1R",
+        "name": "HDP1R_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 252,
+        "fieldset": "HDP1R",
+        "name": "HDP1R_PRG"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 256,
+        "fieldset": "ECCCORR",
+        "name": "ECCCORR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 260,
+        "fieldset": "ECCDETR",
+        "name": "ECCDETR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 264,
+        "fieldset": "ECCDR",
+        "name": "ECCDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 416,
+        "name": "SECBB2R1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 420,
+        "name": "SECBB2R2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 448,
+        "fieldset": "PRIVBB",
+        "name": "PRIVBB2R1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 452,
+        "fieldset": "PRIVBB",
+        "name": "PRIVBB2R2"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 480,
+        "fieldset": "SECWM",
+        "name": "SECWM2R_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 484,
+        "fieldset": "SECWM",
+        "name": "SECWM2R_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 488,
+        "fieldset": "WRP",
+        "name": "WRP2R_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 492,
+        "fieldset": "WRP",
+        "name": "WRP2R_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 496,
+        "fieldset": "EDATA2R",
+        "name": "EDATA2R_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 500,
+        "fieldset": "EDATA2R",
+        "name": "EDATA2R_PRG"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 504,
+        "fieldset": "HDP2R",
+        "name": "HDP2R_CUR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 508,
+        "fieldset": "HDP2R",
+        "name": "HDP2R_PRG"
+      }
+    ]
+  },
+  "enum/CODE_OP": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "description": "No flash operation on going during previous reset",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "Single write operation interrupted",
+        "name": "B_0x1",
+        "value": 1
+      },
+      {
+        "description": "OBK alternate sector erase",
+        "name": "B_0x2",
+        "value": 2
+      },
+      {
+        "description": "Sector erase operation interrupted",
+        "name": "B_0x3",
+        "value": 3
+      },
+      {
+        "description": "Bank erase operation interrupted",
+        "name": "B_0x4",
+        "value": 4
+      },
+      {
+        "description": "Mass erase operation interrupted",
+        "name": "B_0x5",
+        "value": 5
+      },
+      {
+        "description": "Option change operation interrupted",
+        "name": "B_0x6",
+        "value": 6
+      },
+      {
+        "description": "OBK swap sector request",
+        "name": "B_0x7",
+        "value": 7
+      }
+    ]
+  },
+  "enum/NSCR_BKSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Bank1 is selected for Bank erase / sector erase / interrupt enable",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "Bank2 is selected for BER / SER",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/NSPRIV": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "access to non secure registers is always granted",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "access to non secure registers is denied in case of unprivileged access.",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTCR_SWAP_BANK": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Bank1 and Bank2 not swapped",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "Bank1 and Bank2 swapped",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_BKPRAM_ECC": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "BKPRAM ECC check enabled",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "BKPRAM ECC check disabled",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_BOOT_UBE": {
+    "bit_size": 8,
+    "variants": [
+      {
+        "description": "OEM-iRoT (user flash) selected. In Open PRODUCT_STATE this value selects bootloader. Defaut value.",
+        "name": "B_0xB4",
+        "value": 180
+      },
+      {
+        "description": "ST-iRoT (system flash) selected",
+        "name": "B_0xC3",
+        "value": 195
+      }
+    ]
+  },
+  "enum/OPTSR_BOR_LEV": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "BOR Level 2, the threshold level is medium (around 2.4 V)",
+        "name": "B_0x1",
+        "value": 1
+      },
+      {
+        "description": "BOR Level 3, the threshold level is high (around 2.7 V)",
+        "name": "B_0x2",
+        "value": 2
+      }
+    ]
+  },
+  "enum/OPTSR_IO_VDDIO_HSLV": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "High-speed IO at low V<sub>DDIO2</sub> voltage feature disabled (V<sub>DDIO2</sub> can exceed 2.7\ufffdV)",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "High-speed IO at low V<sub>DDIO2</sub> voltage feature enabled (V<sub>DDIO2</sub> remains below 2.7\ufffdV)",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_IO_VDD_HSLV": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "High-speed IO at low V<sub>DD</sub> voltage feature disabled (V<sub>DD</sub> can exceed 2.7\ufffdV)",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "High-speed IO at low V<sub>DD</sub> voltage feature enabled (V<sub>DD</sub> remains below 2.7\ufffdV)",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_IWDG_STDBY": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Independent watchdog frozen in Standby mode",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "Independent watchdog keep running in Standby mode.",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_IWDG_STOP": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Independent watchdog frozen in system Stop mode",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "Independent watchdog keep running in system Stop mode.",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_IWDG_SW": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "IWDG watchdog is controlled by hardware",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "IWDG watchdog is controlled by software",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_NRST_STDBY": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "a reset is generated when entering Standby mode on core domain",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "no reset generated when entering Standby mode on core domain.",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_NRST_STOP": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "a reset is generated when entering Stop mode on core domain",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "no reset generated when entering Stop mode on core domain.",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_SRAM_ECC": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "SRAM2 ECC check enabled",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "SRAM2 ECC check disabled",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_SWAP_BANK": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Bank1 and Bank2 not swapped",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "Bank1 and Bank2 swapped",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OPTSR_TZEN": {
+    "bit_size": 8,
+    "variants": [
+      {
+        "description": "TrustZone enabled.",
+        "name": "B_0xB4",
+        "value": 180
+      },
+      {
+        "description": "TrustZone disabled",
+        "name": "B_0xC3",
+        "value": 195
+      }
+    ]
+  },
+  "enum/OPTSR_WWDG_SW": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "WWDG watchdog is controlled by hardware",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "WWDG watchdog is controlled by software",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/PRIVBBR_PRIVBB": {
+    "bit_size": 32,
+    "variants": [
+      {
+        "description": "sectors (32 * (x-1) + y) in bank 2 is unprivileged",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "sector (32 * (x-1) + y) in bank 2 is privileged",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SECCR_BKSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Bank1 is selected for Bank erase / sector erase / interrupt enable",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "Bank2 is selected for BER / SER",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SPRIV": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "access to secure registers is always granted",
+        "name": "B_0x0",
+        "value": 0
+      },
+      {
+        "description": "access to secure registers is denied in case of unprivileged access.",
+        "name": "B_0x1",
+        "value": 1
+      }
+    ]
+  },
+  "fieldset/ACR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "LATENCY"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "WRHIGHFREQ"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "PRFTEN"
+      }
+    ]
+  },
+  "fieldset/BOOTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "BOOT_LOCK"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 24,
+        "name": "BOOTADD"
+      }
+    ]
+  },
+  "fieldset/ECCCORR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "ADDR_ECC"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "OBK_ECC"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "DATA_ECC"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "BK_ECC"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "SYSF_ECC"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "OTP_ECC"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "ECCIE"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "ECCC"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "ECCD"
+      }
+    ]
+  },
+  "fieldset/ECCDETR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "ADDR_ECC"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "OBK_ECC"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "DATA_ECC"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "BK_ECC"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "SYSF_ECC"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "OTP_ECC"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "ECCIE"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "ECCC"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "ECCD"
+      }
+    ]
+  },
+  "fieldset/ECCDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "FAIL_DATA"
+      }
+    ]
+  },
+  "fieldset/EDATA1R": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "EDATA_STRT"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "EDATA_EN"
+      }
+    ]
+  },
+  "fieldset/EDATA2R": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "EDATA_STRT"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "EDATA_EN"
+      }
+    ]
+  },
+  "fieldset/HDP1R": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "HDP_STRT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 7,
+        "name": "HDP_END"
+      }
+    ]
+  },
+  "fieldset/HDP2R": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "HDP_STRT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 7,
+        "name": "HDP_END"
+      }
+    ]
+  },
+  "fieldset/HDPEXTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "HDP1_EXT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 7,
+        "name": "HDP2_EXT"
+      }
+    ]
+  },
+  "fieldset/NSBOOTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "BOOT_LOCK"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 24,
+        "name": "BOOTADD"
+      }
+    ]
+  },
+  "fieldset/NSCCR": {
+    "fields": [
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "CLR_EOP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CLR_WRPERR"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "CLR_PGSERR"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "CLR_STRBERR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "CLR_INCERR"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "CLR_OBKERR"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "CLR_OBKWERR"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "CLR_OPTCHANGEERR"
+      }
+    ]
+  },
+  "fieldset/NSCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LOCK"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "PG"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SER"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BER"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FW"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "START"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 6,
+        "name": "SNB"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "MER"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "EOPIE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "WRPERRIE"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "PGSERRIE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "STRBERRIE"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "INCERRIE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "OBKERRIE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "OBKWERRIE"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "OPTCHANGEERRIE"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "INV"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "enum": "NSCR_BKSEL",
+        "name": "BKSEL"
+      }
+    ]
+  },
+  "fieldset/NSEPOCHR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 24,
+        "name": "EPOCH"
+      }
+    ]
+  },
+  "fieldset/NSEPOCHR_PRG": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 24,
+        "name": "EPOCH"
+      }
+    ]
+  },
+  "fieldset/NSOBKCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LOCK"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SWAP_SECT_REQ"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ALT_SECT"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ALT_SECT_ERASE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 9,
+        "name": "SWAP_OFFSET"
+      }
+    ]
+  },
+  "fieldset/NSSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BSY"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "WBNE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DBNE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "EOP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "WRPERR"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "PGSERR"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "STRBERR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "INCERR"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "OBKERR"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "OBKWERR"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "OPTCHANGEERR"
+      }
+    ]
+  },
+  "fieldset/OPSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 20,
+        "name": "ADDR_OP"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "DATA_OP"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "BK_OP"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "SYSF_OP"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "OTP_OP"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 3,
+        "enum": "CODE_OP",
+        "name": "CODE_OP"
+      }
+    ]
+  },
+  "fieldset/OPTCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "OPTLOCK"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OPTSTART"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "enum": "OPTCR_SWAP_BANK",
+        "name": "SWAP_BANK"
+      }
+    ]
+  },
+  "fieldset/OPTSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "enum": "OPTSR_BOR_LEV",
+        "name": "BOR_LEV"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "BORH_EN"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "enum": "OPTSR_IWDG_SW",
+        "name": "IWDG_SW"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "enum": "OPTSR_WWDG_SW",
+        "name": "WWDG_SW"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "enum": "OPTSR_NRST_STOP",
+        "name": "NRST_STOP"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "enum": "OPTSR_NRST_STDBY",
+        "name": "NRST_STDBY"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "PRODUCT_STATE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "enum": "OPTSR_IO_VDD_HSLV",
+        "name": "IO_VDD_HSLV"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "enum": "OPTSR_IO_VDDIO_HSLV",
+        "name": "IO_VDDIO2_HSLV"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "enum": "OPTSR_IWDG_STOP",
+        "name": "IWDG_STOP"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "enum": "OPTSR_IWDG_STDBY",
+        "name": "IWDG_STDBY"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 8,
+        "enum": "OPTSR_BOOT_UBE",
+        "name": "BOOT_UBE"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "enum": "OPTSR_SWAP_BANK",
+        "name": "SWAP_BANK"
+      }
+    ]
+  },
+  "fieldset/OPTSR2": {
+    "fields": [
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SRAM1_3_RST"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SRAM2_RST"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "enum": "OPTSR_BKPRAM_ECC",
+        "name": "BKPRAM_ECC"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "enum": "OPTSR_SRAM_ECC",
+        "name": "SRAM3_ECC"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "enum": "OPTSR_SRAM_ECC",
+        "name": "SRAM2_ECC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "USBPD_DIS"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 8,
+        "enum": "OPTSR_TZEN",
+        "name": "TZEN"
+      }
+    ]
+  },
+  "fieldset/PRIVBB": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "enum": "PRIVBBR_PRIVBB",
+        "name": "PRIVBB"
+      }
+    ]
+  },
+  "fieldset/PRIVCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "enum": "SPRIV",
+        "name": "SPRIV"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "enum": "NSPRIV",
+        "name": "NSPRIV"
+      }
+    ]
+  },
+  "fieldset/SECBOOTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "BOOT_LOCK"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 24,
+        "name": "BOOTADD"
+      }
+    ]
+  },
+  "fieldset/SECCCR": {
+    "fields": [
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "CLR_EOP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CLR_WRPERR"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "CLR_PGSERR"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "CLR_STRBERR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "CLR_INCERR"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "CLR_OBKERR"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "CLR_OBKWERR"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "CLR_OPTCHANGEERR"
+      }
+    ]
+  },
+  "fieldset/SECCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LOCK"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "PG"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SER"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BER"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "FW"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "START"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 6,
+        "name": "SNB"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "MER"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "EOPIE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "WRPERRIE"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "PGSERRIE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "STRBERRIE"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "INCERRIE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "OBKERRIE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "OBKWERRIE"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "OPTCHANGEERRIE"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "INV"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "enum": "SECCR_BKSEL",
+        "name": "BKSEL"
+      }
+    ]
+  },
+  "fieldset/SECEPOCHR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 24,
+        "name": "EPOCH"
+      }
+    ]
+  },
+  "fieldset/SECEPOCHR_PRG": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 24,
+        "name": "EPOCH"
+      }
+    ]
+  },
+  "fieldset/SECOBKCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LOCK"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SWAP_SECT_REQ"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ALT_SECT"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ALT_SECT_ERASE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 9,
+        "name": "SWAP_OFFSET"
+      }
+    ]
+  },
+  "fieldset/SECSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BSY"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "WBNE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DBNE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "EOP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "WRPERR"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "PGSERR"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "STRBERR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "INCERR"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "OBKERR"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "OBKWERR"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "OPTCHANGEERR"
+      }
+    ]
+  },
+  "fieldset/SECWM": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 6,
+        "name": "SECWM_STRT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 6,
+        "name": "SECWM_END"
+      }
+    ]
+  },
+  "fieldset/WRP": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "WRPSG"
+      }
+    ]
+  }
+}

@@ -1,0 +1,531 @@
+{
+  "block/DAC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "SWTRIGR",
+        "name": "SWTRIGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "DHR12R1",
+        "name": "DHR12R1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "DHR12L1",
+        "name": "DHR12L1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "DHR8R1",
+        "name": "DHR8R1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "DHR12R2",
+        "name": "DHR12R2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "DHR12L2",
+        "name": "DHR12L2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "DHR8R2",
+        "name": "DHR8R2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "DHR12RD",
+        "name": "DHR12RD"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "DHR12LD",
+        "name": "DHR12LD"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "DHR8RD",
+        "name": "DHR8RD"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 44,
+        "fieldset": "DOR1",
+        "name": "DOR1"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 48,
+        "fieldset": "DOR2",
+        "name": "DOR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 52,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 56,
+        "fieldset": "CCR",
+        "name": "CCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 60,
+        "fieldset": "MCR",
+        "name": "MCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "SHSR1",
+        "name": "SHSR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "fieldset": "SHSR2",
+        "name": "SHSR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "SHHR",
+        "name": "SHHR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "fieldset": "SHRR",
+        "name": "SHRR"
+      }
+    ]
+  },
+  "fieldset/CCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "OTRIM1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 5,
+        "name": "OTRIM2"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN1"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TEN1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 4,
+        "name": "TSEL1"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 2,
+        "name": "WAVE1"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "MAMP1"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "DMAEN1"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "DMAUDRIE1"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "CEN1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "EN2"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "TEN2"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 4,
+        "name": "TSEL2"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 2,
+        "name": "WAVE2"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "MAMP2"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "DMAEN2"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "DMAUDRIE2"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "CEN2"
+      }
+    ]
+  },
+  "fieldset/DHR12L1": {
+    "fields": [
+      {
+        "bit_offset": 4,
+        "bit_size": 12,
+        "name": "DACC1DHR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 12,
+        "name": "DACC1DHRB"
+      }
+    ]
+  },
+  "fieldset/DHR12L2": {
+    "fields": [
+      {
+        "bit_offset": 4,
+        "bit_size": 12,
+        "name": "DACC2DHR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 12,
+        "name": "DACC2DHRB"
+      }
+    ]
+  },
+  "fieldset/DHR12LD": {
+    "fields": [
+      {
+        "bit_offset": 4,
+        "bit_size": 12,
+        "name": "DACC1DHR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 12,
+        "name": "DACC2DHR"
+      }
+    ]
+  },
+  "fieldset/DHR12R1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "DACC1DHR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 12,
+        "name": "DACC1DHRB"
+      }
+    ]
+  },
+  "fieldset/DHR12R2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "DACC2DHR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 12,
+        "name": "DACC2DHRB"
+      }
+    ]
+  },
+  "fieldset/DHR12RD": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "DACC1DHR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 12,
+        "name": "DACC2DHR"
+      }
+    ]
+  },
+  "fieldset/DHR8R1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "DACC1DHR"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "DACC1DHRB"
+      }
+    ]
+  },
+  "fieldset/DHR8R2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "DACC2DHR"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "DACC2DHRB"
+      }
+    ]
+  },
+  "fieldset/DHR8RD": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "DACC1DHR"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "DACC2DHR"
+      }
+    ]
+  },
+  "fieldset/DOR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "DACC1DOR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 12,
+        "name": "DACC1DORB"
+      }
+    ]
+  },
+  "fieldset/DOR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "DACC2DOR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 12,
+        "name": "DACC2DORB"
+      }
+    ]
+  },
+  "fieldset/MCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "MODE1"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "DMADOUBLE1"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SINFORMAT1"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 2,
+        "name": "HFSEL"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 3,
+        "name": "MODE2"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "DMADOUBLE2"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "SINFORMAT2"
+      }
+    ]
+  },
+  "fieldset/SHHR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 10,
+        "name": "THOLD1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 10,
+        "name": "THOLD2"
+      }
+    ]
+  },
+  "fieldset/SHRR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "TREFRESH1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "TREFRESH2"
+      }
+    ]
+  },
+  "fieldset/SHSR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 10,
+        "name": "TSAMPLE1"
+      }
+    ]
+  },
+  "fieldset/SHSR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 10,
+        "name": "TSAMPLE2"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "DAC1RDY"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "DORSTAT1"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "DMAUDR1"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "CAL_FLAG1"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "BWST1"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "DAC2RDY"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "DORSTAT2"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "DMAUDR2"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "CAL_FLAG2"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "BWST2"
+      }
+    ]
+  },
+  "fieldset/SWTRIGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SWTRIG1"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SWTRIG2"
+      }
+    ]
+  }
+}

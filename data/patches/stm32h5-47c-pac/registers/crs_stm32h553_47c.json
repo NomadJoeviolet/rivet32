@@ -1,0 +1,176 @@
+{
+  "block/CRS": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CFGR",
+        "name": "CFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "ICR",
+        "name": "ICR"
+      }
+    ]
+  },
+  "fieldset/CFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "RELOAD"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "FELIM"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 3,
+        "name": "SYNCDIV"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "SYNCSRC"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "SYNCPOL"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SYNCOKIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SYNCWARNIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERRIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ESYNCIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "CEN"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "AUTOTRIMEN"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "SWSYNC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 6,
+        "name": "TRIM"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SYNCOKC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SYNCWARNC"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERRC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ESYNCC"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SYNCOKF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SYNCWARNF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERRF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ESYNCF"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SYNCERR"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SYNCMISS"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "TRIMOVF"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FEDIR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "FECAP"
+      }
+    ]
+  }
+}

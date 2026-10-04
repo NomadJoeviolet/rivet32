@@ -1,0 +1,251 @@
+{
+  "block/DTS": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CFGR1",
+        "name": "CFGR1"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 8,
+        "fieldset": "T0VALR1",
+        "name": "T0VALR1"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 16,
+        "fieldset": "RAMPVALR",
+        "name": "RAMPVALR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "ITR1",
+        "name": "ITR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "DR",
+        "name": "DR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 32,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "ITENR",
+        "name": "ITENR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "ICIFR",
+        "name": "ICIFR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "name": "OR"
+      }
+    ]
+  },
+  "fieldset/CFGR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "TS1_EN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TS1_START"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "TS1_INTRIG_SEL"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "TS1_SMP_TIME"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "REFCLK_SEL"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "Q_MEAS_OPT"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 7,
+        "name": "HSREF_CLK_DIV"
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TS1_MFREQ"
+      }
+    ]
+  },
+  "fieldset/ICIFR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "TS1_CITEF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TS1_CITLF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "TS1_CITHF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TS1_CAITEF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "TS1_CAITLF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TS1_CAITHF"
+      }
+    ]
+  },
+  "fieldset/ITENR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "TS1_ITEEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TS1_ITLEN"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "TS1_ITHEN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TS1_AITEEN"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "TS1_AITLEN"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TS1_AITHEN"
+      }
+    ]
+  },
+  "fieldset/ITR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TS1_LITTHD"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "TS1_HITTHD"
+      }
+    ]
+  },
+  "fieldset/RAMPVALR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TS1_RAMP_COEFF"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "TS1_ITEF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TS1_ITLF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "TS1_ITHF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TS1_AITEF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "TS1_AITLF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TS1_AITHF"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TS1_RDY"
+      }
+    ]
+  },
+  "fieldset/T0VALR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TS1_FMT0"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "TS1_T0"
+      }
+    ]
+  }
+}

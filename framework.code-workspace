@@ -1,0 +1,9 @@
+{
+  "folders": [{"path": "."}],
+  "settings": {
+    "rust-analyzer.cargo.allFeatures": false,
+    "rust-analyzer.cargo.features": [],
+    "rust-analyzer.check.command": "clippy",
+    "editor.formatOnSave": true
+  }
+}

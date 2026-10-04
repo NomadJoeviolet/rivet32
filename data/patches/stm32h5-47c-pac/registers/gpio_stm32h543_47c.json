@@ -1,0 +1,1090 @@
+{
+  "block/GPIO": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "MODER",
+        "name": "MODER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "OTYPER",
+        "name": "OTYPER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "OSPEEDR",
+        "name": "OSPEEDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "PUPDR",
+        "name": "PUPDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "IDR",
+        "name": "IDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "ODR",
+        "name": "ODR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "BSRR",
+        "name": "BSRR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "LCKR",
+        "name": "LCKR"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 2,
+          "stride": 4
+        },
+        "byte_offset": 32,
+        "name": "AFR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "BRR",
+        "name": "BRR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "fieldset": "HSLVR",
+        "name": "HSLVR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 48,
+        "fieldset": "SECCFGR",
+        "name": "SECCFGR"
+      }
+    ]
+  },
+  "fieldset/BRR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BR0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "BR1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "BR2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BR3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "BR4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "BR5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "BR6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "BR7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "BR8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "BR9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "BR10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "BR11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "BR12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "BR13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "BR14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "BR15"
+      }
+    ]
+  },
+  "fieldset/BSRR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BS0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "BS1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "BS2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BS3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "BS4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "BS5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "BS6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "BS7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "BS8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "BS9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "BS10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "BS11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "BS12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "BS13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "BS14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "BS15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "BR0"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "BR1"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "BR2"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "BR3"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "BR4"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "BR5"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "BR6"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "BR7"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "BR8"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "BR9"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "BR10"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "BR11"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "BR12"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "BR13"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "BR14"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "BR15"
+      }
+    ]
+  },
+  "fieldset/HSLVR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "HSLV0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "HSLV1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "HSLV2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "HSLV3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "HSLV4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "HSLV5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "HSLV6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "HSLV7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "HSLV8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "HSLV9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "HSLV10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "HSLV11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "HSLV12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "HSLV13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "HSLV14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "HSLV15"
+      }
+    ]
+  },
+  "fieldset/IDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ID0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ID1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ID2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ID3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ID4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "ID5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "ID6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "ID7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "ID8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "ID9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "ID10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ID11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "ID12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "ID13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "ID14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "ID15"
+      }
+    ]
+  },
+  "fieldset/LCKR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LCK0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "LCK1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "LCK2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "LCK3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "LCK4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "LCK5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "LCK6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "LCK7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "LCK8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "LCK9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "LCK10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "LCK11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "LCK12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "LCK13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "LCK14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "LCK15"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "LCKK"
+      }
+    ]
+  },
+  "fieldset/MODER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "MODE0"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 2,
+        "name": "MODE1"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "MODE2"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 2,
+        "name": "MODE3"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "MODE4"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 2,
+        "name": "MODE5"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 2,
+        "name": "MODE6"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 2,
+        "name": "MODE7"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "MODE8"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 2,
+        "name": "MODE9"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "MODE10"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 2,
+        "name": "MODE11"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 2,
+        "name": "MODE12"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 2,
+        "name": "MODE13"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "MODE14"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 2,
+        "name": "MODE15"
+      }
+    ]
+  },
+  "fieldset/ODR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "OD0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OD1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "OD2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "OD3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "OD4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "OD5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "OD6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "OD7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "OD8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "OD9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "OD10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "OD11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "OD12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "OD13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "OD14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "OD15"
+      }
+    ]
+  },
+  "fieldset/OSPEEDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "OSPEED0"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 2,
+        "name": "OSPEED1"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "OSPEED2"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 2,
+        "name": "OSPEED3"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "OSPEED4"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 2,
+        "name": "OSPEED5"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 2,
+        "name": "OSPEED6"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 2,
+        "name": "OSPEED7"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "OSPEED8"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 2,
+        "name": "OSPEED9"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "OSPEED10"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 2,
+        "name": "OSPEED11"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 2,
+        "name": "OSPEED12"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 2,
+        "name": "OSPEED13"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "OSPEED14"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 2,
+        "name": "OSPEED15"
+      }
+    ]
+  },
+  "fieldset/OTYPER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "OT0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "OT1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "OT2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "OT3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "OT4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "OT5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "OT6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "OT7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "OT8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "OT9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "OT10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "OT11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "OT12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "OT13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "OT14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "OT15"
+      }
+    ]
+  },
+  "fieldset/PUPDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "PUPD0"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 2,
+        "name": "PUPD1"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "PUPD2"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 2,
+        "name": "PUPD3"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "PUPD4"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 2,
+        "name": "PUPD5"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 2,
+        "name": "PUPD6"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 2,
+        "name": "PUPD7"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "PUPD8"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 2,
+        "name": "PUPD9"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "PUPD10"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 2,
+        "name": "PUPD11"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 2,
+        "name": "PUPD12"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 2,
+        "name": "PUPD13"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "PUPD14"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 2,
+        "name": "PUPD15"
+      }
+    ]
+  },
+  "fieldset/SECCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SEC0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SEC1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SEC2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SEC3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "SEC4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "SEC5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SEC6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "SEC7"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SEC8"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SEC9"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "SEC10"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SEC11"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "SEC12"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SEC13"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "SEC14"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "SEC15"
+      }
+    ]
+  }
+}

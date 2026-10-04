@@ -1,0 +1,65 @@
+{
+  "schema": "stm32-h5-47c-generator-comparison-inputs-v1",
+  "revision": "e6a417fa643efaf031abc79590ea3e76bc4edbf2",
+  "redistribution": "reference_metadata_and_facts_only_no_generator_source_copy",
+  "files": {
+    "data/header_map.yaml": {
+      "sha256": "eac7107474dfaf32b63c4fca75591af6d6c45df9d4bb6719178da672c1731a9b",
+      "bytes": 13408,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/data/header_map.yaml"
+    },
+    "stm32-data-gen/src/perimap.rs": {
+      "sha256": "c766999d76edf599612052f0dbbe7d0bc41e0412bdc07c7db8843f589045d1b7",
+      "bytes": 47769,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/stm32-data-gen/src/perimap.rs"
+    },
+    "stm32-data-gen/src/memory.rs": {
+      "sha256": "9d7853a87cc3f8950f7aebabd21bc3e66bdb9a128d829c65ec0de62dfe640c4b",
+      "bytes": 58045,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/stm32-data-gen/src/memory.rs"
+    },
+    "stm32-data-gen/src/chips.rs": {
+      "sha256": "c3843cb3f40fd77593ece9f70c431ba213be7b2e1d61189b368b08e70e807cca",
+      "bytes": 9477,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/stm32-data-gen/src/chips.rs"
+    },
+    "stm32-data-gen/src/dma.rs": {
+      "sha256": "5f65fafb74d2d9b9961743c54b96c7837eba2df9fe254270b91bd8195bd961cd",
+      "bytes": 27061,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/stm32-data-gen/src/dma.rs"
+    },
+    "data/registers/rcc_h5.yaml": {
+      "sha256": "206f7bf78ebda63f32640f2ede49d6b45d9052f8b102374a8cdddc0dcb3ae2fa",
+      "bytes": 121509,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/data/registers/rcc_h5.yaml"
+    },
+    "data/registers/pwr_h5.yaml": {
+      "sha256": "4b9095ca23833f58d3c51a58ad6aa3e9afec450a784b9199fc5ab93f9fcac425",
+      "bytes": 18004,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/data/registers/pwr_h5.yaml"
+    },
+    "data/registers/flash_h5.yaml": {
+      "sha256": "bb6a427638e784a45585eba0450d177b12f1b0458cc605c679b41a95524353a9",
+      "bytes": 57646,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/data/registers/flash_h5.yaml"
+    },
+    "data/registers/gpdma_v1.yaml": {
+      "sha256": "14a5b503bce103ee1014a1309daa3c90ed18aeb3b1ef149911fbb24d2dabd038",
+      "bytes": 37140,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/data/registers/gpdma_v1.yaml"
+    },
+    "data/registers/i3c_v1.yaml": {
+      "sha256": "a5da87513a824223d0a7732368a634637b8b03336f884dff44889a2b5c9ebc94",
+      "bytes": 70277,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/data/registers/i3c_v1.yaml"
+    },
+    "data/registers/rng_v4.yaml": {
+      "sha256": "e640dc94ed07c434994a175c6ec8743cf2b45e2d22523fa01cd49e14bf3ce310",
+      "bytes": 6121,
+      "url": "https://raw.githubusercontent.com/embassy-rs/stm32-data/e6a417fa643efaf031abc79590ea3e76bc4edbf2/data/registers/rng_v4.yaml"
+    }
+  },
+  "facts": {
+    "rng_v4_NSCR_EN_OSC_array_length": 3
+  }
+}

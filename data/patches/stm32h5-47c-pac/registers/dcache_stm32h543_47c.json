@@ -1,0 +1,236 @@
+{
+  "block/DCACHE": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 12,
+        "fieldset": "FCR",
+        "name": "FCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 16,
+        "fieldset": "RHMONR",
+        "name": "RHMONR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 20,
+        "fieldset": "RMMONR",
+        "name": "RMMONR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 32,
+        "fieldset": "WHMONR",
+        "name": "WHMONR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 36,
+        "fieldset": "WMMONR",
+        "name": "WMMONR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "name": "CMDRSADDRR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "name": "CMDREADDRR"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CACHEINV"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 3,
+        "name": "CACHECMD"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "STARTCMD"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "RHITMEN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "RMISSMEN"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "RHITMRST"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "RMISSMRST"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "WHITMEN"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "WMISSMEN"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "WHITMRST"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "WMISSMRST"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "HBURST"
+      }
+    ]
+  },
+  "fieldset/FCR": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CBSYENDF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CERRF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "CCMDENDF"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "BSYENDIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERRIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "CMDENDIE"
+      }
+    ]
+  },
+  "fieldset/RHMONR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "RHITMON"
+      }
+    ]
+  },
+  "fieldset/RMMONR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "RMISSMON"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BUSYF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "BSYENDF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ERRF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BUSYCMDF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "CMDENDF"
+      }
+    ]
+  },
+  "fieldset/WHMONR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "WHITMON"
+      }
+    ]
+  },
+  "fieldset/WMMONR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "WMISSMON"
+      }
+    ]
+  }
+}

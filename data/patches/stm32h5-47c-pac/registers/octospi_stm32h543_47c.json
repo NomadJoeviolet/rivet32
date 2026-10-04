@@ -1,0 +1,796 @@
+{
+  "block/OCTOSPI": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "DCR1",
+        "name": "DCR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "DCR2",
+        "name": "DCR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "DCR3",
+        "name": "DCR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "DCR4",
+        "name": "DCR4"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 32,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 36,
+        "fieldset": "FCR",
+        "name": "FCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "DLR",
+        "name": "DLR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "AR",
+        "name": "AR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "fieldset": "DR",
+        "name": "DR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 128,
+        "fieldset": "PSMKR",
+        "name": "PSMKR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 136,
+        "fieldset": "PSMAR",
+        "name": "PSMAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 144,
+        "fieldset": "PIR",
+        "name": "PIR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 256,
+        "fieldset": "CCR",
+        "name": "CCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 264,
+        "fieldset": "TCR",
+        "name": "TCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 272,
+        "fieldset": "IR",
+        "name": "IR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 288,
+        "fieldset": "ABR",
+        "name": "ABR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 304,
+        "fieldset": "LPTR",
+        "name": "LPTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 320,
+        "fieldset": "WPCCR",
+        "name": "WPCCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 328,
+        "fieldset": "WPTCR",
+        "name": "WPTCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 336,
+        "fieldset": "WPIR",
+        "name": "WPIR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 352,
+        "fieldset": "WPABR",
+        "name": "WPABR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 384,
+        "fieldset": "WCCR",
+        "name": "WCCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 392,
+        "fieldset": "WTCR",
+        "name": "WTCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 400,
+        "fieldset": "WIR",
+        "name": "WIR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 416,
+        "fieldset": "WABR",
+        "name": "WABR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 512,
+        "fieldset": "HLCR",
+        "name": "HLCR"
+      }
+    ]
+  },
+  "fieldset/ABR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "ALTERNATE"
+      }
+    ]
+  },
+  "fieldset/AR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "ADDRESS"
+      }
+    ]
+  },
+  "fieldset/CCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "IMODE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "IDTR"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "ISIZE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 3,
+        "name": "ADMODE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ADDTR"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 2,
+        "name": "ADSIZE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 3,
+        "name": "ABMODE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "ABDTR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "ABSIZE"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 3,
+        "name": "DMODE"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "DDTR"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "DQSE"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ABORT"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "DMAEN"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TCEN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ADOFFEN"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DMM"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 5,
+        "name": "FTHRES"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "TEIE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "TCIE"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "FTIE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "SMIE"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "TOIE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "BERRIE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "APMS"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "PMM"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "CSSEL"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "NOPREF"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "FMODE"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "MSEL"
+      }
+    ]
+  },
+  "fieldset/DCR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CKMODE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "FRCK"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DLYBYP"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 6,
+        "name": "CSHT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 5,
+        "name": "DEVSIZE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "EXTENDMEM"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 3,
+        "name": "MTYP"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 5,
+        "name": "ADOFF"
+      }
+    ]
+  },
+  "fieldset/DCR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "PRESCALER"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 3,
+        "name": "WRAPSIZE"
+      }
+    ]
+  },
+  "fieldset/DCR3": {
+    "fields": [
+      {
+        "bit_offset": 16,
+        "bit_size": 5,
+        "name": "CSBOUND"
+      }
+    ]
+  },
+  "fieldset/DCR4": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "REFRESH"
+      }
+    ]
+  },
+  "fieldset/DLR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "DL"
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "DATA"
+      }
+    ]
+  },
+  "fieldset/FCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CTEF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CTCF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CSMF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "CTOF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "CBERRF"
+      }
+    ]
+  },
+  "fieldset/HLCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LM"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "WZL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "TACC"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "TRWR"
+      }
+    ]
+  },
+  "fieldset/IR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "INSTRUCTION"
+      }
+    ]
+  },
+  "fieldset/LPTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TIMEOUT"
+      }
+    ]
+  },
+  "fieldset/PIR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "INTERVAL"
+      }
+    ]
+  },
+  "fieldset/PSMAR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "MATCH"
+      }
+    ]
+  },
+  "fieldset/PSMKR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "MASK"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "TEF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TCF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FTF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SMF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TOF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "BUSY"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "BERRF"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 6,
+        "name": "FLEVEL"
+      }
+    ]
+  },
+  "fieldset/TCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "DCYC"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "DHQC"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "SSHIFT"
+      }
+    ]
+  },
+  "fieldset/WABR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "ALTERNATE"
+      }
+    ]
+  },
+  "fieldset/WCCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "IMODE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "IDTR"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "ISIZE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 3,
+        "name": "ADMODE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ADDTR"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 2,
+        "name": "ADSIZE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 3,
+        "name": "ABMODE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "ABDTR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "ABSIZE"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 3,
+        "name": "DMODE"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "DDTR"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "DQSE"
+      }
+    ]
+  },
+  "fieldset/WIR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "INSTRUCTION"
+      }
+    ]
+  },
+  "fieldset/WPABR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "ALTERNATE"
+      }
+    ]
+  },
+  "fieldset/WPCCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "IMODE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "IDTR"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "ISIZE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 3,
+        "name": "ADMODE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ADDTR"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 2,
+        "name": "ADSIZE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 3,
+        "name": "ABMODE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "ABDTR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "ABSIZE"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 3,
+        "name": "DMODE"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "DDTR"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "DQSE"
+      }
+    ]
+  },
+  "fieldset/WPIR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "INSTRUCTION"
+      }
+    ]
+  },
+  "fieldset/WPTCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "DCYC"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "DHQC"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "SSHIFT"
+      }
+    ]
+  },
+  "fieldset/WTCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "DCYC"
+      }
+    ]
+  }
+}

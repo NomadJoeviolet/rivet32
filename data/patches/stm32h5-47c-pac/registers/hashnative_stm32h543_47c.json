@@ -1,0 +1,192 @@
+{
+  "block/HASH": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "HASH_CR",
+        "name": "CR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 4,
+        "fieldset": "HASH_DIN",
+        "name": "DIN"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "HASH_STR",
+        "name": "STR"
+      },
+      {
+        "access": "Read",
+        "array": {
+          "len": 5,
+          "stride": 4
+        },
+        "byte_offset": 12,
+        "name": "HRA"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "HASH_IMR",
+        "name": "IMR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "HASH_SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 103,
+          "stride": 4
+        },
+        "byte_offset": 248,
+        "name": "CSR"
+      }
+    ]
+  },
+  "block/HASH_DIGEST": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 42,
+          "stride": 4
+        },
+        "byte_offset": 0,
+        "name": "HR"
+      }
+    ]
+  },
+  "fieldset/HASH_CR": {
+    "fields": [
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "INIT"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DMAE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "DATATYPE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "MODE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 4,
+        "name": "NBW"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "DINNE"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "MDMAT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "LKEY"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 4,
+        "name": "ALGO"
+      }
+    ]
+  },
+  "fieldset/HASH_DIN": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "DATAIN"
+      }
+    ]
+  },
+  "fieldset/HASH_IMR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DINIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DCIE"
+      }
+    ]
+  },
+  "fieldset/HASH_SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DINIS"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DCIS"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "DMAS"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BUSY"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 6,
+        "name": "NBWP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "DINNE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 6,
+        "name": "NBWE"
+      }
+    ]
+  },
+  "fieldset/HASH_STR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 5,
+        "name": "NBLW"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "DCAL"
+      }
+    ]
+  }
+}

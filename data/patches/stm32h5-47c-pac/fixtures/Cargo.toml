@@ -1,0 +1,9 @@
+[package]
+name = "h5-47c-register-fixtures"
+version = "0.1.0"
+edition = "2024"
+[workspace]
+[dependencies]
+stm32-metapac = { path = "../build/stm32-metapac", features = ["stm32h543zg", "metadata"] }
+[lib]
+path = "registers.rs"

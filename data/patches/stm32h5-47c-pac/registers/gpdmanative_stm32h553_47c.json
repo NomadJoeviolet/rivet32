@@ -1,0 +1,750 @@
+{
+  "block/DMA": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "DMA_SECCFGR",
+        "name": "SECCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "DMA_PRIVCFGR",
+        "name": "PRIVCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "DMA_RCFGLOCKR",
+        "name": "RCFGLOCKR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "DMA_MISR",
+        "name": "MISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "DMA_SMISR",
+        "name": "SMISR"
+      }
+    ]
+  },
+  "block/DMA_CHANNEL": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CLBAR",
+        "name": "CLBAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "CFCR",
+        "name": "CFCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "CSR",
+        "name": "CSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "CCR",
+        "name": "CCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "CTR1",
+        "name": "CTR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "fieldset": "CTR2",
+        "name": "CTR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "CBR1",
+        "name": "CBR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "fieldset": "CSAR",
+        "name": "CSAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "fieldset": "CDAR",
+        "name": "CDAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 84,
+        "fieldset": "CTR3",
+        "name": "CTR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 88,
+        "fieldset": "CBR2",
+        "name": "CBR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 124,
+        "fieldset": "CLLR",
+        "name": "CLLR"
+      }
+    ]
+  },
+  "fieldset/CBR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "BNDT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 11,
+        "name": "BRC"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "SDEC"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "DDEC"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "BRSDEC"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "BRDDEC"
+      }
+    ]
+  },
+  "fieldset/CBR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "BRSAO"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "BRDAO"
+      }
+    ]
+  },
+  "fieldset/CCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RESET"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SUSP"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TCIE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "HTIE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DTEIE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ULEIE"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "USEIE"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SUSPIE"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TOIE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "LSM"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "LAP"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 2,
+        "name": "PRIO"
+      }
+    ]
+  },
+  "fieldset/CDAR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "DA"
+      }
+    ]
+  },
+  "fieldset/CFCR": {
+    "fields": [
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TCF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "HTF"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DTEF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ULEF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "USEF"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SUSPF"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TOF"
+      }
+    ]
+  },
+  "fieldset/CLBAR": {
+    "fields": [
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "LBA"
+      }
+    ]
+  },
+  "fieldset/CLLR": {
+    "fields": [
+      {
+        "bit_offset": 2,
+        "bit_size": 14,
+        "name": "LA"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "ULL"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "UB2"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "UT3"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "UDA"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "USA"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "UB1"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "UT2"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "UT1"
+      }
+    ]
+  },
+  "fieldset/CSAR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "SA"
+      }
+    ]
+  },
+  "fieldset/CSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "IDLEF"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TCF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "HTF"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DTEF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "ULEF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "USEF"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SUSPF"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TOF"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "FIFOL"
+      }
+    ]
+  },
+  "fieldset/CTR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "SDW_LOG2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SINC"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 6,
+        "name": "SBL_1"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 2,
+        "name": "PAM"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SBX"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "SAP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "SSEC"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "DDW_LOG2"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "DINC"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 6,
+        "name": "DBL_1"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "DBX"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "DHX"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "DAP"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "DSEC"
+      }
+    ]
+  },
+  "fieldset/CTR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "REQSEL"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SWREQ"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DREQ"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "BREQ"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "PFREQ"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 2,
+        "name": "TRIGM"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 6,
+        "name": "TRIGSEL"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 2,
+        "name": "TRIGPOL"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 2,
+        "name": "TCEM"
+      }
+    ]
+  },
+  "fieldset/CTR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 13,
+        "name": "SAO"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 13,
+        "name": "DAO"
+      }
+    ]
+  },
+  "fieldset/DMA_MISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "MIS0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "MIS1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "MIS2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "MIS3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "MIS4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "MIS5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "MIS6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "MIS7"
+      }
+    ]
+  },
+  "fieldset/DMA_PRIVCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "PRIV0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "PRIV1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "PRIV2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "PRIV3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "PRIV4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "PRIV5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "PRIV6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "PRIV7"
+      }
+    ]
+  },
+  "fieldset/DMA_RCFGLOCKR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LOCK0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "LOCK1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "LOCK2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "LOCK3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "LOCK4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "LOCK5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "LOCK6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "LOCK7"
+      }
+    ]
+  },
+  "fieldset/DMA_SECCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SEC0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SEC1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SEC2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SEC3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "SEC4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "SEC5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SEC6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "SEC7"
+      }
+    ]
+  },
+  "fieldset/DMA_SMISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "MIS0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "MIS1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "MIS2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "MIS3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "MIS4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "MIS5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "MIS6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "MIS7"
+      }
+    ]
+  }
+}

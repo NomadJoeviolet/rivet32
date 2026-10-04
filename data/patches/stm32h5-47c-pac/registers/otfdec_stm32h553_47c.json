@@ -1,0 +1,111 @@
+{
+  "block/OTFDEC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "PRIVCFGR",
+        "name": "PRIVCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 768,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 772,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 776,
+        "fieldset": "IER",
+        "name": "IER"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ENC"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SEIF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "XONEIF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "KEIF"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SEIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "XONEIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "KEIE"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SEIF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "XONEIF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "KEIF"
+      }
+    ]
+  },
+  "fieldset/PRIVCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "PRIV"
+      }
+    ]
+  }
+}

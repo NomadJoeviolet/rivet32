@@ -1,0 +1,531 @@
+{
+  "block/LPTIM": {
+    "items": [
+      {
+        "access": "Read",
+        "byte_offset": 0,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 4,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "DIER",
+        "name": "DIER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "CFGR",
+        "name": "CFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "CCR1",
+        "name": "CCR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "ARR",
+        "name": "ARR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 28,
+        "fieldset": "CNT",
+        "name": "CNT"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "CFGR2",
+        "name": "CFGR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "RCR",
+        "name": "RCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "fieldset": "CCMR1",
+        "name": "CCMR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 52,
+        "fieldset": "CCR2",
+        "name": "CCR2"
+      }
+    ]
+  },
+  "fieldset/ARR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "ARR"
+      }
+    ]
+  },
+  "fieldset/CCMR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CC1SEL"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CC1E"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 2,
+        "name": "CC1P"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "IC1PSC"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 2,
+        "name": "IC1F"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "CC2SEL"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CC2E"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 2,
+        "name": "CC2P"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 2,
+        "name": "IC2PSC"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "name": "IC2F"
+      }
+    ]
+  },
+  "fieldset/CCR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "CCR1"
+      }
+    ]
+  },
+  "fieldset/CCR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "CCR2"
+      }
+    ]
+  },
+  "fieldset/CFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CKSEL"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 2,
+        "name": "CKPOL"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 2,
+        "name": "CKFLT"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 2,
+        "name": "TRGFLT"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 3,
+        "name": "PRESC"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 3,
+        "name": "TRIGSEL"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 2,
+        "name": "TRIGEN"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "TIMOUT"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "WAVE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "WAVPOL"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "PRELOAD"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "COUNTMODE"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "ENC"
+      }
+    ]
+  },
+  "fieldset/CFGR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "IN1SEL"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "IN2SEL"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "IC1SEL"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 2,
+        "name": "IC2SEL"
+      }
+    ]
+  },
+  "fieldset/CNT": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "CNT"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ENABLE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "SNGSTRT"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CNTSTRT"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "COUNTRST"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "RSTARE"
+      }
+    ]
+  },
+  "fieldset/DIER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CC1IE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ARRMIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EXTTRIGIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CMP1OKIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ARROKIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "UPIE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DOWNIE"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "UEIE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "REPOKIE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "CC2IE"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "CC1OIE"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CC2OIE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "CC1DE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "CMP2OKIE"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "UEDE"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "CC2DE"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CC1CF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ARRMCF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EXTTRIGCF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CMP1OKCF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ARROKCF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "UPCF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DOWNCF"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "UECF"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "REPOKCF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "CC2CF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "CC1OCF"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CC2OCF"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "CMP2OKCF"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "DIEROKCF"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CC1IF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ARRM"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "EXTTRIG"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CMP1OK"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ARROK"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "UP"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DOWN"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "UE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "REPOK"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "CC2IF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "CC1OF"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "CC2OF"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "CMP2OK"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "DIEROK"
+      }
+    ]
+  },
+  "fieldset/RCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "REP"
+      }
+    ]
+  }
+}

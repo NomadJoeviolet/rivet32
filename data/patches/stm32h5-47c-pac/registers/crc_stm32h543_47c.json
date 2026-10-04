@@ -1,0 +1,106 @@
+{
+  "block/CRC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "DR",
+        "name": "DR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "IDR",
+        "name": "IDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "INIT",
+        "name": "INIT"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "POL",
+        "name": "POL"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RESET"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 2,
+        "name": "POLYSIZE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 2,
+        "name": "REV_IN"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 2,
+        "name": "REV_OUT"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RTYPE_IN"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RTYPE_OUT"
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "DR"
+      }
+    ]
+  },
+  "fieldset/IDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "IDR"
+      }
+    ]
+  },
+  "fieldset/INIT": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "INIT"
+      }
+    ]
+  },
+  "fieldset/POL": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "POL"
+      }
+    ]
+  }
+}

@@ -1,0 +1,738 @@
+{
+  "block/PWR": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "PMCR",
+        "name": "PMCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4,
+        "fieldset": "PMSR",
+        "name": "PMSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "VOSCR",
+        "name": "VOSCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 20,
+        "fieldset": "VOSSR",
+        "name": "VOSSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "BDCR",
+        "name": "BDCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "DBPCR",
+        "name": "DBPCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 40,
+        "fieldset": "BDSR",
+        "name": "BDSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "fieldset": "UCPDR",
+        "name": "UCPDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 48,
+        "fieldset": "SCCR",
+        "name": "SCCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 52,
+        "fieldset": "VMCR",
+        "name": "VMCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 56,
+        "fieldset": "USBSCR",
+        "name": "USBSCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 60,
+        "fieldset": "VMSR",
+        "name": "VMSR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 64,
+        "fieldset": "WUSCR",
+        "name": "WUSCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 68,
+        "fieldset": "WUSR",
+        "name": "WUSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "WUCR",
+        "name": "WUCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "fieldset": "IORETR",
+        "name": "IORETR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 256,
+        "fieldset": "SECCFGR",
+        "name": "SECCFGR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 260,
+        "fieldset": "PRIVCFGR",
+        "name": "PRIVCFGR"
+      }
+    ]
+  },
+  "enum/ALS": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "AVD level0 (VAVD0 ~ 1.7 V)",
+        "name": "Level0",
+        "value": 0
+      },
+      {
+        "description": "AVD level1 (VAVD1 ~ 2.1 V)",
+        "name": "Level1",
+        "value": 1
+      },
+      {
+        "description": "AVD level2 (VAVD2 ~ 2.5 V)",
+        "name": "Level2",
+        "value": 2
+      },
+      {
+        "description": "AVD level3 (VAVD3 ~ 2.8 V)",
+        "name": "Level3",
+        "value": 3
+      }
+    ]
+  },
+  "enum/LPMS": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Keeps Stop mode when entering DeepSleep.",
+        "name": "Stop",
+        "value": 0
+      },
+      {
+        "description": "Allows Standby mode when entering DeepSleep.",
+        "name": "Standby",
+        "value": 1
+      }
+    ]
+  },
+  "enum/PLS": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "description": "PVD level0 (VPVD0 ~ 1.95 V)",
+        "name": "Level0",
+        "value": 0
+      },
+      {
+        "description": "PVD level1 (VPVD1 ~ 2.10 V)",
+        "name": "Level1",
+        "value": 1
+      },
+      {
+        "description": "PVD level2 (VPVD2 ~ 2.25 V)",
+        "name": "Level2",
+        "value": 2
+      },
+      {
+        "description": "PVD level3 (VPVD3 ~ 2.40 V)",
+        "name": "Level3",
+        "value": 3
+      },
+      {
+        "description": "PVD level4 (VPVD4 ~ 2.55 V)",
+        "name": "Level4",
+        "value": 4
+      },
+      {
+        "description": "PVD level5 (VPVD5 ~ 2.70 V)",
+        "name": "Level5",
+        "value": 5
+      },
+      {
+        "description": "PVD level6 (VPVD6 ~ 2.85 V)",
+        "name": "Level6",
+        "value": 6
+      },
+      {
+        "description": "PVD_IN pin",
+        "name": "PVDInPin",
+        "value": 7
+      }
+    ]
+  },
+  "enum/PowerModeInStopMode": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Remains in normal mode when the system enters Stop mode (quick restart time).",
+        "name": "Normal",
+        "value": 0
+      },
+      {
+        "description": "Enters low-power mode when the system enters Stop mode (low-power consumption).",
+        "name": "LowPower",
+        "value": 1
+      }
+    ]
+  },
+  "enum/Retention": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Content is lost.",
+        "name": "Lost",
+        "value": 0
+      },
+      {
+        "description": "Content is preserved.",
+        "name": "Preserved",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SVOS": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "SVOS5 scale 5",
+        "name": "Scale5",
+        "value": 1
+      },
+      {
+        "description": "SVOS4 scale 4",
+        "name": "Scale4",
+        "value": 2
+      },
+      {
+        "description": "SVOS3 scale 3 (default)",
+        "name": "Scale3",
+        "value": 3
+      }
+    ]
+  },
+  "enum/ShutOff": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Content is kept.",
+        "name": "Kept",
+        "value": 0
+      },
+      {
+        "description": "Content is lost.",
+        "name": "Lost",
+        "value": 1
+      }
+    ]
+  },
+  "enum/VBRS": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "Charge VBAT through a 5 k\u03a9 resistor.",
+        "name": "R5kOhm",
+        "value": 0
+      },
+      {
+        "description": "Charge VBAT through a 1.5 k\u03a9 resistor.",
+        "name": "R1_5kOhm",
+        "value": 1
+      }
+    ]
+  },
+  "enum/VOS": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Scale3",
+        "value": 0
+      },
+      {
+        "name": "Scale2",
+        "value": 1
+      },
+      {
+        "name": "Scale1",
+        "value": 2
+      },
+      {
+        "name": "Scale0",
+        "value": 3
+      }
+    ]
+  },
+  "enum/WUPP": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "description": "detection on high level (rising edge)",
+        "name": "High",
+        "value": 0
+      },
+      {
+        "description": "detection on low level (falling edge)",
+        "name": "Low",
+        "value": 1
+      }
+    ]
+  },
+  "enum/WUPPUPD": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "NoPullUp",
+        "value": 0
+      },
+      {
+        "name": "PullUp",
+        "value": 1
+      },
+      {
+        "name": "PullDown",
+        "value": 2
+      }
+    ]
+  },
+  "fieldset/BDCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "enum": "Retention",
+        "name": "BREN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "MONEN"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "VBE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "enum": "VBRS",
+        "name": "VBRS"
+      }
+    ]
+  },
+  "fieldset/BDSR": {
+    "fields": [
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "BRRDY"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "VBATL"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "VBATH"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "TEMPL"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "TEMPH"
+      }
+    ]
+  },
+  "fieldset/DBPCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DBP"
+      }
+    ]
+  },
+  "fieldset/IORETR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "IORETEN"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "JTAGIORETEN"
+      }
+    ]
+  },
+  "fieldset/PMCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "enum": "LPMS",
+        "name": "LPMS"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 2,
+        "enum": "SVOS",
+        "name": "SVOS"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "CSSF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "enum": "PowerModeInStopMode",
+        "name": "FLPS"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "BOOSTE"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "AVD_READY"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "enum": "ShutOff",
+        "name": "ETHERNETSO"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "enum": "ShutOff",
+        "name": "SRAM3SO"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "SRAM2_16LSO"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "SRAM2_16HSO"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "enum": "ShutOff",
+        "name": "SRAM2_48SO"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "enum": "ShutOff",
+        "name": "SRAM1SO"
+      }
+    ]
+  },
+  "fieldset/PMSR": {
+    "fields": [
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "STOPF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SBF"
+      }
+    ]
+  },
+  "fieldset/PRIVCFGR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SPRIV"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "NSPRIV"
+      }
+    ]
+  },
+  "fieldset/SCCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BYPASS"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "LDOEN"
+      }
+    ]
+  },
+  "fieldset/SECCFGR": {
+    "fields": [
+      {
+        "array": {
+          "len": 8,
+          "stride": 1
+        },
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "WUPSEC"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "RETSEC"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "LPMSEC"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "SCMSEC"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "VBSEC"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "VUSBSEC"
+      }
+    ]
+  },
+  "fieldset/UCPDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "UCPD_DBDIS"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "UCPD_STBY"
+      }
+    ]
+  },
+  "fieldset/USBSCR": {
+    "fields": [
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "USB33DEN"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "USB33SV"
+      }
+    ]
+  },
+  "fieldset/VMCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "PVDEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 3,
+        "enum": "PLS",
+        "name": "PLS"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "AVDEN"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 2,
+        "enum": "ALS",
+        "name": "ALS"
+      }
+    ]
+  },
+  "fieldset/VMSR": {
+    "fields": [
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "AVDO"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "VDDIO2RDY"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "PVDO"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "USB33RDY"
+      }
+    ]
+  },
+  "fieldset/VOSCR": {
+    "fields": [
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "enum": "VOS",
+        "name": "VOS"
+      }
+    ]
+  },
+  "fieldset/VOSSR": {
+    "fields": [
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "VOSRDY"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "ACTVOSRDY"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 2,
+        "enum": "VOS",
+        "name": "ACTVOS"
+      }
+    ]
+  },
+  "fieldset/WUCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "WUPEN_BITS"
+      },
+      {
+        "array": {
+          "len": 8,
+          "stride": 1
+        },
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "WUPEN"
+      },
+      {
+        "array": {
+          "len": 8,
+          "stride": 1
+        },
+        "bit_offset": 8,
+        "bit_size": 1,
+        "enum": "WUPP",
+        "name": "WUPP"
+      },
+      {
+        "array": {
+          "len": 8,
+          "stride": 2
+        },
+        "bit_offset": 16,
+        "bit_size": 2,
+        "enum": "WUPPUPD",
+        "name": "WUPPUPD"
+      }
+    ]
+  },
+  "fieldset/WUSCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "CWUF_BITS"
+      },
+      {
+        "array": {
+          "len": 8,
+          "stride": 1
+        },
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CWUF"
+      }
+    ]
+  },
+  "fieldset/WUSR": {
+    "fields": [
+      {
+        "array": {
+          "len": 8,
+          "stride": 1
+        },
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "WUF"
+      }
+    ]
+  }
+}

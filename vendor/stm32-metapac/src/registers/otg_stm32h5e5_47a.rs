@@ -1,0 +1,266 @@
+
+use crate::metadata::ir::*;
+pub(crate) static REGISTERS: IR = IR {
+    blocks: &[Block {
+        name: "UsbOtgGlobal",
+        extends: None,
+        description: None,
+        items: &[
+            BlockItem {
+                name: "gotgctl",
+                description: None,
+                array: None,
+                byte_offset: 0x0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gotgint",
+                description: None,
+                array: None,
+                byte_offset: 0x4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gahbcfg",
+                description: None,
+                array: None,
+                byte_offset: 0x8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gusbcfg",
+                description: None,
+                array: None,
+                byte_offset: 0xc,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "grstctl",
+                description: None,
+                array: None,
+                byte_offset: 0x10,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gintsts",
+                description: None,
+                array: None,
+                byte_offset: 0x14,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gintmsk",
+                description: None,
+                array: None,
+                byte_offset: 0x18,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "grxstsr",
+                description: None,
+                array: None,
+                byte_offset: 0x1c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "grxstsp",
+                description: None,
+                array: None,
+                byte_offset: 0x20,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "grxfsiz",
+                description: None,
+                array: None,
+                byte_offset: 0x24,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "dieptxf0_hnptxfsiz",
+                description: None,
+                array: None,
+                byte_offset: 0x28,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "hnptxsts",
+                description: None,
+                array: None,
+                byte_offset: 0x2c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reserved30",
+                description: None,
+                array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
+                byte_offset: 0x30,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gccfg",
+                description: None,
+                array: None,
+                byte_offset: 0x38,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "cid",
+                description: None,
+                array: None,
+                byte_offset: 0x3c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gsnpsid",
+                description: None,
+                array: None,
+                byte_offset: 0x40,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reserved44",
+                description: None,
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 0x44,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "glpmcfg",
+                description: None,
+                array: None,
+                byte_offset: 0x54,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gpwrdn",
+                description: None,
+                array: None,
+                byte_offset: 0x58,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "gdfifocfg",
+                description: None,
+                array: None,
+                byte_offset: 0x5c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reserved60",
+                description: None,
+                array: Some(Array::Regular(RegularArray { len: 40, stride: 4 })),
+                byte_offset: 0x60,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "hptxfsiz",
+                description: None,
+                array: None,
+                byte_offset: 0x100,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "dieptxf",
+                description: None,
+                array: Some(Array::Regular(RegularArray { len: 15, stride: 4 })),
+                byte_offset: 0x104,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+        ],
+    }],
+    fieldsets: &[],
+    enums: &[],
+};

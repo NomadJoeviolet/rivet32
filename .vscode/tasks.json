@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Framework: host tests",
+      "type": "process",
+      "command": "cargo",
+      "args": ["test", "--workspace", "--locked"],
+      "problemMatcher": ["$rustc"],
+      "group": "test"
+    },
+    {
+      "label": "App: H723 minimal release",
+      "type": "process",
+      "command": "cargo",
+      "args": ["build", "-p", "embodied-app", "--bin", "minimal", "--release", "--locked", "--target", "thumbv7em-none-eabihf", "--features", "stm32h723vg"],
+      "problemMatcher": ["$rustc"],
+      "group": {"kind": "build", "isDefault": true}
+    },
+    {
+      "label": "Framework: formatting",
+      "type": "process",
+      "command": "cargo",
+      "args": ["fmt", "--all", "--check"],
+      "problemMatcher": []
+    }
+  ]
+}

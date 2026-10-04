@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "baseline_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "generator_revision": "caa36afd62510b0e6315ee0dccd1f9c65fbcac83",
+  "chips": {
+    "STM32F745IE.json": {
+      "before_sha256": "2f6c9c6a24c3a955a70c5a00a4add33d303764b9cecb7255625444428629735a",
+      "after_sha256": "95c96005ed32503b7c3accf30d036e41ec133e973c4c09c358b11a3288f7da51",
+      "metadata_path": "src/chips/stm32f745ie/metadata.rs",
+      "metadata_before_sha256": "b96e4d81b5393ad9129629ef7d357c3bf2c68969db362d4d362aa73b594bf923",
+      "metadata_after_sha256": "b98c1d072094401a70a2f7883e951c042b8ff8d7df5b82f3c115ceb850c3312f"
+    },
+    "STM32F745IG.json": {
+      "before_sha256": "d2366282fbc901b7e4ca12e58dd51334e2beb077a0a8add2e78661886418cec6",
+      "after_sha256": "b0e3e8da9c853ae8a8c18efca07c5a8d445c7aecf42e52749ebf58986b6089a4",
+      "metadata_path": "src/chips/stm32f745ig/metadata.rs",
+      "metadata_before_sha256": "4c0df25f6cb0fb73fea03840fa07b570834dc6a9563d102c8c0870ba6c9f83e0",
+      "metadata_after_sha256": "a8f0e474021c8aeecaa1942cc36da2436d5f44a4d73951c7802acfa58630ef11"
+    },
+    "STM32F745VE.json": {
+      "before_sha256": "921c8d7e07f27d6856c1d31580c35ccbf5be45b6740345eb9b9cf9af5866e171",
+      "after_sha256": "055293d6669458abf479843ba50518292ce992fd2af04145540397b999acc946",
+      "metadata_path": "src/chips/stm32f745ve/metadata.rs",
+      "metadata_before_sha256": "d527fdb816917a441ad1ed1eab3696b5363425272493c497a6dc2dcf49637711",
+      "metadata_after_sha256": "924f741565d174632260f759a1a223db1d3c37205a1730549bf31bb29d257246"
+    },
+    "STM32F745VG.json": {
+      "before_sha256": "a7915685d868006bc7ace6a6bf47c63def2e71108a90df7541906160034b5769",
+      "after_sha256": "98f62ea3022d9b9e7864de5222c4c32f71e69642fcc3e598c2040766e9af4680",
+      "metadata_path": "src/chips/stm32f745vg/metadata.rs",
+      "metadata_before_sha256": "202874194a7adaa6d3599bf923d4eadd1600afa76c95412c9afad2d560d9d855",
+      "metadata_after_sha256": "ccb593cce4e7a73661f3681be9d729586424557c02fae7cb800e9ffd74facbc8"
+    },
+    "STM32F745ZE.json": {
+      "before_sha256": "5bb2f9a26b5bbe32385d74e1920102339b8887f1984410c9736bfa384f2fb1c2",
+      "after_sha256": "989276a88b6237e02995a9ba9ef76180de3b0d4009135aaed481dfe857d5952a",
+      "metadata_path": "src/chips/stm32f745ze/metadata.rs",
+      "metadata_before_sha256": "bb2cad048af82697090c03c834a63499ebdcbde535e8de28c96b9af9dfc417ab",
+      "metadata_after_sha256": "12631d9c5dda940954cf5636213dfd8332ee64d6527fda1558a1e9942f01cdeb"
+    },
+    "STM32F745ZG.json": {
+      "before_sha256": "5531239b693e33149a9f4cdfbe18e7968320c7cc4d59db44d49606af13b90867",
+      "after_sha256": "4ee958dcf72a0bd45d9d29fd9a936c78507b3ad5dfbfd30fadfb4b695bf212ee",
+      "metadata_path": "src/chips/stm32f745zg/metadata.rs",
+      "metadata_before_sha256": "dbc8bdd19b10f1ca8d3c2e19b1781d06ddda35cf33d02bd120484d0dfed4c859",
+      "metadata_after_sha256": "1ba030034e3875f69f8795ba9a956f7bd56cf2ef4587064c54ed58c8ad782717"
+    },
+    "STM32F746BE.json": {
+      "before_sha256": "22b70cf8442454b5f779997c9e00dced137bfed7ed086461c37a1baa653bf86a",
+      "after_sha256": "d06ec6f9db3fb5ae0bf6c61bb224302afb611d83ebab40c09d6be3661f81d6ed",
+      "metadata_path": "src/chips/stm32f746be/metadata.rs",
+      "metadata_before_sha256": "620aeda895959afd03450c86b81bd920f7be89285948f5cb9d687193168e1f9a",
+      "metadata_after_sha256": "a249d28d014b6db48f792631abfc7e03d8a1116000000fc863ceb85bafae5b8b"
+    },
+    "STM32F746BG.json": {
+      "before_sha256": "4132f8f0a223df59ed7c7be7e99836a6a109b303a6a149f8585d2f2acb0d3425",
+      "after_sha256": "c2c6547cb333a1e848b7054e62f363d943b1dc1d5e7478f795e7ca708bc65fb7",
+      "metadata_path": "src/chips/stm32f746bg/metadata.rs",
+      "metadata_before_sha256": "fd671a7c235bb209a2cc8f9293c9d8cef0d85a31ccfedc3ee9d1363067488338",
+      "metadata_after_sha256": "de9419854e010085d543ed2e3812a55041bbb77e0353b25f20bc13f804928efd"
+    },
+    "STM32F746IE.json": {
+      "before_sha256": "6f227d94f706c60582f47f7d5a127e02fdb40e186ad36d7ffbeef85636c24765",
+      "after_sha256": "c06d4931a5859e8a92b35fefcb7ebd694a894d6db3e01b999789686fbf40248c",
+      "metadata_path": "src/chips/stm32f746ie/metadata.rs",
+      "metadata_before_sha256": "1b0b5b346b016f2bb2dbb73e0ae7bfc7242c2f74e252424f2e66945f588dc3e6",
+      "metadata_after_sha256": "47dd2700e02610cba3c852dcd59eeacf9e0e62d2f2c54c64b56e358e7189b214"
+    },
+    "STM32F746IG.json": {
+      "before_sha256": "1bc0717da36c6a594aa1d0fca06945089501db11d71618b3e66504883c03c7e3",
+      "after_sha256": "218a5fabd1ebcdaa5813c77aaea9dd7522448bea44f282e86aaecd3c2b8ebf43",
+      "metadata_path": "src/chips/stm32f746ig/metadata.rs",
+      "metadata_before_sha256": "91f8eb6deb8607a382742db775161d9b3db46a486572c1c0cc250267a1785d92",
+      "metadata_after_sha256": "e67cba761853ee84d53a7dbd627725fda0a6d583af85d0e8acc4747840e8bc84"
+    },
+    "STM32F746NE.json": {
+      "before_sha256": "b1df9eae022b95836ef130fedb1515c6e9b005033cf6d5c7f64ca0ddee32eaf8",
+      "after_sha256": "5453b6ca1ee84ece4c87cd638bb969e10c0042b316b4ba4f3e6b5defe07ce55a",
+      "metadata_path": "src/chips/stm32f746ne/metadata.rs",
+      "metadata_before_sha256": "c08a7a98619976352f33d72b7712aa8c00e9e979325fb9ff8fd2cec88da3ecf1",
+      "metadata_after_sha256": "509a7da6012aeeb16b0a93d46002414750c7b3792336eecb62c29148acddd700"
+    },
+    "STM32F746NG.json": {
+      "before_sha256": "05c63dd03f0d4b5773581f1bb79794406a583ba7dda7682b6154957483868f73",
+      "after_sha256": "7ecf71cde2e75b6c1448321e1812f8812986ef102bb88424d55542bcacf0d2f9",
+      "metadata_path": "src/chips/stm32f746ng/metadata.rs",
+      "metadata_before_sha256": "f75683294d6bfb7fff0d4d5ea91e4a011db23dc46d7409e583a665ce88e2282b",
+      "metadata_after_sha256": "c6e7d3f2d38f390d7d09be327a1c10b2eed08285dc13f47ed1795f4f2d7356f7"
+    },
+    "STM32F746VE.json": {
+      "before_sha256": "cde7846818cb8beb63bc6727d13b2b7dd0998bc30c9359a47ccd8ab5e1ff2328",
+      "after_sha256": "a4e06f57555a50b83b8bb03929f5c495a08ba88a8bb2f1bb36e8476a82a7662a",
+      "metadata_path": "src/chips/stm32f746ve/metadata.rs",
+      "metadata_before_sha256": "95dc8e963c00341bdd6526638b8e544044737281bd8f072c2ed59b2e49c8981a",
+      "metadata_after_sha256": "2340a8639c60a44f7bb100968eb7445d15c3f19c7b96cea150a8067bc6659329"
+    },
+    "STM32F746VG.json": {
+      "before_sha256": "d4ae14c8f1e442678436d5fd685cd30e22524716bea6a41153a27c341b32a459",
+      "after_sha256": "44edbcdc1de5b5a0872d04adef709ec84c108de68893413c870da3ff2fae9b59",
+      "metadata_path": "src/chips/stm32f746vg/metadata.rs",
+      "metadata_before_sha256": "df3de692b33783f59b99167d4f3eb0a7f2be715e1f659814b2adda403defc589",
+      "metadata_after_sha256": "40e04f871b9152428fd51aa5b3aee9b40ad0add94ebe87a05074c1ba14855253"
+    },
+    "STM32F746ZE.json": {
+      "before_sha256": "fc2156c8148ffe5273060e2ccccc8ab313fc6eae3ad6d7655f7d2ad84489c932",
+      "after_sha256": "ee9936ea7f87846b79cffa72d391d5572cf392f952757dfa3e7a4801e0cac385",
+      "metadata_path": "src/chips/stm32f746ze/metadata.rs",
+      "metadata_before_sha256": "10e08cdc0ecb325c32c633daefcb7ce7fe0c055a849d9b8905cf5803b8898aba",
+      "metadata_after_sha256": "f9ceda8a500c4f841eb6dfe8e00d7f29041d83b653963c16c3bcf209648498a0"
+    },
+    "STM32F746ZG.json": {
+      "before_sha256": "ee986fe6369a3e89eb127d3cb0f1c2b2b7740cbda04a7eae259a75a4c6039ec2",
+      "after_sha256": "bd0a44b31189b341a71ac2fb14e617b9a9cd73878573f9c5e5393f6a14bef515",
+      "metadata_path": "src/chips/stm32f746zg/metadata.rs",
+      "metadata_before_sha256": "3deafa39dae3077488c4259ec5760b862a427f5f5342e4d657344ba23eeb6857",
+      "metadata_after_sha256": "9c7acbff4b2b748409ae6ab84209189e0e90817050901279d43740c62d510d96"
+    },
+    "STM32F756BG.json": {
+      "before_sha256": "1c69759fc0e0dfec68dafd92a5d51cf17da88085818ef7da09c348259dcd3d4f",
+      "after_sha256": "1417b3cc2ae2f41482c22c8a3619c38879e74559e05bb932857d3d3942930bbf",
+      "metadata_path": "src/chips/stm32f756bg/metadata.rs",
+      "metadata_before_sha256": "b51dee36e783824e92364935626abfbc9d2d58b0abba4bc43ac01f5f0a0abc87",
+      "metadata_after_sha256": "35d21506c16e145bf2adc056e2d8a2ca1f5d105259dc8d47638563dd489bbd83"
+    },
+    "STM32F756IG.json": {
+      "before_sha256": "4e00d3df7643d4787cad5aa8d0534c9a68842618b0e27e3246b4f12fa9f33c4e",
+      "after_sha256": "5acc86917bfd5590805f232c8bd68a5f5c21d00f4839958d47e5658cae7a31b5",
+      "metadata_path": "src/chips/stm32f756ig/metadata.rs",
+      "metadata_before_sha256": "5e4654513fcc53db61a358a670a49551f6b9f8f649d414a182f279ffb2494e87",
+      "metadata_after_sha256": "5c724e39b4b8089d84cfef99015e5b224ac4609eee9ebf34b9646e0458497478"
+    },
+    "STM32F756NG.json": {
+      "before_sha256": "8cd075ec5b294f4de57756fe914a7d498aa8baa064dae31a1ec54eb7158f2770",
+      "after_sha256": "418a026d0e30334a91ad0bf17f398215cca47410d7568796a86e8ef03ea8fb0c",
+      "metadata_path": "src/chips/stm32f756ng/metadata.rs",
+      "metadata_before_sha256": "23b445237687b2b849e21573cc099b2f80482881ad87338eed88dc3a6f62e45a",
+      "metadata_after_sha256": "d4d32929fe50b61c5731684f5891d6857f465485ca908bad91802bebc842d5a2"
+    },
+    "STM32F756VG.json": {
+      "before_sha256": "d065a8291b895d1d1b4a4f4b1ee14de23eea73179718c1fb9440f93c5f6875d5",
+      "after_sha256": "73730de628748b67e2f627a6db929c54c6785774aff6cd08b810e0149e126952",
+      "metadata_path": "src/chips/stm32f756vg/metadata.rs",
+      "metadata_before_sha256": "0554e002b58e196dcc4817c5fc667e3f000978306885572607c8a62fa564db0d",
+      "metadata_after_sha256": "b7465985b64ac78614ffb963bc799e520f0cad372131da4dedbc365811ac911c"
+    },
+    "STM32F756ZG.json": {
+      "before_sha256": "fbb246d121f8569c47302396a9f24bc7fc0aaa6030e4b5a4963cc74b6f3a40bc",
+      "after_sha256": "f6a824de0b97c7cf3a5d5028a5c8c29662001fc2b74be9567135818e88e6bc43",
+      "metadata_path": "src/chips/stm32f756zg/metadata.rs",
+      "metadata_before_sha256": "f87b6ce5a8e02482e32deffe17dd009f0c2ec1cb1be22c15d0eec69919bd4c95",
+      "metadata_after_sha256": "4992d6c8e465779ea7be282e43602a3bd66fb3c0ba34b0a90d071968135fdc27"
+    }
+  },
+  "baseline_manifest_sha256": "a3b71f71c15a8bfea03c2c8f8ac1bbce31e76ae3bd05d8e922c33b45e30b3004",
+  "register_inputs": {
+    "adccommon_v2.json": "a6a097654a478701e0e627b94cb7da847728a6ae4912f4ffef7afc7eba55063e",
+    "adc_v1_f4.json": "c7d20b5a8b568587ef671b09a79380f0aabc55d98cd3f19514ca8c3fae59ede1",
+    "can_bxcan.json": "4be924b1aa8c3f06614d3a16750d01ee85ebad021ecdb28d9f07837d9175e4c3",
+    "cec_v2.json": "beacbc6d6ab63640c73a40fe1d06518136861f18b579f491196cef3728b3d543",
+    "crc_v3.json": "8c6d4b82f5462baef6de74272d5d757736683cd22e3ef2b856370b99d8e99f10",
+    "cryp_v2.json": "cee8e7281ce7bcab81731f2ab34ebcdd8d334bdf2b0a210abb3b1d84e799b6f2",
+    "dac_v2.json": "b194e2ea3a00d5e8b88a26af1cabe9c63fac0d862960b323bf6fc08aaa89e510",
+    "dbgmcu_f7.json": "bdbf026cb7283a38ca2ea1638da9a7dc0f3cc379c8995db65b1779e8bc495002",
+    "dcmi_v1.json": "40ce0bbff0a4535660b2c9e40ffb0147a87fa1a0bdd7d43b6f92c421a991bd0d",
+    "dma2d_v1.json": "d7cb0fa9aae900f5286f3c9719468f1248d6a6961b15fcf225c61e537421d705",
+    "dma_v2.json": "b9e884895738cbe023c1232dd0a04267d07783f56e4a1bd8b08287f2d75df1f8",
+    "eth_v1c.json": "33dcdeb3b1f4a994093d8ef4c3d2b97eff20bcf1e7d381f1b14dc9a440fb27d4",
+    "exti_v1.json": "be0782b52097c2bc08ff9fec9a5276c525c584428c296899fb4d92dd83de7ac7",
+    "flash_f7.json": "1a7e8a695578ca1f04a6b2bdcd1d5e88cc08e662702f6cc5c7e902106d040177",
+    "fmc_v2x1.json": "7840f84020521642d75ea618c530ea2af874fccd96447bd51f1929bc456def34",
+    "gpio_v2.json": "ca5b97f7cb10eec36190d4942d5ca0cca731b01899dc64012ef4df6ffc3f550a",
+    "hash_v2.json": "d02a19fe5112a39139a746ca0d8f5c71f47d3efe5e6a0936d3892f9e73d7dfa5",
+    "i2c_v2.json": "6afb67fa021971da9f4d1a16b8f37ae1da974a46793e6c2ab2c18b8459bd210c",
+    "iwdg_v2.json": "34376922f03a5ed7b33e426be415946531f37c2948bafb0fb0a0092f93dcbaa1",
+    "lptim_v1a.json": "2a7b461ad2ec4082d80b510b57acff14430780f20956ac025f7bb30b26bd9f1e",
+    "ltdc_v1.json": "a488805d26b451cb1d3ccee9d97334e0d67c9f9746d6db515370bd39b611cf04",
+    "otg_v1.json": "64c909351bab05f3a134fcf08c26592d49cdbccf3c8a12d8bab695d70f910892",
+    "pwr_f7.json": "151d228b8045b1003c5e104a757615b255fd407e0571f587ebeaa3ef4b537e96",
+    "quadspi_v1.json": "888e14b27aed88fdfe79eb3fc8f92517834e2ef2547ce92671f32018e0a779c2",
+    "rcc_f7.json": "379bf59f8d813f18222e551c05192fa7b4a786ad7e508b59e68f3b5a8bda88d7",
+    "rng_v1.json": "36864f4c1c118dde1c7acff647e9a773183859a54646e666bee07eee1118df67",
+    "rtc_v2_f7.json": "be68a784aae0a93aeada0e9fcbceeb2f0a7670c5209b8d26fbdca2994dc56343",
+    "sai_v2.json": "6d3bcfd48da9082acaafd6bf0c13d5cee45ef3f3b2ed3ed75eccdbb8ae9d7687",
+    "sdmmc_v1.json": "0860c7bb6ca402b412420dd3f543ca45458d2f077451cb8aac8b0c034bb32445",
+    "spdifrx_v1.json": "3709b5958446506f27b126ab5d28602a488cf30724976ef77fbfacb455bc434f",
+    "spi_v3_i2s.json": "90d5fde11783951873f3df77cd87adbc19c951e4fe0e507251b8e750b35c4041",
+    "syscfg_f7.json": "cd4fc242cc34f1a294a2f978368ca42e434e953426e244e397142035c485ede3",
+    "timer_v1.json": "314a938042aab3b184226e60e4b81a92be439ba3cd7acf72d18a290353bade2a",
+    "tscal_v1.json": "a4ae5b27b5e307d235bcdd603320da31f4926862bf2c0ac455d586892395d55b",
+    "uid_v1.json": "11cdcc432eb3cd049b53a3fece80ad75f7f8e7b0c3aa3d1c08f33dd0e4c7eed9",
+    "usart_v3.json": "13f20ea13fa789ce4d9061748c8055f3c235c5ed8dab81518ebad7fcffdb6b7e",
+    "vrefintcal_v1.json": "a8c8784776357c29e592b8a1612a589db72f7435f6c94bd381844668509c34f7",
+    "wwdg_v1.json": "120abb04f31cbb46665514d98acd8b58db598feae7869b62890ef78116d2838b"
+  },
+  "changes_archive": {
+    "sha256": "39b151e2f89c012cbd866121ec2f12e6c3ae1ee93f1611378c6efdff930ffa4b",
+    "files": {
+      "before/src/chips/stm32f745ie/metadata.rs": "b96e4d81b5393ad9129629ef7d357c3bf2c68969db362d4d362aa73b594bf923",
+      "after/src/chips/stm32f745ie/metadata.rs": "b98c1d072094401a70a2f7883e951c042b8ff8d7df5b82f3c115ceb850c3312f",
+      "before/src/chips/stm32f745ig/metadata.rs": "4c0df25f6cb0fb73fea03840fa07b570834dc6a9563d102c8c0870ba6c9f83e0",
+      "after/src/chips/stm32f745ig/metadata.rs": "a8f0e474021c8aeecaa1942cc36da2436d5f44a4d73951c7802acfa58630ef11",
+      "before/src/chips/stm32f745ve/metadata.rs": "d527fdb816917a441ad1ed1eab3696b5363425272493c497a6dc2dcf49637711",
+      "after/src/chips/stm32f745ve/metadata.rs": "924f741565d174632260f759a1a223db1d3c37205a1730549bf31bb29d257246",
+      "before/src/chips/stm32f745vg/metadata.rs": "202874194a7adaa6d3599bf923d4eadd1600afa76c95412c9afad2d560d9d855",
+      "after/src/chips/stm32f745vg/metadata.rs": "ccb593cce4e7a73661f3681be9d729586424557c02fae7cb800e9ffd74facbc8",
+      "before/src/chips/stm32f745ze/metadata.rs": "bb2cad048af82697090c03c834a63499ebdcbde535e8de28c96b9af9dfc417ab",
+      "after/src/chips/stm32f745ze/metadata.rs": "12631d9c5dda940954cf5636213dfd8332ee64d6527fda1558a1e9942f01cdeb",
+      "before/src/chips/stm32f745zg/metadata.rs": "dbc8bdd19b10f1ca8d3c2e19b1781d06ddda35cf33d02bd120484d0dfed4c859",
+      "after/src/chips/stm32f745zg/metadata.rs": "1ba030034e3875f69f8795ba9a956f7bd56cf2ef4587064c54ed58c8ad782717",
+      "before/src/chips/stm32f746be/metadata.rs": "620aeda895959afd03450c86b81bd920f7be89285948f5cb9d687193168e1f9a",
+      "after/src/chips/stm32f746be/metadata.rs": "a249d28d014b6db48f792631abfc7e03d8a1116000000fc863ceb85bafae5b8b",
+      "before/src/chips/stm32f746bg/metadata.rs": "fd671a7c235bb209a2cc8f9293c9d8cef0d85a31ccfedc3ee9d1363067488338",
+      "after/src/chips/stm32f746bg/metadata.rs": "de9419854e010085d543ed2e3812a55041bbb77e0353b25f20bc13f804928efd",
+      "before/src/chips/stm32f746ie/metadata.rs": "1b0b5b346b016f2bb2dbb73e0ae7bfc7242c2f74e252424f2e66945f588dc3e6",
+      "after/src/chips/stm32f746ie/metadata.rs": "47dd2700e02610cba3c852dcd59eeacf9e0e62d2f2c54c64b56e358e7189b214",
+      "before/src/chips/stm32f746ig/metadata.rs": "91f8eb6deb8607a382742db775161d9b3db46a486572c1c0cc250267a1785d92",
+      "after/src/chips/stm32f746ig/metadata.rs": "e67cba761853ee84d53a7dbd627725fda0a6d583af85d0e8acc4747840e8bc84",
+      "before/src/chips/stm32f746ne/metadata.rs": "c08a7a98619976352f33d72b7712aa8c00e9e979325fb9ff8fd2cec88da3ecf1",
+      "after/src/chips/stm32f746ne/metadata.rs": "509a7da6012aeeb16b0a93d46002414750c7b3792336eecb62c29148acddd700",
+      "before/src/chips/stm32f746ng/metadata.rs": "f75683294d6bfb7fff0d4d5ea91e4a011db23dc46d7409e583a665ce88e2282b",
+      "after/src/chips/stm32f746ng/metadata.rs": "c6e7d3f2d38f390d7d09be327a1c10b2eed08285dc13f47ed1795f4f2d7356f7",
+      "before/src/chips/stm32f746ve/metadata.rs": "95dc8e963c00341bdd6526638b8e544044737281bd8f072c2ed59b2e49c8981a",
+      "after/src/chips/stm32f746ve/metadata.rs": "2340a8639c60a44f7bb100968eb7445d15c3f19c7b96cea150a8067bc6659329",
+      "before/src/chips/stm32f746vg/metadata.rs": "df3de692b33783f59b99167d4f3eb0a7f2be715e1f659814b2adda403defc589",
+      "after/src/chips/stm32f746vg/metadata.rs": "40e04f871b9152428fd51aa5b3aee9b40ad0add94ebe87a05074c1ba14855253",
+      "before/src/chips/stm32f746ze/metadata.rs": "10e08cdc0ecb325c32c633daefcb7ce7fe0c055a849d9b8905cf5803b8898aba",
+      "after/src/chips/stm32f746ze/metadata.rs": "f9ceda8a500c4f841eb6dfe8e00d7f29041d83b653963c16c3bcf209648498a0",
+      "before/src/chips/stm32f746zg/metadata.rs": "3deafa39dae3077488c4259ec5760b862a427f5f5342e4d657344ba23eeb6857",
+      "after/src/chips/stm32f746zg/metadata.rs": "9c7acbff4b2b748409ae6ab84209189e0e90817050901279d43740c62d510d96",
+      "before/src/chips/stm32f756bg/metadata.rs": "b51dee36e783824e92364935626abfbc9d2d58b0abba4bc43ac01f5f0a0abc87",
+      "after/src/chips/stm32f756bg/metadata.rs": "35d21506c16e145bf2adc056e2d8a2ca1f5d105259dc8d47638563dd489bbd83",
+      "before/src/chips/stm32f756ig/metadata.rs": "5e4654513fcc53db61a358a670a49551f6b9f8f649d414a182f279ffb2494e87",
+      "after/src/chips/stm32f756ig/metadata.rs": "5c724e39b4b8089d84cfef99015e5b224ac4609eee9ebf34b9646e0458497478",
+      "before/src/chips/stm32f756ng/metadata.rs": "23b445237687b2b849e21573cc099b2f80482881ad87338eed88dc3a6f62e45a",
+      "after/src/chips/stm32f756ng/metadata.rs": "d4d32929fe50b61c5731684f5891d6857f465485ca908bad91802bebc842d5a2",
+      "before/src/chips/stm32f756vg/metadata.rs": "0554e002b58e196dcc4817c5fc667e3f000978306885572607c8a62fa564db0d",
+      "after/src/chips/stm32f756vg/metadata.rs": "b7465985b64ac78614ffb963bc799e520f0cad372131da4dedbc365811ac911c",
+      "before/src/chips/stm32f756zg/metadata.rs": "f87b6ce5a8e02482e32deffe17dd009f0c2ec1cb1be22c15d0eec69919bd4c95",
+      "after/src/chips/stm32f756zg/metadata.rs": "4992d6c8e465779ea7be282e43602a3bd66fb3c0ba34b0a90d071968135fdc27"
+    }
+  }
+}

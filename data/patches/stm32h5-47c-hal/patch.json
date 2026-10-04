@@ -1,0 +1,852 @@
+{
+  "schema_version": 1,
+  "base_revision": "ae9e6f0672af84cec8e200a94c574041844396f0",
+  "baseline_manifest_path": "data/patches/embassy-stm32/manifest.json",
+  "baseline_manifest_sha256": "042a5ed0189cd57508f09ac0ca13b5c7217ffef4564df01c543238abeafa8fd6",
+  "pac_manifest_path": "data/patches/stm32h5-47c-pac/manifest.json",
+  "pac_manifest_sha256": "fac9b8b2c030a55133d215f36c47e63fe0979d9b3a15f6ed76ba0913304d272b",
+  "added_chips": [
+    "stm32h543ce",
+    "stm32h543cg",
+    "stm32h543re",
+    "stm32h543rg",
+    "stm32h543ug",
+    "stm32h543ve",
+    "stm32h543vg",
+    "stm32h543ze",
+    "stm32h543zg",
+    "stm32h553cg",
+    "stm32h553rg",
+    "stm32h553ug",
+    "stm32h553vg",
+    "stm32h553zg"
+  ],
+  "files": [
+    {
+      "path": "build.rs",
+      "upstream_sha256": "287064556bf7077fe0a34d8db592ea7a8cc1db9642dca890aa53bf3d081a9225",
+      "patched_sha256": "34bbf573313c07a6e191d931ef467af829b6068a0894504cb7a59e98a32f152c",
+      "replacements": [
+        {
+          "old": "\n    eprintln!(\"chip: {chip_name}\");\n\n    for p in METADATA.peripherals {\n        if let Some(r) = &p.registers {\n            // The AES driver enables the peripheral's clock, which the metadata does not\n",
+          "new": "\n    eprintln!(\"chip: {chip_name}\");\n\n    // Private incremental audit: hardware remains in the PAC. Only implemented\n    // HAL drivers may emit driver traits; absent drivers are NOT absent hardware.\n    let die47c = chip_name.starts_with(\"stm32h543\") || chip_name.starts_with(\"stm32h553\");\n    cfgs.declare(\"stm32h5_47c\");\n    cfgs.set(\"stm32h5_47c\", die47c);\n    let driver_available = |kind: &str| !die47c || matches!(kind,\n        \"rcc\" | \"pwr\" | \"gpio\" | \"gpdma\" | \"usart\" | \"can\" |\n        \"timer\" | \"spi\" | \"usb\" | \"usbram\" | \"icache\" | \"dcache\" | \"exti\" | \"crs\"\n    );\n\n\n    for p in METADATA.peripherals {\n        if let Some(r) = &p.registers {\n            // The AES driver enables the peripheral's clock, which the metadata does not\n"
+        },
+        {
+          "old": "            if r.kind == \"aes\" && p.rcc.is_none() {\n                continue;\n            }\n            cfgs.enable(r.kind);\n            foreach_version_cfg(&mut cfgs, r.kind, r.version, |cfgs, cfg_name| {\n                cfgs.enable(cfg_name);\n",
+          "new": "            if r.kind == \"aes\" && p.rcc.is_none() {\n                continue;\n            }\n            if !driver_available(r.kind) { continue; }\n            cfgs.enable(r.kind);\n            foreach_version_cfg(&mut cfgs, r.kind, r.version, |cfgs, cfg_name| {\n                cfgs.enable(cfg_name);\n"
+        },
+        {
+          "old": "    // Generate FLASH regions\n    cfgs.declare(\"flash\");\n    let mut has_flash = false;\n    if !chip_name.starts_with(\"stm32n6\") {\n        cfgs.enable(\"flash\");\n        has_flash = true;\n\n",
+          "new": "    // Generate FLASH regions\n    cfgs.declare(\"flash\");\n    let mut has_flash = false;\n    if !chip_name.starts_with(\"stm32n6\") && !die47c {\n        cfgs.enable(\"flash\");\n        has_flash = true;\n\n"
+        },
+        {
+          "old": "    cfgs.declare(\"usb_alternate_function\");\n\n    for (p, regs) in &peripheral_list {\n        let mut adc_pairs: BTreeMap<u8, (Option<Ident>, Option<Ident>)> = BTreeMap::new();\n        let mut seen_lcd_seg_pins = HashSet::new();\n\n",
+          "new": "    cfgs.declare(\"usb_alternate_function\");\n\n    for (p, regs) in &peripheral_list {\n        if !driver_available(regs.kind) { continue; }\n        let mut adc_pairs: BTreeMap<u8, (Option<Ident>, Option<Ident>)> = BTreeMap::new();\n        let mut seen_lcd_seg_pins = HashSet::new();\n\n"
+        },
+        {
+          "old": "\n    let mut has_dfsdm_adc = false;\n    for (p, regs) in &peripheral_list {\n        if (regs.kind == \"dac\" || regs.kind == \"hash\") && chip_name.starts_with(\"stm32c5\") {\n            continue;\n        }\n",
+          "new": "\n    let mut has_dfsdm_adc = false;\n    for (p, regs) in &peripheral_list {\n        if !driver_available(regs.kind) { continue; }\n        if (regs.kind == \"dac\" || regs.kind == \"hash\") && chip_name.starts_with(\"stm32c5\") {\n            continue;\n        }\n"
+        },
+        {
+          "old": "    }\n\n    for (p, regs) in &peripheral_list {\n        if regs.kind == \"adc\" {\n            let adc_num = p.name.strip_prefix(\"ADC\").unwrap();\n            let mut adc_common = None;\n",
+          "new": "    }\n\n    for (p, regs) in &peripheral_list {\n        if !driver_available(regs.kind) { continue; }\n        if regs.kind == \"adc\" {\n            let adc_num = p.name.strip_prefix(\"ADC\").unwrap();\n            let mut adc_common = None;\n"
+        }
+      ]
+    },
+    {
+      "path": "Cargo.toml",
+      "upstream_sha256": "2be7cb191613f998f1d08bb7b97499009610d4aa0fc15860190fbe58cf82700f",
+      "patched_sha256": "2d3ae75c1a3305544cb1d5bda2b04e844e268289b13054295d824323463e0905",
+      "replacements": [
+        {
+          "old": "\n\n[features]\ndefault = [\"rt\"]\n\n## Enable `stm32-metapac`'s `rt` feature\n",
+          "new": "\n\n[features]\nstm32h543ce = [\"stm32-metapac/stm32h543ce\"]\nstm32h543cg = [\"stm32-metapac/stm32h543cg\"]\nstm32h543re = [\"stm32-metapac/stm32h543re\"]\nstm32h543rg = [\"stm32-metapac/stm32h543rg\"]\nstm32h543ug = [\"stm32-metapac/stm32h543ug\"]\nstm32h543ve = [\"stm32-metapac/stm32h543ve\"]\nstm32h543vg = [\"stm32-metapac/stm32h543vg\"]\nstm32h543ze = [\"stm32-metapac/stm32h543ze\"]\nstm32h543zg = [\"stm32-metapac/stm32h543zg\"]\nstm32h553cg = [\"stm32-metapac/stm32h553cg\"]\nstm32h553rg = [\"stm32-metapac/stm32h553rg\"]\nstm32h553ug = [\"stm32-metapac/stm32h553ug\"]\nstm32h553vg = [\"stm32-metapac/stm32h553vg\"]\nstm32h553zg = [\"stm32-metapac/stm32h553zg\"]\ndefault = [\"rt\"]\n\n## Enable `stm32-metapac`'s `rt` feature\n"
+        },
+        {
+          "old": "stm32wle5j8 = [ \"stm32-metapac/stm32wle5j8\" ]\nstm32wle5jb = [ \"stm32-metapac/stm32wle5jb\" ]\nstm32wle5jc = [ \"stm32-metapac/stm32wle5jc\" ]\n",
+          "new": "stm32wle5j8 = [ \"stm32-metapac/stm32wle5j8\" ]\nstm32wle5jb = [ \"stm32-metapac/stm32wle5jb\" ]\nstm32wle5jc = [ \"stm32-metapac/stm32wle5jc\" ]\n\n[workspace]\n"
+        }
+      ]
+    },
+    {
+      "path": "src/exti/low_level.rs",
+      "upstream_sha256": "84e3cb9d221c50406bd9ceb3417db4a9532750b72b0fb3db67dc7d0c6b97f305",
+      "patched_sha256": "1724c966d722ccb9c77f40e99aa9674b5f25ed9fc1001d0aba42d6cddb106d7e",
+      "replacements": [
+        {
+          "old": "        let pin = pin as usize;\n        cpu_regs().imr(0).modify(|w| w.set_line(pin, state.into()));\n    });\n}\n\n/// Configures and enables an EXTI line from a GPIO Input in a single critical section\n",
+          "new": "        let pin = pin as usize;\n        cpu_regs().imr(0).modify(|w| w.set_line(pin, state.into()));\n    });\n}\n\npub(super) fn mask_interrupts(mask: u32) {\n    cpu_regs().imr(0).modify(|w| w.0 &= !mask);\n}\n\npub(super) fn is_interrupt_enabled(pin: PinNumber) -> bool {\n    cpu_regs().imr(0).read().line(pin as usize)\n}\n\n/// Configures and enables an EXTI line from a GPIO Input in a single critical section\n"
+        }
+      ]
+    },
+    {
+      "path": "src/exti/mod.rs",
+      "upstream_sha256": "c00d32d742193f0f3cc02fffbcdce9d14bec0709df9725d81c2766b6f9f0a672",
+      "patched_sha256": "e8a9ef8de8d0d5d16ea06b3b2bd33929ee0d5b800bb21c55a4d9ac3caea40724",
+      "replacements": [
+        {
+          "old": "use embassy_sync::waitqueue::AtomicWaker;\nuse futures_util::FutureExt;\n\nuse crate::exti::low_level::read_pending;\nuse crate::gpio::{AnyPin, ExtiPin, Flex, Input, Level, Pin as GpioPin, PinNumber, Pull};\nuse crate::interrupt::Interrupt as InterruptEnum;\nuse crate::interrupt::typelevel::{Binding, Handler, Interrupt as InterruptType};\nuse crate::mode::{Async, Blocking, Mode as PeriMode};\nuse crate::pac::EXTI;\nuse crate::{Peri, pac};\n\n#[macro_use]\nmod low_level;\npub use low_level::{InterruptState, TriggerEdge};\n\n",
+          "new": "use embassy_sync::waitqueue::AtomicWaker;\nuse futures_util::FutureExt;\n\nuse crate::Peri;\nuse crate::exti::low_level::read_pending;\nuse crate::gpio::{AnyPin, ExtiPin, Flex, Input, Level, Pin as GpioPin, PinNumber, Pull};\nuse crate::interrupt::Interrupt as InterruptEnum;\nuse crate::interrupt::typelevel::{Binding, Handler, Interrupt as InterruptType};\nuse crate::mode::{Async, Blocking, Mode as PeriMode};\n#[cfg(not(any(exti_stm32h543_47c, exti_stm32h553_47c)))]\nuse crate::pac;\n#[cfg(not(any(exti_stm32h543_47c, exti_stm32h553_47c)))]\nuse crate::pac::EXTI;\n\n#[cfg(not(any(exti_stm32h543_47c, exti_stm32h553_47c)))]\n#[macro_use]\nmod low_level;\n#[cfg(any(exti_stm32h543_47c, exti_stm32h553_47c))]\nmod h5_47c_regs;\n#[cfg(any(exti_stm32h543_47c, exti_stm32h553_47c))]\n#[path = \"h5_47c.rs\"]\nmod low_level;\npub use low_level::{InterruptState, TriggerEdge};\n\n"
+        },
+        {
+          "old": "    EXTI.cpu(CoreId::current().to_index().into())\n}\n\n#[cfg(not(any(feature = \"_dual-core\", exti_w)))]\n#[inline(always)]\nfn cpu_regs() -> pac::exti::Exti {\n    EXTI\n}\n\n#[cfg(not(any(\n    exti_c0, exti_g0, exti_u0, exti_l5, gpio_v1, exti_u5, exti_u3, exti_h5, exti_h50, exti_n6\n)))]\nfn exticr_regs() -> pac::syscfg::Syscfg {\n    pac::SYSCFG\n}\n#[cfg(any(exti_c0, exti_g0, exti_u0, exti_l5, exti_u5, exti_u3, exti_h5, exti_h50, exti_n6))]\nfn exticr_regs() -> pac::exti::Exti {\n    EXTI\n}\n",
+          "new": "    EXTI.cpu(CoreId::current().to_index().into())\n}\n\n#[cfg(not(any(feature = \"_dual-core\", exti_w, exti_stm32h543_47c, exti_stm32h553_47c)))]\n#[inline(always)]\nfn cpu_regs() -> pac::exti::Exti {\n    EXTI\n}\n\n#[cfg(not(any(\n    exti_c0,\n    exti_g0,\n    exti_u0,\n    exti_l5,\n    gpio_v1,\n    exti_u5,\n    exti_u3,\n    exti_h5,\n    exti_h50,\n    exti_n6,\n    exti_stm32h543_47c,\n    exti_stm32h553_47c\n)))]\nfn exticr_regs() -> pac::syscfg::Syscfg {\n    pac::SYSCFG\n}\n#[cfg(any(\n    exti_c0, exti_g0, exti_u0, exti_l5, exti_u5, exti_u3, exti_h5, exti_h50, exti_n6\n))]\nfn exticr_regs() -> pac::exti::Exti {\n    EXTI\n}\n"
+        },
+        {
+          "old": "    let bits = read_pending() & 0x0000FFFF;\n\n    // Mask all the channels that fired.\n    cpu_regs().imr(0).modify(|w| w.0 &= !bits);\n\n    // Wake the tasks\n    for pin in BitIter(bits) {\n",
+          "new": "    let bits = read_pending() & 0x0000FFFF;\n\n    // Mask all the channels that fired.\n    low_level::mask_interrupts(bits);\n\n    // Wake the tasks\n    for pin in BitIter(bits) {\n"
+        },
+        {
+          "old": "    fn drop(&mut self) {\n        if self.drop {\n            critical_section::with(|_| {\n                let pin = self.pin as _;\n                cpu_regs().imr(0).modify(|w| w.set_line(pin, false));\n            });\n        }\n    }\n",
+          "new": "    fn drop(&mut self) {\n        if self.drop {\n            critical_section::with(|_| {\n                low_level::set_exti_interrupt_enabled(self.pin, InterruptState::Disabled);\n            });\n        }\n    }\n"
+        },
+        {
+          "old": "    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {\n        EXTI_WAKERS[self.pin as usize].register(cx.waker());\n\n        let imr = cpu_regs().imr(0).read();\n        if !imr.line(self.pin as _) {\n            Poll::Ready(())\n        } else {\n            Poll::Pending\n",
+          "new": "    fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {\n        EXTI_WAKERS[self.pin as usize].register(cx.waker());\n\n        if !low_level::is_interrupt_enabled(self.pin) {\n            Poll::Ready(())\n        } else {\n            Poll::Pending\n"
+        }
+      ]
+    },
+    {
+      "path": "src/rcc/h.rs",
+      "upstream_sha256": "c3a382c256be665a6b160fbabfb7617f178f6e498d53846c9c88fb688a86dc1d",
+      "patched_sha256": "aace06fefc95d7e5f84972c3588a1259687e99e2d7d728926c1fb368e1a084f3",
+      "replacements": [
+        {
+          "old": "#[cfg(stm32h7rs)]\npub use crate::pac::rcc::vals::Plldivst as PllDivSt;\npub use crate::pac::rcc::vals::{\n    Hsidiv as HSIPrescaler, Plldiv as PllDiv, Pllm as PllPreDiv, Plln as PllMul, Pllsrc as PllSource, Sw as Sysclk,\n};\nuse crate::pac::rcc::vals::{Pllrge, Pllvcosel, Timpre};\nuse crate::pac::{FLASH, PWR, RCC};\n",
+          "new": "#[cfg(stm32h7rs)]\npub use crate::pac::rcc::vals::Plldivst as PllDivSt;\npub use crate::pac::rcc::vals::{\n    Hsidiv as HSIPrescaler, Plldiv as PllDiv, Pllm as PllPreDiv, Plln as PllMul,\n    Pllsrc as PllSource, Sw as Sysclk,\n};\nuse crate::pac::rcc::vals::{Pllrge, Pllvcosel, Timpre};\nuse crate::pac::{FLASH, PWR, RCC};\n"
+        },
+        {
+          "old": "    /// external analog clock (low swing) (HSEBYP=1, HSEEXT=0)\n    Bypass,\n    /// external digital clock (full swing) (HSEBYP=1, HSEEXT=1)\n    #[cfg(any(rcc_h5, rcc_h50, rcc_h7rs))]\n    BypassDigital,\n}\n\n",
+          "new": "    /// external analog clock (low swing) (HSEBYP=1, HSEEXT=0)\n    Bypass,\n    /// external digital clock (full swing) (HSEBYP=1, HSEEXT=1)\n    #[cfg(any(rcc_h5, rcc_h50, rcc_h7rs, stm32h5_47c))]\n    BypassDigital,\n}\n\n"
+        },
+        {
+          "old": "                        config.supply_config,\n                        SupplyConfig::SMPSLDO(_) | SupplyConfig::SMPSExternalLDO(_)\n                    ));\n                    w.set_bypass(matches!(config.supply_config, SupplyConfig::SMPSExternalLDOBypass(_)));\n                });\n            }\n            SupplyConfig::SMPSDisabledLDOBypass => {\n",
+          "new": "                        config.supply_config,\n                        SupplyConfig::SMPSLDO(_) | SupplyConfig::SMPSExternalLDO(_)\n                    ));\n                    w.set_bypass(matches!(\n                        config.supply_config,\n                        SupplyConfig::SMPSExternalLDOBypass(_)\n                    ));\n                });\n            }\n            SupplyConfig::SMPSDisabledLDOBypass => {\n"
+        },
+        {
+          "old": "    while !PWR.sr1().read().actvosrdy() {}\n\n    // Configure voltage scale.\n    #[cfg(any(pwr_h5, pwr_h50))]\n    {\n        PWR.voscr().modify(|w| {\n            w.set_vos(match config.voltage_scale {\n",
+          "new": "    while !PWR.sr1().read().actvosrdy() {}\n\n    // Configure voltage scale.\n    #[cfg(any(pwr_h5, pwr_h50, stm32h5_47c))]\n    {\n        PWR.voscr().modify(|w| {\n            w.set_vos(match config.voltage_scale {\n"
+        },
+        {
+          "old": "        match config.voltage_scale {\n            VoltageScale::Scale0 => {\n                // to go to scale0, we must go to Scale1 first...\n                PWR.d3cr().modify(|w| w.set_vos(crate::pac::pwr::vals::Vos::Scale1));\n                while !PWR.d3cr().read().vosrdy() {}\n\n                // Then enable overdrive.\n",
+          "new": "        match config.voltage_scale {\n            VoltageScale::Scale0 => {\n                // to go to scale0, we must go to Scale1 first...\n                PWR.d3cr()\n                    .modify(|w| w.set_vos(crate::pac::pwr::vals::Vos::Scale1));\n                while !PWR.d3cr().read().vosrdy() {}\n\n                // Then enable overdrive.\n"
+        },
+        {
+          "old": "    #[cfg(stm32h7rs)]\n    {\n        // Switch the XSPI clock source so it will use HSI\n        RCC.ahbperckselr().modify(|w| w.set_xspi1sel(Xspisel::Hclk5));\n        RCC.ahbperckselr().modify(|w| w.set_xspi2sel(Xspisel::Hclk5));\n    };\n\n    // Use the HSI clock as system clock during the actual clock setup\n",
+          "new": "    #[cfg(stm32h7rs)]\n    {\n        // Switch the XSPI clock source so it will use HSI\n        RCC.ahbperckselr()\n            .modify(|w| w.set_xspi1sel(Xspisel::Hclk5));\n        RCC.ahbperckselr()\n            .modify(|w| w.set_xspi2sel(Xspisel::Hclk5));\n    };\n\n    // Use the HSI clock as system clock during the actual clock setup\n"
+        },
+        {
+          "old": "        Some(hse) => {\n            RCC.cr().modify(|w| {\n                w.set_hsebyp(hse.mode != HseMode::Oscillator);\n                #[cfg(any(rcc_h5, rcc_h50, rcc_h7rs))]\n                w.set_hseext(match hse.mode {\n                    HseMode::Oscillator | HseMode::Bypass => pac::rcc::vals::Hseext::Analog,\n                    HseMode::BypassDigital => pac::rcc::vals::Hseext::Digital,\n",
+          "new": "        Some(hse) => {\n            RCC.cr().modify(|w| {\n                w.set_hsebyp(hse.mode != HseMode::Oscillator);\n                #[cfg(any(rcc_h5, rcc_h50, rcc_h7rs, stm32h5_47c))]\n                w.set_hseext(match hse.mode {\n                    HseMode::Oscillator | HseMode::Bypass => pac::rcc::vals::Hseext::Analog,\n                    HseMode::BypassDigital => pac::rcc::vals::Hseext::Digital,\n"
+        },
+        {
+          "old": "    // Configure PLLs.\n    let pll_input = PllInput { csi, hse, hsi };\n    disable_pll(0);\n    let pll1 = config\n        .pll1\n        .map_or_else(PllOutput::default, |c| init_pll(0, c, &pll_input));\n    disable_pll(1);\n    let pll2 = config\n        .pll2\n        .map_or_else(PllOutput::default, |c| init_pll(1, c, &pll_input));\n    #[cfg(any(rcc_h5, stm32h7, stm32h7rs))]\n    disable_pll(2);\n    #[cfg(any(rcc_h5, stm32h7, stm32h7rs))]\n    let pll3 = config\n        .pll3\n        .map_or_else(PllOutput::default, |c| init_pll(2, c, &pll_input));\n\n    // Configure sysclk\n    let sys = match config.sys {\n",
+          "new": "    // Configure PLLs.\n    let pll_input = PllInput { csi, hse, hsi };\n    disable_pll(0);\n    let pll1 = config.pll1.map_or_else(PllOutput::default, |c| {\n        init_pll(0, c, &pll_input, config.voltage_scale)\n    });\n    disable_pll(1);\n    let pll2 = config.pll2.map_or_else(PllOutput::default, |c| {\n        init_pll(1, c, &pll_input, config.voltage_scale)\n    });\n    #[cfg(any(rcc_h5, stm32h7, stm32h7rs))]\n    disable_pll(2);\n    #[cfg(any(rcc_h5, stm32h7, stm32h7rs))]\n    let pll3 = config.pll3.map_or_else(PllOutput::default, |c| {\n        init_pll(2, c, &pll_input, config.voltage_scale)\n    });\n\n    // Configure sysclk\n    let sys = match config.sys {\n"
+        },
+        {
+          "old": "        Sysclk::Hse => unwrap!(hse),\n        Sysclk::Csi => unwrap!(csi),\n        Sysclk::Pll1P => unwrap!(pll1.p),\n        _ => unreachable!(),\n    };\n\n",
+          "new": "        Sysclk::Hse => unwrap!(hse),\n        Sysclk::Csi => unwrap!(csi),\n        Sysclk::Pll1P => unwrap!(pll1.p),\n        #[cfg(not(stm32h5_47c))]\n        _ => unreachable!(),\n    };\n\n"
+        },
+        {
+          "old": "            } else {\n                520_000_000\n            };\n            (Hertz(d1cpre_clk_max), Hertz(275_000_000), Hertz(137_500_000))\n        }\n        VoltageScale::Scale1 => (Hertz(400_000_000), Hertz(200_000_000), Hertz(100_000_000)),\n        VoltageScale::Scale2 => (Hertz(300_000_000), Hertz(150_000_000), Hertz(75_000_000)),\n",
+          "new": "            } else {\n                520_000_000\n            };\n            (\n                Hertz(d1cpre_clk_max),\n                Hertz(275_000_000),\n                Hertz(137_500_000),\n            )\n        }\n        VoltageScale::Scale1 => (Hertz(400_000_000), Hertz(200_000_000), Hertz(100_000_000)),\n        VoltageScale::Scale2 => (Hertz(300_000_000), Hertz(150_000_000), Hertz(75_000_000)),\n"
+        },
+        {
+          "old": "        });\n    }\n\n    RCC.cfgr().modify(|w| w.set_timpre(config.timer_prescaler.into()));\n\n    RCC.cfgr().modify(|w| w.set_sw(config.sys));\n    while RCC.cfgr().read().sws() != config.sys {}\n",
+          "new": "        });\n    }\n\n    RCC.cfgr()\n        .modify(|w| w.set_timpre(config.timer_prescaler.into()));\n\n    RCC.cfgr().modify(|w| w.set_sw(config.sys));\n    while RCC.cfgr().read().sws() != config.sys {}\n"
+        },
+        {
+          "old": "        //       as fall-back, with a diagnostic message.\n        const COMP_POLL_MAX: u32 = 10000; // Enough for maxed-out clocks.\n        let mut poll_cnt = 0;\n        while config.comp_xspi1 && !pac::SYSCFG.cccsr().read().octo1_comp_rdy() && poll_cnt < COMP_POLL_MAX {\n            poll_cnt += 1;\n        }\n        if poll_cnt == COMP_POLL_MAX {\n            warn!(\"XSPI1 compensation cell ready-flag time-out.\");\n        }\n        poll_cnt = 0;\n        while config.comp_xspi2 && !pac::SYSCFG.cccsr().read().octo2_comp_rdy() && poll_cnt < COMP_POLL_MAX {\n            poll_cnt += 1\n        }\n        if poll_cnt == COMP_POLL_MAX {\n",
+          "new": "        //       as fall-back, with a diagnostic message.\n        const COMP_POLL_MAX: u32 = 10000; // Enough for maxed-out clocks.\n        let mut poll_cnt = 0;\n        while config.comp_xspi1\n            && !pac::SYSCFG.cccsr().read().octo1_comp_rdy()\n            && poll_cnt < COMP_POLL_MAX\n        {\n            poll_cnt += 1;\n        }\n        if poll_cnt == COMP_POLL_MAX {\n            warn!(\"XSPI1 compensation cell ready-flag time-out.\");\n        }\n        poll_cnt = 0;\n        while config.comp_xspi2\n            && !pac::SYSCFG.cccsr().read().octo2_comp_rdy()\n            && poll_cnt < COMP_POLL_MAX\n        {\n            poll_cnt += 1\n        }\n        if poll_cnt == COMP_POLL_MAX {\n"
+        },
+        {
+          "old": "        csi: csi,\n        hse: hse,\n\n        lse: None,\n        lsi: None,\n\n        pll1_q: pll1.q,\n        pll2_p: pll2.p,\n",
+          "new": "        csi: csi,\n        hse: hse,\n\n        // LsConfig::init above waits for the requested sources. Their\n        // peripheral clocks remain available even when RTC is disabled.\n        lse: if cfg!(stm32h5_47c) { config.ls.lse.map(|lse| lse.frequency) } else { None },\n        lsi: if cfg!(stm32h5_47c) && config.ls.lsi { Some(super::LSI_FREQ) } else { None },\n\n        pll1_q: pll1.q,\n        pll2_p: pll2.p,\n"
+        },
+        {
+          "old": "\n    // \"To save power when PLL1 is not used, the value of PLL1M must be set to 0.\"\"\n    #[cfg(any(stm32h7, stm32h7rs))]\n    RCC.pllckselr().write(|w| w.set_divm(num, PllPreDiv::from_bits(0)));\n    #[cfg(stm32h5)]\n    RCC.pllcfgr(num).write(|w| w.set_divm(PllPreDiv::from_bits(0)));\n}\n\nfn init_pll(num: usize, config: Pll, input: &PllInput) -> PllOutput {\n    let in_clk = match config.source {\n        PllSource::Disable => panic!(\"must not set PllSource::Disable\"),\n        PllSource::Hsi => unwrap!(input.hsi),\n",
+          "new": "\n    // \"To save power when PLL1 is not used, the value of PLL1M must be set to 0.\"\"\n    #[cfg(any(stm32h7, stm32h7rs))]\n    RCC.pllckselr()\n        .write(|w| w.set_divm(num, PllPreDiv::from_bits(0)));\n    #[cfg(stm32h5)]\n    RCC.pllcfgr(num)\n        .write(|w| w.set_divm(PllPreDiv::from_bits(0)));\n}\n\n#[cfg(stm32h5_47c)]\nfn validate_pll_outputs_47c(mode: Pllvcosel, voltage: VoltageScale, outputs: &[Option<Hertz>]) {\n    // PLL output ceilings: H543 DS15168 Rev1 tables 44/45 and H553\n    // DS15167 Rev1 tables 45/46. Consumers must also obey their own\n    // bus/peripheral limits; those must not be confused with this PLL table.\n    let maximum = match (mode, voltage) {\n        (Pllvcosel::WideVco, VoltageScale::Scale0) => 250_000_000,\n        (Pllvcosel::WideVco, VoltageScale::Scale1) => 200_000_000,\n        (Pllvcosel::WideVco, VoltageScale::Scale2) => 150_000_000,\n        (Pllvcosel::WideVco, VoltageScale::Scale3) => 100_000_000,\n        (Pllvcosel::MediumVco, VoltageScale::Scale0 | VoltageScale::Scale1) => 210_000_000,\n        (Pllvcosel::MediumVco, VoltageScale::Scale2) => 160_000_000,\n        (Pllvcosel::MediumVco, VoltageScale::Scale3) => 88_000_000,\n    };\n    for output in outputs.iter().flatten() {\n        assert!(output.0 <= maximum, \"pll output exceeds voltage/mode limit\");\n    }\n}\n\nfn init_pll(num: usize, config: Pll, input: &PllInput, _voltage_scale: VoltageScale) -> PllOutput {\n    let in_clk = match config.source {\n        PllSource::Disable => panic!(\"must not set PllSource::Disable\"),\n        PllSource::Hsi => unwrap!(input.hsi),\n"
+        },
+        {
+          "old": "    };\n\n    let ref_clk = in_clk / config.prediv as u32;\n\n    let ref_range = match ref_clk.0 {\n        ..=1_999_999 => Pllrge::Range1,\n",
+          "new": "    };\n\n    let ref_clk = in_clk / config.prediv as u32;\n\n    // H543 DS15168 table 45 / H553 DS15167 table 46: the medium\n    // VCO input starts at 1 MHz. Range1 must not admit smaller inputs.\n    #[cfg(stm32h5_47c)]\n    assert!(ref_clk >= Hertz(1_000_000), \"pll ref_clk below 1 MHz\");\n\n    let ref_range = match ref_clk.0 {\n        ..=1_999_999 => Pllrge::Range1,\n"
+        },
+        {
+          "old": "\n    #[cfg(any(stm32h743, stm32h730))]\n    let vco_clk = match config.fracn {\n        Some(fracn) => {\n            Hertz::hz((ref_clk.0 as f32 * ((config.mul.to_bits() + 1) as f32 + (fracn as f32 / 8192.0))) as u32)\n        }\n        None => ref_clk * config.mul,\n    };\n    #[cfg(not(any(stm32h743, stm32h730)))]\n    let vco_clk = ref_clk * config.mul;\n\n    let vco_range = if VCO_RANGE.contains(&vco_clk) {\n        Pllvcosel::MediumVco\n    } else if wide_allowed && VCO_WIDE_RANGE.contains(&vco_clk) {\n        Pllvcosel::WideVco\n",
+          "new": "\n    #[cfg(any(stm32h743, stm32h730))]\n    let vco_clk = match config.fracn {\n        Some(fracn) => Hertz::hz(\n            (ref_clk.0 as f32 * ((config.mul.to_bits() + 1) as f32 + (fracn as f32 / 8192.0)))\n                as u32,\n        ),\n        None => ref_clk * config.mul,\n    };\n    #[cfg(not(any(stm32h743, stm32h730)))]\n    let vco_clk = ref_clk * config.mul;\n\n    // On 47C, medium VCO requires the 1-2 MHz Range1 setting. At\n    // Range2 and above use wide VCO even where the output ranges overlap.\n    // This agrees with the exact part datasheets and ST's RGE/VCO checks.\n    let vco_range = if VCO_RANGE.contains(&vco_clk) && (!cfg!(stm32h5_47c) || !wide_allowed) {\n        Pllvcosel::MediumVco\n    } else if wide_allowed && VCO_WIDE_RANGE.contains(&vco_clk) {\n        Pllvcosel::WideVco\n"
+        },
+        {
+          "old": "    let s = config.divs.map(|div| vco_clk / div);\n    #[cfg(stm32h7rs)]\n    let t = config.divt.map(|div| vco_clk / div);\n\n    #[cfg(stm32h5)]\n    RCC.pllcfgr(num).write(|w| {\n",
+          "new": "    let s = config.divs.map(|div| vco_clk / div);\n    #[cfg(stm32h7rs)]\n    let t = config.divt.map(|div| vco_clk / div);\n\n    // Reject invalid enabled outputs before programming or enabling the PLL.\n    #[cfg(stm32h5_47c)]\n    validate_pll_outputs_47c(vco_range, _voltage_scale, &[p, q, r]);\n\n    #[cfg(stm32h5)]\n    RCC.pllcfgr(num).write(|w| {\n"
+        },
+        {
+          "old": "            rsr.d1rstf(),\n            rsr.cpurstf(),\n        ) {\n            (false, false, false, false, true, true, true, true, true, true) => ResetReason::PowerOnReset,\n            (false, false, false, false, false, true, false, false, false, true) => ResetReason::PinReset,\n            (false, false, false, false, false, true, true, false, false, true) => ResetReason::BrownoutReset,\n            (false, false, false, true, false, true, false, false, false, true) => ResetReason::SysReset,\n            (false, false, false, false, false, false, false, false, false, true) => ResetReason::CpuReset,\n            (false, true, false, false, false, true, false, false, false, true) => ResetReason::Wwdg1Reset,\n            (false, false, true, false, false, true, false, false, false, true) => ResetReason::Iwdg1Reset,\n            (false, false, false, false, false, false, false, false, true, false) => ResetReason::D1ExitStandby,\n            (false, false, false, false, false, false, false, true, false, false) => ResetReason::D2ExitStandby,\n            (true, false, false, false, false, true, false, false, false, true) => ResetReason::D1ErroneousStandby,\n            _ => ResetReason::Unknown(rsr.0),\n        }\n    }\n",
+          "new": "            rsr.d1rstf(),\n            rsr.cpurstf(),\n        ) {\n            (false, false, false, false, true, true, true, true, true, true) => {\n                ResetReason::PowerOnReset\n            }\n            (false, false, false, false, false, true, false, false, false, true) => {\n                ResetReason::PinReset\n            }\n            (false, false, false, false, false, true, true, false, false, true) => {\n                ResetReason::BrownoutReset\n            }\n            (false, false, false, true, false, true, false, false, false, true) => {\n                ResetReason::SysReset\n            }\n            (false, false, false, false, false, false, false, false, false, true) => {\n                ResetReason::CpuReset\n            }\n            (false, true, false, false, false, true, false, false, false, true) => {\n                ResetReason::Wwdg1Reset\n            }\n            (false, false, true, false, false, true, false, false, false, true) => {\n                ResetReason::Iwdg1Reset\n            }\n            (false, false, false, false, false, false, false, false, true, false) => {\n                ResetReason::D1ExitStandby\n            }\n            (false, false, false, false, false, false, false, true, false, false) => {\n                ResetReason::D2ExitStandby\n            }\n            (true, false, false, false, false, true, false, false, false, true) => {\n                ResetReason::D1ErroneousStandby\n            }\n            _ => ResetReason::Unknown(rsr.0),\n        }\n    }\n"
+        }
+      ]
+    },
+    {
+      "path": "src/rcc/mco.rs",
+      "upstream_sha256": "12cf2323ab3b143c5d70d5c377b6a413e8279e5b11d9d1c9a05f4e33891e0063",
+      "patched_sha256": "94701832bc0c5615d2c619aa2f6f2e59cd561565766f5bc220d418030cb3e9b8",
+      "replacements": [
+        {
+          "old": "use crate::pac::RCC;\n#[cfg(any(\n    rcc_f2,\n    rcc_f410,\n    rcc_f4,\n    rcc_f7,\n    rcc_h50,\n    rcc_h5,\n    rcc_h7ab,\n    rcc_h7rm0433,\n    rcc_h7rm0468,\n    rcc_h7,\n    rcc_h7rs,\n",
+          "new": "use crate::pac::RCC;\n#[cfg(any(\n    rcc_f2,\n    rcc_f410,\n    rcc_f4,\n    rcc_f7,\n    rcc_h50, rcc_stm32h543_47c, rcc_stm32h553_47c,\n    rcc_h5,\n    rcc_h7ab,\n    rcc_h7rm0433,\n    rcc_h7rm0468,\n    rcc_h7,\n    rcc_h7rs,\n"
+        },
+        {
+          "old": "pub use crate::pac::rcc::vals::Mco1sel as Mco1Source;\n#[cfg(any(\n    rcc_f2,\n    rcc_f410,\n    rcc_f4,\n    rcc_f7,\n    rcc_h50,\n    rcc_h5,\n    rcc_h7ab,\n    rcc_h7rm0433,\n    rcc_h7rm0468,\n    rcc_h7,\n    rcc_h7rs,\n",
+          "new": "pub use crate::pac::rcc::vals::Mco1sel as Mco1Source;\n#[cfg(any(\n    rcc_f2,\n    rcc_f410,\n    rcc_f4,\n    rcc_f7,\n    rcc_h50, rcc_stm32h543_47c, rcc_stm32h553_47c,\n    rcc_h5,\n    rcc_h7ab,\n    rcc_h7rm0433,\n    rcc_h7rm0468,\n    rcc_h7,\n    rcc_h7rs,\n"
+        },
+        {
+          "old": "pub use crate::pac::rcc::vals::Mcopre as McoPrescaler;\n#[cfg(not(any(\n    rcc_f2,\n    rcc_f410,\n    rcc_f4,\n    rcc_f7,\n    rcc_h50,\n    rcc_h5,\n    rcc_h7ab,\n    rcc_h7rm0433,\n    rcc_h7rm0468,\n    rcc_h7,\n    rcc_h7rs,\n",
+          "new": "pub use crate::pac::rcc::vals::Mcopre as McoPrescaler;\n#[cfg(not(any(\n    rcc_f2,\n    rcc_f410,\n    rcc_f4,\n    rcc_f7,\n    rcc_h50, rcc_stm32h543_47c, rcc_stm32h553_47c,\n    rcc_h5,\n    rcc_h7ab,\n    rcc_h7rm0433,\n    rcc_h7rm0468,\n    rcc_h7,\n    rcc_h7rs,\n"
+        }
+      ]
+    },
+    {
+      "path": "src/spi/mod.rs",
+      "upstream_sha256": "01df478fa6f909aed17a4a60420a0c5c1a130b105f96355d630b1df11c3cb680",
+      "patched_sha256": "af43754fd5013cc57d22fcd881efd48fbeaa396cd2e537e88bd652716d72ffcd",
+      "replacements": [
+        {
+          "old": "}\n\n/// Slave Select (SS) pin polarity.\n#[derive(Debug, PartialEq, Eq, Clone, Copy)]\n#[cfg_attr(feature = \"defmt\", derive(defmt::Format))]\npub enum SlaveSelectPolarity {\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    /// SS active high\n    ActiveHigh,\n    /// SS active low\n    ActiveLow,\n}\n\nimpl SlaveSelectPolarity {\n    fn from_regs(_regs: Regs) -> Self {\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        match _regs.cfg2().read().ssiop() {\n            vals::Ssiop::ActiveLow => SlaveSelectPolarity::ActiveLow,\n            vals::Ssiop::ActiveHigh => SlaveSelectPolarity::ActiveHigh,\n        }\n\n        #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n        SlaveSelectPolarity::ActiveLow\n    }\n}\n\n/// CRC configuration.\n#[derive(Debug, PartialEq, Eq, Clone, Copy)]\n",
+          "new": "}\n\n/// Slave Select (SS) pin polarity.\n#[derive(Debug, PartialEq, Eq, Clone, Copy)]\n#[cfg_attr(feature = \"defmt\", derive(defmt::Format))]\npub enum SlaveSelectPolarity {\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    /// SS active high\n    ActiveHigh,\n    /// SS active low\n    ActiveLow,\n}\n\nimpl SlaveSelectPolarity {\n    fn from_regs(_regs: Regs) -> Self {\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        match _regs.cfg2().read().ssiop() {\n            vals::Ssiop::ActiveLow => SlaveSelectPolarity::ActiveLow,\n            vals::Ssiop::ActiveHigh => SlaveSelectPolarity::ActiveHigh,\n        }\n\n        #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n        SlaveSelectPolarity::ActiveLow\n    }\n}\n\n/// CRC configuration.\n#[derive(Debug, PartialEq, Eq, Clone, Copy)]\n"
+        },
+        {
+          "old": "    /// NSS output enabled (SSM = 0, SSOE = 1): The NSS signal is driven low when the master starts the communication and is kept low until the SPI is disabled.\n    /// NSS output disabled (SSM = 0, SSOE = 0): For devices set as slave, the NSS pin acts as a classical NSS input: the slave is selected when NSS is low and deselected when NSS high.\n    pub nss_output_disable: bool,\n    /// Hardware CRC configuration.\n    pub crc: CrcConfig,\n    /// Slave Select (SS) pin polarity.\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    pub nss_polarity: SlaveSelectPolarity,\n}\n\nimpl Default for Config {\n    fn default() -> Self {\n        Self {\n",
+          "new": "    /// NSS output enabled (SSM = 0, SSOE = 1): The NSS signal is driven low when the master starts the communication and is kept low until the SPI is disabled.\n    /// NSS output disabled (SSM = 0, SSOE = 0): For devices set as slave, the NSS pin acts as a classical NSS input: the slave is selected when NSS is low and deselected when NSS high.\n    pub nss_output_disable: bool,\n    /// Hardware CRC configuration.\n    pub crc: CrcConfig,\n    /// Slave Select (SS) pin polarity.\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    pub nss_polarity: SlaveSelectPolarity,\n}\n\nimpl Default for Config {\n    fn default() -> Self {\n        Self {\n"
+        },
+        {
+          "old": "            frequency: Hertz(1_000_000),\n            input_pull: Pull::None,\n            nss_pull: Pull::None,\n            gpio_speed: Speed::VeryHigh,\n            nss_output_disable: false,\n            crc: CrcConfig::default(),\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            nss_polarity: SlaveSelectPolarity::ActiveLow,\n        }\n    }\n}\n\nimpl Config {\n",
+          "new": "            frequency: Hertz(1_000_000),\n            input_pull: Pull::None,\n            nss_pull: Pull::None,\n            gpio_speed: Speed::VeryHigh,\n            nss_output_disable: false,\n            crc: CrcConfig::default(),\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            nss_polarity: SlaveSelectPolarity::ActiveLow,\n        }\n    }\n}\n\nimpl Config {\n"
+        },
+        {
+          "old": "        match self.bit_order {\n            BitOrder::LsbFirst => vals::Lsbfirst::LsbFirst,\n            BitOrder::MsbFirst => vals::Lsbfirst::MsbFirst,\n        }\n    }\n\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    fn raw_nss_polarity(&self) -> vals::Ssiop {\n        match self.nss_polarity {\n            SlaveSelectPolarity::ActiveHigh => vals::Ssiop::ActiveHigh,\n            SlaveSelectPolarity::ActiveLow => vals::Ssiop::ActiveLow,\n        }\n    }\n",
+          "new": "        match self.bit_order {\n            BitOrder::LsbFirst => vals::Lsbfirst::LsbFirst,\n            BitOrder::MsbFirst => vals::Lsbfirst::MsbFirst,\n        }\n    }\n\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    fn raw_nss_polarity(&self) -> vals::Ssiop {\n        match self.nss_polarity {\n            SlaveSelectPolarity::ActiveHigh => vals::Ssiop::ActiveHigh,\n            SlaveSelectPolarity::ActiveLow => vals::Ssiop::ActiveLow,\n        }\n    }\n"
+        },
+        {
+          "old": "    trait SealedMode {}\n\n    /// Trait for SPI communication mode operations.\n    #[allow(private_bounds)]\n    pub trait CommunicationMode: SealedMode {\n        /// Spi communication mode\n        #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n        const MASTER: vals::Mstr;\n        /// Spi communication mode\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        const MASTER: vals::Master;\n    }\n\n    /// Mode allowing for SPI master operations.\n    pub struct Master;\n    /// Mode allowing for SPI slave operations.\n    pub struct Slave;\n\n    impl SealedMode for Master {}\n    impl CommunicationMode for Master {\n        #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n        const MASTER: vals::Mstr = vals::Mstr::Master;\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        const MASTER: vals::Master = vals::Master::Master;\n    }\n\n    impl SealedMode for Slave {}\n    impl CommunicationMode for Slave {\n        #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n        const MASTER: vals::Mstr = vals::Mstr::Slave;\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        const MASTER: vals::Master = vals::Master::Slave;\n    }\n}\nuse mode::{CommunicationMode, Master, Slave};\n\nenum CsPinType<'d> {\n",
+          "new": "    trait SealedMode {}\n\n    /// Trait for SPI communication mode operations.\n    #[allow(private_bounds)]\n    pub trait CommunicationMode: SealedMode {\n        /// Spi communication mode\n        #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n        const MASTER: vals::Mstr;\n        /// Spi communication mode\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        const MASTER: vals::Master;\n    }\n\n    /// Mode allowing for SPI master operations.\n    pub struct Master;\n    /// Mode allowing for SPI slave operations.\n    pub struct Slave;\n\n    impl SealedMode for Master {}\n    impl CommunicationMode for Master {\n        #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n        const MASTER: vals::Mstr = vals::Mstr::Master;\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        const MASTER: vals::Master = vals::Master::Master;\n    }\n\n    impl SealedMode for Slave {}\n    impl CommunicationMode for Slave {\n        #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n        const MASTER: vals::Mstr = vals::Mstr::Slave;\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        const MASTER: vals::Master = vals::Master::Slave;\n    }\n}\nuse mode::{CommunicationMode, Master, Slave};\n\nenum CsPinType<'d> {\n"
+        },
+        {
+          "old": "    }\n\n    pub async fn wait_for_edge(&mut self, _polarity: SlaveSelectPolarity) {\n        match self {\n            #[cfg(feature = \"exti\")]\n            Self::Exti(exti) => match _polarity {\n                #[cfg(any(spi_v4, spi_v5, spi_v6))]\n                SlaveSelectPolarity::ActiveHigh => exti.wait_for_falling_edge().await,\n                SlaveSelectPolarity::ActiveLow => exti.wait_for_rising_edge().await,\n            },\n            Self::Flex(_) | Self::None => core::future::pending().await,\n        }\n    }\n",
+          "new": "    }\n\n    pub async fn wait_for_edge(&mut self, _polarity: SlaveSelectPolarity) {\n        match self {\n            #[cfg(feature = \"exti\")]\n            Self::Exti(exti) => match _polarity {\n                #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n                SlaveSelectPolarity::ActiveHigh => exti.wait_for_falling_edge().await,\n                SlaveSelectPolarity::ActiveLow => exti.wait_for_rising_edge().await,\n            },\n            Self::Flex(_) | Self::None => core::future::pending().await,\n        }\n    }\n"
+        },
+        {
+          "old": "            #[cfg(feature = \"exti\")]\n            Self::Exti(exti) => exti.is_high(),\n            Self::Flex(flex) => flex.is_high(),\n            Self::None => false,\n        };\n        match polarity {\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            SlaveSelectPolarity::ActiveHigh => high,\n            SlaveSelectPolarity::ActiveLow => !high,\n        }\n    }\n\n    pub const fn is_none(&self) -> bool {\n",
+          "new": "            #[cfg(feature = \"exti\")]\n            Self::Exti(exti) => exti.is_high(),\n            Self::Flex(flex) => flex.is_high(),\n            Self::None => false,\n        };\n        match polarity {\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            SlaveSelectPolarity::ActiveHigh => high,\n            SlaveSelectPolarity::ActiveLow => !high,\n        }\n    }\n\n    pub const fn is_none(&self) -> bool {\n"
+        },
+        {
+          "old": "            match config.crc {\n                CrcConfig::Crc8 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial as u16)),\n                CrcConfig::Crc16 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial)),\n                CrcConfig::Disabled => {}\n            }\n        }\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        {\n            let ssoe = CM::MASTER == vals::Master::Master && !config.nss_output_disable;\n            let ssiop = config.raw_nss_polarity();\n            regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n            regs.cfg2().modify(|w| {\n                w.set_ssoe(ssoe);\n",
+          "new": "            match config.crc {\n                CrcConfig::Crc8 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial as u16)),\n                CrcConfig::Crc16 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial)),\n                CrcConfig::Disabled => {}\n            }\n        }\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        {\n            let ssoe = CM::MASTER == vals::Master::Master && !config.nss_output_disable;\n            let ssiop = config.raw_nss_polarity();\n            regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n            regs.cfg2().modify(|w| {\n                w.set_ssoe(ssoe);\n"
+        },
+        {
+          "old": "    pub fn set_crc(&mut self, config: CrcConfig) {\n        let regs = self.info.regs;\n        self.crc_enabled = !matches!(config, CrcConfig::Disabled);\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        regs.cr1().modify(|w| w.set_spe(false));\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        regs.cr1().modify(|w| w.set_spe(false));\n\n        #[cfg(any(spi_v2_i2s, spi_v3))]\n        regs.cr1().modify(|w| {\n            w.set_crcen(self.crc_enabled);\n            if self.crc_enabled {\n",
+          "new": "    pub fn set_crc(&mut self, config: CrcConfig) {\n        let regs = self.info.regs;\n        self.crc_enabled = !matches!(config, CrcConfig::Disabled);\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        regs.cr1().modify(|w| w.set_spe(false));\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        regs.cr1().modify(|w| w.set_spe(false));\n\n        #[cfg(any(spi_v2_i2s, spi_v3))]\n        regs.cr1().modify(|w| {\n            w.set_crcen(self.crc_enabled);\n            if self.crc_enabled {\n"
+        },
+        {
+          "old": "            }\n        });\n\n        #[cfg(spi_v3)]\n        regs.cr1().modify(|w| w.set_crcen(self.crc_enabled));\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        regs.cfg1().modify(|w| w.set_crcen(self.crc_enabled));\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        match config {\n            CrcConfig::Crc8 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial as u16)),\n            CrcConfig::Crc16 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial)),\n            CrcConfig::Disabled => {}\n        }\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        match config {\n            CrcConfig::Crc8 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial as u32)),\n            CrcConfig::Crc16 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial as u32)),\n            CrcConfig::Disabled => {}\n        }\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        regs.cr1().modify(|w| w.set_spe(true));\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        regs.cr1().modify(|w| w.set_spe(true));\n    }\n\n    /// Read the TX CRC register value.\n    #[cfg(any(spi_v1, spi_v2, spi_v3))]\n    pub fn crc_value(&self) -> u16 {\n        self.info.regs.txcrc().read().txcrc() as u16\n    }\n\n    /// Read the TX CRC register value.\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    pub fn crc_value(&self) -> u16 {\n        self.info.regs.txcrc().read().txcrc() as u16\n    }\n\n    /// Read the RX CRC register value.\n    #[cfg(any(spi_v1, spi_v2, spi_v3))]\n    pub fn rx_crc_value(&self) -> u16 {\n        self.info.regs.rxcrc().read().rxcrc() as u16\n    }\n\n    /// Read the TX CRC register value.\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    pub fn rx_crc_value(&self) -> u16 {\n        self.info.regs.rxcrc().read().rxcrc() as u16\n    }\n\n    /// Check if a CRC error occurred.\n    fn check_transfer_crc(&self) -> Result<(), Error> {\n",
+          "new": "            }\n        });\n\n        #[cfg(spi_v3)]\n        regs.cr1().modify(|w| w.set_crcen(self.crc_enabled));\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        regs.cfg1().modify(|w| w.set_crcen(self.crc_enabled));\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        match config {\n            CrcConfig::Crc8 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial as u16)),\n            CrcConfig::Crc16 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial)),\n            CrcConfig::Disabled => {}\n        }\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        match config {\n            CrcConfig::Crc8 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial as u32)),\n            CrcConfig::Crc16 { polynomial } => regs.crcpoly().write(|w| w.set_crcpoly(polynomial as u32)),\n            CrcConfig::Disabled => {}\n        }\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        regs.cr1().modify(|w| w.set_spe(true));\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        regs.cr1().modify(|w| w.set_spe(true));\n    }\n\n    /// Read the TX CRC register value.\n    #[cfg(any(spi_v1, spi_v2, spi_v3))]\n    pub fn crc_value(&self) -> u16 {\n        self.info.regs.txcrc().read().txcrc() as u16\n    }\n\n    /// Read the TX CRC register value.\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    pub fn crc_value(&self) -> u16 {\n        self.info.regs.txcrc().read().txcrc() as u16\n    }\n\n    /// Read the RX CRC register value.\n    #[cfg(any(spi_v1, spi_v2, spi_v3))]\n    pub fn rx_crc_value(&self) -> u16 {\n        self.info.regs.rxcrc().read().rxcrc() as u16\n    }\n\n    /// Read the TX CRC register value.\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    pub fn rx_crc_value(&self) -> u16 {\n        self.info.regs.rxcrc().read().rxcrc() as u16\n    }\n\n    /// Check if a CRC error occurred.\n    fn check_transfer_crc(&self) -> Result<(), Error> {\n"
+        },
+        {
+          "old": "            let _ = regs.dr().read();\n        }\n        #[cfg(spi_v3)]\n        {\n            let _ = regs.dr16().read();\n        }\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        {\n            let _ = regs.rxdr32().read();\n        }\n\n        // Check for CRC mismatch.\n        let sr = regs.sr().read();\n        #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n        if sr.crcerr() {\n            return Err(Error::Crc);\n        }\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        if sr.crce() {\n            return Err(Error::Crc);\n        }\n\n        Ok(())\n    }\n",
+          "new": "            let _ = regs.dr().read();\n        }\n        #[cfg(spi_v3)]\n        {\n            let _ = regs.dr16().read();\n        }\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        {\n            let _ = regs.rxdr32().read();\n        }\n\n        // Check for CRC mismatch.\n        let sr = regs.sr().read();\n        #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n        if sr.crcerr() {\n            return Err(Error::Crc);\n        }\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        if sr.crce() {\n            return Err(Error::Crc);\n        }\n\n        Ok(())\n    }\n"
+        },
+        {
+          "old": "    }\n\n    /// Get current SPI configuration.\n    pub fn get_current_config(&self) -> Config {\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        let cfg = self.info.regs.cr1().read();\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let cfg = self.info.regs.cfg2().read();\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let cfg1 = self.info.regs.cfg1().read();\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        let ssoe = self.info.regs.cr2().read().ssoe();\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let ssoe = cfg.ssoe();\n\n        let polarity = if cfg.cpol() == vals::Cpol::IdleLow {\n            Polarity::IdleLow\n        } else {\n            Polarity::IdleHigh\n",
+          "new": "    }\n\n    /// Get current SPI configuration.\n    pub fn get_current_config(&self) -> Config {\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        let cfg = self.info.regs.cr1().read();\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let cfg = self.info.regs.cfg2().read();\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let cfg1 = self.info.regs.cfg1().read();\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        let ssoe = self.info.regs.cr2().read().ssoe();\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let ssoe = cfg.ssoe();\n\n        let polarity = if cfg.cpol() == vals::Cpol::IdleLow {\n            Polarity::IdleLow\n        } else {\n            Polarity::IdleHigh\n"
+        },
+        {
+          "old": "        } else {\n            BitOrder::MsbFirst\n        };\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        let br = cfg.br();\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let br = cfg1.mbr();\n\n        let frequency = compute_frequency(self.kernel_clock, br);\n\n        // NSS output disabled if SSOE=0 or if SSM=1 software slave management enabled\n        let nss_output_disable = !ssoe || cfg.ssm();\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let nss_polarity = if cfg.ssiop() == vals::Ssiop::ActiveLow {\n            SlaveSelectPolarity::ActiveLow\n        } else {\n            SlaveSelectPolarity::ActiveHigh\n        };\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        let crc_enabled = cfg.crcen();\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let crc_enabled = cfg1.crcen();\n\n        let crc = if crc_enabled {\n            #[cfg(any(spi_v1, spi_v2, spi_v3))]\n            let poly = self.info.regs.crcpoly().read().crcpoly() as u16;\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            let poly = self.info.regs.crcpoly().read().crcpoly() as u16;\n\n            #[cfg(all(any(spi_v1, spi_v2), not(spi_v2_i2s)))]\n            {\n                // spi_v1 and spi_v2 (non-I2S) have no CRCL field; CRC is always 8-bit.\n                CrcConfig::Crc8 { polynomial: poly as u8 }\n            }\n            #[cfg(any(spi_v2_i2s, spi_v3))]\n            match cfg.crcl() {\n                vals::Crcl::Bits8 => CrcConfig::Crc8 { polynomial: poly as u8 },\n                vals::Crcl::Bits16 => CrcConfig::Crc16 { polynomial: poly },\n            }\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            {\n                // spi_v4/v5/v6 do not expose CRC width in a readable register.\n                // Heuristic: if the polynomial fits in u8, assume CRC-8.\n                if poly <= u8::MAX as u16 {\n                    CrcConfig::Crc8 { polynomial: poly as u8 }\n                } else {\n",
+          "new": "        } else {\n            BitOrder::MsbFirst\n        };\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        let br = cfg.br();\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let br = cfg1.mbr();\n\n        let frequency = compute_frequency(self.kernel_clock, br);\n\n        // NSS output disabled if SSOE=0 or if SSM=1 software slave management enabled\n        let nss_output_disable = !ssoe || cfg.ssm();\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let nss_polarity = if cfg.ssiop() == vals::Ssiop::ActiveLow {\n            SlaveSelectPolarity::ActiveLow\n        } else {\n            SlaveSelectPolarity::ActiveHigh\n        };\n\n        #[cfg(any(spi_v1, spi_v2, spi_v3))]\n        let crc_enabled = cfg.crcen();\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let crc_enabled = cfg1.crcen();\n\n        let crc = if crc_enabled {\n            #[cfg(any(spi_v1, spi_v2, spi_v3))]\n            let poly = self.info.regs.crcpoly().read().crcpoly() as u16;\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            let poly = self.info.regs.crcpoly().read().crcpoly() as u16;\n\n            #[cfg(all(any(spi_v1, spi_v2), not(spi_v2_i2s)))]\n            {\n                // spi_v1 and spi_v2 (non-I2S) have no CRCL field; CRC is always 8-bit.\n                CrcConfig::Crc8 { polynomial: poly as u8 }\n            }\n            #[cfg(any(spi_v2_i2s, spi_v3))]\n            match cfg.crcl() {\n                vals::Crcl::Bits8 => CrcConfig::Crc8 { polynomial: poly as u8 },\n                vals::Crcl::Bits16 => CrcConfig::Crc16 { polynomial: poly },\n            }\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            {\n                // spi_v4/v5/v6 do not expose CRC width in a readable register.\n                // Heuristic: if the polynomial fits in u8, assume CRC-8.\n                if poly <= u8::MAX as u16 {\n                    CrcConfig::Crc8 { polynomial: poly as u8 }\n                } else {\n"
+        },
+        {
+          "old": "            bit_order,\n            frequency,\n            input_pull: self.input_pull,\n            nss_pull: self.nss_pull,\n            gpio_speed: self.gpio_speed,\n            nss_output_disable,\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            nss_polarity,\n            crc,\n        }\n    }\n\n    pub(crate) fn set_word_size(&mut self, word_size: word_impl::Config) {\n",
+          "new": "            bit_order,\n            frequency,\n            input_pull: self.input_pull,\n            nss_pull: self.nss_pull,\n            gpio_speed: self.gpio_speed,\n            nss_output_disable,\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            nss_polarity,\n            crc,\n        }\n    }\n\n    pub(crate) fn set_word_size(&mut self, word_size: word_impl::Config) {\n"
+        },
+        {
+          "old": "        });\n        #[cfg(spi_v3)]\n        self.info.regs.cr2().modify(|w| {\n            w.set_frxth(word_size.1);\n            w.set_ds(word_size.0);\n        });\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.cfg1().modify(|w| {\n            w.set_dsize(word_size);\n        });\n\n        self.current_word_size = word_size;\n    }\n\n    /// Blocking write.\n    pub fn blocking_write<W: Word>(&mut self, words: &[W]) -> Result<(), Error> {\n        // needed in spi_v4+ to avoid overrun causing the SPI RX state machine to get stuck...?\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.cr1().modify(|w| w.set_spe(false));\n        self.set_word_size(W::CONFIG);\n        self.info.regs.cr1().modify(|w| w.set_spe(true));\n        flush_rx_fifo(self.info.regs);\n\n        // Memory barrier after flush RX fifo to ensure register writes complete\n",
+          "new": "        });\n        #[cfg(spi_v3)]\n        self.info.regs.cr2().modify(|w| {\n            w.set_frxth(word_size.1);\n            w.set_ds(word_size.0);\n        });\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.cfg1().modify(|w| {\n            w.set_dsize(word_size);\n        });\n\n        self.current_word_size = word_size;\n    }\n\n    /// Blocking write.\n    pub fn blocking_write<W: Word>(&mut self, words: &[W]) -> Result<(), Error> {\n        // needed in spi_v4+ to avoid overrun causing the SPI RX state machine to get stuck...?\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.cr1().modify(|w| w.set_spe(false));\n        self.set_word_size(W::CONFIG);\n        self.info.regs.cr1().modify(|w| w.set_spe(true));\n        flush_rx_fifo(self.info.regs);\n\n        // Memory barrier after flush RX fifo to ensure register writes complete\n"
+        },
+        {
+          "old": "        Ok(())\n    }\n\n    /// Blocking read.\n    pub fn blocking_read<W: Word>(&mut self, words: &mut [W]) -> Result<(), Error> {\n        // needed in spi_v4+ to avoid overrun causing the SPI RX state machine to get stuck...?\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.cr1().modify(|w| w.set_spe(false));\n        self.set_word_size(W::CONFIG);\n        self.info.regs.cr1().modify(|w| w.set_spe(true));\n        flush_rx_fifo(self.info.regs);\n\n        // Memory barrier after flush RX fifo to ensure register writes complete\n",
+          "new": "        Ok(())\n    }\n\n    /// Blocking read.\n    pub fn blocking_read<W: Word>(&mut self, words: &mut [W]) -> Result<(), Error> {\n        // needed in spi_v4+ to avoid overrun causing the SPI RX state machine to get stuck...?\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.cr1().modify(|w| w.set_spe(false));\n        self.set_word_size(W::CONFIG);\n        self.info.regs.cr1().modify(|w| w.set_spe(true));\n        flush_rx_fifo(self.info.regs);\n\n        // Memory barrier after flush RX fifo to ensure register writes complete\n"
+        },
+        {
+          "old": "\n    /// Blocking in-place bidirectional transfer.\n    ///\n    /// This writes the contents of `data` on MOSI, and puts the received data on MISO in `data`, at the same time.\n    pub fn blocking_transfer_in_place<W: Word>(&mut self, words: &mut [W]) -> Result<(), Error> {\n        // needed in spi_v4+ to avoid overrun causing the SPI RX state machine to get stuck...?\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.cr1().modify(|w| w.set_spe(false));\n        self.set_word_size(W::CONFIG);\n        self.info.regs.cr1().modify(|w| w.set_spe(true));\n        flush_rx_fifo(self.info.regs);\n\n        // Memory barrier after flush RX fifo to ensure register writes complete\n",
+          "new": "\n    /// Blocking in-place bidirectional transfer.\n    ///\n    /// This writes the contents of `data` on MOSI, and puts the received data on MISO in `data`, at the same time.\n    pub fn blocking_transfer_in_place<W: Word>(&mut self, words: &mut [W]) -> Result<(), Error> {\n        // needed in spi_v4+ to avoid overrun causing the SPI RX state machine to get stuck...?\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.cr1().modify(|w| w.set_spe(false));\n        self.set_word_size(W::CONFIG);\n        self.info.regs.cr1().modify(|w| w.set_spe(true));\n        flush_rx_fifo(self.info.regs);\n\n        // Memory barrier after flush RX fifo to ensure register writes complete\n"
+        },
+        {
+          "old": "    /// This transfers both buffers at the same time, so it is NOT equivalent to `write` followed by `read`.\n    ///\n    /// The transfer runs for `max(read.len(), write.len())` bytes. If `read` is shorter extra bytes are ignored.\n    /// If `write` is shorter it is padded with zero bytes.\n    pub fn blocking_transfer<W: Word>(&mut self, read: &mut [W], write: &[W]) -> Result<(), Error> {\n        // needed in spi_v4+ to avoid overrun causing the SPI RX state machine to get stuck...?\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.cr1().modify(|w| w.set_spe(false));\n        self.set_word_size(W::CONFIG);\n        self.info.regs.cr1().modify(|w| w.set_spe(true));\n        flush_rx_fifo(self.info.regs);\n\n        // Memory barrier after flush RX fifo to ensure register writes complete\n",
+          "new": "    /// This transfers both buffers at the same time, so it is NOT equivalent to `write` followed by `read`.\n    ///\n    /// The transfer runs for `max(read.len(), write.len())` bytes. If `read` is shorter extra bytes are ignored.\n    /// If `write` is shorter it is padded with zero bytes.\n    pub fn blocking_transfer<W: Word>(&mut self, read: &mut [W], write: &[W]) -> Result<(), Error> {\n        // needed in spi_v4+ to avoid overrun causing the SPI RX state machine to get stuck...?\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.cr1().modify(|w| w.set_spe(false));\n        self.set_word_size(W::CONFIG);\n        self.info.regs.cr1().modify(|w| w.set_spe(true));\n        flush_rx_fifo(self.info.regs);\n\n        // Memory barrier after flush RX fifo to ensure register writes complete\n"
+        },
+        {
+          "old": "            D1::Interrupt,\n            crate::dma::InterruptHandler<D1>,\n        > + crate::interrupt::typelevel::Binding<\n            D2::Interrupt,\n            crate::dma::InterruptHandler<D2>,\n        > + 'd,\n        #[cfg(any(spi_v4, spi_v5, spi_v6))] _irq: impl crate::interrupt::typelevel::Binding<\n            D2::Interrupt,\n            crate::dma::InterruptHandler<D2>,\n        > + 'd,\n        config: Config,\n    ) -> Self {\n        Self::new_inner(\n",
+          "new": "            D1::Interrupt,\n            crate::dma::InterruptHandler<D1>,\n        > + crate::interrupt::typelevel::Binding<\n            D2::Interrupt,\n            crate::dma::InterruptHandler<D2>,\n        > + 'd,\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))] _irq: impl crate::interrupt::typelevel::Binding<\n            D2::Interrupt,\n            crate::dma::InterruptHandler<D2>,\n        > + 'd,\n        config: Config,\n    ) -> Self {\n        Self::new_inner(\n"
+        },
+        {
+          "old": "            new_pin!(sck, config.sck_af()),\n            None,\n            new_pin!(miso, AfType::input(config.input_pull)),\n            CsPinType::None,\n            #[cfg(any(spi_v1, spi_v2, spi_v3))]\n            new_dma!(tx_dma, _irq),\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            None,\n            new_dma!(rx_dma, _irq),\n            config,\n        )\n    }\n\n",
+          "new": "            new_pin!(sck, config.sck_af()),\n            None,\n            new_pin!(miso, AfType::input(config.input_pull)),\n            CsPinType::None,\n            #[cfg(any(spi_v1, spi_v2, spi_v3))]\n            new_dma!(tx_dma, _irq),\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            None,\n            new_dma!(rx_dma, _irq),\n            config,\n        )\n    }\n\n"
+        },
+        {
+          "old": "        // Memory barrier after DMA setup to ensure register writes complete before command\n        fence(Ordering::SeqCst);\n\n        self.info.regs.cr1().modify(|w| {\n            w.set_spe(true);\n        });\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.cr1().modify(|w| {\n            w.set_cstart(true);\n        });\n\n        tx_f.await;\n\n",
+          "new": "        // Memory barrier after DMA setup to ensure register writes complete before command\n        fence(Ordering::SeqCst);\n\n        self.info.regs.cr1().modify(|w| {\n            w.set_spe(true);\n        });\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.cr1().modify(|w| {\n            w.set_cstart(true);\n        });\n\n        tx_f.await;\n\n"
+        },
+        {
+          "old": "        self.check_transfer_crc()?;\n\n        Ok(())\n    }\n\n    /// SPI read, using DMA.\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    pub async fn read<W: Word>(&mut self, data: &mut [W]) -> Result<(), Error> {\n        let _scoped_wake_guard = self.info.rcc.wake_guard();\n        if data.is_empty() {\n            return Ok(());\n        }\n\n",
+          "new": "        self.check_transfer_crc()?;\n\n        Ok(())\n    }\n\n    /// SPI read, using DMA.\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    pub async fn read<W: Word>(&mut self, data: &mut [W]) -> Result<(), Error> {\n        let _scoped_wake_guard = self.info.rcc.wake_guard();\n        if data.is_empty() {\n            return Ok(());\n        }\n\n"
+        },
+        {
+          "old": "            w.set_spe(false);\n        });\n\n        self.set_word_size(W::CONFIG);\n\n        // spi_v4 clears rxfifo on SPE=0\n        #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n        flush_rx_fifo(self.info.regs);\n\n        set_rxdmaen(self.info.regs, true);\n\n        let rx_src = self.info.regs.rx_ptr::<W>();\n        let rx_f = unsafe { self.rx_dma.as_mut().unwrap().read_raw(rx_src, read, Default::default()) };\n",
+          "new": "            w.set_spe(false);\n        });\n\n        self.set_word_size(W::CONFIG);\n\n        // spi_v4 clears rxfifo on SPE=0\n        #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n        flush_rx_fifo(self.info.regs);\n\n        set_rxdmaen(self.info.regs, true);\n\n        let rx_src = self.info.regs.rx_ptr::<W>();\n        let rx_f = unsafe { self.rx_dma.as_mut().unwrap().read_raw(rx_src, read, Default::default()) };\n"
+        },
+        {
+          "old": "        // Memory barrier after DMA setup to ensure register writes complete before command\n        fence(Ordering::SeqCst);\n\n        self.info.regs.cr1().modify(|w| {\n            w.set_spe(true);\n        });\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.cr1().modify(|w| {\n            w.set_cstart(true);\n        });\n\n        join(tx_f, rx_f).await;\n\n",
+          "new": "        // Memory barrier after DMA setup to ensure register writes complete before command\n        fence(Ordering::SeqCst);\n\n        self.info.regs.cr1().modify(|w| {\n            w.set_spe(true);\n        });\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.cr1().modify(|w| {\n            w.set_cstart(true);\n        });\n\n        join(tx_f, rx_f).await;\n\n"
+        },
+        {
+          "old": "            });\n        }\n\n        self.set_word_size(W::CONFIG);\n\n        // spi_v4 clears the rxfifo on SPE=0.\n        #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n        flush_rx_fifo(regs);\n\n        set_rxdmaen(regs, true);\n\n        let n_rx_total = read.len();\n        let n_tx_total = write.len();\n",
+          "new": "            });\n        }\n\n        self.set_word_size(W::CONFIG);\n\n        // spi_v4 clears the rxfifo on SPE=0.\n        #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n        flush_rx_fifo(regs);\n\n        set_rxdmaen(regs, true);\n\n        let n_rx_total = read.len();\n        let n_tx_total = write.len();\n"
+        },
+        {
+          "old": "            // Memory barrier after DMA setup to ensure register writes complete before command\n            fence(Ordering::SeqCst);\n\n            regs.cr1().modify(|w| {\n                w.set_spe(true);\n            });\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            regs.cr1().modify(|w| {\n                w.set_cstart(true);\n            });\n\n            let nss_fut = pin!(self.nss.wait_for_edge(SlaveSelectPolarity::from_regs(regs)));\n            match select(join(&mut tx_f, &mut rx_f), nss_fut).await {\n",
+          "new": "            // Memory barrier after DMA setup to ensure register writes complete before command\n            fence(Ordering::SeqCst);\n\n            regs.cr1().modify(|w| {\n                w.set_spe(true);\n            });\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            regs.cr1().modify(|w| {\n                w.set_cstart(true);\n            });\n\n            let nss_fut = pin!(self.nss.wait_for_edge(SlaveSelectPolarity::from_regs(regs)));\n            match select(join(&mut tx_f, &mut rx_f), nss_fut).await {\n"
+        },
+        {
+          "old": "                    slave_abort(regs);\n                    (n_rx, n_tx)\n                }\n            }\n        };\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        {\n            // Clear sticky error flags raised by frames clocked after a DMA buffer\n            // filled up (overrun on the shorter buffer, underrun on the empty one).\n            regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n        }\n\n",
+          "new": "                    slave_abort(regs);\n                    (n_rx, n_tx)\n                }\n            }\n        };\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        {\n            // Clear sticky error flags raised by frames clocked after a DMA buffer\n            // filled up (overrun on the shorter buffer, underrun on the empty one).\n            regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n        }\n\n"
+        },
+        {
+          "old": "                });\n            }\n\n            self.set_word_size(W::CONFIG);\n\n            // spi_v4 clears the rxfifo on SPE=0.\n            #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n            flush_rx_fifo(regs);\n\n            set_rxdmaen(regs, true);\n\n            let n = chunk.len();\n            let rx_src = regs.rx_ptr();\n",
+          "new": "                });\n            }\n\n            self.set_word_size(W::CONFIG);\n\n            // spi_v4 clears the rxfifo on SPE=0.\n            #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n            flush_rx_fifo(regs);\n\n            set_rxdmaen(regs, true);\n\n            let n = chunk.len();\n            let rx_src = regs.rx_ptr();\n"
+        },
+        {
+          "old": "            // Memory barrier after DMA setup to ensure register writes complete before command\n            fence(Ordering::SeqCst);\n\n            regs.cr1().modify(|w| {\n                w.set_spe(true);\n            });\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            regs.cr1().modify(|w| {\n                w.set_cstart(true);\n            });\n\n            let nss_fut = pin!(self.nss.wait_for_edge(SlaveSelectPolarity::from_regs(regs)));\n            let mut deselect_count = None;\n",
+          "new": "            // Memory barrier after DMA setup to ensure register writes complete before command\n            fence(Ordering::SeqCst);\n\n            regs.cr1().modify(|w| {\n                w.set_spe(true);\n            });\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            regs.cr1().modify(|w| {\n                w.set_cstart(true);\n            });\n\n            let nss_fut = pin!(self.nss.wait_for_edge(SlaveSelectPolarity::from_regs(regs)));\n            let mut deselect_count = None;\n"
+        },
+        {
+          "old": "                total += got;\n                return Ok(total);\n            }\n            total += n;\n        }\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n\n        self.check_transfer_crc()?;\n\n        Ok(total)\n    }\n",
+          "new": "                total += got;\n                return Ok(total);\n            }\n            total += n;\n        }\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n\n        self.check_transfer_crc()?;\n\n        Ok(total)\n    }\n"
+        },
+        {
+          "old": "            // Memory barrier after DMA setup to ensure register writes complete before command\n            fence(Ordering::SeqCst);\n\n            regs.cr1().modify(|w| {\n                w.set_spe(true);\n            });\n            #[cfg(any(spi_v4, spi_v5, spi_v6))]\n            regs.cr1().modify(|w| {\n                w.set_cstart(true);\n            });\n\n            let mut nss_fut = pin!(self.nss.wait_for_edge(SlaveSelectPolarity::from_regs(regs)));\n            match select(&mut tx_f, nss_fut.as_mut()).await {\n",
+          "new": "            // Memory barrier after DMA setup to ensure register writes complete before command\n            fence(Ordering::SeqCst);\n\n            regs.cr1().modify(|w| {\n                w.set_spe(true);\n            });\n            #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n            regs.cr1().modify(|w| {\n                w.set_cstart(true);\n            });\n\n            let mut nss_fut = pin!(self.nss.wait_for_edge(SlaveSelectPolarity::from_regs(regs)));\n            match select(&mut tx_f, nss_fut.as_mut()).await {\n"
+        },
+        {
+          "old": "            drop(tx_f);\n            slave_abort(regs);\n            total += sent;\n            return Ok(total);\n        }\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        self.info.regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n\n        self.check_transfer_crc()?;\n\n        Ok(total)\n    }\n",
+          "new": "            drop(tx_f);\n            slave_abort(regs);\n            total += sent;\n            return Ok(total);\n        }\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        self.info.regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n\n        self.check_transfer_crc()?;\n\n        Ok(total)\n    }\n"
+        },
+        {
+          "old": "/// re-enabling the SPI (SPE=0 -> 1) while NSS is asserted latches an\n/// end-of-transaction and the slave then silently ignores the whole transaction.\nfn slave_abort(regs: Regs) {\n    set_txdmaen(regs, false);\n    set_rxdmaen(regs, false);\n\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    {\n        // Clear sticky error flags (OVR/UDR/MODF/CRCE/TIFRE/SUSP) raised by\n        // frames clocked around the deselect, and drop stale RX data.\n        regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n        flush_rx_fifo(regs);\n    }\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    abort_dma(regs);\n}\n\nimpl<'d, M: PeriMode, CM: CommunicationMode> Drop for Spi<'d, M, CM> {\n    fn drop(&mut self) {\n        self.info.rcc.disable();\n    }\n}\n\n#[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\nuse vals::Br;\n#[cfg(any(spi_v4, spi_v5, spi_v6))]\nuse vals::Mbr as Br;\n\nfn compute_baud_rate(kernel_clock: Hertz, freq: Hertz) -> Result<Br, ConfigError> {\n    let val = match kernel_clock.0 / freq.0 {\n        0 => return Err(ConfigError::FrequencyTooHigh),\n        1..=2 => 0b000,\n",
+          "new": "/// re-enabling the SPI (SPE=0 -> 1) while NSS is asserted latches an\n/// end-of-transaction and the slave then silently ignores the whole transaction.\nfn slave_abort(regs: Regs) {\n    set_txdmaen(regs, false);\n    set_rxdmaen(regs, false);\n\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    {\n        // Clear sticky error flags (OVR/UDR/MODF/CRCE/TIFRE/SUSP) raised by\n        // frames clocked around the deselect, and drop stale RX data.\n        regs.ifcr().write(|w| w.0 = 0xffff_ffff);\n        flush_rx_fifo(regs);\n    }\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    abort_dma(regs);\n}\n\nimpl<'d, M: PeriMode, CM: CommunicationMode> Drop for Spi<'d, M, CM> {\n    fn drop(&mut self) {\n        self.info.rcc.disable();\n    }\n}\n\n#[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\nuse vals::Br;\n#[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\nuse vals::Mbr as Br;\n\nfn compute_baud_rate(kernel_clock: Hertz, freq: Hertz) -> Result<Br, ConfigError> {\n    let val = match kernel_clock.0 / freq.0 {\n        0 => return Err(ConfigError::FrequencyTooHigh),\n        1..=2 => 0b000,\n"
+        },
+        {
+          "old": "        }\n        info.regs.cr1().modify(|w| {\n            w.set_spe(true);\n        });\n    }\n\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    {\n        let ssiop = config.raw_nss_polarity();\n\n        info.regs.cr1().modify(|w| {\n            w.set_spe(false);\n        });\n",
+          "new": "        }\n        info.regs.cr1().modify(|w| {\n            w.set_spe(true);\n        });\n    }\n\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    {\n        let ssiop = config.raw_nss_polarity();\n\n        info.regs.cr1().modify(|w| {\n            w.set_spe(false);\n        });\n"
+        },
+        {
+          "old": "impl RegsExt for Regs {\n    fn tx_ptr<W>(&self) -> *mut W {\n        #[cfg(any(spi_v1, spi_v2))]\n        let dr = self.dr();\n        #[cfg(spi_v3)]\n        let dr = self.dr16();\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let dr = self.txdr32();\n        dr.as_ptr() as *mut W\n    }\n\n    fn rx_ptr<W>(&self) -> *mut W {\n        #[cfg(any(spi_v1, spi_v2))]\n        let dr = self.dr();\n        #[cfg(spi_v3)]\n        let dr = self.dr16();\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let dr = self.rxdr32();\n        dr.as_ptr() as *mut W\n    }\n}\n\nfn check_error_flags(sr: regs::Sr, ovr: bool) -> Result<(), Error> {\n",
+          "new": "impl RegsExt for Regs {\n    fn tx_ptr<W>(&self) -> *mut W {\n        #[cfg(any(spi_v1, spi_v2))]\n        let dr = self.dr();\n        #[cfg(spi_v3)]\n        let dr = self.dr16();\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let dr = self.txdr32();\n        dr.as_ptr() as *mut W\n    }\n\n    fn rx_ptr<W>(&self) -> *mut W {\n        #[cfg(any(spi_v1, spi_v2))]\n        let dr = self.dr();\n        #[cfg(spi_v3)]\n        let dr = self.dr16();\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let dr = self.rxdr32();\n        dr.as_ptr() as *mut W\n    }\n}\n\nfn check_error_flags(sr: regs::Sr, ovr: bool) -> Result<(), Error> {\n"
+        },
+        {
+          "old": "        return Err(Error::Overrun);\n    }\n    #[cfg(all(any(spi_v1, spi_v2, spi_v3), not(spi_v1_i2s)))]\n    if sr.fre() {\n        return Err(Error::Framing);\n    }\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    if sr.tifre() {\n        return Err(Error::Framing);\n    }\n    if sr.modf() {\n        return Err(Error::ModeFault);\n    }\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    if sr.crcerr() {\n        return Err(Error::Crc);\n    }\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    if sr.crce() {\n        return Err(Error::Crc);\n    }\n\n    Ok(())\n}\n\nfn check_tx_ready(regs: Regs, ovr: bool) -> Result<bool, Error> {\n    let sr = regs.sr().read();\n\n    check_error_flags(sr, ovr)?;\n\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    if sr.txe() {\n        return Ok(true);\n    }\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    if sr.txp() {\n        return Ok(true);\n    }\n\n    Ok(false)\n}\n",
+          "new": "        return Err(Error::Overrun);\n    }\n    #[cfg(all(any(spi_v1, spi_v2, spi_v3), not(spi_v1_i2s)))]\n    if sr.fre() {\n        return Err(Error::Framing);\n    }\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    if sr.tifre() {\n        return Err(Error::Framing);\n    }\n    if sr.modf() {\n        return Err(Error::ModeFault);\n    }\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    if sr.crcerr() {\n        return Err(Error::Crc);\n    }\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    if sr.crce() {\n        return Err(Error::Crc);\n    }\n\n    Ok(())\n}\n\nfn check_tx_ready(regs: Regs, ovr: bool) -> Result<bool, Error> {\n    let sr = regs.sr().read();\n\n    check_error_flags(sr, ovr)?;\n\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    if sr.txe() {\n        return Ok(true);\n    }\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    if sr.txp() {\n        return Ok(true);\n    }\n\n    Ok(false)\n}\n"
+        },
+        {
+          "old": "\nfn check_rx_ready(regs: Regs) -> Result<bool, Error> {\n    let sr = regs.sr().read();\n\n    check_error_flags(sr, true)?;\n\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    if sr.rxne() {\n        return Ok(true);\n    }\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    if sr.rxp() {\n        return Ok(true);\n    }\n\n    Ok(false)\n}\n",
+          "new": "\nfn check_rx_ready(regs: Regs) -> Result<bool, Error> {\n    let sr = regs.sr().read();\n\n    check_error_flags(sr, true)?;\n\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    if sr.rxne() {\n        return Ok(true);\n    }\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    if sr.rxp() {\n        return Ok(true);\n    }\n\n    Ok(false)\n}\n"
+        },
+        {
+          "old": "            return Ok(());\n        }\n    }\n}\n\npub(crate) fn flush_rx_fifo(regs: Regs) {\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    while regs.sr().read().rxne() {\n        #[cfg(not(spi_v3))]\n        let _ = regs.dr().read();\n        #[cfg(spi_v3)]\n        let _ = regs.dr16().read();\n    }\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    while regs.sr().read().rxp() {\n        let _ = regs.rxdr32().read();\n    }\n}\n\npub(crate) fn set_txdmaen(regs: Regs, val: bool) {\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    regs.cr2().modify(|reg| {\n        reg.set_txdmaen(val);\n    });\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    regs.cfg1().modify(|reg| {\n        reg.set_txdmaen(val);\n    });\n}\n\npub(crate) fn set_rxdmaen(regs: Regs, val: bool) {\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    regs.cr2().modify(|reg| {\n        reg.set_rxdmaen(val);\n    });\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    regs.cfg1().modify(|reg| {\n        reg.set_rxdmaen(val);\n    });\n}\n\nfn finish_dma(regs: Regs) {\n    #[cfg(spi_v3)]\n    while regs.sr().read().ftlvl().to_bits() > 0 {}\n\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    {\n        if regs.cr2().read().tsize() == 0 {\n            while !regs.sr().read().txc() {}\n        } else {\n            while !regs.sr().read().eot() {}\n        }\n    }\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    while regs.sr().read().bsy() {}\n\n    // The peripheral automatically disables the DMA stream on completion without error,\n    // but it does not clear the RXDMAEN/TXDMAEN flag in CR2.\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    regs.cr2().modify(|reg| {\n        reg.set_txdmaen(false);\n        reg.set_rxdmaen(false);\n    });\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    regs.cfg1().modify(|reg| {\n        reg.set_txdmaen(false);\n        reg.set_rxdmaen(false);\n    });\n}\n\n#[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n/// Abort an in-progress DMA transfer and disable SPI to leave hardware in a safe state.\nfn abort_dma(regs: Regs) {\n    // Disable DMA requests first so the peripheral stops requesting DMA.\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    regs.cr2().modify(|reg| {\n        reg.set_txdmaen(false);\n        reg.set_rxdmaen(false);\n    });\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    regs.cfg1().modify(|reg| {\n        reg.set_txdmaen(false);\n        reg.set_rxdmaen(false);\n    });\n\n    // Disable SPI to abort any ongoing transfer.\n",
+          "new": "            return Ok(());\n        }\n    }\n}\n\npub(crate) fn flush_rx_fifo(regs: Regs) {\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    while regs.sr().read().rxne() {\n        #[cfg(not(spi_v3))]\n        let _ = regs.dr().read();\n        #[cfg(spi_v3)]\n        let _ = regs.dr16().read();\n    }\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    while regs.sr().read().rxp() {\n        let _ = regs.rxdr32().read();\n    }\n}\n\npub(crate) fn set_txdmaen(regs: Regs, val: bool) {\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    regs.cr2().modify(|reg| {\n        reg.set_txdmaen(val);\n    });\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    regs.cfg1().modify(|reg| {\n        reg.set_txdmaen(val);\n    });\n}\n\npub(crate) fn set_rxdmaen(regs: Regs, val: bool) {\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    regs.cr2().modify(|reg| {\n        reg.set_rxdmaen(val);\n    });\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    regs.cfg1().modify(|reg| {\n        reg.set_rxdmaen(val);\n    });\n}\n\nfn finish_dma(regs: Regs) {\n    #[cfg(spi_v3)]\n    while regs.sr().read().ftlvl().to_bits() > 0 {}\n\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    {\n        if regs.cr2().read().tsize() == 0 {\n            while !regs.sr().read().txc() {}\n        } else {\n            while !regs.sr().read().eot() {}\n        }\n    }\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    while regs.sr().read().bsy() {}\n\n    // The peripheral automatically disables the DMA stream on completion without error,\n    // but it does not clear the RXDMAEN/TXDMAEN flag in CR2.\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    regs.cr2().modify(|reg| {\n        reg.set_txdmaen(false);\n        reg.set_rxdmaen(false);\n    });\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    regs.cfg1().modify(|reg| {\n        reg.set_txdmaen(false);\n        reg.set_rxdmaen(false);\n    });\n}\n\n#[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n/// Abort an in-progress DMA transfer and disable SPI to leave hardware in a safe state.\nfn abort_dma(regs: Regs) {\n    // Disable DMA requests first so the peripheral stops requesting DMA.\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    regs.cr2().modify(|reg| {\n        reg.set_txdmaen(false);\n        reg.set_rxdmaen(false);\n    });\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    regs.cfg1().modify(|reg| {\n        reg.set_txdmaen(false);\n        reg.set_rxdmaen(false);\n    });\n\n    // Disable SPI to abort any ongoing transfer.\n"
+        },
+        {
+          "old": "        if ndt == 0 {\n            return Ok(());\n        }\n\n        spin_until_tx_ready(regs, true)?;\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        while w < ndt && check_tx_ready(regs, true)? {\n            if let Some(word_out) = write.next() {\n                ptr::write_volatile(regs.tx_ptr(), *word_out);\n            } else {\n                ptr::write_volatile(regs.tx_ptr(), W::default());\n            }\n\n            w += 1;\n        }\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        regs.cr1().modify(|reg| reg.set_cstart(true));\n\n        #[cfg(any(spi_v1, spi_v2))]\n        let fifo_size = 1;\n\n        #[cfg(spi_v3)]\n        let fifo_size = 4 / size_of::<W>();\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        let fifo_size = w;\n\n        while w < ndt || r < ndt {\n            if w < ndt && (w - r) < fifo_size && check_tx_ready(regs, true)? {\n                if let Some(word_out) = write.next() {\n                    ptr::write_volatile(regs.tx_ptr(), *word_out);\n",
+          "new": "        if ndt == 0 {\n            return Ok(());\n        }\n\n        spin_until_tx_ready(regs, true)?;\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        while w < ndt && check_tx_ready(regs, true)? {\n            if let Some(word_out) = write.next() {\n                ptr::write_volatile(regs.tx_ptr(), *word_out);\n            } else {\n                ptr::write_volatile(regs.tx_ptr(), W::default());\n            }\n\n            w += 1;\n        }\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        regs.cr1().modify(|reg| reg.set_cstart(true));\n\n        #[cfg(any(spi_v1, spi_v2))]\n        let fifo_size = 1;\n\n        #[cfg(spi_v3)]\n        let fifo_size = 4 / size_of::<W>();\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        let fifo_size = w;\n\n        while w < ndt || r < ndt {\n            if w < ndt && (w - r) < fifo_size && check_tx_ready(regs, true)? {\n                if let Some(word_out) = write.next() {\n                    ptr::write_volatile(regs.tx_ptr(), *word_out);\n"
+        },
+        {
+          "old": "fn transfer_word<W: Word>(regs: Regs, tx_word: W) -> Result<W, Error> {\n    spin_until_tx_ready(regs, true)?;\n\n    unsafe {\n        ptr::write_volatile(regs.tx_ptr(), tx_word);\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        regs.cr1().modify(|reg| reg.set_cstart(true));\n    }\n\n    spin_until_rx_ready(regs)?;\n\n    let rx_word = unsafe { ptr::read_volatile(regs.rx_ptr()) };\n    Ok(rx_word)\n}\n\n#[cfg(any(spi_v3, spi_v4, spi_v5, spi_v6))]\nfn write_word<W: Word>(regs: Regs, tx_word: W) -> Result<(), Error> {\n    // for write, we intentionally ignore the rx fifo, which will cause\n    // overrun errors that we have to ignore.\n    spin_until_tx_ready(regs, false)?;\n\n    unsafe {\n        ptr::write_volatile(regs.tx_ptr(), tx_word);\n\n        #[cfg(any(spi_v4, spi_v5, spi_v6))]\n        regs.cr1().modify(|reg| reg.set_cstart(true));\n    }\n    Ok(())\n}\n\n// Note: It is not possible to impl these traits generically in embedded-hal 0.2 due to a conflict with\n",
+          "new": "fn transfer_word<W: Word>(regs: Regs, tx_word: W) -> Result<W, Error> {\n    spin_until_tx_ready(regs, true)?;\n\n    unsafe {\n        ptr::write_volatile(regs.tx_ptr(), tx_word);\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        regs.cr1().modify(|reg| reg.set_cstart(true));\n    }\n\n    spin_until_rx_ready(regs)?;\n\n    let rx_word = unsafe { ptr::read_volatile(regs.rx_ptr()) };\n    Ok(rx_word)\n}\n\n#[cfg(any(spi_v3, spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\nfn write_word<W: Word>(regs: Regs, tx_word: W) -> Result<(), Error> {\n    // for write, we intentionally ignore the rx fifo, which will cause\n    // overrun errors that we have to ignore.\n    spin_until_tx_ready(regs, false)?;\n\n    unsafe {\n        ptr::write_volatile(regs.tx_ptr(), tx_word);\n\n        #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n        regs.cr1().modify(|reg| reg.set_cstart(true));\n    }\n    Ok(())\n}\n\n// Note: It is not possible to impl these traits generically in embedded-hal 0.2 due to a conflict with\n"
+        },
+        {
+          "old": "    impl_word!(word::U13, (vals::Ds::Bits13, vals::Frxth::Half));\n    impl_word!(word::U14, (vals::Ds::Bits14, vals::Frxth::Half));\n    impl_word!(word::U15, (vals::Ds::Bits15, vals::Frxth::Half));\n    impl_word!(u16, (vals::Ds::Bits16, vals::Frxth::Half));\n}\n\n#[cfg(any(spi_v4, spi_v5, spi_v6))]\nmod word_impl {\n    use super::*;\n\n    pub type Config = u8;\n\n    impl_word!(word::U4, 4 - 1);\n",
+          "new": "    impl_word!(word::U13, (vals::Ds::Bits13, vals::Frxth::Half));\n    impl_word!(word::U14, (vals::Ds::Bits14, vals::Frxth::Half));\n    impl_word!(word::U15, (vals::Ds::Bits15, vals::Frxth::Half));\n    impl_word!(u16, (vals::Ds::Bits16, vals::Frxth::Half));\n}\n\n#[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\nmod word_impl {\n    use super::*;\n\n    pub type Config = u8;\n\n    impl_word!(word::U4, 4 - 1);\n"
+        }
+      ]
+    },
+    {
+      "path": "src/spi/ringbuffered.rs",
+      "upstream_sha256": "774c11e6773e3064729e6f4847e72a9870dc403506c4211ed5cc62e9bca78c8d",
+      "patched_sha256": "e7cda7a0fbc8c23c851d29b14f88010e027bd22eff7be251875a745dc07b73ee",
+      "replacements": [
+        {
+          "old": "use crate::gpio::Flex;\nuse crate::mode::Async;\nuse crate::rcc::WakeGuard;\n#[cfg(any(spi_v4, spi_v5, spi_v6))]\nuse crate::spi::flush_rx_fifo;\nuse crate::spi::mode::Slave;\nuse crate::spi::{\n",
+          "new": "use crate::gpio::Flex;\nuse crate::mode::Async;\nuse crate::rcc::WakeGuard;\n#[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\nuse crate::spi::flush_rx_fifo;\nuse crate::spi::mode::Slave;\nuse crate::spi::{\n"
+        },
+        {
+          "old": "/// On SPI v4/v5/v6 (H7), OVR/UDR/MODF/CRCE/TIFRE are cleared via IFCR.\n/// On older SPI, OVR is cleared by reading SR then DR.\nfn clear_spi_errors(r: Regs) {\n    #[cfg(any(spi_v4, spi_v5, spi_v6))]\n    {\n        // Write 1s to all flag-clear bits in IFCR\n        r.ifcr().write(|w| w.0 = 0xffff_ffff);\n        flush_rx_fifo(r);\n    }\n    #[cfg(not(any(spi_v4, spi_v5, spi_v6)))]\n    {\n        // OVR is cleared by reading SR then DR.\n        // MODF is cleared by reading SR then writing CR1.\n",
+          "new": "/// On SPI v4/v5/v6 (H7), OVR/UDR/MODF/CRCE/TIFRE are cleared via IFCR.\n/// On older SPI, OVR is cleared by reading SR then DR.\nfn clear_spi_errors(r: Regs) {\n    #[cfg(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6))]\n    {\n        // Write 1s to all flag-clear bits in IFCR\n        r.ifcr().write(|w| w.0 = 0xffff_ffff);\n        flush_rx_fifo(r);\n    }\n    #[cfg(not(any(spi_v4, any(spi_v5, spi_h5_47c), spi_v6)))]\n    {\n        // OVR is cleared by reading SR then DR.\n        // MODF is cleared by reading SR then writing CR1.\n"
+        }
+      ]
+    },
+    {
+      "path": "src/timer/complementary_pwm.rs",
+      "upstream_sha256": "17708b7ec7934858c826a488d5db57eb73869f1d1a964f5e7fe4c8bda3c687a1",
+      "patched_sha256": "2ff29f09d9e82aa1e145314a5528da231e3de645a1e087b3ea769a9d31a8c987",
+      "replacements": [
+        {
+          "old": "use core::marker::PhantomData;\n\npub use super::low_level::FilterValue;\n#[cfg(timer_v2)]\nuse super::low_level::OcrefClearSource;\nuse super::low_level::{CountingMode, OutputPolarity, RoundTo, Timer};\nuse super::simple_pwm::PwmPin;\n",
+          "new": "use core::marker::PhantomData;\n\npub use super::low_level::FilterValue;\n#[cfg(any(timer_v2, timer_h5_47c))]\nuse super::low_level::OcrefClearSource;\nuse super::low_level::{CountingMode, OutputPolarity, RoundTo, Timer};\nuse super::simple_pwm::PwmPin;\n"
+        },
+        {
+          "old": "use crate::Peri;\nuse crate::dma::word::Word;\nuse crate::gpio::{AfType, Flex, OutputType};\n#[cfg(timer_v2)]\npub use crate::pac::timer::vals::{Bkbid as BreakBidirectionalMode, Bkdsrm as BreakDisarmMode};\npub use crate::pac::timer::vals::{\n    Bkinp as BreakComparatorPolarity, Bkp as BreakInputPolarity, Ccds, Ckd, Mms2, Ossi, Ossr,\n",
+          "new": "use crate::Peri;\nuse crate::dma::word::Word;\nuse crate::gpio::{AfType, Flex, OutputType};\n#[cfg(any(timer_v2, timer_h5_47c))]\npub use crate::pac::timer::vals::{Bkbid as BreakBidirectionalMode, Bkdsrm as BreakDisarmMode};\npub use crate::pac::timer::vals::{\n    Bkinp as BreakComparatorPolarity, Bkp as BreakInputPolarity, Ccds, Ckd, Mms2, Ossi, Ossr,\n"
+        },
+        {
+          "old": "use crate::rcc::WakeGuard;\nuse crate::time::Hertz;\nuse crate::timer::TimerChannel;\n#[cfg(timer_v2)]\nuse crate::timer::low_level::DitheringConfig;\nuse crate::timer::low_level::{MasterMode, OutputCompareMode};\nuse crate::timer::simple_pwm::PwmPinConfig;\n",
+          "new": "use crate::rcc::WakeGuard;\nuse crate::time::Hertz;\nuse crate::timer::TimerChannel;\n#[cfg(any(timer_v2, timer_h5_47c))]\nuse crate::timer::low_level::DitheringConfig;\nuse crate::timer::low_level::{MasterMode, OutputCompareMode};\nuse crate::timer::simple_pwm::PwmPinConfig;\n"
+        },
+        {
+          "old": "        self.inner.set_moe(enable);\n    }\n\n    #[cfg(timer_v2)]\n    /// Select OCREF clear source.\n    pub fn set_ocref_clear_source(&mut self, source: OcrefClearSource) {\n        self.inner.set_ocref_clear_source(source);\n",
+          "new": "        self.inner.set_moe(enable);\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Select OCREF clear source.\n    pub fn set_ocref_clear_source(&mut self, source: OcrefClearSource) {\n        self.inner.set_ocref_clear_source(source);\n"
+        },
+        {
+          "old": "        self.inner.get_break_filter()\n    }\n\n    #[cfg(timer_v2)]\n    /// Set break input 1 disarm mode.\n    pub fn set_break_disarm_mode(&mut self, mode: BreakDisarmMode) {\n        self.inner.set_break_disarm_mode(mode);\n    }\n\n    #[cfg(timer_v2)]\n    /// Get break input 1 disarm mode.\n    pub fn get_break_disarm_mode(&self) -> BreakDisarmMode {\n        self.inner.get_break_disarm_mode()\n    }\n\n    #[cfg(timer_v2)]\n    /// Set break input 1 bidirectional mode.\n    pub fn set_break_bidirectional_mode(&mut self, mode: BreakBidirectionalMode) {\n        self.inner.set_break_bidirectional_mode(mode);\n    }\n\n    #[cfg(timer_v2)]\n    /// Get break input 1 bidirectional mode.\n    pub fn get_break_bidirectional_mode(&self) -> BreakBidirectionalMode {\n        self.inner.get_break_bidirectional_mode()\n",
+          "new": "        self.inner.get_break_filter()\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set break input 1 disarm mode.\n    pub fn set_break_disarm_mode(&mut self, mode: BreakDisarmMode) {\n        self.inner.set_break_disarm_mode(mode);\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get break input 1 disarm mode.\n    pub fn get_break_disarm_mode(&self) -> BreakDisarmMode {\n        self.inner.get_break_disarm_mode()\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set break input 1 bidirectional mode.\n    pub fn set_break_bidirectional_mode(&mut self, mode: BreakBidirectionalMode) {\n        self.inner.set_break_bidirectional_mode(mode);\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get break input 1 bidirectional mode.\n    pub fn get_break_bidirectional_mode(&self) -> BreakBidirectionalMode {\n        self.inner.get_break_bidirectional_mode()\n"
+        },
+        {
+          "old": "        self.inner.get_break2_filter()\n    }\n\n    #[cfg(timer_v2)]\n    /// Set break input 2 disarm mode.\n    pub fn set_break2_disarm_mode(&mut self, mode: BreakDisarmMode) {\n        self.inner.set_break2_disarm_mode(mode);\n    }\n\n    #[cfg(timer_v2)]\n    /// Get break input 2 disarm mode.\n    pub fn get_break2_disarm_mode(&self) -> BreakDisarmMode {\n        self.inner.get_break2_disarm_mode()\n    }\n\n    #[cfg(timer_v2)]\n    /// Set break input 2 bidirectional mode.\n    pub fn set_break2_bidirectional_mode(&mut self, mode: BreakBidirectionalMode) {\n        self.inner.set_break2_bidirectional_mode(mode);\n    }\n\n    #[cfg(timer_v2)]\n    /// Get break input 2 bidirectional mode.\n    pub fn get_break2_bidirectional_mode(&self) -> BreakBidirectionalMode {\n        self.inner.get_break2_bidirectional_mode()\n",
+          "new": "        self.inner.get_break2_filter()\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set break input 2 disarm mode.\n    pub fn set_break2_disarm_mode(&mut self, mode: BreakDisarmMode) {\n        self.inner.set_break2_disarm_mode(mode);\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get break input 2 disarm mode.\n    pub fn get_break2_disarm_mode(&self) -> BreakDisarmMode {\n        self.inner.get_break2_disarm_mode()\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set break input 2 bidirectional mode.\n    pub fn set_break2_bidirectional_mode(&mut self, mode: BreakBidirectionalMode) {\n        self.inner.set_break2_bidirectional_mode(mode);\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get break input 2 bidirectional mode.\n    pub fn get_break2_bidirectional_mode(&self) -> BreakBidirectionalMode {\n        self.inner.get_break2_bidirectional_mode()\n"
+        },
+        {
+          "old": "        }\n    }\n\n    #[cfg(timer_v2)]\n    /// Configure timer dithering mode and ARR fractional nibble.\n    pub fn set_dithering(&mut self, config: DitheringConfig) {\n        self.inner.set_dithering(config);\n    }\n\n    #[cfg(timer_v2)]\n    /// Set CCR fractional nibble for one channel.\n    pub fn set_channel_dither(&mut self, channel: Channel, dither: u8) {\n        self.inner.set_compare_dither_value(channel, dither);\n",
+          "new": "        }\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Configure timer dithering mode and ARR fractional nibble.\n    pub fn set_dithering(&mut self, config: DitheringConfig) {\n        self.inner.set_dithering(config);\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set CCR fractional nibble for one channel.\n    pub fn set_channel_dither(&mut self, channel: Channel, dither: u8) {\n        self.inner.set_compare_dither_value(channel, dither);\n"
+        }
+      ]
+    },
+    {
+      "path": "src/timer/low_level.rs",
+      "upstream_sha256": "df476c26e2ad303228f735cc65a73dbfb64f15840f60dba82b85981f2bd6ed86",
+      "patched_sha256": "91afb8c01d67aacecb1b4750c57e07d9e049d7ec5ddfe6ecd73db04089754251",
+      "replacements": [
+        {
+          "old": "    /// TIMx_CNT>TIMx_CCRx else inactive.\n    PwmMode2,\n\n    #[cfg(timer_v2)]\n    /// In up-counting mode, the channel is active until a trigger\n    /// event is detected (on tim_trgi signal). Then, a comparison is performed as in PWM\n    /// mode 1 and the channels becomes active again at the next update. In down-counting\n",
+          "new": "    /// TIMx_CNT>TIMx_CCRx else inactive.\n    PwmMode2,\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// In up-counting mode, the channel is active until a trigger\n    /// event is detected (on tim_trgi signal). Then, a comparison is performed as in PWM\n    /// mode 1 and the channels becomes active again at the next update. In down-counting\n"
+        },
+        {
+          "old": "    /// inactive again at the next update.\n    OnePulseMode1,\n\n    #[cfg(timer_v2)]\n    /// In up-counting mode, the channel is inactive until a\n    /// trigger event is detected (on tim_trgi signal). Then, a comparison is performed as in\n    /// PWM mode 2 and the channels becomes inactive again at the next update. In down\n",
+          "new": "    /// inactive again at the next update.\n    OnePulseMode1,\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// In up-counting mode, the channel is inactive until a\n    /// trigger event is detected (on tim_trgi signal). Then, a comparison is performed as in\n    /// PWM mode 2 and the channels becomes inactive again at the next update. In down\n"
+        },
+        {
+          "old": "    /// becomes active again at the next update.\n    OnePulseMode2,\n\n    #[cfg(timer_v2)]\n    /// Combined PWM mode 1 - tim_oc1ref has the same behavior as in PWM mode 1.\n    /// tim_oc1refc is the logical OR between tim_oc1ref and tim_oc2ref.\n    CombinedPwmMode1,\n\n    #[cfg(timer_v2)]\n    /// Combined PWM mode 2 - tim_oc1ref has the same behavior as in PWM mode 2.\n    /// tim_oc1refc is the logical AND between tim_oc1ref and tim_oc2ref.\n    CombinedPwmMode2,\n\n    #[cfg(timer_v2)]\n    /// tim_oc1ref has the same behavior as in PWM mode 1. tim_oc1refc outputs tim_oc1ref\n    /// when the counter is counting up, tim_oc2ref when it is counting down.\n    AsymmetricPwmMode1,\n\n    #[cfg(timer_v2)]\n    /// tim_oc1ref has the same behavior as in PWM mode 2. tim_oc1refc outputs tim_oc1ref\n    /// when the counter is counting up, tim_oc2ref when it is counting down.\n    AsymmetricPwmMode2,\n",
+          "new": "    /// becomes active again at the next update.\n    OnePulseMode2,\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Combined PWM mode 1 - tim_oc1ref has the same behavior as in PWM mode 1.\n    /// tim_oc1refc is the logical OR between tim_oc1ref and tim_oc2ref.\n    CombinedPwmMode1,\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Combined PWM mode 2 - tim_oc1ref has the same behavior as in PWM mode 2.\n    /// tim_oc1refc is the logical AND between tim_oc1ref and tim_oc2ref.\n    CombinedPwmMode2,\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// tim_oc1ref has the same behavior as in PWM mode 1. tim_oc1refc outputs tim_oc1ref\n    /// when the counter is counting up, tim_oc2ref when it is counting down.\n    AsymmetricPwmMode1,\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// tim_oc1ref has the same behavior as in PWM mode 2. tim_oc1refc outputs tim_oc1ref\n    /// when the counter is counting up, tim_oc2ref when it is counting down.\n    AsymmetricPwmMode2,\n"
+        },
+        {
+          "old": "            OutputCompareMode::ForceActive => crate::pac::timer::vals::Ocm::ForceActive,\n            OutputCompareMode::PwmMode1 => crate::pac::timer::vals::Ocm::PwmMode1,\n            OutputCompareMode::PwmMode2 => crate::pac::timer::vals::Ocm::PwmMode2,\n            #[cfg(timer_v2)]\n            OutputCompareMode::OnePulseMode1 => crate::pac::timer::vals::Ocm::RetrigerrableOpmMode1,\n            #[cfg(timer_v2)]\n            OutputCompareMode::OnePulseMode2 => crate::pac::timer::vals::Ocm::RetrigerrableOpmMode2,\n            #[cfg(timer_v2)]\n            OutputCompareMode::CombinedPwmMode1 => crate::pac::timer::vals::Ocm::CombinedPwmMode1,\n            #[cfg(timer_v2)]\n            OutputCompareMode::CombinedPwmMode2 => crate::pac::timer::vals::Ocm::CombinedPwmMode2,\n            #[cfg(timer_v2)]\n            OutputCompareMode::AsymmetricPwmMode1 => crate::pac::timer::vals::Ocm::AsymmetricPwmMode1,\n            #[cfg(timer_v2)]\n            OutputCompareMode::AsymmetricPwmMode2 => crate::pac::timer::vals::Ocm::AsymmetricPwmMode2,\n        }\n    }\n",
+          "new": "            OutputCompareMode::ForceActive => crate::pac::timer::vals::Ocm::ForceActive,\n            OutputCompareMode::PwmMode1 => crate::pac::timer::vals::Ocm::PwmMode1,\n            OutputCompareMode::PwmMode2 => crate::pac::timer::vals::Ocm::PwmMode2,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            OutputCompareMode::OnePulseMode1 => crate::pac::timer::vals::Ocm::RetrigerrableOpmMode1,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            OutputCompareMode::OnePulseMode2 => crate::pac::timer::vals::Ocm::RetrigerrableOpmMode2,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            OutputCompareMode::CombinedPwmMode1 => crate::pac::timer::vals::Ocm::CombinedPwmMode1,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            OutputCompareMode::CombinedPwmMode2 => crate::pac::timer::vals::Ocm::CombinedPwmMode2,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            OutputCompareMode::AsymmetricPwmMode1 => crate::pac::timer::vals::Ocm::AsymmetricPwmMode1,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            OutputCompareMode::AsymmetricPwmMode2 => crate::pac::timer::vals::Ocm::AsymmetricPwmMode2,\n        }\n    }\n"
+        },
+        {
+          "old": "}\n\n/// Dithering configuration for timer_v2-capable timers.\n#[cfg(timer_v2)]\n#[derive(Debug, Clone, Copy, PartialEq, Eq)]\n#[cfg_attr(feature = \"defmt\", derive(defmt::Format))]\n#[derive(Default)]\n",
+          "new": "}\n\n/// Dithering configuration for timer_v2-capable timers.\n#[cfg(any(timer_v2, timer_h5_47c))]\n#[derive(Debug, Clone, Copy, PartialEq, Eq)]\n#[cfg_attr(feature = \"defmt\", derive(defmt::Format))]\n#[derive(Default)]\n"
+        },
+        {
+          "old": "        self.regs_gp16().tisel().modify(|w| w.set_tisel(raw_channel, tisel));\n    }\n\n    #[cfg(timer_v2)]\n    /// Configure encoder index direction behavior (TIMx_ECR.IDIR).\n    pub fn set_encoder_index_direction(&self, direction: vals::Idir) {\n        self.regs_gp16().ecr().modify(|w| w.set_idir(direction));\n    }\n\n    #[cfg(timer_v2)]\n    /// Configure encoder index position behavior (TIMx_ECR.FIDX).\n    pub fn set_encoder_index_position(&self, position: vals::Fidx) {\n        self.regs_gp16().ecr().modify(|w| w.set_fidx(position));\n    }\n\n    #[cfg(timer_v2)]\n    /// Enable/disable index event interrupts (TIMx_DIER.IDXIE).\n    pub fn enable_encoder_index_interrupt(&self, enable: bool) {\n        self.regs_gp16().dier().modify(|w| w.set_idxie(enable));\n    }\n\n    #[cfg(timer_v2)]\n    /// Enable/disable direction-change interrupts (TIMx_DIER.DIRIE).\n    pub fn enable_encoder_direction_change_interrupt(&self, enable: bool) {\n        self.regs_gp16().dier().modify(|w| w.set_dirie(enable));\n    }\n\n    #[cfg(timer_v2)]\n    /// Get index event interrupt pending state (TIMx_SR.IDXIF).\n    pub fn get_encoder_index_interrupt(&self) -> bool {\n        self.regs_gp16().sr().read().idxif()\n    }\n\n    #[cfg(timer_v2)]\n    /// Get direction-change interrupt pending state (TIMx_SR.DIRIF).\n    pub fn get_encoder_direction_change_interrupt(&self) -> bool {\n        self.regs_gp16().sr().read().dirif()\n    }\n\n    #[cfg(timer_v2)]\n    /// Clear index event interrupt pending state (TIMx_SR.IDXIF).\n    pub fn clear_encoder_index_interrupt(&self) {\n        self.regs_gp16().sr().modify(|w| w.set_idxif(false));\n    }\n\n    #[cfg(timer_v2)]\n    /// Clear direction-change interrupt pending state (TIMx_SR.DIRIF).\n    pub fn clear_encoder_direction_change_interrupt(&self) {\n        self.regs_gp16().sr().modify(|w| w.set_dirif(false));\n",
+          "new": "        self.regs_gp16().tisel().modify(|w| w.set_tisel(raw_channel, tisel));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Configure encoder index direction behavior (TIMx_ECR.IDIR).\n    pub fn set_encoder_index_direction(&self, direction: vals::Idir) {\n        self.regs_gp16().ecr().modify(|w| w.set_idir(direction));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Configure encoder index position behavior (TIMx_ECR.FIDX).\n    pub fn set_encoder_index_position(&self, position: vals::Fidx) {\n        self.regs_gp16().ecr().modify(|w| w.set_fidx(position));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Enable/disable index event interrupts (TIMx_DIER.IDXIE).\n    pub fn enable_encoder_index_interrupt(&self, enable: bool) {\n        self.regs_gp16().dier().modify(|w| w.set_idxie(enable));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Enable/disable direction-change interrupts (TIMx_DIER.DIRIE).\n    pub fn enable_encoder_direction_change_interrupt(&self, enable: bool) {\n        self.regs_gp16().dier().modify(|w| w.set_dirie(enable));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get index event interrupt pending state (TIMx_SR.IDXIF).\n    pub fn get_encoder_index_interrupt(&self) -> bool {\n        self.regs_gp16().sr().read().idxif()\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get direction-change interrupt pending state (TIMx_SR.DIRIF).\n    pub fn get_encoder_direction_change_interrupt(&self) -> bool {\n        self.regs_gp16().sr().read().dirif()\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Clear index event interrupt pending state (TIMx_SR.IDXIF).\n    pub fn clear_encoder_index_interrupt(&self) {\n        self.regs_gp16().sr().modify(|w| w.set_idxif(false));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Clear direction-change interrupt pending state (TIMx_SR.DIRIF).\n    pub fn clear_encoder_direction_change_interrupt(&self) {\n        self.regs_gp16().sr().modify(|w| w.set_dirif(false));\n"
+        },
+        {
+          "old": "            .modify(|w| w.set_ccr(unwrap!(value.try_into())));\n    }\n\n    #[cfg(timer_v2)]\n    /// Configure timer dithering mode and ARR fractional nibble.\n    pub fn set_dithering(&self, config: DitheringConfig) {\n        self.regs_gp16().cr1().modify(|w| w.set_dithen(config.enabled));\n",
+          "new": "            .modify(|w| w.set_ccr(unwrap!(value.try_into())));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Configure timer dithering mode and ARR fractional nibble.\n    pub fn set_dithering(&self, config: DitheringConfig) {\n        self.regs_gp16().cr1().modify(|w| w.set_dithen(config.enabled));\n"
+        },
+        {
+          "old": "            .modify(|w| w.set_dither(config.arr_dither & 0x0f));\n    }\n\n    #[cfg(timer_v2)]\n    /// Set CCR fractional nibble (`CCRx_DITHER.DITHER`) for a channel.\n    pub fn set_compare_dither_value(&self, channel: Channel, dither: u8) {\n        self.regs_gp16()\n",
+          "new": "            .modify(|w| w.set_dither(config.arr_dither & 0x0f));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set CCR fractional nibble (`CCRx_DITHER.DITHER`) for a channel.\n    pub fn set_compare_dither_value(&self, channel: Channel, dither: u8) {\n        self.regs_gp16()\n"
+        },
+        {
+          "old": "        unsafe { crate::pac::timer::TimAdv::from_ptr(T::regs()) }\n    }\n\n    #[cfg(timer_v2)]\n    /// Select OCREF clear source.\n    pub fn set_ocref_clear_source(&self, source: OcrefClearSource) {\n        self.regs_advanced().smcr().modify(|w| {\n",
+          "new": "        unsafe { crate::pac::timer::TimAdv::from_ptr(T::regs()) }\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Select OCREF clear source.\n    pub fn set_ocref_clear_source(&self, source: OcrefClearSource) {\n        self.regs_advanced().smcr().modify(|w| {\n"
+        },
+        {
+          "old": "        self.regs_advanced().bdtr().read().bkf(1)\n    }\n\n    #[cfg(timer_v2)]\n    /// Set break input 1 disarm mode.\n    pub fn set_break_disarm_mode(&self, mode: vals::Bkdsrm) {\n        self.regs_advanced().bdtr().modify(|w| w.set_bkdsrm(0, mode));\n    }\n\n    #[cfg(timer_v2)]\n    /// Get break input 1 disarm mode.\n    pub fn get_break_disarm_mode(&self) -> vals::Bkdsrm {\n        self.regs_advanced().bdtr().read().bkdsrm(0)\n    }\n\n    #[cfg(timer_v2)]\n    /// Set break input 1 bidirectional mode.\n    pub fn set_break_bidirectional_mode(&self, mode: vals::Bkbid) {\n        self.regs_advanced().bdtr().modify(|w| w.set_bkbid(0, mode));\n    }\n\n    #[cfg(timer_v2)]\n    /// Get break input 1 bidirectional mode.\n    pub fn get_break_bidirectional_mode(&self) -> vals::Bkbid {\n        self.regs_advanced().bdtr().read().bkbid(0)\n    }\n\n    #[cfg(timer_v2)]\n    /// Set break input 2 disarm mode.\n    pub fn set_break2_disarm_mode(&self, mode: vals::Bkdsrm) {\n        self.regs_advanced().bdtr().modify(|w| w.set_bkdsrm(1, mode));\n    }\n\n    #[cfg(timer_v2)]\n    /// Get break input 2 disarm mode.\n    pub fn get_break2_disarm_mode(&self) -> vals::Bkdsrm {\n        self.regs_advanced().bdtr().read().bkdsrm(1)\n    }\n\n    #[cfg(timer_v2)]\n    /// Set break input 2 bidirectional mode.\n    pub fn set_break2_bidirectional_mode(&self, mode: vals::Bkbid) {\n        self.regs_advanced().bdtr().modify(|w| w.set_bkbid(1, mode));\n    }\n\n    #[cfg(timer_v2)]\n    /// Get break input 2 bidirectional mode.\n    pub fn get_break2_bidirectional_mode(&self) -> vals::Bkbid {\n        self.regs_advanced().bdtr().read().bkbid(1)\n",
+          "new": "        self.regs_advanced().bdtr().read().bkf(1)\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set break input 1 disarm mode.\n    pub fn set_break_disarm_mode(&self, mode: vals::Bkdsrm) {\n        self.regs_advanced().bdtr().modify(|w| w.set_bkdsrm(0, mode));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get break input 1 disarm mode.\n    pub fn get_break_disarm_mode(&self) -> vals::Bkdsrm {\n        self.regs_advanced().bdtr().read().bkdsrm(0)\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set break input 1 bidirectional mode.\n    pub fn set_break_bidirectional_mode(&self, mode: vals::Bkbid) {\n        self.regs_advanced().bdtr().modify(|w| w.set_bkbid(0, mode));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get break input 1 bidirectional mode.\n    pub fn get_break_bidirectional_mode(&self) -> vals::Bkbid {\n        self.regs_advanced().bdtr().read().bkbid(0)\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set break input 2 disarm mode.\n    pub fn set_break2_disarm_mode(&self, mode: vals::Bkdsrm) {\n        self.regs_advanced().bdtr().modify(|w| w.set_bkdsrm(1, mode));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get break input 2 disarm mode.\n    pub fn get_break2_disarm_mode(&self) -> vals::Bkdsrm {\n        self.regs_advanced().bdtr().read().bkdsrm(1)\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set break input 2 bidirectional mode.\n    pub fn set_break2_bidirectional_mode(&self, mode: vals::Bkbid) {\n        self.regs_advanced().bdtr().modify(|w| w.set_bkbid(1, mode));\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Get break input 2 bidirectional mode.\n    pub fn get_break2_bidirectional_mode(&self) -> vals::Bkbid {\n        self.regs_advanced().bdtr().read().bkbid(1)\n"
+        }
+      ]
+    },
+    {
+      "path": "src/timer/qei.rs",
+      "upstream_sha256": "38178abc5bae526b401b55fa91286c61f5786737184e68d1fce6a3c0cffc54a3",
+      "patched_sha256": "268e64acf3a99360f9a306c407181adb9f598a79477a3f9b2941f169e3e38f43",
+      "replacements": [
+        {
+          "old": "    /// Base QEI configuration.\n    pub base: Config<T>,\n    /// Optional index behavior configuration.\n    #[cfg(timer_v2)]\n    pub index: Option<IndexConfig>,\n    /// Enable index event interrupt.\n    #[cfg(timer_v2)]\n    pub enable_index_interrupt: bool,\n    /// Enable direction-change interrupt.\n    #[cfg(timer_v2)]\n    pub enable_direction_change_interrupt: bool,\n}\n\n",
+          "new": "    /// Base QEI configuration.\n    pub base: Config<T>,\n    /// Optional index behavior configuration.\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    pub index: Option<IndexConfig>,\n    /// Enable index event interrupt.\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    pub enable_index_interrupt: bool,\n    /// Enable direction-change interrupt.\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    pub enable_direction_change_interrupt: bool,\n}\n\n"
+        },
+        {
+          "old": "    fn from(base: Config<T>) -> Self {\n        Self {\n            base,\n            #[cfg(timer_v2)]\n            index: None,\n            #[cfg(timer_v2)]\n            enable_index_interrupt: false,\n            #[cfg(timer_v2)]\n            enable_direction_change_interrupt: false,\n        }\n    }\n",
+          "new": "    fn from(base: Config<T>) -> Self {\n        Self {\n            base,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            index: None,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            enable_index_interrupt: false,\n            #[cfg(any(timer_v2, timer_h5_47c))]\n            enable_direction_change_interrupt: false,\n        }\n    }\n"
+        },
+        {
+          "old": "    }\n}\n\n#[cfg(timer_v2)]\n/// Encoder index configuration (TIMx_ECR fields).\n#[cfg_attr(feature = \"defmt\", derive(defmt::Format))]\n#[derive(Clone, Copy)]\n",
+          "new": "    }\n}\n\n#[cfg(any(timer_v2, timer_h5_47c))]\n/// Encoder index configuration (TIMx_ECR fields).\n#[cfg_attr(feature = \"defmt\", derive(defmt::Format))]\n#[derive(Clone, Copy)]\n"
+        },
+        {
+          "old": "        inner.set_max_compare_value(config.base.auto_reload);\n        r.cr1().modify(|w| w.set_cen(true));\n\n        #[cfg(timer_v2)]\n        if let Some(index) = config.index {\n            inner.set_encoder_index_direction(index.direction);\n            inner.set_encoder_index_position(index.position);\n        }\n\n        #[cfg(timer_v2)]\n        {\n            inner.enable_encoder_index_interrupt(config.enable_index_interrupt);\n            inner.enable_encoder_direction_change_interrupt(config.enable_direction_change_interrupt);\n",
+          "new": "        inner.set_max_compare_value(config.base.auto_reload);\n        r.cr1().modify(|w| w.set_cen(true));\n\n        #[cfg(any(timer_v2, timer_h5_47c))]\n        if let Some(index) = config.index {\n            inner.set_encoder_index_direction(index.direction);\n            inner.set_encoder_index_position(index.position);\n        }\n\n        #[cfg(any(timer_v2, timer_h5_47c))]\n        {\n            inner.enable_encoder_index_interrupt(config.enable_index_interrupt);\n            inner.enable_encoder_direction_change_interrupt(config.enable_direction_change_interrupt);\n"
+        },
+        {
+          "old": "        self.inner.reset();\n    }\n\n    #[cfg(timer_v2)]\n    /// Check whether an encoder index event interrupt is pending.\n    pub fn index_event_pending(&self) -> bool {\n        self.inner.get_encoder_index_interrupt()\n    }\n\n    #[cfg(timer_v2)]\n    /// Clear encoder index event interrupt pending state.\n    pub fn clear_index_event(&self) {\n        self.inner.clear_encoder_index_interrupt();\n    }\n\n    #[cfg(timer_v2)]\n    /// Check whether a direction-change interrupt is pending.\n    pub fn direction_change_pending(&self) -> bool {\n        self.inner.get_encoder_direction_change_interrupt()\n    }\n\n    #[cfg(timer_v2)]\n    /// Clear direction-change interrupt pending state.\n    pub fn clear_direction_change(&self) {\n        self.inner.clear_encoder_direction_change_interrupt();\n",
+          "new": "        self.inner.reset();\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Check whether an encoder index event interrupt is pending.\n    pub fn index_event_pending(&self) -> bool {\n        self.inner.get_encoder_index_interrupt()\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Clear encoder index event interrupt pending state.\n    pub fn clear_index_event(&self) {\n        self.inner.clear_encoder_index_interrupt();\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Check whether a direction-change interrupt is pending.\n    pub fn direction_change_pending(&self) -> bool {\n        self.inner.get_encoder_direction_change_interrupt()\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Clear direction-change interrupt pending state.\n    pub fn clear_direction_change(&self) {\n        self.inner.clear_encoder_direction_change_interrupt();\n"
+        }
+      ]
+    },
+    {
+      "path": "src/timer/simple_pwm.rs",
+      "upstream_sha256": "c84b6cb6e59b9ffa1b9d51bd53819a5ee4381f1539e29a733ef353735e19480b",
+      "patched_sha256": "8648fe2b19a9f203b73880cc0aa8b07ab71bcfd474dcf0afe17387bdc98cadf0",
+      "replacements": [
+        {
+          "old": "use crate::pac::timer::vals::Ccds;\nuse crate::rcc::WakeGuard;\nuse crate::time::Hertz;\n#[cfg(timer_v2)]\nuse crate::timer::low_level::DitheringConfig;\n\n/// PWM pin wrapper.\n",
+          "new": "use crate::pac::timer::vals::Ccds;\nuse crate::rcc::WakeGuard;\nuse crate::time::Hertz;\n#[cfg(any(timer_v2, timer_h5_47c))]\nuse crate::timer::low_level::DitheringConfig;\n\n/// PWM pin wrapper.\n"
+        },
+        {
+          "old": "        self.inner.get_max_compare_value().into() + 1\n    }\n\n    #[cfg(timer_v2)]\n    /// Configure timer dithering mode and ARR fractional nibble.\n    pub fn set_dithering(&mut self, config: DitheringConfig) {\n        self.inner.set_dithering(config);\n    }\n\n    #[cfg(timer_v2)]\n    /// Set CCR fractional nibble for one channel.\n    pub fn set_channel_dither(&mut self, channel: Channel, dither: u8) {\n        self.inner.set_compare_dither_value(channel, dither);\n",
+          "new": "        self.inner.get_max_compare_value().into() + 1\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Configure timer dithering mode and ARR fractional nibble.\n    pub fn set_dithering(&mut self, config: DitheringConfig) {\n        self.inner.set_dithering(config);\n    }\n\n    #[cfg(any(timer_v2, timer_h5_47c))]\n    /// Set CCR fractional nibble for one channel.\n    pub fn set_channel_dither(&mut self, channel: Channel, dither: u8) {\n        self.inner.set_compare_dither_value(channel, dither);\n"
+        }
+      ]
+    },
+    {
+      "path": "src/usb/mod.rs",
+      "upstream_sha256": "5303c6780e05dadc4519052ad06323d9ffa1d2e3783d690b83ef68e284ad3942",
+      "patched_sha256": "4c1fbaeaa24f1910796a709c1370371c6bae4ccbfcf1a4c0df65176bb2a9f300",
+      "replacements": [
+        {
+          "old": "    #[cfg(any(stm32l4, stm32l5, stm32wb, stm32u0))]\n    critical_section::with(|_| crate::pac::PWR.cr2().modify(|w| w.set_usv(true)));\n\n    #[cfg(pwr_h5)]\n    critical_section::with(|_| crate::pac::PWR.usbscr().modify(|w| w.set_usb33sv(true)));\n\n    #[cfg(stm32h7)]\n",
+          "new": "    #[cfg(any(stm32l4, stm32l5, stm32wb, stm32u0))]\n    critical_section::with(|_| crate::pac::PWR.cr2().modify(|w| w.set_usv(true)));\n\n    #[cfg(any(pwr_h5, stm32h5_47c))]\n    critical_section::with(|_| crate::pac::PWR.usbscr().modify(|w| w.set_usb33sv(true)));\n\n    #[cfg(stm32h7)]\n"
+        }
+      ]
+    },
+    {
+      "path": "src/usb/usb.rs",
+      "upstream_sha256": "82b03ae229e51b88495e6665432009ebc7e75b733ee52cbe527f300ec4accfb5",
+      "patched_sha256": "26de26b444941001ead4333e12d22e65308c85fb07e2601c4f4da56390bad91a",
+      "replacements": [
+        {
+          "old": "#![macro_use]\n\n#[cfg(usb_v4)]\nmod usb_host;\n\nuse core::future::poll_fn;\n",
+          "new": "#![macro_use]\n\n#[cfg(any(usb_v4, usb_h5_47c))]\nmod usb_host;\n\nuse core::future::poll_fn;\n"
+        },
+        {
+          "old": "use embassy_usb_driver::{\n    Direction, EndpointAddress, EndpointAllocError, EndpointError, EndpointInfo, EndpointType, Event, Unsupported,\n};\n#[cfg(usb_v4)]\npub use usb_host::*;\n\nuse crate::pac::USBRAM;\n",
+          "new": "use embassy_usb_driver::{\n    Direction, EndpointAddress, EndpointAllocError, EndpointError, EndpointInfo, EndpointType, Event, Unsupported,\n};\n#[cfg(any(usb_v4, usb_h5_47c))]\npub use usb_host::*;\n\nuse crate::pac::USBRAM;\n"
+        },
+        {
+          "old": "        // wait t_STARTUP = 1us\n        cortex_m::asm::delay(unsafe { crate::rcc::get_freqs() }.sys.to_hertz().unwrap().0 / 1_000_000);\n\n        #[cfg(not(usb_v4))]\n        regs.btable().write(|w| w.set_btable(0));\n\n        #[cfg(usb_alternate_function)]\n",
+          "new": "        // wait t_STARTUP = 1us\n        cortex_m::asm::delay(unsafe { crate::rcc::get_freqs() }.sys.to_hertz().unwrap().0 / 1_000_000);\n\n        #[cfg(not(any(usb_v4, usb_h5_47c)))]\n        regs.btable().write(|w| w.set_btable(0));\n\n        #[cfg(usb_alternate_function)]\n"
+        },
+        {
+          "old": "            w.set_ctrm(true);\n        });\n\n        #[cfg(any(usb_v3, usb_v4))]\n        regs.bcdr().write(|w| w.set_dppu(true));\n\n        #[cfg(stm32l1)]\n",
+          "new": "            w.set_ctrm(true);\n        });\n\n        #[cfg(any(usb_v3, any(usb_v4, usb_h5_47c)))]\n        regs.bcdr().write(|w| w.set_dppu(true));\n\n        #[cfg(stm32l1)]\n"
+        }
+      ]
+    },
+    {
+      "path": "src/usb/usb_host.rs",
+      "upstream_sha256": "2db80248395540bd48a877f858f046753179b47a768e84d1537c39e22a5f4216",
+      "patched_sha256": "af91e3e7b36da26e9f3f1b5b55c0b8fb732dc72215a67dbbc0364b6808329ace",
+      "replacements": [
+        {
+          "old": "        // Wait for voltage reference\n        block_for_us(100_000); // 100 ms\n\n        #[cfg(not(usb_v4))]\n        regs.btable().write(|w| w.set_btable(0));\n\n        #[cfg(not(stm32l1))]\n",
+          "new": "        // Wait for voltage reference\n        block_for_us(100_000); // 100 ms\n\n        #[cfg(not(any(usb_v4, usb_h5_47c)))]\n        regs.btable().write(|w| w.set_btable(0));\n\n        #[cfg(not(stm32l1))]\n"
+        },
+        {
+          "old": "        });\n\n        // Enable pull downs on DP and DM lines for host mode\n        #[cfg(any(usb_v3, usb_v4))]\n        regs.bcdr().write(|w| w.set_dppu(true));\n\n        #[cfg(stm32l1)]\n",
+          "new": "        });\n\n        // Enable pull downs on DP and DM lines for host mode\n        #[cfg(any(usb_v3, any(usb_v4, usb_h5_47c)))]\n        regs.bcdr().write(|w| w.set_dppu(true));\n\n        #[cfg(stm32l1)]\n"
+        }
+      ]
+    }
+  ],
+  "new_files": [
+    {
+      "path": "src/exti/h5_47c.rs",
+      "source": "sources/src/exti/h5_47c.rs",
+      "sha256": "bba10257dc55fb02e8adf1fc4f07b886da2a81de60ee5ddca278062b9400ec1e"
+    },
+    {
+      "path": "src/exti/h5_47c_regs.rs",
+      "source": "sources/src/exti/h5_47c_regs.rs",
+      "sha256": "ed8e764433ca7001d7416cb56773ec654b82d12609a1ed8094ca17567ea5c336"
+    }
+  ],
+  "candidate_files_sha256": {
+    "build.rs": "34bbf573313c07a6e191d931ef467af829b6068a0894504cb7a59e98a32f152c",
+    "build_common.rs": "9f49958f39a47764f51b2fa9a78ea867a99e0e92d49a616844caac5b02dac00e",
+    "Cargo.toml": "2d3ae75c1a3305544cb1d5bda2b04e844e268289b13054295d824323463e0905",
+    "CHANGELOG.md": "51792e0e2724b76ebd561b9d82dd49e87bd3488486844901d8dd4cc24c6b626d",
+    "LICENSE-APACHE": "64853d2f346cf20ad5a133c441e792d4b99b45adb2ef3acfa2b890d713e4ed0b",
+    "LICENSE-MIT": "83d04e56c5beb631d65d6bd7b78c9350083084acc19753a3e6e1b68806a607f5",
+    "README.md": "1ab0ac3c4f82e404d1ccdf17030ed63905bfc810daa22c3b3fbcc2396c871c99",
+    "src/adc/configured_sequence.rs": "d6029ae3ec1b354a8f882beb128573595bf2f1d6b152dbe00f6b80995977e76d",
+    "src/adc/injected.rs": "d7e106e81cdaa2c5a8f5d47a123bee7f6ee9702d5f2894b00d2ff1e1bbba4909",
+    "src/adc/internal.rs": "211474e0b1ca348682e0af7bcb4d0411bbc6d7c8f07746b0e481a0b97dc8af55",
+    "src/adc/mod.rs": "c3e23dce107d0d495f1a1d88c429ee357cc92d73a3d6e02477da5b8d9596139c",
+    "src/adc/ringbuffered.rs": "3d02819736af16d5686ad1bec99f753203f7aefd5684b201aa4242dfce42a15d",
+    "src/adc/v1.rs": "92a8d0f37ce3ef0365a9231059126f15c07b71f349a7888d6c9e2af92c6e2b5b",
+    "src/adc/v2.rs": "becdc3febf95081dc4ec5e74603036fb03d40638577cb41cfaba26bbf5f7b644",
+    "src/adc/v3.rs": "3411650eb5b9dbd57b5b5ba0b0ab825c542d3eca3ab72ad3c5b0c23355c33823",
+    "src/adc/watchdog.rs": "f4cdce97799f7e0a8c51666f0516a1f4d1a6df95d26082dfaa3a1fa98c267f04",
+    "src/adf.rs": "3752bec8bcc474361a1f5b32a90fa8ab08472035d474d70808cc21aa4f07a982",
+    "src/aes/common.rs": "daddc1be6a8010992bb8eeda08471fe81722cd85a858543a644874132a32116f",
+    "src/aes/mod.rs": "00e8119e4f92218241d6f2ca57cdb0a58948b98a30c3f1d0aa5df8e1ab97d81d",
+    "src/aes/v2.rs": "a661d47d1c991d523b1273214775f98f615b0a6e712273cb12cb3c22fa8ab34f",
+    "src/aes/v3.rs": "9c9284e63339be9dbc47d1e8d2b6b77caad747e8dfeb310461b17d0db1a49584",
+    "src/atomic.rs": "a7e230950f66bafed1885fa2d1cfb39d1c12d80f1d6db95a230893131e9e16ab",
+    "src/backup_sram.rs": "191c8958b6f63f6969b4166cc0057bb4a971a1fe644301bbee444793dc17b3e2",
+    "src/cacheaxi.rs": "f36384044b509c353361558bd8ea90eeff90816916111059d2261644eabe5c32",
+    "src/can/bxcan/filter.rs": "13ac9869e3f2ffab54e97d1fbdd14fdd2db90b188c8c758471efbb0e5940f9f0",
+    "src/can/bxcan/mod.rs": "ed4ae06dda9236b690c2399df7febedc29d38f85342efe65159dd1b2c566601d",
+    "src/can/bxcan/registers.rs": "3462c92b226c49a3750f1510236d548750f6def9d94281c90179af090b55e119",
+    "src/can/common.rs": "f98af956c5951d8f4f7ac605df30e0adc7eeb2936b6b75517a9389bdbf418dcc",
+    "src/can/enums.rs": "e6dc9e14a2237fe03cf0219bde27ae207dc35f6707a5cf97457930cdd4435e21",
+    "src/can/fd/config.rs": "e862bd1dec54043b6537cd725ecc139dc1ea7aa5cce7fda9165d4b8554a970c7",
+    "src/can/fd/filter.rs": "51035f648d928799d0398b9e9b8558e765dc58f2cac18505d5b460b2cd306292",
+    "src/can/fd/message_ram/common.rs": "0ddc60430c29baf7e76f24002c95c1a987faf211557c9d6dbc12074b88ba004a",
+    "src/can/fd/message_ram/enums.rs": "bbf4f036ff051d06f3c448dba50b1cf96a3564d12a5b4b74705b446dacb9d72d",
+    "src/can/fd/message_ram/extended_filter.rs": "1ae29d8ee3cccd5fb8ac6dbea9506bf1c3c1a8ff52b7bad0e5143c5885a2f6e3",
+    "src/can/fd/message_ram/generic.rs": "27b5a9b61b85169c794d0c8f3ac2487dffe52f33fd5c7f1b37af855e86f83984",
+    "src/can/fd/message_ram/mod.rs": "bc2b62b2bb490fa32d60c3550d28e794397627af66470c6ae67b7cf717967d28",
+    "src/can/fd/message_ram/rxfifo_element.rs": "82780b2cc4416c76fc9900a726c3064f5c4c30db7fd9281d30c673ecf267367c",
+    "src/can/fd/message_ram/standard_filter.rs": "571f5bc97e67b158cb5d9be73b6b57389aea91a19160d52176c41fdad8ffc1b9",
+    "src/can/fd/message_ram/txbuffer_element.rs": "a893052bddf38ce4ecbc396956e271e32cc4de23118612e2bcb44462a96d2fb4",
+    "src/can/fd/message_ram/txevent_element.rs": "e9ed50f410aa22300fcc7c4bfd539e4c0a3bc79abd23d83cc23922dda911ae1d",
+    "src/can/fd/mod.rs": "e67e88f410d4c48c0bc398fd4ac871ed05610e32c30beb6bb60426e422d02a3d",
+    "src/can/fd/peripheral.rs": "2fbc16ddf787201daf3b1e900238dd5ea6a97a4cb4581a93de1b0730254db994",
+    "src/can/fdcan.rs": "7b94920f261ea1c16c278c16c2778ea55f18a9ab54bc27936170b5cab88e6bcf",
+    "src/can/frame.rs": "76c652067658c9aa7aa48f5f7896209e6e51e443b05cbba7cb028d047e434018",
+    "src/can/mod.rs": "ea7a962dbe2f4d6c8bf44a1ae9b9a640f435da471ce62311497ce59ea859ab38",
+    "src/can/util.rs": "9d549de7ee9bf094cd54bcac69e99a5d818cf8301a58a0e0784d264af52a69f5",
+    "src/comp.rs": "326ed36f1aaaf8dcb254fd82cc2c16aa42a83c87d37298703b3e5443014012fc",
+    "src/cordic/enums.rs": "7f3ea3569f577321b0303ca516e02a5ec6c42fd6091202feb1830f79771f7dab",
+    "src/cordic/errors.rs": "e03a0806a79943a95975a5fd074ebf6fedef9618084210d45c4fede6b4bd8ce8",
+    "src/cordic/mod.rs": "9261bb901f3f7d34ee8aed078a4c7c7f2073f9086c08fe602ffd94a5c6be2afb",
+    "src/cpu.rs": "bbea205bbf988eda927d2b504247ca32664df3e097cc4e0b2156eeb727c2012e",
+    "src/crc/mod.rs": "ed976b8af33842128c2c416c84d6d759eddf3c8ae187e55ddd048b95862e129e",
+    "src/crc/v1.rs": "9397d5dfaf1a08f8a6f4f301f5a6a61a2ef404fd9bd2d1242aa453e9a0b0d437",
+    "src/crc/v2v3.rs": "b1335c365ff89870f18a29e2d767d787094deaab07cf173b149766f6800498c3",
+    "src/cryp/mod.rs": "78e4a93d6fd9c61b679115b4118791ca7dfdb1be0a55c155122a9ced3bfceb39",
+    "src/crypto.rs": "a2dca13f0b5e0924a7996977760485f6bf748086f9e6135c3754d02c6af11031",
+    "src/crypto_driver.rs": "b0ae73485fad5437764eca1469f772c852269ae0c6270b7fbc205e09785c9e4d",
+    "src/csi.rs": "55913b7ec18bbb57cd528d92179899c12bd5b534b2e6794566b6e8cc83e8cab4",
+    "src/dac/mod.rs": "e48cd75427bf1e1803637e06d13beb320812172c0a299fa4fb68342ff54472a8",
+    "src/dac/ringbuffered.rs": "e336b00b43f6d9ea423c1439eff1022baaeb0d417c77fbea3d565b1aa04fc060",
+    "src/dcmi.rs": "0b7a960b31830850633d18c976511b047c7a024ef9bc4de86538878ef5ca06d3",
+    "src/dcmipp.rs": "c79e41e83acb33464932f4502c932b807fc7bbd1d60b6f13641a1a79acfd0e8a",
+    "src/dflt.rs": "a323a0d267fbacbf7130c6ca04df01e03eb6f96e2a01ae823e40f98dbec2762e",
+    "src/dfsdm/codegen.rs": "459bd2a0137ba419b7145a4d2eb8a65e42e56d74d02724d51051f8cf6af3f266",
+    "src/dfsdm/config.rs": "96bf96c6c745221498d1e407f2401c2f3b0abaf9f57737a101d280a496be33c2",
+    "src/dfsdm/detector.rs": "92c9f41b795c1fdf7fd9bc8f6e7552155b108145aa260d10accfc38f3891f486",
+    "src/dfsdm/dma.rs": "a0fdba4e74f85b7f3af719ee0eeea0dff6f3fda5a3d2ecca8c72a1e8ccb5ae92",
+    "src/dfsdm/filter.rs": "a1c02e4f0fd8db34b9204185dcb955c487632ba71422b0e1824bc4e7fdc9fca4",
+    "src/dfsdm/mod.rs": "7ba580a1e835f353fa8df38c19ba2bfb02528f0c283a8f193134bad962a5c04a",
+    "src/dfsdm/splits.rs": "0fce7a1d03657215d250678f82645755625bd332d4fabae6bff3405c220b8728",
+    "src/dfsdm/transceiver.rs": "b02252f345f7f0ba91a0e92287da6022bfb83c57d2b0b762d6fe90dd36e684af",
+    "src/dfsdm/types.rs": "1f7b4bebc052a027622ec987f21d1c41939e866715abe15f83fc9a196a63b34d",
+    "src/dlyb.rs": "a28adf6b35eaf7692e16b17d0e200fc5fb9b55df2cf3ac9f6608489419336a81",
+    "src/dma/dma_bdma/mod.rs": "e17f8e2ae2d88668070ce165737e62e16009b69feb4b257e4710ea0bd63467cf",
+    "src/dma/dma_bdma/ringbuffered.rs": "dff8722f96047bf9c8b99e1a28c00e4862de05a83b2d6369c6df60f4b072ee45",
+    "src/dma/dmamux.rs": "ea446ecf49e63e98b253485b4604db1da2b118381c7e3c349a383bd76b78d3d5",
+    "src/dma/gpdma/linked_list.rs": "923dbed1ae9c6fb82a684074dcd8f53a32535e0d39352a439625f70bd00e30ec",
+    "src/dma/gpdma/mod.rs": "cfda6b145cb86b96acecbe627418da4d5d9ae8598022d6d6f9fb7a9b0b40697d",
+    "src/dma/gpdma/ringbuffered.rs": "049db78a720cd2ac689fe013de6a101d083fa3de863dc95ca606e84ebb6638f0",
+    "src/dma/gpdma/two_d.rs": "cc54c78a01f4dc465a56a6262f74b50e8d41d07b6b8e8882f580f3869b3c8198",
+    "src/dma/mod.rs": "9c3f273511eb71b31505647d84be022a8f0286f772d8a4bf168d59e3bd71f39a",
+    "src/dma/ringbuffer/mod.rs": "b106745c2c733e3e3a3fec5e53cba4a5996fd2f484c8a5a254bd184884d552f4",
+    "src/dma/ringbuffer/tests/mod.rs": "210448fed14877e54be74c644d6cfb0c5131be65d2f5d17101f91299856d60e8",
+    "src/dma/ringbuffer/tests/prop_test/mod.rs": "4f8cb1494e5888d2fb2b49db9bb565d7cfb5363b39de3e581b3431d0ebb5df30",
+    "src/dma/ringbuffer/tests/prop_test/reader.rs": "67d39b9c809494f30585bd61cf80b3ff272044e5e4286bdb3b766b778d261210",
+    "src/dma/ringbuffer/tests/prop_test/writer.rs": "6624dcda33102ea26a2dd88b8302631da03b7b62c496acb1c3467ad02ca3c409",
+    "src/dma/util.rs": "a41f85466764ac8afaf823f14b0a7e2147a5cc1a8af724a9ab00b4fc1dc7089e",
+    "src/dma/word.rs": "8b15b9503d3f2d980ced454e740741433758aa60aacd456f48ec6b5bb0f03abc",
+    "src/dma2d/mod.rs": "9681036718b943db95a38126e1c9dbbee2183872af5c8d5703d270454c80f0fd",
+    "src/dsihost/mod.rs": "7d5ee953acdfb52cf370bf29e87bf9463f427e31c2f86031793ba1c7e19a0e0c",
+    "src/dsihost/mode.rs": "32bf80ef1292a86598f24811951759925c66408d70d1935a15f2650d6dd59a54",
+    "src/dsihost/panel.rs": "5778f2db08c46547681e30b454c396ad912a101b8a34974cdc22f349f62b2841",
+    "src/dsihost/phy.rs": "e2274fcc82d50de335587ab786f1e89c8ebebdd326e61ff0ba8bec05f314cb7e",
+    "src/dts/mod.rs": "1cd630c5f5d03ea01713b11094403c1a0f9fb5e371fd59607bd3f815e88cbd57",
+    "src/dts/tsel.rs": "ca2c9be95e3a833c3031cf4cd411b855f95796cc74a4c400d0947da9fab9168e",
+    "src/eth/generic_phy.rs": "8488ead2c198d9438c9d2d84ac9a944dd900899b62061d68c3dceaa98a05209d",
+    "src/eth/mod.rs": "8dc47b15fa987f3b3341e7f00e809634d27a0364d91462dd69b502ef7daadf14",
+    "src/eth/ring.rs": "a9c6d121095ec1c663bef85e1d7d06b26f09fd5d91c0bcdc1ac539013151436b",
+    "src/eth/sma/mod.rs": "93de212f450508153bb42d6c489afa611afbcdb4c3208302e8fb1331eef5cddf",
+    "src/eth/sma/v1.rs": "f871be9c8c1e3e39bbb008c7e2f1aaa3f7a7d455c632a0d4a686001eb6407405",
+    "src/eth/sma/v2.rs": "7c763d007af80f7e834ae195608041eeebcabf9d1a452f58937384366d0fe078",
+    "src/eth/v1/descriptors.rs": "b1dca47d259783ce315d48e836d874296533af9395c925150a4e507c7cf52edc",
+    "src/eth/v1/mod.rs": "1ddfb661fa8916d9d433da0803400be8670becf659474d228a45546d56b4ea34",
+    "src/eth/v1/ptp.rs": "61ccdea9825b3fcc9d82c677b346692dbce4e9eea2ecc25fff868dad3ca403cb",
+    "src/eth/v2/descriptors.rs": "c591e0eb3a84483772da4aa8f67ee5a328afffdeb766e8dcf0ba760e1c31c3db",
+    "src/eth/v2/mod.rs": "4908a3c3d3c0b1c0ef53f25d60d4187f7e3deddfcd756901e1fabcaeb6007f83",
+    "src/eth/v2/ptp.rs": "f450e07d8e8dd48110946d0c0cd54e3ed8269b65ed2d9b98a5d244436edf13dd",
+    "src/executor.rs": "c5f2599c3ac48c16d0b8f9ad449a1f3975f624fbf6308b591bb8639978e70ef7",
+    "src/exti/blocking.rs": "b3a4ef797c7c9e0afde4fbd2369a9a330962683083fa10211993f0ec4c135c97",
+    "src/exti/h5_47c.rs": "bba10257dc55fb02e8adf1fc4f07b886da2a81de60ee5ddca278062b9400ec1e",
+    "src/exti/h5_47c_regs.rs": "ed8e764433ca7001d7416cb56773ec654b82d12609a1ed8094ca17567ea5c336",
+    "src/exti/low_level.rs": "1724c966d722ccb9c77f40e99aa9674b5f25ed9fc1001d0aba42d6cddb106d7e",
+    "src/exti/mod.rs": "e8a9ef8de8d0d5d16ea06b3b2bd33929ee0d5b800bb21c55a4d9ac3caea40724",
+    "src/flash/asynch.rs": "f4aedfb66a08f6760af045ab39916832f2364608adaf8a96959e01f34f0bf2a3",
+    "src/flash/c.rs": "ad5e4034bccddc6e6f5cfceb42a70b67a99b882bcbe7570859f952dc95279422",
+    "src/flash/c5.rs": "439313ba319717f8910769c5d36fc537bd3d560412d257b43799089dd88a4ce3",
+    "src/flash/common.rs": "85ff591c74623936b0318b50538fa257aa0518faaf2b9b8bfc3563e254fac4fd",
+    "src/flash/edata.rs": "b3b6db3d5380fbd0ced4313b5591e035be8c1eec51ca28151469d8203c450469",
+    "src/flash/eeprom.rs": "eaaf3c90a144e43174e7a13629c877aca3d1c07494795eea1d863d56696f639f",
+    "src/flash/f0.rs": "584c77d3072a92311b8c7fd8819aa9c56b1fe556ab894cad26d53707fb24a05d",
+    "src/flash/f1_xl.rs": "7b7446e5dd575c9f50beb72be0108d0d0d945108e74c37c3e32c4bf3d0b653b4",
+    "src/flash/f1f3.rs": "135b95680d186dec520c6390af5ca5151b39913e7e8f77d30098ae8466b5840f",
+    "src/flash/f2.rs": "0590b5a5361333a455cc728dcbd9fe738b2c4e024db50e70d082b2eac263f013",
+    "src/flash/f4.rs": "8cc05ed8d62ae35f52684e0c0029a3bc396307ee2e13054f1aa1f9ae9e863839",
+    "src/flash/f7.rs": "067ffabb82e38dda77071b7f9802a229b1a0b2435e76348a228132b16faee609",
+    "src/flash/g.rs": "121aa9610a267245ac18d31c9731801342cd1ba39b05a535f44cdb9670d47c53",
+    "src/flash/h5.rs": "a7802b19950a7f5dfd4fa3c5b0362438cbf06a97eeb75847056b3b324eef83df",
+    "src/flash/h50.rs": "7cb363e0e6d8d7643a644981c6a7889703bdcd82729bbacddfdcd00a11d47da4",
+    "src/flash/h7.rs": "89aa08681f7bcad7a71a0c518bab1de976c021edda02e28effea848f9d84f560",
+    "src/flash/l.rs": "ec40679a832bb628a8a353d2941072a9edbe536ecafee5423a7ab1903a2f744c",
+    "src/flash/mod.rs": "2a9569c4dc661cc81adf87390049ee02bf15b4811bcbad07984bd417b7734f76",
+    "src/flash/other.rs": "f675ebe5fc79d607a995f35715a428be482e642af16846c4d350a69e58368f9d",
+    "src/flash/u0.rs": "782579faa169b262366780111cff438ce48d57aebb364d5dfaa54bd7f7fd6a10",
+    "src/flash/u3.rs": "b3603c171b934e8fe4b3212ea8f391e84d067555d984d826df40e59e97c6d126",
+    "src/flash/u5.rs": "5772da0c35f917f946767eb15e54bbe4acc8bdd20bbf5c28ae2b8b78f4000bce",
+    "src/fmac/from_adc.rs": "c53032849aba1e71312807ea76e32ae598212e73ebd8c02ab18ad36778fa0c92",
+    "src/fmac/mod.rs": "b89472ad5a6eb970ab54d03474f31f3e6f071d872e1b89e739a1bc487a51792a",
+    "src/fmc.rs": "1a76ee5e397799b65d13c2dc08e3a3790ff5bd5bb235b0c44b9ff2e50cc3d9a8",
+    "src/fmt.rs": "5021a9030215d1e805b171af7db06f344278f60dd4f3295b7ba8513bbf94b0d1",
+    "src/gfxmmu.rs": "047bbcfbd5cf305bf37e978fbd5da732bab9e78f5a93508a87d3d5ff62ab0c0f",
+    "src/gfxtim.rs": "e360709517a88812f54044eaf9a56b39a8b10fa6c64ead69cb90a532af9e95bc",
+    "src/gpio.rs": "3a6dc6526b2714fef9e8ffc27b09872bac71c8d3769b69c8516da93457845eb9",
+    "src/gpu2d.rs": "2423b0bffa5cb2abe1d344c7aeee1c7bfa9d5d77f64f24807e2d793b8cfe55fd",
+    "src/hash/mod.rs": "1b114ed455da09ef4b2cc920be89043b4d40bb311a8012989b704f399e17b9fd",
+    "src/hrtim/advanced_channel.rs": "fc18ef0f6a2d75fe1ab5c8ee9f1b24bc179e1a9d2d7d6f27e21f98a0d20b3203",
+    "src/hrtim/advanced_pwm.rs": "5544fc71de1f6645cd91607d90d42690a4750605152757541f54c6d62a0d0644",
+    "src/hrtim/bridge_converter.rs": "643fc71a55c1e5db1d3745d511d64da51fc3f6fbd3c6ca4175e7ce2a597c4b6a",
+    "src/hrtim/fullbridge.rs": "8622bf08775cb8c5bd501e0565a0d30f77e4de6a1a2d3fdb6d6012372358ab1e",
+    "src/hrtim/low_level.rs": "c78142109f1a96ba9f992889939eaf3e4c276535d30435dbf59b779ad08e5548",
+    "src/hrtim/mod.rs": "8da6c863f96a6d3034f5ad658b361d4ea4724f98ad6c1e2285295e092bb2636e",
+    "src/hrtim/resonant_converter.rs": "f4ebb2b27a0586ecd00a0e7db82319009e1bc3912c374d98c8decfe19e043428",
+    "src/hrtim/stm32_hrtim.rs": "09aaa4f6d896f3b62254d7efb6bda00f17c3c6b9e9e5fbfe0d544d7824b3fb2a",
+    "src/hsem/mod.rs": "3fc1a11bd728a6ecc266246e37c104105ff6a92ffd8f391b1334ceb03aa2f0c0",
+    "src/hspi/enums.rs": "7b165a254c36ab7c6435e2851f8a18bab41758b41dfa0d439a6a42a4a92ea99e",
+    "src/hspi/mod.rs": "5b36c77c99a3276e911a56635171c4df14a77384efeea91bc068775d67ef3469",
+    "src/i2c/config.rs": "975592aa17e7427092c3247ccf2832d9f7e35d19afc6bb139982d53d5a7da64c",
+    "src/i2c/mod.rs": "d70d68dd44fa11c16287300e5c9ac7dc281357426675a6e5e0978514b7e379f5",
+    "src/i2c/v1.rs": "0d2833f7e031f40b65572668a3b8530b193bed834c56f61212018f15b0aacbaa",
+    "src/i2c/v2.rs": "d1509e5d64532872162b2602a58f11e6dbed464b97120b526d6a199fe9a2a879",
+    "src/i2s.rs": "ef50ab3e4f47b795259923579cd5327fd762517b44642b75be96751270c86a9b",
+    "src/i3c/config.rs": "44fa0bacf615e5b2b19a7928c9c9bdee01feb2905742ae0a220c62470959cba1",
+    "src/i3c/controller.rs": "548cb78d45a34ce197093a5bd92cede507135f50e36eda517eb536c995bb769c",
+    "src/i3c/mod.rs": "452528e84c970733ba207f9ba2f40ef8c0de3cd732253e433a40e234fd1b2948",
+    "src/icache/region.rs": "fc5f25bbe75d1879406c1884f0d3faa55a29b7de4f15d859725c92004723f8d3",
+    "src/icache.rs": "970edb584d9bab02b24c8b306635d7f2a20aa0d20bd42f0d9c747f4b17b49984",
+    "src/ipcc.rs": "bc0e218d2419b69a54d80731bb05092b8d35c5e55f16c8539c70cc89cb4bba40",
+    "src/jpeg.rs": "d2c6da2e7c90045ff4c73e04d5108965a95ea4d45e2644d89f3e409695b4a9de",
+    "src/lcd.rs": "068079fa45f6d7c37dda4aff4dd6238972bb1aa7f832b989b2f8a9d5c690b404",
+    "src/lib.rs": "020532c75924e168aa5f1b58a54a2202677624b1cdc7fca3121f3f3df4481ba3",
+    "src/low_power.rs": "eb7ad0b2dda96535e76c5592ea9a01f63c25405adbfbf61ff5774d805f0ab836",
+    "src/lpgpio.rs": "f3c780c25db5ab70ec1bcfa663919447f946784d2fef5129f28a658f8341d3ff",
+    "src/lptim/channel.rs": "4dbd0e5ce4156e0a867481dade6daf4d7ae3e52ef948a0cd5fcb9bcd77c76af0",
+    "src/lptim/mod.rs": "7e21b0f643da0b7041821192e68a81c63f54aa0c1d078b41395084e7603bb3f5",
+    "src/lptim/pwm.rs": "d0d4d551c15029ffef610dd235f139ecc0ecbf89b21d2918e958cb92c715fda3",
+    "src/lptim/timer/channel_direction.rs": "d16447b3a0f719186d166874d50b5cd8e309c3fd30c101d200db8140c871f50f",
+    "src/lptim/timer/mod.rs": "82c83a4bde51100ca2518ebe3341df3d17e04f668673c9c5d5700ff4c606e279",
+    "src/lptim/timer/prescaler.rs": "6a838ca412ab59aec836d08531a5bc097ebe419143301ba7d4f07a3916bfad58",
+    "src/lptim/vals.rs": "6f47280a92bd68700f97240b958b0456a6ad5558a0251345a1d2e9b1be3a4185",
+    "src/ltdc.rs": "88b603a52a0c48cfc7be720d86180789e4e574f084553aac9bbf9a50df849f47",
+    "src/macros.rs": "77c111c4cf6b3130a52f97870f112ddf6b1d212ba5e5f8972b88be02b6266924",
+    "src/mce.rs": "4244efcfbf06369202ee52cf39827db26a66e4e3fe532a8bbb7abf0240dc181e",
+    "src/mdf.rs": "11225900194538b2c2f6dba259118f9a8fbd6fd8fbd6148ad083a72282ae167a",
+    "src/mdios.rs": "958f8fef9403fd0d7b8de0664b9b651a10bee6b0611fbba4e98b493ceaad0e6d",
+    "src/npu/cache.rs": "3efa110df123110f7943a48e310efced0be8c86c7d7ccff5d67692003e59d28a",
+    "src/npu/ecloader.rs": "c8b88a4ab174fe9eeebc786c1e8a053d7c68c06195e1fc0de8044108e77b88fe",
+    "src/npu/mod.rs": "a49a512850d91ca54f5dd3969faee389afc87c43e1ce79f2f617add9c9f8fbd3",
+    "src/opamp.rs": "95fc95843b60d3b55224d822c9151c204a1b5463b40439e4cc404bdfa33db801",
+    "src/ospi/enums.rs": "eae2d35c9c03ef30f9a4b34596c8e45f2757e1d942eed6414d7edcbe55d4f514",
+    "src/ospi/mod.rs": "9ace0a90c8b8bf4b41c607145b1d4be3921757c660bf9e3075cb89d6aef2712a",
+    "src/pka/driver.rs": "5a0ec91060e4c66319ad6c6024d46d4e9f967d510a317a5ec3f8db1a986cc1e0",
+    "src/pka/mod.rs": "2c258284e5d2682fbd3d313b7fad8ab7ba688a16a3ad492b5d20ece15b2b40a7",
+    "src/pssi.rs": "dab14393097a8d70b6d3f456eab89109618fdd186e797d0a1484d3f25a6977cb",
+    "src/qspi/enums.rs": "47856206c2a7a18a7c46a62c1af329d3e6a752556e7698fe33deb56e63b4aea0",
+    "src/qspi/mod.rs": "dc3d2f7eb2a322b6b12baf82b1f944773c1602bc6bad5e9d559b0711db83c044",
+    "src/ramcfg.rs": "75780f9acc348e2ec2558900f707aee78e1ef090faf218af8b52df2b6fcaff9c",
+    "src/rcc/bd.rs": "f0fa757acc59b768b316c3ae94117db528bbf8363a7417d2dad66b832abf93e0",
+    "src/rcc/c0.rs": "fc588cf2e81d975d6e88642269d8ebd0d914f0c3cbe5aec7bf3e40d27472b2b4",
+    "src/rcc/c5.rs": "eda56df6bbb8db85a07acbca2d11c7fb7c046b0fcda87b6bde8a1ab2cc0ecb2e",
+    "src/rcc/dsi.rs": "134c581b2368615d3e8b49ea408412f8b40839f8ac6ff83f67cc76e2d3adb976",
+    "src/rcc/f013.rs": "f3d17772e8701863209b72d348cfc6bd02eddd693610593956f793668792e3b2",
+    "src/rcc/f247.rs": "0933154dc9310763faa145dd368f6ba2e7e5a71f67ac3ad89614cf66b0dfa9fe",
+    "src/rcc/g0.rs": "03554572d14eb102863d92ce363487ad29232239b4d7ea9858316fa3e62d472f",
+    "src/rcc/g4.rs": "71192a24458ebd999d23befc246135a2865aa1ae3c712807d64e6a1720918b88",
+    "src/rcc/h.rs": "aace06fefc95d7e5f84972c3588a1259687e99e2d7d728926c1fb368e1a084f3",
+    "src/rcc/hsi48.rs": "3a0e78f12e7360a1d9310e4f27fc390cc3a5e39ff554fe226f87b6bc1258e873",
+    "src/rcc/l.rs": "79a482f296be4813b79b4abd3ea1f229a9f552c6bf44fcb855065ae0c18fa2d3",
+    "src/rcc/mco.rs": "94701832bc0c5615d2c619aa2f6f2e59cd561565766f5bc220d418030cb3e9b8",
+    "src/rcc/mod.rs": "7d0a7280c6218e92ba178ccb61df386a55aef3a57309f8c95779079a1872c7c2",
+    "src/rcc/n6.rs": "91d95e9b460450018a40b967ef4997448653bcf060fa2f29d2875886903421b0",
+    "src/rcc/u3.rs": "e3d2541cdc20a7ab81eabf31876718e143f7364d0ff878faca39a5d86eac577c",
+    "src/rcc/u5.rs": "1857e99b9c886b4d63a2205e7357a629e22375b54b13ea654d65208c335e77d7",
+    "src/rcc/wba.rs": "79f9e8cf468b7514f637d2360ffebf629dd3e754d115a88a865f77f6c205043d",
+    "src/rif.rs": "44f0142067239ed506ec8ba499f12fdf9b3394e59cc06695eda7f12769ed110b",
+    "src/rng.rs": "60131a83269c2634fdc896c3ab475d93dea0cbaf122fbcfe6c3fcb7fd5c4b370",
+    "src/rtc/datetime.rs": "11d5c58c5737003db8c859e9d0ec66528ff5b11cd94764f7a143992d9ed9bb4e",
+    "src/rtc/low_power.rs": "0173ee9ce21b0715b81cacb0be70c66ed31b75f04a47a9716e8249801c7c37b0",
+    "src/rtc/mod.rs": "ce8a10135a3b0e34c5c9d72da43e12c85b2d7824136159de8f361c2b18fd29f8",
+    "src/rtc/v2.rs": "abc951356d022ed382eff3b27e888b0da6dd6a494cdc9f6e86aa72a385c8e0af",
+    "src/rtc/v3.rs": "f284cf8220474fe2666b05183fba3685352ffa1b21a6b3e88950807069917d9e",
+    "src/saes/mod.rs": "d56d38b6221560c7650b8c0a566e3526849818f70e969faf985ec0c34e05cfd1",
+    "src/sai/mod.rs": "2b3f8ec87c8e0cb17ee70d0e9f9d4cb05b40c6c69056781057cda3239cbe2379",
+    "src/sai/regs.rs": "7f019fcdf6ef5542cda64640e3c747f51c859074fb3677619eab6dedfee21cbc",
+    "src/sai/vals.rs": "8879f50143a3ccbc6e506d6b50773550e71c06e469d453eb3af968a9012e7d67",
+    "src/sdmmc/dlyb.rs": "7ecaa8e45d0a5d0ff9f44e3ed63db54939f7bbf0ea5037fe9d5ab692b3a83869",
+    "src/sdmmc/mod.rs": "e31eb8634d351f68f4fd7f6d6546c626de6670aec5d44e55c5a61a4f77e82680",
+    "src/sdmmc/sd.rs": "b0737a76b2c092810803bcc7a79f8dc4063a246f3f247e1c371b1aed8770e620",
+    "src/spdifrx/mod.rs": "ef07846a016a309a100d04838f69c887e02d11a9834ee349d239143af75a2332",
+    "src/spi/mod.rs": "af43754fd5013cc57d22fcd881efd48fbeaa396cd2e537e88bd652716d72ffcd",
+    "src/spi/ringbuffered.rs": "e7cda7a0fbc8c23c851d29b14f88010e027bd22eff7be251875a745dc07b73ee",
+    "src/suspend.rs": "3e93486adc5caec0f285db1b0c6e6d0d2d96d05dac0559e280c0a250fd1af40d",
+    "src/tamp/h5.rs": "2a116a547154f8efffefd026675b87f1cb854a4f0b431c84f6559fb0b346fa46",
+    "src/tamp/mod.rs": "ab404df9365febd96b4885f39d31b64c83418f9b00ad107377119d319f4fbabb",
+    "src/tamp/n6.rs": "13fb2e13558d9b3d862c4221492cc96c3b2b73a30f18f3721286e393c049d9d7",
+    "src/time.rs": "f384a32dfee1aac90c0dd73254dd1dee1cb47b7a3949f11e444bf2016c8fd974",
+    "src/time_driver/lptim.rs": "fdd07669a4f0c7f8838a38f61661448cdfb74e1461c8b262e77782e0d856c9b3",
+    "src/time_driver/mod.rs": "64f21642cb3c98ef89765a6bc8c50cf90730ea2c01642f2822105c302a6507a5",
+    "src/time_driver/tim.rs": "7d79afaec38aa8e1bcc64ed4d9d780dfdc57d61ccd71b26c866fe6a7574953cc",
+    "src/timer/complementary_pwm.rs": "2ff29f09d9e82aa1e145314a5528da231e3de645a1e087b3ea769a9d31a8c987",
+    "src/timer/hall.rs": "ff20b1c54b060731543cb9c7152771b0cf2ec0df07aa420df920d962953a2a28",
+    "src/timer/input_capture.rs": "e35888aae8e077b1c694ae4b6914fb5fc1385332cdad6ad5a229df4df56a2a99",
+    "src/timer/low_level.rs": "91afb8c01d67aacecb1b4750c57e07d9e049d7ec5ddfe6ecd73db04089754251",
+    "src/timer/mod.rs": "8e0cf0ecdaaae4a9b7ec1e825f79839a94bb60cc15a6684ab0b503bb70c07706",
+    "src/timer/one_pulse.rs": "c423819abc2d87f3ced63bdf33180fbe3393a6de8f6559750503106b1be9d7d4",
+    "src/timer/pwm_input.rs": "7de5abf302d4f3632ff466f02f918d586ae937461a63c7a8cb04a9bfacd1912e",
+    "src/timer/qei.rs": "268e64acf3a99360f9a306c407181adb9f598a79477a3f9b2941f169e3e38f43",
+    "src/timer/ringbuffered.rs": "7d41ef6355d6f87f3e4ef80982d073d555a6f3d598bb99e7b5e4fba8f0dd3ef8",
+    "src/timer/simple_pwm.rs": "8648fe2b19a9f203b73880cc0aa8b07ab71bcfd474dcf0afe17387bdc98cadf0",
+    "src/tsc/acquisition_banks.rs": "60b00bf31e2e8927aa4a6670cd9f7553beafabca2cd0a68e2934496d485db0b4",
+    "src/tsc/config.rs": "79d9ab01c192c5fb2c0d3485e10a31787583f4f5cd0d2c938b697ba84d8242ba",
+    "src/tsc/errors.rs": "5bc115738941a959f8e57764aec4e0ffe33dc634bdf5d12691c5e879d1e9c018",
+    "src/tsc/io_pin.rs": "33ae6255bd44db2ae533703792fcda790659e0c09377a7b048e0d687814d5cfa",
+    "src/tsc/mod.rs": "bb1a95779ee4299af5c137f96d6e426b12aefa4cf413c7b660b89840fc7acabb",
+    "src/tsc/pin_groups.rs": "b051eec7a101d021b5637e2f7180d293d17eb6c0820d922b209ce19a2ef15a07",
+    "src/tsc/tsc.rs": "a9b090cb51a7cc065950e2da420ed58cd727394e3a6c9c9798acafb887b23b2d",
+    "src/tsc/types.rs": "32b89b846f654a6055fc29ee781650ba01d37a76d74620158d235cf103f76cd8",
+    "src/ucpd.rs": "c188363c4c234e1b16b7eb11a5677508c2797636d30894d2ed2c8a95bde1771d",
+    "src/uid.rs": "4628e9549b8d176767e062df30a88d3632f4e31ce87aa54c62922ef042cb2c03",
+    "src/usart/buffered.rs": "0e6fe9780a8aeb341a8dee35f8c98701dc4d07f0ef6178d1c51c76a85fafac0b",
+    "src/usart/mod.rs": "3d79b51c7e48ff2dcb89016ac40319697a48f878599d52ad6c8692525a4a7adf",
+    "src/usart/ringbuffered.rs": "807b7b833d9488b30ae50a869086a3cef8a211a4a0f18e030c60ddac836f9d94",
+    "src/usb/mod.rs": "4c1fbaeaa24f1910796a709c1370371c6bae4ccbfcf1a4c0df65176bb2a9f300",
+    "src/usb/otg.rs": "264229b5088e686cffded233aa66c8c4a432faa54cdc5784cfc93f6687047070",
+    "src/usb/usb.rs": "26de26b444941001ead4333e12d22e65308c85fb07e2601c4f4da56390bad91a",
+    "src/usb/usb_host.rs": "af91e3e7b36da26e9f3f1b5b55c0b8fb732dc72215a67dbbc0364b6808329ace",
+    "src/vrefbuf/mod.rs": "628b865e13d5d93a39e5552925a3aaaee588d907a01a7879d618574211e6fc5c",
+    "src/wait.rs": "2d931793bd4e66a55c72c71549423ba9be6b5a2f42ce09489d219560240cee0b",
+    "src/wdg/mod.rs": "7c689010c88a7233b1b946817929a6f32c3167c34d39be9998cacfad09daf8a8",
+    "src/xspi/enums.rs": "c442e7db42a44f6e2025f119afd18bc3d244dca8c3b80345e673c89a94cc6f8e",
+    "src/xspi/mod.rs": "c4a86bef47c5a18ed99833ef9cb3b9f572f49df05159c80324ccdce21ee97d66"
+  },
+  "scope": "exact 47C candidate over the currently patched Embassy baseline; not promoted to main vendor",
+  "hil": "not-run"
+}

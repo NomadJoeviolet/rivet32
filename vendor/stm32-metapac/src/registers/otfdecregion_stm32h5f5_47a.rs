@@ -1,0 +1,167 @@
+
+use crate::metadata::ir::*;
+pub(crate) static REGISTERS: IR = IR {
+    blocks: &[Block {
+        name: "OtfdecRegion",
+        extends: None,
+        description: None,
+        items: &[
+            BlockItem {
+                name: "reg_configr",
+                description: None,
+                array: None,
+                byte_offset: 0x0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: Some("OtfdecRegionRegConfigr"),
+                }),
+            },
+            BlockItem {
+                name: "reg_start_addr",
+                description: None,
+                array: None,
+                byte_offset: 0x4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reg_end_addr",
+                description: None,
+                array: None,
+                byte_offset: 0x8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reg_noncer0",
+                description: None,
+                array: None,
+                byte_offset: 0xc,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reg_noncer1",
+                description: None,
+                array: None,
+                byte_offset: 0x10,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reg_keyr0",
+                description: None,
+                array: None,
+                byte_offset: 0x14,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reg_keyr1",
+                description: None,
+                array: None,
+                byte_offset: 0x18,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reg_keyr2",
+                description: None,
+                array: None,
+                byte_offset: 0x1c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "reg_keyr3",
+                description: None,
+                array: None,
+                byte_offset: 0x20,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+        ],
+    }],
+    fieldsets: &[FieldSet {
+        name: "OtfdecRegionRegConfigr",
+        extends: None,
+        description: None,
+        bit_size: 32,
+        fields: &[
+            Field {
+                name: "reg_en",
+                description: None,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            },
+            Field {
+                name: "configlock",
+                description: None,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            },
+            Field {
+                name: "keylock",
+                description: None,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            },
+            Field {
+                name: "mode",
+                description: None,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                bit_size: 2,
+                array: None,
+                enumm: None,
+            },
+            Field {
+                name: "keycrc",
+                description: None,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                bit_size: 8,
+                array: None,
+                enumm: None,
+            },
+            Field {
+                name: "version",
+                description: None,
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            },
+        ],
+    }],
+    enums: &[],
+};

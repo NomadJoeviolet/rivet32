@@ -1,0 +1,67 @@
+{
+  "STM32H543": {
+    "gcc": {
+      "mismatches": 0,
+      "values_sha256": "5429188ea1ccc471b99a3a0dda5670c60a5e4af1ce71aad2ae903a53f38f8473",
+      "verified": 18605
+    },
+    "changed": {},
+    "removed": [
+      "USB_CH_KIND_MASK",
+      "USB_CH_T_MASK",
+      "USB_EP_KIND_MASK",
+      "USB_EP_T_MASK",
+      "WIN32",
+      "WIN64",
+      "WINNT",
+      "_INTEGRAL_MAX_BITS",
+      "_REENTRANT",
+      "_WIN32",
+      "_WIN64"
+    ],
+    "excluded_width_sensitive_USB_values": {
+      "USB_CH_KIND_MASK": 134188687,
+      "USB_CH_T_MASK": 134187407,
+      "USB_EP_KIND_MASK": 134188687,
+      "USB_EP_T_MASK": 134187407
+    },
+    "excluded_USB_gcc_audit": {
+      "verified": 4,
+      "mismatches": 0,
+      "values_sha256": "fb4e084a632d9dcfa6cb419f9463ce3f621d9994e0028e0636dd6749eaf819f4"
+    }
+  },
+  "STM32H553": {
+    "gcc": {
+      "mismatches": 0,
+      "values_sha256": "28b053b023f7c3e794298201b121836df8b85deff8a25154cda9425b1f2ed42d",
+      "verified": 19002
+    },
+    "changed": {},
+    "removed": [
+      "USB_CH_KIND_MASK",
+      "USB_CH_T_MASK",
+      "USB_EP_KIND_MASK",
+      "USB_EP_T_MASK",
+      "WIN32",
+      "WIN64",
+      "WINNT",
+      "_INTEGRAL_MAX_BITS",
+      "_REENTRANT",
+      "_WIN32",
+      "_WIN64"
+    ],
+    "excluded_width_sensitive_USB_values": {
+      "USB_CH_KIND_MASK": 134188687,
+      "USB_CH_T_MASK": 134187407,
+      "USB_EP_KIND_MASK": 134188687,
+      "USB_EP_T_MASK": 134187407
+    },
+    "excluded_USB_gcc_audit": {
+      "verified": 4,
+      "mismatches": 0,
+      "values_sha256": "fb4e084a632d9dcfa6cb419f9463ce3f621d9994e0028e0636dd6749eaf819f4"
+    }
+  },
+  "conclusion": "All current CMSIS candidates and the four formerly accepted width-sensitive USB constants agree with GCC; no former device constant was found numerically wrong. Four USB constants are now deliberately excluded by the reduced grammar. Seven host-preprocessor built-ins are no longer exported."
+}

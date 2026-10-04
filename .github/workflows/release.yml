@@ -1,0 +1,52 @@
+name: Release firmware
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    uses: ./.github/workflows/ci.yml
+
+  package:
+    needs: quality
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - name: Match tag to workspace version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: python3 scripts/package_release.py --check-tag
+      - run: |
+          rustup toolchain install 1.98.1 --profile minimal --component llvm-tools
+          rustup target add --toolchain 1.98.1 thumbv7em-none-eabihf
+      - run: cargo xtask build --chip stm32h723vg
+      - name: Package ELF, BIN, HEX, MAP and provenance
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: python3 scripts/package_release.py --chip stm32h723vg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-bundle
+          path: dist/
+          if-no-files-found: error
+
+  draft:
+    needs: package
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v5
+        with:
+          name: release-bundle
+          path: dist
+      - name: Create release draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release create "$RELEASE_TAG" dist/* --verify-tag --draft --generate-notes

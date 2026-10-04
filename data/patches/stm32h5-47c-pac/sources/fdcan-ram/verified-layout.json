@@ -1,0 +1,110 @@
+{
+  "hal_source_sha256": "a430429a327511cf96203dcebd45a1ab8491d1f09ecb19027333b718c3f35b53",
+  "cmsis_commit": "884b8dc78e41cbfca008363342b17f4a9e8641f7",
+  "cases": [
+    {
+      "chip": "stm32h543xx",
+      "security_alias": "NS",
+      "cmsis_sha256": "cf3492b9f8c38102e38ecbd0f7101029ae617c7041089cd49331550d71daad51",
+      "compile_command": [
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "C:\\IncludeAll\\WorkSpace\\Codes\\OpenSource\\embodied_framework\\target\\h543-fdcan-ram\\stm32h543xx-ns.c",
+        "-o",
+        "C:\\IncludeAll\\WorkSpace\\Codes\\OpenSource\\embodied_framework\\target\\h543-fdcan-ram\\stm32h543xx-ns.exe"
+      ],
+      "values": {
+        "FDCANRAM1": 1073785856,
+        "FDCANRAM2": 1073786704,
+        "SRAMCAN_FLSSA": 0,
+        "SRAMCAN_FLESA": 112,
+        "SRAMCAN_RF0SA": 176,
+        "SRAMCAN_RF1SA": 392,
+        "SRAMCAN_TEFSA": 608,
+        "SRAMCAN_TFQSA": 632,
+        "SRAMCAN_SIZE": 848
+      }
+    },
+    {
+      "chip": "stm32h543xx",
+      "security_alias": "S",
+      "cmsis_sha256": "cf3492b9f8c38102e38ecbd0f7101029ae617c7041089cd49331550d71daad51",
+      "compile_command": [
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "C:\\IncludeAll\\WorkSpace\\Codes\\OpenSource\\embodied_framework\\target\\h543-fdcan-ram\\stm32h543xx-s.c",
+        "-o",
+        "C:\\IncludeAll\\WorkSpace\\Codes\\OpenSource\\embodied_framework\\target\\h543-fdcan-ram\\stm32h543xx-s.exe"
+      ],
+      "values": {
+        "FDCANRAM1": 1342221312,
+        "FDCANRAM2": 1342222160,
+        "SRAMCAN_FLSSA": 0,
+        "SRAMCAN_FLESA": 112,
+        "SRAMCAN_RF0SA": 176,
+        "SRAMCAN_RF1SA": 392,
+        "SRAMCAN_TEFSA": 608,
+        "SRAMCAN_TFQSA": 632,
+        "SRAMCAN_SIZE": 848
+      }
+    },
+    {
+      "chip": "stm32h553xx",
+      "security_alias": "NS",
+      "cmsis_sha256": "b0d412088d7bf0e3728e0fe0349910ca2c0aef1f42bd5a0bf422a77e3d166433",
+      "compile_command": [
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "C:\\IncludeAll\\WorkSpace\\Codes\\OpenSource\\embodied_framework\\target\\h543-fdcan-ram\\stm32h553xx-ns.c",
+        "-o",
+        "C:\\IncludeAll\\WorkSpace\\Codes\\OpenSource\\embodied_framework\\target\\h543-fdcan-ram\\stm32h553xx-ns.exe"
+      ],
+      "values": {
+        "FDCANRAM1": 1073785856,
+        "FDCANRAM2": 1073786704,
+        "SRAMCAN_FLSSA": 0,
+        "SRAMCAN_FLESA": 112,
+        "SRAMCAN_RF0SA": 176,
+        "SRAMCAN_RF1SA": 392,
+        "SRAMCAN_TEFSA": 608,
+        "SRAMCAN_TFQSA": 632,
+        "SRAMCAN_SIZE": 848
+      }
+    },
+    {
+      "chip": "stm32h553xx",
+      "security_alias": "S",
+      "cmsis_sha256": "b0d412088d7bf0e3728e0fe0349910ca2c0aef1f42bd5a0bf422a77e3d166433",
+      "compile_command": [
+        "gcc",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "C:\\IncludeAll\\WorkSpace\\Codes\\OpenSource\\embodied_framework\\target\\h543-fdcan-ram\\stm32h553xx-s.c",
+        "-o",
+        "C:\\IncludeAll\\WorkSpace\\Codes\\OpenSource\\embodied_framework\\target\\h543-fdcan-ram\\stm32h553xx-s.exe"
+      ],
+      "values": {
+        "FDCANRAM1": 1342221312,
+        "FDCANRAM2": 1342222160,
+        "SRAMCAN_FLSSA": 0,
+        "SRAMCAN_FLESA": 112,
+        "SRAMCAN_RF0SA": 176,
+        "SRAMCAN_RF1SA": 392,
+        "SRAMCAN_TEFSA": 608,
+        "SRAMCAN_TFQSA": 632,
+        "SRAMCAN_SIZE": 848
+      }
+    }
+  ]
+}

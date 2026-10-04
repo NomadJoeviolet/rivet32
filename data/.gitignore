@@ -1,0 +1,14 @@
+sources/*.zip
+sources/*tree.json
+sources/sample.xml
+sources/embassy-*.rs
+results/
+# Keep audit outputs/provenance; downloaded upstream documents remain a local cache.
+sources/stm32-gaps/*
+!sources/stm32-gaps/audit.py
+!sources/stm32-gaps/audit-results.json
+!sources/stm32-gaps/register-macro-differences.json
+!sources/stm32-gaps/*-head.json
+!sources/stm32-gaps/*-head.txt
+# Optional ST documentation downloads are local audit caches, not redistributed inputs.
+sources/stm32h5-47c-documents/

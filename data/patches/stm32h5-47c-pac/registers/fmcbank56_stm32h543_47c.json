@@ -1,0 +1,109 @@
+{
+  "block/FMC_BANK5_6": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 2,
+          "stride": 4
+        },
+        "byte_offset": 0,
+        "name": "SDCR"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 2,
+          "stride": 4
+        },
+        "byte_offset": 8,
+        "name": "SDTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "SDCMR",
+        "name": "SDCMR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "SDRTR",
+        "name": "SDRTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "SDSR",
+        "name": "SDSR"
+      }
+    ]
+  },
+  "fieldset/SDCMR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "MODE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CTB2"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "CTB1"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 4,
+        "name": "NRFS"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 13,
+        "name": "MRD"
+      }
+    ]
+  },
+  "fieldset/SDRTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CRE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 13,
+        "name": "COUNT"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "REIE"
+      }
+    ]
+  },
+  "fieldset/SDSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 2,
+        "name": "MODES1"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 2,
+        "name": "MODES2"
+      }
+    ]
+  }
+}

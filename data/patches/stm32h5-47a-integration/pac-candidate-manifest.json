@@ -1,0 +1,20 @@
+{
+  "completed": true,
+  "scope": "Portable source capture, not formal backend integration",
+  "files": {
+    "baseline-manifest.json": "3e5b2f4c1332e633227e0d267720b64563811b725f9c886e96cdc14992dea70e",
+    "DFP-LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "generated-pac.zip": "1325c395d37da8e62136045a9e40854c30ec18cce32580ceac0000cdb88afb15",
+    "inputs.zip": "9a18eb466c188cefef5e96829049de1884c3ceb979e653b03fa8c15472499b63",
+    "LICENSE-APACHE": "5299622e84aeae35539a7b08ec1c81f1a952f92221a298e5acbcf77936ec048b",
+    "LICENSE-MIT": "ac59f2b9077719f3ef8de5e20b10c5ceb5206693d2ed42573f9de56752898834",
+    "NOTICE": "83966f2186a9b1c7c0f79cf79588ae9ddb9eb5771debe84470267d695eaa378b",
+    "raw-evidence.json": "906db35ef4fcb79f3440ae9b6ecb89190774c6d11f3848dc56b84bc8ad54e8cc",
+    "raw_guard.py": "adb7a550cb8a3141d63e893736aba0f7e2728e50ac51fe8af60fd065d846db60",
+    "README.md": "c7345dc3e90911394e16735f491ce8aa8c5b11a7125e90a4055e2386435b9f89",
+    "references.zip": "ea72fdac3f1863a5eb402eb58de041d89b8aad5a7530fcdf2e1bf5a37e1cd02c",
+    "sources/generate.py": "6c0d5f0704cc8dce08919b9d93b61eff7fc752c8c307568019124b51b64f66fa",
+    "sources.json": "206f468ee09fa57b972b97cdf12b3fc5076d46ba556e9291ebee599415ac21f4",
+    "ST-LICENSE": "2e80479026d27db007f8bdd190860e4b0452ca30d622ef4c04084b064418a096"
+  }
+}

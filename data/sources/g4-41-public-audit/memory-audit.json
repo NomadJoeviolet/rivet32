@@ -1,0 +1,820 @@
+{
+  "completed": true,
+  "scope": "Read-only exact-part public source comparison; no PAC/HAL support asserted",
+  "sources": {
+    "dfp": {
+      "repository": "Open-CMSIS-Pack/STM32G4xx_DFP",
+      "revision": "697d2262d1986b449fbe9329882bf206171d88f9",
+      "selected": [
+        {
+          "path": "Keil.STM32G4xx_DFP.pdsc",
+          "url": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32G4xx_DFP/697d2262d1986b449fbe9329882bf206171d88f9/Keil.STM32G4xx_DFP.pdsc",
+          "sha256": "5beb24ab0827bea12fa62cb114bc48e86ee5e2e78a695a5c5f2bcbb47a279b36",
+          "bytes": 131455
+        },
+        {
+          "path": "LICENSE-Apache-2.0",
+          "url": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32G4xx_DFP/697d2262d1986b449fbe9329882bf206171d88f9/LICENSE-Apache-2.0",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "bytes": 11357
+        },
+        {
+          "path": "LICENSE-BSD-3-Clause",
+          "url": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32G4xx_DFP/697d2262d1986b449fbe9329882bf206171d88f9/LICENSE-BSD-3-Clause",
+          "sha256": "376c82bcef0be563bf59b93d05cfdd4b6295e4660b55b31dd8a883bf1d6637f7",
+          "bytes": 1485
+        },
+        {
+          "path": "LICENSES",
+          "url": "https://raw.githubusercontent.com/Open-CMSIS-Pack/STM32G4xx_DFP/697d2262d1986b449fbe9329882bf206171d88f9/LICENSES",
+          "sha256": "75ea35e88fa430641941205aefd8c2c594e4e524b2ed0aaec5f4c8c3504e4db9",
+          "bytes": 13413
+        }
+      ]
+    },
+    "hal": {
+      "repository": "STMicroelectronics/stm32g4xx-hal-driver",
+      "revision": "a6001282dfacfff57e9710250f15e4333b578865",
+      "selected": [
+        {
+          "path": "Inc/stm32g4xx_hal_flash.h",
+          "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Inc/stm32g4xx_hal_flash.h",
+          "sha256": "7bcce9a12e02de94e23343e696919874d5b7288fbb33e8e837b193626e49d14d",
+          "bytes": 46690
+        },
+        {
+          "path": "Inc/stm32g4xx_hal_flash_ex.h",
+          "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Inc/stm32g4xx_hal_flash_ex.h",
+          "sha256": "6857115967b5b929054fd9416f2f65237559201d9ed2d4dad63088b5aa72fe9f",
+          "bytes": 2407
+        },
+        {
+          "path": "Inc/stm32g4xx_ll_rcc.h",
+          "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Inc/stm32g4xx_ll_rcc.h",
+          "sha256": "bd54a7974fe8497de2138ae290b913d2b0c6e138d3272263622bc7a3f25febe6",
+          "bytes": 113531
+        },
+        {
+          "path": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/LICENSE.md",
+          "sha256": "1a0c3a2cf55d2d808048d452c6598d441f89890d62d0890147459ec6db61037a",
+          "bytes": 1484
+        },
+        {
+          "path": "Src/stm32g4xx_hal_flash.c",
+          "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Src/stm32g4xx_hal_flash.c",
+          "sha256": "7894f8cf4a3bd8b214fc826cbb93aa9a20596cfc3c45760f6f775d79e28cbda4",
+          "bytes": 24008
+        },
+        {
+          "path": "Src/stm32g4xx_hal_flash_ex.c",
+          "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Src/stm32g4xx_hal_flash_ex.c",
+          "sha256": "faa9d7ffa04c9072035273fdf1dedbfee1886a4f58d29f5d0b075263ef06bc30",
+          "bytes": 48966
+        },
+        {
+          "path": "Src/stm32g4xx_hal_pwr_ex.c",
+          "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Src/stm32g4xx_hal_pwr_ex.c",
+          "sha256": "e86b738668581f6e1a2acf59010f5eceb236f94a0dc6a1a8554ddf24a6437bd4",
+          "bytes": 38165
+        },
+        {
+          "path": "Src/stm32g4xx_hal_rcc.c",
+          "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32g4xx-hal-driver/a6001282dfacfff57e9710250f15e4333b578865/Src/stm32g4xx_hal_rcc.c",
+          "sha256": "446b3b7319a22f118526a4665da8971ba48c0c31634a32a2215c6aa8b8a9ba3e",
+          "bytes": 51118
+        }
+      ]
+    }
+  },
+  "pdsc_sha256": "5beb24ab0827bea12fa62cb114bc48e86ee5e2e78a695a5c5f2bcbb47a279b36",
+  "parts": {
+    "stm32g411c6": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411C6Tx",
+          "flash_bytes": 32768,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        },
+        {
+          "order_code": "STM32G411C6Ux",
+          "flash_bytes": 32768,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411c8": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411C8Tx",
+          "flash_bytes": 65536,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        },
+        {
+          "order_code": "STM32G411C8Ux",
+          "flash_bytes": 65536,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411cb": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411CBTx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        },
+        {
+          "order_code": "STM32G411CBUx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411cc": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xc.h",
+      "header_sha256": "5f502a2e0fecef6dac79d0aaac8e0ae942b4e40cb132428d6274fb99336d03fe",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536952832,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 81920,
+        "SRAM2_SIZE": 16384,
+        "CCMSRAM_SIZE": 16384
+      },
+      "cmsis_max_ram_bytes": 114688,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411CCTx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 114688,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        },
+        {
+          "order_code": "STM32G411CCUx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 114688,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411k6": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411K6Tx",
+          "flash_bytes": 32768,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        },
+        {
+          "order_code": "STM32G411K6Ux",
+          "flash_bytes": 32768,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411k8": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411K8Ux",
+          "flash_bytes": 65536,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        },
+        {
+          "order_code": "STM32G411K8Tx",
+          "flash_bytes": 65536,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411kb": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411KBTx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        },
+        {
+          "order_code": "STM32G411KBUx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411m6": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411M6Tx",
+          "flash_bytes": 32768,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411m8": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411M8Tx",
+          "flash_bytes": 65536,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411mb": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411MBTx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411mc": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xc.h",
+      "header_sha256": "5f502a2e0fecef6dac79d0aaac8e0ae942b4e40cb132428d6274fb99336d03fe",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536952832,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 81920,
+        "SRAM2_SIZE": 16384,
+        "CCMSRAM_SIZE": 16384
+      },
+      "cmsis_max_ram_bytes": 114688,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411MCTx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 114688,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411r6": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411R6Tx",
+          "flash_bytes": 32768,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411r8": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411R8Tx",
+          "flash_bytes": 65536,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411rb": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xb.h",
+      "header_sha256": "88bb39989ca8f18402e8709afd7d496ddb4f497fa6cd58492af799364b13ab56",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536887296,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 16384,
+        "SRAM2_SIZE": 6144,
+        "CCMSRAM_SIZE": 10240
+      },
+      "cmsis_max_ram_bytes": 32768,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411RBTx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 32768,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        32
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g411rc": {
+      "header": "data\\sources\\stm32-gaps\\stm32g411xc.h",
+      "header_sha256": "5f502a2e0fecef6dac79d0aaac8e0ae942b4e40cb132428d6274fb99336d03fe",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "SRAM2_BASE": 536952832,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 81920,
+        "SRAM2_SIZE": 16384,
+        "CCMSRAM_SIZE": 16384
+      },
+      "cmsis_max_ram_bytes": 114688,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G411RCTx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 114688,
+          "debug_svd": "CMSIS/SVD/STM32G431.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": true,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g414cb": {
+      "header": "data\\sources\\stm32-gaps\\stm32g414xx.h",
+      "header_sha256": "a53b5211b298f3fa5a4d0336e66e013fc6c58f44e5815d35dc567012ada15975",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 40960,
+        "CCMSRAM_SIZE": 20480
+      },
+      "cmsis_max_ram_bytes": 61440,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G414CBTx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        },
+        {
+          "order_code": "STM32G414CBUx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": false,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g414cc": {
+      "header": "data\\sources\\stm32-gaps\\stm32g414xx.h",
+      "header_sha256": "a53b5211b298f3fa5a4d0336e66e013fc6c58f44e5815d35dc567012ada15975",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 40960,
+        "CCMSRAM_SIZE": 20480
+      },
+      "cmsis_max_ram_bytes": 61440,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G414CCTx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        },
+        {
+          "order_code": "STM32G414CCUx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": false,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g414mb": {
+      "header": "data\\sources\\stm32-gaps\\stm32g414xx.h",
+      "header_sha256": "a53b5211b298f3fa5a4d0336e66e013fc6c58f44e5815d35dc567012ada15975",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 40960,
+        "CCMSRAM_SIZE": 20480
+      },
+      "cmsis_max_ram_bytes": 61440,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G414MBTx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": false,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g414mc": {
+      "header": "data\\sources\\stm32-gaps\\stm32g414xx.h",
+      "header_sha256": "a53b5211b298f3fa5a4d0336e66e013fc6c58f44e5815d35dc567012ada15975",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 40960,
+        "CCMSRAM_SIZE": 20480
+      },
+      "cmsis_max_ram_bytes": 61440,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G414MCTx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": false,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g414rb": {
+      "header": "data\\sources\\stm32-gaps\\stm32g414xx.h",
+      "header_sha256": "a53b5211b298f3fa5a4d0336e66e013fc6c58f44e5815d35dc567012ada15975",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 40960,
+        "CCMSRAM_SIZE": 20480
+      },
+      "cmsis_max_ram_bytes": 61440,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G414RBTx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": false,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g414rc": {
+      "header": "data\\sources\\stm32-gaps\\stm32g414xx.h",
+      "header_sha256": "a53b5211b298f3fa5a4d0336e66e013fc6c58f44e5815d35dc567012ada15975",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 40960,
+        "CCMSRAM_SIZE": 20480
+      },
+      "cmsis_max_ram_bytes": 61440,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G414RCTx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": false,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g414vb": {
+      "header": "data\\sources\\stm32-gaps\\stm32g414xx.h",
+      "header_sha256": "a53b5211b298f3fa5a4d0336e66e013fc6c58f44e5815d35dc567012ada15975",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 40960,
+        "CCMSRAM_SIZE": 20480
+      },
+      "cmsis_max_ram_bytes": 61440,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G414VBTx",
+          "flash_bytes": 131072,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": false,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    },
+    "stm32g414vc": {
+      "header": "data\\sources\\stm32-gaps\\stm32g414xx.h",
+      "header_sha256": "a53b5211b298f3fa5a4d0336e66e013fc6c58f44e5815d35dc567012ada15975",
+      "header_memory_macros": {
+        "FLASH_BASE": 134217728,
+        "SRAM1_BASE": 536870912,
+        "CCMSRAM_BASE": 268435456,
+        "SRAM1_SIZE_MAX": 40960,
+        "CCMSRAM_SIZE": 20480
+      },
+      "cmsis_max_ram_bytes": 61440,
+      "dfp_packages": [
+        {
+          "order_code": "STM32G414VCTx",
+          "flash_bytes": 262144,
+          "dfp_sram_start": 536870912,
+          "dfp_sram_bytes": 131072,
+          "debug_svd": "CMSIS/SVD/STM32G474.svd"
+        }
+      ],
+      "xml_ram_kib": [
+        256
+      ],
+      "cmsis_dfp_max_ram_agree": false,
+      "memory_verified": false,
+      "limitation": "Maximum sizes and DFP totals are source evidence, not proof of every bank/alias or device restriction"
+    }
+  },
+  "known_conflicts": [
+    "stm32g414cb",
+    "stm32g414cc",
+    "stm32g414mb",
+    "stm32g414mc",
+    "stm32g414rb",
+    "stm32g414rc",
+    "stm32g414vb",
+    "stm32g414vc"
+  ],
+  "exact_part_count": 23,
+  "exact_package_count": 32,
+  "source_code_changed": false
+}

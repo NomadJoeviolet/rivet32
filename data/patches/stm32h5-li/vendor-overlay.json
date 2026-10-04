@@ -1,0 +1,19 @@
+{
+  "baseline_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "files": {
+    "Cargo.toml": "f1e4a117d044ddd461d0cb225e5795805d971961386f98c57a7f19c7ae481c2f",
+    "LICENSE-APACHE": "5299622e84aeae35539a7b08ec1c81f1a952f92221a298e5acbcf77936ec048b",
+    "LICENSE-MIT": "ac59f2b9077719f3ef8de5e20b10c5ceb5206693d2ed42573f9de56752898834",
+    "NOTICE": "595adc897bdfd336f7afb86c05b837d3f831bbca1f7e04c60690fff8eda93702",
+    "ST-LICENSE": "2e80479026d27db007f8bdd190860e4b0452ca30d622ef4c04084b064418a096",
+    "src/all_chips.rs": "bd8ffa4060cd592a207c074eda6174733061e9e592a199a6bef81887fb9a6583",
+    "src/chips/metadata_li_0000.rs": "43a58a9b0f61615040c7c788eccf0b3ae30834654ad106d262e58418445ffa41",
+    "src/chips/metadata_li_0001.rs": "2f35b2a0869c8fe845027a483c02de8863b782179d86448bb2dc7d6f8c89a127",
+    "src/chips/stm32h563li/device.x": "55212ce576582249007539dc77e31e0aeb4387753503e5d9a335a0e265b63d06",
+    "src/chips/stm32h563li/metadata.rs": "60b5efc84458e7e82be43df329376ff9b2ade308e04c83ef348397b0f70856e6",
+    "src/chips/stm32h563li/pac.rs": "bf233bd7785620a60b454241c669dea4d784340dd9c54c59af3e5a3c70bd4f5f",
+    "src/chips/stm32h573li/device.x": "e94ea3ee0daddbae2a091b1d6ec9524fe9f562a8ee86b8dd9a78f0a1879040bd",
+    "src/chips/stm32h573li/metadata.rs": "82ad23ddcebd0d7bfa71f96ae294cbbb44ce5c7e2a14c5bf4abfc7132e081ff2",
+    "src/chips/stm32h573li/pac.rs": "f8364b00367a4326561dadbd727edda2f816dfeeaedab74879cdd68f999a64e0"
+  }
+}

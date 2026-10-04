@@ -1,0 +1,101 @@
+{
+  "block/CORDIC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CSR",
+        "name": "CSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "WDATA",
+        "name": "WDATA"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "RDATA",
+        "name": "RDATA"
+      }
+    ]
+  },
+  "fieldset/CSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "FUNC"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "PRECISION"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 3,
+        "name": "SCALE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "IEN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "DMAREN"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "DMAWEN"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "NRES"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "NARGS"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "RESSIZE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "ARGSIZE"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "RRDY"
+      }
+    ]
+  },
+  "fieldset/RDATA": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "RES"
+      }
+    ]
+  },
+  "fieldset/WDATA": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "ARG"
+      }
+    ]
+  }
+}

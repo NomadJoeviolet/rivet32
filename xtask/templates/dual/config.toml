@@ -1,0 +1,12 @@
+[alias]
+app-build = "run --locked --offline -p @NAME@-builder --"
+app-check = "run --locked --offline -p @NAME@-builder -- --check"
+cm7-build = "build --release --locked -p @NAME@-cm7 --bin firmware-cm7 --target @TARGET@ --target-dir target/cm7"
+cm4-build = "build --release --locked -p @NAME@-cm4 --bin firmware-cm4 --target @TARGET@ --target-dir target/cm4"
+
+[net]
+git-fetch-with-cli = true
+
+[target.'cfg(all(target_arch = "arm", target_os = "none"))']
+# Scalar avoids concatenating inherited link.x/defmt.x flags.
+rustflags = "-C link-arg=-Tlink.x -C link-arg=-Tdefmt.x"

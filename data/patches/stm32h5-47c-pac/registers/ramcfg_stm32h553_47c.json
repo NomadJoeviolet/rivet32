@@ -1,0 +1,581 @@
+{
+  "block/RAMCFG": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "SEAR",
+        "name": "SEAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "DEAR",
+        "name": "DEAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "WPR1",
+        "name": "WPR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "WPR2",
+        "name": "WPR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "WPR3",
+        "name": "WPR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "name": "ECCKEY"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "ERKEYR",
+        "name": "ERKEYR"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ECCE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ALE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SRAMER"
+      }
+    ]
+  },
+  "fieldset/DEAR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "EDEA"
+      }
+    ]
+  },
+  "fieldset/ERKEYR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "ERASEKEY"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CSEDC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CDED"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SEIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DEIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ECCNMI"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "SEDC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DED"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "SRAMBUSY"
+      }
+    ]
+  },
+  "fieldset/SEAR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "ESEA"
+      }
+    ]
+  },
+  "fieldset/WPR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "P0WP"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "P1WP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "P2WP"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "P3WP"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "P4WP"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "P5WP"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "P6WP"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "P7WP"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "P8WP"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "P9WP"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "P10WP"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "P11WP"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "P12WP"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "P13WP"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "P14WP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "P15WP"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "P16WP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "P17WP"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "P18WP"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "P19WP"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "P20WP"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "P21WP"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "P22WP"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "P23WP"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "P24WP"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "P25WP"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "P26WP"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "P27WP"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "P28WP"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "P29WP"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "P30WP"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "P31WP"
+      }
+    ]
+  },
+  "fieldset/WPR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "P32WP"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "P33WP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "P34WP"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "P35WP"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "P36WP"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "P37WP"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "P38WP"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "P39WP"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "P40WP"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "P41WP"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "P42WP"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "P43WP"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "P44WP"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "P45WP"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "P46WP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "P47WP"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "P48WP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "P49WP"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "P50WP"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "P51WP"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "P52WP"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "P53WP"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "P54WP"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "P55WP"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "P56WP"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 1,
+        "name": "P57WP"
+      },
+      {
+        "bit_offset": 27,
+        "bit_size": 1,
+        "name": "P58WP"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 1,
+        "name": "P59WP"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "P60WP"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "P61WP"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "P62WP"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "P63WP"
+      }
+    ]
+  },
+  "fieldset/WPR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "P64WP"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "P65WP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "P66WP"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "P67WP"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "P68WP"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "P69WP"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "P70WP"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "P71WP"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "P72WP"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "P73WP"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "P74WP"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "P75WP"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "P76WP"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "P77WP"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "P78WP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "P79WP"
+      }
+    ]
+  }
+}

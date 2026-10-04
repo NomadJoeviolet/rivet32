@@ -1,0 +1,526 @@
+{
+  "block/DBGMCU": {
+    "items": [
+      {
+        "access": "Read",
+        "byte_offset": 0,
+        "fieldset": "IDCODE",
+        "name": "IDCODE"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "APB1FZR1",
+        "name": "APB1FZR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "APB1FZR2",
+        "name": "APB1FZR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "APB2FZR",
+        "name": "APB2FZR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "APB3FZR",
+        "name": "APB3FZR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "AHB1FZR",
+        "name": "AHB1FZR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 128,
+        "fieldset": "EDBGRQ",
+        "name": "EDBGRQ"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 252,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 256,
+        "name": "DBG_AUTH_HOST"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 260,
+        "name": "DBG_AUTH_DEV"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 264,
+        "fieldset": "DBG_AUTH_ACK",
+        "name": "DBG_AUTH_ACK"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4048,
+        "fieldset": "PIDR4",
+        "name": "PIDR4"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4064,
+        "fieldset": "PIDR0",
+        "name": "PIDR0"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4068,
+        "fieldset": "PIDR1",
+        "name": "PIDR1"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4072,
+        "fieldset": "PIDR2",
+        "name": "PIDR2"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4076,
+        "fieldset": "PIDR3",
+        "name": "PIDR3"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4080,
+        "fieldset": "CIDR0",
+        "name": "CIDR0"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4084,
+        "fieldset": "CIDR1",
+        "name": "CIDR1"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4088,
+        "fieldset": "CIDR2",
+        "name": "CIDR2"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4092,
+        "fieldset": "CIDR3",
+        "name": "CIDR3"
+      }
+    ]
+  },
+  "fieldset/AHB1FZR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DBG_GPDMA1_CH0_STOP"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DBG_GPDMA1_CH1_STOP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "DBG_GPDMA1_CH2_STOP"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DBG_GPDMA1_CH3_STOP"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "DBG_GPDMA1_CH4_STOP"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "DBG_GPDMA1_CH5_STOP"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DBG_GPDMA1_CH6_STOP"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "DBG_GPDMA1_CH7_STOP"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "DBG_GPDMA2_CH0_STOP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "DBG_GPDMA2_CH1_STOP"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "DBG_GPDMA2_CH2_STOP"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "DBG_GPDMA2_CH3_STOP"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "DBG_GPDMA2_CH4_STOP"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "DBG_GPDMA2_CH5_STOP"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "DBG_GPDMA2_CH6_STOP"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "DBG_GPDMA2_CH7_STOP"
+      }
+    ]
+  },
+  "fieldset/APB1FZR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "DBG_TIM2_STOP"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DBG_TIM3_STOP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "DBG_TIM4_STOP"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "DBG_TIM5_STOP"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "DBG_TIM6_STOP"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "DBG_TIM7_STOP"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DBG_TIM12_STOP"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "DBG_WWDG_STOP"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "DBG_IWDG_STOP"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "DBG_I2C1_STOP"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "DBG_I2C2_STOP"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "DBG_I3C1_STOP"
+      }
+    ]
+  },
+  "fieldset/APB1FZR2": {
+    "fields": [
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "DBG_LPTIM2_STOP"
+      }
+    ]
+  },
+  "fieldset/APB2FZR": {
+    "fields": [
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "DBG_TIM1_STOP"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "DBG_TIM8_STOP"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "DBG_TIM15_STOP"
+      }
+    ]
+  },
+  "fieldset/APB3FZR": {
+    "fields": [
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DBG_I2C3_STOP"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "DBG_I3C2_STOP"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "DBG_LPTIM1_STOP"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "DBG_RTC_STOP"
+      }
+    ]
+  },
+  "fieldset/CIDR0": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "PREAMBLE"
+      }
+    ]
+  },
+  "fieldset/CIDR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "PREAMBLE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "CLASS"
+      }
+    ]
+  },
+  "fieldset/CIDR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "PREAMBLE"
+      }
+    ]
+  },
+  "fieldset/CIDR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "PREAMBLE"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DBG_STOP"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "DBG_STANDBY"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "TRACE_IOEN"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "TRACE_CLKEN"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 2,
+        "name": "TRACE_MODE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "DCRT"
+      }
+    ]
+  },
+  "fieldset/DBG_AUTH_ACK": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "HOST"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DEV"
+      }
+    ]
+  },
+  "fieldset/EDBGRQ": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CPU"
+      }
+    ]
+  },
+  "fieldset/IDCODE": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 12,
+        "name": "DEV_ID"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "REV_ID"
+      }
+    ]
+  },
+  "fieldset/PIDR0": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "PARTNUM"
+      }
+    ]
+  },
+  "fieldset/PIDR1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "PARTNUM"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "JEP106ID"
+      }
+    ]
+  },
+  "fieldset/PIDR2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "JEP106ID"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "JEDEC"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "REVISION"
+      }
+    ]
+  },
+  "fieldset/PIDR3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "CMOD"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "REVAND"
+      }
+    ]
+  },
+  "fieldset/PIDR4": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "JEP106CON"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "4KCOUNT"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "ACC_PORT_PRES"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "ACC_PORT_ENBL"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+[workspace]
+resolver = "3"
+members = ["App", "crates/*", "xtask"]
+exclude = ["vendor/*"]
+default-members = ["crates/embodied-core", "crates/embodied-runtime", "crates/embodied-algorithms", "crates/embodied-devices", "crates/embodied-framework", "xtask"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.98"
+license = "MIT"
+
+[workspace.dependencies]
+heapless = "0.9"
+libm = "0.2"
+critical-section = "1.2"
+embodied-core = { path = "crates/embodied-core" }
+embodied-runtime = { path = "crates/embodied-runtime" }
+embodied-algorithms = { path = "crates/embodied-algorithms" }
+embodied-devices = { path = "crates/embodied-devices" }
+embodied-stm32 = { path = "crates/embodied-stm32" }
+embodied-framework = { path = "crates/embodied-framework" }
+
+[profile.release]
+codegen-units = 1
+debug = 2
+lto = true
+opt-level = "s"
+panic = "abort"
+
+[profile.dev]
+panic = "abort"
+
+[patch."https://github.com/embassy-rs/stm32-data-generated"]
+stm32-metapac = { path = "vendor/stm32-metapac" }
+
+[patch."https://github.com/embassy-rs/embassy"]
+embassy-stm32 = { path = "vendor/embassy-stm32" }

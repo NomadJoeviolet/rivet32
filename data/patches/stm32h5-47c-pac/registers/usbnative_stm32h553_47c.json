@@ -1,0 +1,430 @@
+{
+  "block/USB": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "name": "CHEP0R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "name": "CHEP1R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "name": "CHEP2R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "name": "CHEP3R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "name": "CHEP4R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "name": "CHEP5R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "name": "CHEP6R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "name": "CHEP7R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "USB_CNTR",
+        "name": "CNTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "fieldset": "USB_ISTR",
+        "name": "ISTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "USB_FNR",
+        "name": "FNR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "fieldset": "USB_DADDR",
+        "name": "DADDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 84,
+        "fieldset": "USB_LPMCSR",
+        "name": "LPMCSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 88,
+        "fieldset": "USB_BCDR",
+        "name": "BCDR"
+      }
+    ]
+  },
+  "block/USB_PMA_DESC": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "name": "TXBD"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "name": "RXBD"
+      }
+    ]
+  },
+  "fieldset/USB_BCDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "BCDEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "DCDEN"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "PDEN"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SDEN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "DCDET"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "PDET"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "SDET"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "PS2DET"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "DPPD"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "DPPU"
+      }
+    ]
+  },
+  "fieldset/USB_CNTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "USBRST"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "PDWN"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SUSPRDY"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "SUSPEN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "L2RES"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "L1RES"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "L1REQM"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "ESOFM"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SOFM"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RESETM"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SUSPM"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "WKUPM"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "ERRM"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "PMAOVRM"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "CTRM"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "THR512M"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "DDISCM"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "HOST"
+      }
+    ]
+  },
+  "fieldset/USB_DADDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "ADD"
+      },
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ADD0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "ADD1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ADD2"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "ADD3"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "ADD4"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "ADD5"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "ADD6"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "EF"
+      }
+    ]
+  },
+  "fieldset/USB_FNR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 11,
+        "name": "FN"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 2,
+        "name": "LSOF"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "LCK"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RXDM"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "RXDP"
+      }
+    ]
+  },
+  "fieldset/USB_ISTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "IDN"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "DIR"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "L1REQ"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "ESOF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "SOF"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "DCON"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RESET"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "SUSP"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "WKUP"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "ERR"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "PMAOVR"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "CTR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "THR512"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "DDISC"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "DCON_STAT"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "LS_DCONN"
+      }
+    ]
+  },
+  "fieldset/USB_LPMCSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "LMPEN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "LPMACK"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "REMWAKE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "BESL"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+/target/
+/.tools/
+/.cache/
+/dist/
+__pycache__/
+.build/
+*.elf
+*.bin
+*.hex

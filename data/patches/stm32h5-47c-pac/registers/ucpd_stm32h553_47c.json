@@ -1,0 +1,591 @@
+{
+  "block/UCPD": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CFG1",
+        "name": "CFG1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CFG2",
+        "name": "CFG2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "CFG3",
+        "name": "CFG3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "IMR",
+        "name": "IMR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 20,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 24,
+        "fieldset": "ICR",
+        "name": "ICR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "TX_ORDSET",
+        "name": "TX_ORDSET"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "TX_PAYSZ",
+        "name": "TX_PAYSZ"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "TXDR",
+        "name": "TXDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "RX_ORDSET",
+        "name": "RX_ORDSET"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "fieldset": "RX_PAYSZ",
+        "name": "RX_PAYSZ"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 48,
+        "fieldset": "RXDR",
+        "name": "RXDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 52,
+        "fieldset": "RX_ORDEXT1",
+        "name": "RX_ORDEXT1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 56,
+        "fieldset": "RX_ORDEXT2",
+        "name": "RX_ORDEXT2"
+      }
+    ]
+  },
+  "fieldset/CFG1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 6,
+        "name": "HBITCLKDIV"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 5,
+        "name": "IFRGAP"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 5,
+        "name": "TRANSWIN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 3,
+        "name": "PSC_UCPDCLK"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 9,
+        "name": "RXORDSETEN"
+      },
+      {
+        "bit_offset": 29,
+        "bit_size": 1,
+        "name": "TXDMAEN"
+      },
+      {
+        "bit_offset": 30,
+        "bit_size": 1,
+        "name": "RXDMAEN"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "UCPDEN"
+      }
+    ]
+  },
+  "fieldset/CFG2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RXFILTDIS"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RXFILT2N3"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "FORCECLK"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "WUPEN"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RXAFILTEN"
+      }
+    ]
+  },
+  "fieldset/CFG3": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "TRIM_CC1_RD"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 4,
+        "name": "TRIM_CC1_RP"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "TRIM_CC2_RD"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 4,
+        "name": "TRIM_CC2_RP"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "TXMODE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "TXSEND"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TXHRST"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "RXMODE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "PHYRXEN"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "PHYCCSEL"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 2,
+        "name": "ANASUBMODE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "ANAMODE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 2,
+        "name": "CCENABLE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "FRSRXEN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "FRSTX"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "RDCH"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "CC1TCDIS"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "CC2TCDIS"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXMSGDISCCF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "TXMSGSENTCF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TXMSGABTCF"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "HRSTDISCCF"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "HRSTSENTCF"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TXUNDCF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RXORDDETCF"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RXHRSTDETCF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "RXOVRCF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "RXMSGENDCF"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TYPECEVT1CF"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TYPECEVT2CF"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "FRSEVTCF"
+      }
+    ]
+  },
+  "fieldset/IMR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "TXISIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXMSGDISCIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "TXMSGSENTIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TXMSGABTIE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "HRSTDISCIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "HRSTSENTIE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TXUNDIE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RXNEIE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RXORDDETIE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RXHRSTDETIE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "RXOVRIE"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "RXMSGENDIE"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TYPECEVT1IE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TYPECEVT2IE"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "FRSEVTIE"
+      }
+    ]
+  },
+  "fieldset/RXDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "RXDATA"
+      }
+    ]
+  },
+  "fieldset/RX_ORDEXT1": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 20,
+        "name": "RXSOPX1"
+      }
+    ]
+  },
+  "fieldset/RX_ORDEXT2": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 20,
+        "name": "RXSOPX2"
+      }
+    ]
+  },
+  "fieldset/RX_ORDSET": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "RXORDSET"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RXSOP3OF4"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 3,
+        "name": "RXSOPKINVALID"
+      }
+    ]
+  },
+  "fieldset/RX_PAYSZ": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 10,
+        "name": "RXPAYSZ"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "TXIS"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "TXMSGDISC"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "TXMSGSENT"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TXMSGABT"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "HRSTDISC"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "HRSTSENT"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "TXUND"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RXNE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "RXORDDET"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "RXHRSTDET"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "RXOVR"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "RXMSGEND"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "RXERR"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TYPECEVT1"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TYPECEVT2"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "TYPEC_VSTATE_CC1"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 2,
+        "name": "TYPEC_VSTATE_CC2"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "FRSEVT"
+      }
+    ]
+  },
+  "fieldset/TXDR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "TXDATA"
+      }
+    ]
+  },
+  "fieldset/TX_ORDSET": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 20,
+        "name": "TXORDSET"
+      }
+    ]
+  },
+  "fieldset/TX_PAYSZ": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 10,
+        "name": "TXPAYSZ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "block/VREFINTCAL": {
+    "description": "VREFINT Factory Calibration",
+    "items": [
+      {
+        "name": "DATA",
+        "description": "Factory calibration",
+        "byte_offset": 0,
+        "access": "Read",
+        "bit_size": 16
+      }
+    ]
+  }
+}

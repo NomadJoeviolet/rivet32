@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "completed": true,
+  "hal_integrated": false,
+  "hil": "not-run",
+  "files": {
+    "README.md": "51e4a6352a933069395db23e923f3875a3903ce091fb7881a6a70ab8c1456ee6",
+    "baseline-manifest.json": "e321ff397a35186f28f903d863add4c955e9e2c1a2ef9b78ce55b5f71f1226ce",
+    "evidence.json": "157d8aa87ee2a4ad1861b3935d97448502a2a848fe1b878bf423651f81d727b2",
+    "patch.json": "74c86421c4b631205c4ef133b942848f36d73f1604d192ae6219ed944d22adab",
+    "sources/src/exti/h5_47a.rs": "8733ba6dd2d65f368627f547418a3e46230bc8a226035ee06e12599ce4ecf0d7",
+    "sources/src/exti/h5_47a_regs.rs": "0ed1e8c743549db694b6126d1775c21f0698ba72ea13cacaceedbc7d0dd9feec",
+    "sources/src/rcc/h5_47a_usb.rs": "1033a91bab8b10051306cfb01f21332a968ad065acf5de65283f1dd3319d76b0",
+    "sources/src/usb/h5_47a.rs": "0f207ffd08a86654ab55a18deba0ec9ff0ee573daf05ac210f34c1fca2b7e8ac",
+    "sources/upstream_cfg_inventory.rs": "092370db654fe989fb2557a08c49b15e2c3cb7464d92290efa88f0554565fd75"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "STM32H543": {
+    "access_policy": "Pinned v1 access; no new permission inferred from CMSIS __IO",
+    "family": "STM32H543",
+    "gcc_report_sha256": "457a66e4e42150b27df2f41bece74d756981b35e241043fbecf9d58b9f8c04ef",
+    "integer_macros": 86,
+    "ir_sha256": "aa23ad6c0be1d83babbb03fc6cde3ff5093a072a78fef5b2db1116068ae33465",
+    "irq": 75,
+    "typedef_bytes": 16
+  },
+  "STM32H553": {
+    "access_policy": "Pinned v1 access; no new permission inferred from CMSIS __IO",
+    "family": "STM32H553",
+    "gcc_report_sha256": "55a4625dfd414de76d858a23bacf57a793aa58163c9e67bff4ab79b06933ada7",
+    "integer_macros": 86,
+    "ir_sha256": "aa23ad6c0be1d83babbb03fc6cde3ff5093a072a78fef5b2db1116068ae33465",
+    "irq": 75,
+    "typedef_bytes": 16
+  }
+}

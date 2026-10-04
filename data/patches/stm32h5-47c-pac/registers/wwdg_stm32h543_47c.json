@@ -1,0 +1,66 @@
+{
+  "block/WWDG": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CFR",
+        "name": "CFR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "SR",
+        "name": "SR"
+      }
+    ]
+  },
+  "fieldset/CFR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "W"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "EWI"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 3,
+        "name": "WDGTB"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "T"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "WDGA"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EWIF"
+      }
+    ]
+  }
+}

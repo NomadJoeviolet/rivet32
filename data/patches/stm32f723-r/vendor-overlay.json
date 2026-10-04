@@ -1,0 +1,15 @@
+{
+  "baseline_revision": "e463add8cc54375f61c6f5f83d6b589e7fc68be2",
+  "files": {
+    "Cargo.toml": "bdb60a04d45187f02897ef02d95d2d4d227977dc83d1d858a02a3d17184f1830",
+    "NOTICE": "c2dcea9ca7b9c44cd4efa4701d64be27e747ec9c0fac288b67349afc1b5e2bd2",
+    "src/all_chips.rs": "f872c4b48c87b3d50298c9cc2c51f01d47e85138036c102f54204a82c858f396",
+    "src/chips/metadata_f723_r_0000.rs": "21343bd0ae11a71fe490f48d7bec50e3a680ce21b693cbcc9dbc726cf26edf78",
+    "src/chips/stm32f723rc/device.x": "15cee28d8f236c007e64e3bff08489bdc2822535cfb9f44e9f356ff6eda2036a",
+    "src/chips/stm32f723rc/metadata.rs": "d9163902897f1fe4c5d3b8343ddfe729f04883be7aced49957eb7184c7f68d37",
+    "src/chips/stm32f723rc/pac.rs": "c2af05cd5481fa672e49a8d8054ca4564f0b25d2f11dc3c5ef6d87b2559a1e04",
+    "src/chips/stm32f723re/device.x": "15cee28d8f236c007e64e3bff08489bdc2822535cfb9f44e9f356ff6eda2036a",
+    "src/chips/stm32f723re/metadata.rs": "ae11ba9c1e93089c95f7a1d919855bfaa6b4621da9853ac4b6e9de607d70c80d",
+    "src/chips/stm32f723re/pac.rs": "c2af05cd5481fa672e49a8d8054ca4564f0b25d2f11dc3c5ef6d87b2559a1e04"
+  }
+}

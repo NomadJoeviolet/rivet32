@@ -1,0 +1,1205 @@
+{
+  "block/FDCAN": {
+    "items": [
+      {
+        "access": "Read",
+        "byte_offset": 0,
+        "fieldset": "FDCAN_CREL",
+        "name": "CREL"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4,
+        "fieldset": "FDCAN_ENDN",
+        "name": "ENDN"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 12,
+        "fieldset": "FDCAN_DBTP",
+        "name": "DBTP"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 16,
+        "fieldset": "FDCAN_TEST",
+        "name": "TEST"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 20,
+        "fieldset": "FDCAN_RWD",
+        "name": "RWD"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 24,
+        "fieldset": "FDCAN_CCCR",
+        "name": "CCCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 28,
+        "fieldset": "FDCAN_NBTP",
+        "name": "NBTP"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "FDCAN_TSCC",
+        "name": "TSCC"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "fieldset": "FDCAN_TSCV",
+        "name": "TSCV"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "fieldset": "FDCAN_TOCC",
+        "name": "TOCC"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "fieldset": "FDCAN_TOCV",
+        "name": "TOCV"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "fieldset": "FDCAN_ECR",
+        "name": "ECR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "fieldset": "FDCAN_PSR",
+        "name": "PSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "fieldset": "FDCAN_TDCR",
+        "name": "TDCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "fieldset": "FDCAN_IR",
+        "name": "IR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 84,
+        "fieldset": "FDCAN_IE",
+        "name": "IE"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 88,
+        "fieldset": "FDCAN_ILS",
+        "name": "ILS"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 92,
+        "fieldset": "FDCAN_ILE",
+        "name": "ILE"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 128,
+        "fieldset": "FDCAN_RXGFC",
+        "name": "RXGFC"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 132,
+        "fieldset": "FDCAN_XIDAM",
+        "name": "XIDAM"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 136,
+        "fieldset": "FDCAN_HPMS",
+        "name": "HPMS"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 144,
+        "fieldset": "FDCAN_RXF0S",
+        "name": "RXF0S"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 148,
+        "fieldset": "FDCAN_RXF0A",
+        "name": "RXF0A"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 152,
+        "fieldset": "FDCAN_RXF1S",
+        "name": "RXF1S"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 156,
+        "fieldset": "FDCAN_RXF1A",
+        "name": "RXF1A"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 192,
+        "fieldset": "FDCAN_TXBC",
+        "name": "TXBC"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 196,
+        "fieldset": "FDCAN_TXFQS",
+        "name": "TXFQS"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 200,
+        "fieldset": "FDCAN_TXBRP",
+        "name": "TXBRP"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 204,
+        "fieldset": "FDCAN_TXBAR",
+        "name": "TXBAR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 208,
+        "fieldset": "FDCAN_TXBCR",
+        "name": "TXBCR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 212,
+        "fieldset": "FDCAN_TXBTO",
+        "name": "TXBTO"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 216,
+        "fieldset": "FDCAN_TXBCF",
+        "name": "TXBCF"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 220,
+        "fieldset": "FDCAN_TXBTIE",
+        "name": "TXBTIE"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 224,
+        "fieldset": "FDCAN_TXBCIE",
+        "name": "TXBCIE"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 228,
+        "fieldset": "FDCAN_TXEFS",
+        "name": "TXEFS"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 232,
+        "fieldset": "FDCAN_TXEFA",
+        "name": "TXEFA"
+      }
+    ]
+  },
+  "block/FDCAN_CONFIG": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CKDIV",
+        "name": "CKDIV"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 516,
+        "name": "OPTR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 752,
+        "name": "HWCFG"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 756,
+        "name": "VERR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 760,
+        "name": "IPIDR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 764,
+        "name": "SIDR"
+      }
+    ]
+  },
+  "fieldset/CKDIV": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "PDIV"
+      }
+    ]
+  },
+  "fieldset/FDCAN_CCCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "INIT"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "CCE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "ASM"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "CSA"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "CSR"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "MON"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "DAR"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "TEST"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "FDOE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "BRSE"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "PXHD"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "EFBI"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "TXP"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "NISO"
+      }
+    ]
+  },
+  "fieldset/FDCAN_CREL": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "DAY"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "MON"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "YEAR"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 4,
+        "name": "SUBSTEP"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "STEP"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 4,
+        "name": "REL"
+      }
+    ]
+  },
+  "fieldset/FDCAN_DBTP": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "DSJW"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 4,
+        "name": "DTSEG2"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 5,
+        "name": "DTSEG1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 5,
+        "name": "DBRP"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "TDC"
+      }
+    ]
+  },
+  "fieldset/FDCAN_ECR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "TEC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 7,
+        "name": "REC"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "RP"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "name": "CEL"
+      }
+    ]
+  },
+  "fieldset/FDCAN_ENDN": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 32,
+        "name": "ETV"
+      }
+    ]
+  },
+  "fieldset/FDCAN_HPMS": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "BIDX"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 2,
+        "name": "MSI"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 5,
+        "name": "FIDX"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "FLST"
+      }
+    ]
+  },
+  "fieldset/FDCAN_IE": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RF0NE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RF0FE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RF0LE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RF1NE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "RF1FE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RF1LE"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "HPME"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "TCE"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TCFE"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "TFEE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "TEFNE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "TEFFE"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TEFLE"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "TSWE"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "MRAFE"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TOOE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "ELOE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "EPE"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "EWE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "BOE"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "WDIE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "PEAE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "PEDE"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "ARAE"
+      }
+    ]
+  },
+  "fieldset/FDCAN_ILE": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EINT0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "EINT1"
+      }
+    ]
+  },
+  "fieldset/FDCAN_ILS": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RXFIFO0"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RXFIFO1"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "SMSG"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "TFERR"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "MISC"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "BERR"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "PERR"
+      }
+    ]
+  },
+  "fieldset/FDCAN_IR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RF0N"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RF0F"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "RF0L"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RF1N"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "RF1F"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "RF1L"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "HPM"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "TC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "TCF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "TFE"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "TEFN"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "TEFF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TEFL"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "TSW"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "MRAF"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "name": "TOO"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "ELO"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "EP"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "EW"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "BO"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "WDI"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "PEA"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "PED"
+      },
+      {
+        "bit_offset": 23,
+        "bit_size": 1,
+        "name": "ARA"
+      }
+    ]
+  },
+  "fieldset/FDCAN_NBTP": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "NTSEG2"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "NTSEG1"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 9,
+        "name": "NBRP"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 7,
+        "name": "NSJW"
+      }
+    ]
+  },
+  "fieldset/FDCAN_PSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "LEC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 2,
+        "name": "ACT"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "name": "EP"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "name": "EW"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "BO"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 3,
+        "name": "DLEC"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "RESI"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "RBRS"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "REDL"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "PXE"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 7,
+        "name": "TDCV"
+      }
+    ]
+  },
+  "fieldset/FDCAN_RWD": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 8,
+        "name": "WDC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 8,
+        "name": "WDV"
+      }
+    ]
+  },
+  "fieldset/FDCAN_RXF0A": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "F0AI"
+      }
+    ]
+  },
+  "fieldset/FDCAN_RXF0S": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "F0FL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "F0GI"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "F0PI"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "F0F"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "RF0L"
+      }
+    ]
+  },
+  "fieldset/FDCAN_RXF1A": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "F1AI"
+      }
+    ]
+  },
+  "fieldset/FDCAN_RXF1S": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 4,
+        "name": "F1FL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "F1GI"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "F1PI"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "F1F"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "RF1L"
+      }
+    ]
+  },
+  "fieldset/FDCAN_RXGFC": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "RRFE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RRFS"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 2,
+        "name": "ANFE"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 2,
+        "name": "ANFS"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "F1OM"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "F0OM"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 5,
+        "name": "LSS"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 4,
+        "name": "LSE"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TDCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 7,
+        "name": "TDCF"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 7,
+        "name": "TDCO"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TEST": {
+    "fields": [
+      {
+        "bit_offset": 4,
+        "bit_size": 1,
+        "name": "LBCK"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 2,
+        "name": "TX"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "RX"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TOCC": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ETOC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 2,
+        "name": "TOS"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "name": "TOP"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TOCV": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TOC"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TSCC": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "TSS"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 4,
+        "name": "TCP"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TSCV": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "TSC"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXBAR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "AR"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXBC": {
+    "fields": [
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "TFQM"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXBCF": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "CF"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXBCIE": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "CFIE"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXBCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "CR"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXBRP": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "TRP"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXBTIE": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "TIE"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXBTO": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "TO"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXEFA": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 2,
+        "name": "EFAI"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXEFS": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "EFFL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "EFGI"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "EFPI"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 1,
+        "name": "EFF"
+      },
+      {
+        "bit_offset": 25,
+        "bit_size": 1,
+        "name": "TEFL"
+      }
+    ]
+  },
+  "fieldset/FDCAN_TXFQS": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 3,
+        "name": "TFFL"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 2,
+        "name": "TFGI"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 2,
+        "name": "TFQPI"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "TFQF"
+      }
+    ]
+  },
+  "fieldset/FDCAN_XIDAM": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 29,
+        "name": "EIDM"
+      }
+    ]
+  }
+}

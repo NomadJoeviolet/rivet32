@@ -1,0 +1,51 @@
+{
+  "block/VREFBUF": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CSR",
+        "name": "CSR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 4,
+        "fieldset": "CCR",
+        "name": "CCR"
+      }
+    ]
+  },
+  "fieldset/CCR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 6,
+        "name": "TRIM"
+      }
+    ]
+  },
+  "fieldset/CSR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "ENVR"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "HIZ"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "VRR"
+      },
+      {
+        "bit_offset": 4,
+        "bit_size": 3,
+        "name": "VRS"
+      }
+    ]
+  }
+}

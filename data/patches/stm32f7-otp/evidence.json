@@ -1,0 +1,12 @@
+{
+  "candidate_report_sha256": "fc6d7d31a9e9429023092a1fd7730e5c40a1aa1153bdfa78df5167f9efd9611a",
+  "root_review_sha256": "389d0d91117b8a2bbef523bb4fb3911de20e5cc2c6b5e4199d0c64e941eb9970",
+  "source_checkpoint_sha256": "4c116ab87e8ec0ff99bfb8ca1522afadc69c774544a9e96b59d0d04ef3e5cb06",
+  "input_checks": 21,
+  "gcc_headers": 3,
+  "rust_metadata_consumers": 21,
+  "arm_elfs": 6,
+  "generated_hal_checks": 6,
+  "hil": "not-run",
+  "scope": "Only exact OTP data-window correction; no new chips or Flash driver replacement"
+}

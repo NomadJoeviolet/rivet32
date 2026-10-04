@@ -1,0 +1,266 @@
+
+use crate::metadata::ir::*;
+pub(crate) static REGISTERS: IR = IR {
+    blocks: &[Block {
+        name: "GtzcTzsc",
+        extends: None,
+        description: None,
+        items: &[
+            BlockItem {
+                name: "cr",
+                description: None,
+                array: None,
+                byte_offset: 0x0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "seccfgr1",
+                description: None,
+                array: None,
+                byte_offset: 0x10,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "seccfgr2",
+                description: None,
+                array: None,
+                byte_offset: 0x14,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "seccfgr3",
+                description: None,
+                array: None,
+                byte_offset: 0x18,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "privcfgr1",
+                description: None,
+                array: None,
+                byte_offset: 0x20,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "privcfgr2",
+                description: None,
+                array: None,
+                byte_offset: 0x24,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "privcfgr3",
+                description: None,
+                array: None,
+                byte_offset: 0x28,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm1acfgr",
+                description: None,
+                array: None,
+                byte_offset: 0x40,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm1ar",
+                description: None,
+                array: None,
+                byte_offset: 0x44,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm1bcfgr",
+                description: None,
+                array: None,
+                byte_offset: 0x48,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm1br",
+                description: None,
+                array: None,
+                byte_offset: 0x4c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm2acfgr",
+                description: None,
+                array: None,
+                byte_offset: 0x50,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm2ar",
+                description: None,
+                array: None,
+                byte_offset: 0x54,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm2bcfgr",
+                description: None,
+                array: None,
+                byte_offset: 0x58,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm2br",
+                description: None,
+                array: None,
+                byte_offset: 0x5c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm3acfgr",
+                description: None,
+                array: None,
+                byte_offset: 0x60,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm3ar",
+                description: None,
+                array: None,
+                byte_offset: 0x64,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm3bcfgr",
+                description: None,
+                array: None,
+                byte_offset: 0x68,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm3br",
+                description: None,
+                array: None,
+                byte_offset: 0x6c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm4acfgr",
+                description: None,
+                array: None,
+                byte_offset: 0x70,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm4ar",
+                description: None,
+                array: None,
+                byte_offset: 0x74,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm4bcfgr",
+                description: None,
+                array: None,
+                byte_offset: 0x78,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "mpcwm4br",
+                description: None,
+                array: None,
+                byte_offset: 0x7c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Raw,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+        ],
+    }],
+    fieldsets: &[],
+    enums: &[],
+};

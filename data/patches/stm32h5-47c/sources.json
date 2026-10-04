@@ -1,0 +1,308 @@
+{
+  "schema": "stm32-h5-47c-source-lock-v1",
+  "revisions": {
+    "pin_data": "7d1f1514ed5583ec5007ad91236b4e1d377295b1",
+    "cmsis_h5": "884b8dc78e41cbfca008363342b17f4a9e8641f7",
+    "hal_h5": "ba20038d938ecc31399e49d60fa6bcc8e82db5da",
+    "generator": "e6a417fa643efaf031abc79590ea3e76bc4edbf2"
+  },
+  "licenses": {
+    "pin_data": {
+      "spdx": "BSD-3-Clause",
+      "file": "ST-pin-LICENSE"
+    },
+    "cmsis_h5": {
+      "spdx": "Apache-2.0",
+      "file": "ST-cmsis-LICENSE"
+    },
+    "hal_h5": {
+      "spdx": "BSD-3-Clause",
+      "file": "ST-hal-LICENSE"
+    }
+  },
+  "files": {
+    "STM32H543CETx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543CETx.xml",
+      "sha256": "78156e65616a6b601e7ba7026d6625d71203e8af5cde0a3b6039be73e47ad17b",
+      "bytes": 55375,
+      "git_blob_sha1": "a2adc3408b27315574432d16ba7d3aac5a088ea4"
+    },
+    "STM32H543CEUx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543CEUx.xml",
+      "sha256": "4cdb8e012f0ff195107ed7d745f2fc02c35f48701d2d9cdbd6bb42a167770510",
+      "bytes": 55377,
+      "git_blob_sha1": "3ae3a764f4d5ac0c05942a63fe6a8cfcc04a93ea"
+    },
+    "STM32H543CGTx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543CGTx.xml",
+      "sha256": "6631d341de6bbfa2f875fbe7185d17a82a3b3b984fd7eba47f43e8e9b6244fda",
+      "bytes": 55376,
+      "git_blob_sha1": "c79478fb574cdaafb7d334ad48783d4a35fe9c87"
+    },
+    "STM32H543CGUx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543CGUx.xml",
+      "sha256": "8d8a9049e564b8e27b0d9be5b110e6b15d1bb6cc1ddc895235282af4984bc0b5",
+      "bytes": 55378,
+      "git_blob_sha1": "c15da22dd9a14e996540e4d09cb3cdd0433c8ff7"
+    },
+    "STM32H543RETx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543RETx.xml",
+      "sha256": "a543c5883969dad4b83e47eb303b3037d787471b64a9a1b6a8868bd461ba1f86",
+      "bytes": 64386,
+      "git_blob_sha1": "f16bd610240dea507c194a997014bec43689a56e"
+    },
+    "STM32H543RGTx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543RGTx.xml",
+      "sha256": "35cd5cdce60d237c4ea2cd96ad81cc82650e102332be8916762932fdf1d98b02",
+      "bytes": 64387,
+      "git_blob_sha1": "8aa5e8875a267d1bd6fd900d9240919db165ebc4"
+    },
+    "STM32H543UGYx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543UGYx.xml",
+      "sha256": "88953e18b24fa65bd84cca2e553b8a5ac9a51790980c57fc7236e3f871a3d9e7",
+      "bytes": 64092,
+      "git_blob_sha1": "ea83ad8af9352ecf067ec3e204861b95fa076706"
+    },
+    "STM32H543VEIx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543VEIx.xml",
+      "sha256": "a798b4941022984c963a36671eff2f245c6a37e44b7e2fc285f34c142337c8ad",
+      "bytes": 79696,
+      "git_blob_sha1": "d7d8086918268899b194f12257adc662675f243f"
+    },
+    "STM32H543VETx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543VETx.xml",
+      "sha256": "23a89c5ce4812cf8c43c5886e8c14026b71301e8b6844ac2f280f02d49b40fd5",
+      "bytes": 79652,
+      "git_blob_sha1": "af4ef083c2bd9e4bc93529958557a110481e2912"
+    },
+    "STM32H543VEZx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543VEZx.xml",
+      "sha256": "5406d513d6d472f1159848dabfb920ddba5b2310cdee82e4ce839373b64d36f7",
+      "bytes": 79655,
+      "git_blob_sha1": "d29e539efc6613e9851908021cb098c8c581b9d2"
+    },
+    "STM32H543VGIx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543VGIx.xml",
+      "sha256": "0ef2511a9c6cf0d8708798411289b6eb2b126a16100aebe1caef9d5b4b14f56c",
+      "bytes": 79697,
+      "git_blob_sha1": "955375369833256da90cb775f214cb7b425f3f39"
+    },
+    "STM32H543VGTx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543VGTx.xml",
+      "sha256": "fa9d7cfbde9a906f57b8f3dce20b731c814c07c0de2a55cb39fdd8517936ceb3",
+      "bytes": 79653,
+      "git_blob_sha1": "5c2f9324c4eb99e12bc78912e160676e2e3a5a5e"
+    },
+    "STM32H543VGZx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543VGZx.xml",
+      "sha256": "b2d310e6ac8b8bd6e25ca33d84fa7de04c0892b4d330ea2bf09af9ddc43772fc",
+      "bytes": 79656,
+      "git_blob_sha1": "01b94566d6d28bc3824f3d260f89456975fdc28f"
+    },
+    "STM32H543ZEJx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543ZEJx.xml",
+      "sha256": "9fc55c8d1f0cf92b47349d68ce243109ab327717fd95022263e8b4018d94b4ca",
+      "bytes": 89184,
+      "git_blob_sha1": "054535d33865ae6c853c46fd7a617adbab4a4562"
+    },
+    "STM32H543ZETx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543ZETx.xml",
+      "sha256": "51da91c84ab956f56585256bb3a323771e2d41827081278588d1b31644de1374",
+      "bytes": 89178,
+      "git_blob_sha1": "1e09b25974ef9871e48ab0b969162d37edfc60bf"
+    },
+    "STM32H543ZEZx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543ZEZx.xml",
+      "sha256": "a6d295bc6080df9008c9a9776457f6e04969d2d616f8f49ac89ec3bdc878c280",
+      "bytes": 89181,
+      "git_blob_sha1": "42458e2e464d15e928f4b842376fb107163c500c"
+    },
+    "STM32H543ZGJx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543ZGJx.xml",
+      "sha256": "cfbc1d4623a9cc856c423ee8393aad1f72d27edf29f755a41fea61df0fa588fb",
+      "bytes": 89185,
+      "git_blob_sha1": "d4a226addcee5f4eb9c93545f556a128f5be4423"
+    },
+    "STM32H543ZGTx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543ZGTx.xml",
+      "sha256": "3d04ba8a7ea9f8842e1dafd13ce173ccb95cedf92a607dea484d9eb03bd462f8",
+      "bytes": 89179,
+      "git_blob_sha1": "fb345812035d3c8d2292d1282fab8b6d1093380e"
+    },
+    "STM32H543ZGZx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H543ZGZx.xml",
+      "sha256": "70857983d0452f70916219be6e5a0dcf937c789559d8d4b4e626db050a4b23a7",
+      "bytes": 89182,
+      "git_blob_sha1": "edff184952137916f5eef4342cea0901686e7e2c"
+    },
+    "STM32H553CGTx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553CGTx.xml",
+      "sha256": "028c2d1aa2d403baedecb47efcc06da6f5195f0652a628f4080705b5a1c4a479",
+      "bytes": 57167,
+      "git_blob_sha1": "5ca25cc1d3300c5634380e4899a2e7c88d4796fb"
+    },
+    "STM32H553CGUx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553CGUx.xml",
+      "sha256": "4f44bcd72e64c50d46fe63f4a3f2edaa4b9ef80bbc4b2ecb03b06a584914ff77",
+      "bytes": 57169,
+      "git_blob_sha1": "356f4ed939fb52076a2556234e696c113f6a91c9"
+    },
+    "STM32H553RGTx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553RGTx.xml",
+      "sha256": "4e0e0f8b4352b23093ee902b7bb0f6761c052e2cef7fcec9eefdea52f4a0e4d8",
+      "bytes": 66178,
+      "git_blob_sha1": "9bf66fcef6948595bc2654dc480fc2ba55b0f634"
+    },
+    "STM32H553UGYx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553UGYx.xml",
+      "sha256": "d9a72e76e7c8e473f418433722d85aeb8d6bcf0279922b0db89c76541e6f6fa2",
+      "bytes": 65883,
+      "git_blob_sha1": "70444d5114813b71c387d1de70a8d827ec48d7a4"
+    },
+    "STM32H553VGIx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553VGIx.xml",
+      "sha256": "1798bee052fe605b2da12543c2a772775da3e8c61e8a2a5ea80f15ad3b5e198f",
+      "bytes": 81488,
+      "git_blob_sha1": "ab187838c57c7b569883a6d5a933c32c4c3d0fe7"
+    },
+    "STM32H553VGTx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553VGTx.xml",
+      "sha256": "57b2d68c621a4f2e3c115aac1c089b10df240203d338d55a6654693aa0504a23",
+      "bytes": 81444,
+      "git_blob_sha1": "eb6478eea15ef6bf3a19c08877dfdd1a2895e894"
+    },
+    "STM32H553VGZx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553VGZx.xml",
+      "sha256": "e4818fe86aa3119cc98f6032a52f5c313231cf3e905a9855f90daac54ec9aaa6",
+      "bytes": 81447,
+      "git_blob_sha1": "b07dabc75193c27b11c5b89f1fb5be1144584bd1"
+    },
+    "STM32H553ZGJx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553ZGJx.xml",
+      "sha256": "d05d023bf08003f63600d5a935674277ff1d2b767a311ac5a7f20c0420d30fd7",
+      "bytes": 90976,
+      "git_blob_sha1": "3026153c206c6aa2d01036ed4213f00270b7d140"
+    },
+    "STM32H553ZGTx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553ZGTx.xml",
+      "sha256": "a69d12423b0e8c957b86d4254707a189ca0c148045c8d0769faf62fce3d8b528",
+      "bytes": 90970,
+      "git_blob_sha1": "4161b8e50149f9bb240276a1d37dfbbb360569bc"
+    },
+    "STM32H553ZGZx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H553ZGZx.xml",
+      "sha256": "ec0c73801123bb38ab2729bd854ff9e41b676e46d33d5547b5db5c3e5073e037",
+      "bytes": 90973,
+      "git_blob_sha1": "67f7fbc89884fb062e42827412719faa28099d33"
+    },
+    "GPIO-STM32H5(4-5)3x_gpio_v1_0_Modes.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/IP/GPIO-STM32H5(4-5)3x_gpio_v1_0_Modes.xml",
+      "sha256": "e42c3de52bb2be2a411eb29d7742d09cb4cdad8413526dd530bddd58cb777ac5",
+      "bytes": 298936,
+      "git_blob_sha1": "e238038a8cae76322167039d78be04c10737ba1b"
+    },
+    "ST-pin-LICENSE": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/LICENSE",
+      "sha256": "2e80479026d27db007f8bdd190860e4b0452ca30d622ef4c04084b064418a096",
+      "bytes": 1526,
+      "git_blob_sha1": "2c8a382abf23c310bd0b451dbf60c9153c2ca218"
+    },
+    "STM32H563ZITx.xml": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/STM32_open_pin_data/7d1f1514ed5583ec5007ad91236b4e1d377295b1/mcu/STM32H563ZITx.xml",
+      "sha256": "ae05cd73463d96df790ae2e6252dc4d3298255fe7f4fd646e50571b72cd6e4ac",
+      "bytes": 100280,
+      "git_blob_sha1": "b381e92f748611513e59ed20933c370f2f0a471a"
+    },
+    "stm32h543xx.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-h5/884b8dc78e41cbfca008363342b17f4a9e8641f7/Include/stm32h543xx.h",
+      "sha256": "cf3492b9f8c38102e38ecbd0f7101029ae617c7041089cd49331550d71daad51",
+      "bytes": 1954499
+    },
+    "stm32h553xx.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-h5/884b8dc78e41cbfca008363342b17f4a9e8641f7/Include/stm32h553xx.h",
+      "sha256": "b0d412088d7bf0e3728e0fe0349910ca2c0aef1f42bd5a0bf422a77e3d166433",
+      "bytes": 2001938
+    },
+    "stm32h563xx.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-h5/884b8dc78e41cbfca008363342b17f4a9e8641f7/Include/stm32h563xx.h",
+      "sha256": "563aeb7a90e100821f740efedc564ff0a5d992469c43b8ed3f2b612b8878626b",
+      "bytes": 1898013
+    },
+    "ST-cmsis-LICENSE": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/cmsis-device-h5/884b8dc78e41cbfca008363342b17f4a9e8641f7/LICENSE.md",
+      "sha256": "fdb37bec600bb3784d8c5fffdddf225f9d4ee8cc225320a01394f5da01e7efc1",
+      "bytes": 11347
+    },
+    "ST-hal-LICENSE": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/LICENSE.md",
+      "sha256": "3ef135517604c828e7e2ac60daa5d34ce90a258dd0dfbec140651ac173b45ced",
+      "bytes": 1484
+    },
+    "stm32h5xx_hal_dma.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_dma.h",
+      "sha256": "b7fe494acda54ccacde350575c70406e954c6d99d2869e067f156c54e72ab167",
+      "bytes": 62024
+    },
+    "stm32h5xx_hal_dma_ex.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_dma_ex.h",
+      "sha256": "be5194b47f2e939938e09af81e2ebe94485ebb9eff2738a24e3d1902215fdcda",
+      "bytes": 45053
+    },
+    "stm32h5xx_ll_dma.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_ll_dma.h",
+      "sha256": "161125c1629947ab0c7a141fa586c5ce0f1c0bdc54a940d4edb6c93e2ad75088",
+      "bytes": 366822
+    },
+    "stm32h5xx_hal_flash.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_flash.h",
+      "sha256": "ed62c21fe7d846569f7ea361e010b7df3180a96c00ba532845825e7bff623975",
+      "bytes": 58963
+    },
+    "stm32h5xx_hal_flash_ex.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_flash_ex.h",
+      "sha256": "7620baf2c3496b893169114d90d371249417e5cdb0b92719ea7debd553ca044c",
+      "bytes": 58322
+    },
+    "stm32h5xx_hal_pwr_ex.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_pwr_ex.h",
+      "sha256": "8aeffa4d9433a2c5d51773a6c924d0f741661548310a8332a9a55c0f48c8de1c",
+      "bytes": 23971
+    },
+    "stm32h5xx_hal_rcc.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_rcc.h",
+      "sha256": "de9157ed61c490ab10c25f74062b2730be160ca782e76ea1dd6138a96cec724d",
+      "bytes": 281023
+    },
+    "stm32h5xx_hal_rcc_ex.h": {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32h5xx-hal-driver/ba20038d938ecc31399e49d60fa6bcc8e82db5da/Inc/stm32h5xx_hal_rcc_ex.h",
+      "sha256": "4926185883fc816d3591b62f2a7f5d31e9c113e1985d17e4694a2d9e38a0f396",
+      "bytes": 232033
+    }
+  },
+  "documents": [
+    {
+      "name": "DS15168-H543.pdf",
+      "url": "https://www.st.com/resource/en/datasheet/stm32h543cg.pdf",
+      "status": "unavailable",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "name": "DS15167-H553.pdf",
+      "url": "https://www.st.com/resource/en/datasheet/stm32h553cg.pdf",
+      "status": "unavailable",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "name": "ES0683.pdf",
+      "url": "https://www.st.com/resource/en/errata_sheet/es0683-stm32h543xx-stm32h553xx-device-errata-stmicroelectronics.pdf",
+      "status": "unavailable",
+      "error": "HTTP Error 567: Unknown Status"
+    },
+    {
+      "name": "RM0481-H543-H553.pdf",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0481-stm32h523533xx-stm32h543553xx-stm32h562xx-and-stm32h563573xx-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "status": "unavailable",
+      "error": "HTTP Error 567: Unknown Status"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "block/AES": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 8,
+        "name": "DINR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 12,
+        "name": "DOUTR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 16,
+        "name": "KEYR0"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 20,
+        "name": "KEYR1"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 24,
+        "name": "KEYR2"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 28,
+        "name": "KEYR3"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "name": "IVR0"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 36,
+        "name": "IVR1"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 40,
+        "name": "IVR2"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 44,
+        "name": "IVR3"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 48,
+        "name": "KEYR4"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 52,
+        "name": "KEYR5"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 56,
+        "name": "KEYR6"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 60,
+        "name": "KEYR7"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 64,
+        "name": "SUSP0R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 68,
+        "name": "SUSP1R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 72,
+        "name": "SUSP2R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 76,
+        "name": "SUSP3R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 80,
+        "name": "SUSP4R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 84,
+        "name": "SUSP5R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 88,
+        "name": "SUSP6R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 92,
+        "name": "SUSP7R"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 768,
+        "fieldset": "IER",
+        "name": "IER"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 772,
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "access": "Write",
+        "byte_offset": 776,
+        "fieldset": "ICR",
+        "name": "ICR"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 2,
+        "name": "DATATYPE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 2,
+        "name": "MODE"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "DMAINEN"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "DMAOUTEN"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 2,
+        "name": "GCMPH"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "KEYSIZE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "KEYPROT"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 4,
+        "name": "NPBLB"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 2,
+        "name": "KMOD"
+      },
+      {
+        "bit_offset": 26,
+        "bit_size": 2,
+        "name": "KSHAREID"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 3,
+        "name": "KEYSEL"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "name": "IPRST"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CCF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RWEIF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "KEIF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RNGEIF"
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CCFIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RWEIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "KEIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RNGEIE"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "CCF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RWEIF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "KEIF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "RNGEIF"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "RDERR"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "WRERR"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "name": "BUSY"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "name": "KEYVALID"
+      }
+    ]
+  }
+}

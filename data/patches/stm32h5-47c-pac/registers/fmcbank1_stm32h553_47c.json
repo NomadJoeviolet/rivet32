@@ -1,0 +1,50 @@
+{
+  "block/FMC_BANK1": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 8,
+          "stride": 4
+        },
+        "byte_offset": 0,
+        "name": "BTCR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 32,
+        "fieldset": "PCSCNTR",
+        "name": "PCSCNTR"
+      }
+    ]
+  },
+  "fieldset/PCSCNTR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "name": "CSCOUNT"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "CNTB1EN"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "CNTB2EN"
+      },
+      {
+        "bit_offset": 18,
+        "bit_size": 1,
+        "name": "CNTB3EN"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "CNTB4EN"
+      }
+    ]
+  }
+}

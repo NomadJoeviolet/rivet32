@@ -1,0 +1,5 @@
+Exact DIE47A candidate PAC: driver-facing RCC/PWR/FLASH, proven SPI v5 extension, three FDCAN RAM regions.
+Pinned source provenance and licenses are retained in parent stages. HAL integration and HIL remain incomplete.
+CRS typed sync sources and OTG HS PLL1_Q_DIV2 naming derived from exact ST constants. USB PHY initialization remains incomplete.
+OTG metadata exposes exact controllers to the Embassy driver; native Raw guards are retained after the kind rename. USB integration and HIL remain incomplete.
+GPIO EXTI metadata binds sixteen exact CMSIS interrupts per chip. Native register APIs and Raw access guards are unchanged; framework integration and HIL remain incomplete.

@@ -1,0 +1,229 @@
+{
+  "block/CRS": {
+    "description": "Clock recovery system",
+    "items": [
+      {
+        "byte_offset": 0,
+        "description": "control register",
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "byte_offset": 4,
+        "description": "configuration register",
+        "fieldset": "CFGR",
+        "name": "CFGR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 8,
+        "description": "interrupt and status register",
+        "fieldset": "ISR",
+        "name": "ISR"
+      },
+      {
+        "byte_offset": 12,
+        "description": "interrupt flag clear register",
+        "fieldset": "ICR",
+        "name": "ICR"
+      }
+    ]
+  },
+  "enum/SYNCSRC": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "description": "GPIO selected as SYNC signal source",
+        "name": "GPIO",
+        "value": 0
+      },
+      {
+        "description": "LSE selected as SYNC signal source",
+        "name": "LSE",
+        "value": 1
+      },
+      {
+        "description": "USB SOF selected as SYNC signal source",
+        "name": "USB",
+        "value": 2
+      }
+    ]
+  },
+  "fieldset/CFGR": {
+    "description": "configuration register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 16,
+        "description": "Counter reload value",
+        "name": "RELOAD"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 8,
+        "description": "Frequency error limit",
+        "name": "FELIM"
+      },
+      {
+        "bit_offset": 24,
+        "bit_size": 3,
+        "description": "SYNC divider",
+        "name": "SYNCDIV"
+      },
+      {
+        "bit_offset": 28,
+        "bit_size": 2,
+        "description": "SYNC signal source selection",
+        "enum": "SYNCSRC",
+        "name": "SYNCSRC"
+      },
+      {
+        "bit_offset": 31,
+        "bit_size": 1,
+        "description": "SYNC polarity selection",
+        "name": "SYNCPOL"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "description": "control register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "description": "SYNC event OK interrupt enable",
+        "name": "SYNCOKIE"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "description": "SYNC warning interrupt enable",
+        "name": "SYNCWARNIE"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "description": "Synchronization or trimming error interrupt enable",
+        "name": "ERRIE"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "description": "Expected SYNC interrupt enable",
+        "name": "ESYNCIE"
+      },
+      {
+        "bit_offset": 5,
+        "bit_size": 1,
+        "description": "Frequency error counter enable",
+        "name": "CEN"
+      },
+      {
+        "bit_offset": 6,
+        "bit_size": 1,
+        "description": "Automatic trimming enable",
+        "name": "AUTOTRIMEN"
+      },
+      {
+        "bit_offset": 7,
+        "bit_size": 1,
+        "description": "Generate software SYNC event",
+        "name": "SWSYNC"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 6,
+        "description": "HSI48 oscillator smooth trimming",
+        "name": "TRIM"
+      }
+    ]
+  },
+  "fieldset/ICR": {
+    "description": "interrupt flag clear register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "description": "SYNC event OK clear flag",
+        "name": "SYNCOKC"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "description": "SYNC warning clear flag",
+        "name": "SYNCWARNC"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "description": "Error clear flag",
+        "name": "ERRC"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "description": "Expected SYNC clear flag",
+        "name": "ESYNCC"
+      }
+    ]
+  },
+  "fieldset/ISR": {
+    "description": "interrupt and status register",
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "description": "SYNC event OK flag",
+        "name": "SYNCOKF"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "description": "SYNC warning flag",
+        "name": "SYNCWARNF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "description": "Error flag",
+        "name": "ERRF"
+      },
+      {
+        "bit_offset": 3,
+        "bit_size": 1,
+        "description": "Expected SYNC flag",
+        "name": "ESYNCF"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "description": "SYNC error",
+        "name": "SYNCERR"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "description": "SYNC missed",
+        "name": "SYNCMISS"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "description": "Trimming overflow or underflow",
+        "name": "TRIMOVF"
+      },
+      {
+        "bit_offset": 15,
+        "bit_size": 1,
+        "description": "Frequency error direction",
+        "name": "FEDIR"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 16,
+        "description": "Frequency error capture",
+        "name": "FECAP"
+      }
+    ]
+  }
+}

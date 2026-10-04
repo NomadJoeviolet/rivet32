@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "scope": "reproducible exact 47C HAL candidate; main integration pending",
+  "files": {
+    "patch.json": "259a88605befa8c9e48ef3171ed1f4e124d226eb7732a5c23a7923feecbfc8f8",
+    "README.md": "ced8cb6fd7d5a1c298bfef09ddf59da428ca0b39c5d3b1f6bd5bd646823ca349",
+    "sources/src/exti/h5_47c.rs": "bba10257dc55fb02e8adf1fc4f07b886da2a81de60ee5ddca278062b9400ec1e",
+    "sources/src/exti/h5_47c_regs.rs": "ed8e764433ca7001d7416cb56773ec654b82d12609a1ed8094ca17567ea5c336"
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "block/PKA": {
+    "items": [
+      {
+        "access": "ReadWrite",
+        "byte_offset": 0,
+        "fieldset": "CR",
+        "name": "CR"
+      },
+      {
+        "access": "Read",
+        "byte_offset": 4,
+        "fieldset": "SR",
+        "name": "SR"
+      },
+      {
+        "access": "ReadWrite",
+        "byte_offset": 8,
+        "fieldset": "CLRFR",
+        "name": "CLRFR"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 253,
+          "stride": 4
+        },
+        "byte_offset": 12,
+        "name": "Reserved"
+      },
+      {
+        "access": "ReadWrite",
+        "array": {
+          "len": 1334,
+          "stride": 4
+        },
+        "byte_offset": 1024,
+        "name": "RAM"
+      }
+    ]
+  },
+  "fieldset/CLRFR": {
+    "fields": [
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "PROCENDFC"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "RAMERRFC"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "ADDRERRFC"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "OPERRFC"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "CMFC"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "EN"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "START"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 6,
+        "name": "MODE"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "PROCENDIE"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "RAMERRIE"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "ADDRERRIE"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "OPERRIE"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "CMFIE"
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "fields": [
+      {
+        "bit_offset": 0,
+        "bit_size": 1,
+        "name": "INITOK"
+      },
+      {
+        "bit_offset": 1,
+        "bit_size": 1,
+        "name": "LMF"
+      },
+      {
+        "bit_offset": 2,
+        "bit_size": 1,
+        "name": "CCEN"
+      },
+      {
+        "bit_offset": 8,
+        "bit_size": 1,
+        "name": "RNGOKF"
+      },
+      {
+        "bit_offset": 9,
+        "bit_size": 1,
+        "name": "DATAOKF"
+      },
+      {
+        "bit_offset": 10,
+        "bit_size": 1,
+        "name": "INCRERRF"
+      },
+      {
+        "bit_offset": 11,
+        "bit_size": 1,
+        "name": "DATAZF"
+      },
+      {
+        "bit_offset": 12,
+        "bit_size": 1,
+        "name": "TRZERRF"
+      },
+      {
+        "bit_offset": 13,
+        "bit_size": 1,
+        "name": "MDERRF"
+      },
+      {
+        "bit_offset": 14,
+        "bit_size": 1,
+        "name": "RNGERRF"
+      },
+      {
+        "bit_offset": 16,
+        "bit_size": 1,
+        "name": "BUSY"
+      },
+      {
+        "bit_offset": 17,
+        "bit_size": 1,
+        "name": "PROCENDF"
+      },
+      {
+        "bit_offset": 19,
+        "bit_size": 1,
+        "name": "RAMERRF"
+      },
+      {
+        "bit_offset": 20,
+        "bit_size": 1,
+        "name": "ADDRERRF"
+      },
+      {
+        "bit_offset": 21,
+        "bit_size": 1,
+        "name": "OPERRF"
+      },
+      {
+        "bit_offset": 22,
+        "bit_size": 1,
+        "name": "CMF"
+      }
+    ]
+  }
+}
