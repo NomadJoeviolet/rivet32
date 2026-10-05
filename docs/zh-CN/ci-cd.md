@@ -32,7 +32,7 @@ ci.yml 定义了 8 类作业（job）。一类作业可以针对多个系统、�
 | 作业名 | 执行的检查 |
 |---|---|
 | workflow-lint | 用 actionlint 检查工作流语法、表达式和 action 参数；安装工具时校验下载文件的 SHA |
-| host | 在 Ubuntu 和 Windows 上检查代码格式、文档链接、整个 workspace 的编译、USB feature 编译，并运行 Clippy |
+| host | 在 Ubuntu 和 Windows 上检查格式、文档链接、workspace 和 USB 编译、Clippy；运行主机契约、异步任务和资料下载测试，以及无需硬件的示例 |
 | peripheral-smoke | 先用 H723 检查最小固件和七类外设，确认 Linux 上的依赖准备、构建和 ELF 检查工具可用 |
 | firmware | 为其余 25 个代表配置链接最小固件、检查 ELF，并构造七类外设 |
 | reference-boards | 为五块参考板链接 release 固件，并针对 ARM 运行 Clippy |
@@ -44,7 +44,7 @@ firmware 矩阵在 peripheral-smoke 和两组 generated-dual-project 都成功�
 
 双核生成工程用 `cargo fmt --check -p ...` 检查两个 App 包和构建工具包；框架源码的格式由 host 作业检查。这里不用 `--all`，因为它还会递归检查本地路径依赖，要求改动 `Framework/vendor/` 中固定版本的 PAC 源码。
 
-Clippy 是 Rust 的静态代码检查工具。这些作业检查编译、链接、代码写法和源码完整性，不运行阶段单元测试、C/C++ 对照工程或专用测试固件，因此不能用其结果代替功能行为的回归测试。
+Clippy 是 Rust 的静态代码检查工具。主机测试还检查队列、任务取消和下载失败等行为；资料下载测试使用本地 HTTP 服务，不依赖外部镜像站。这些检查不连接开发板，不能代替实机验证。
 
 ## 提交前在本地运行什么
 
@@ -110,7 +110,9 @@ RELEASE_TAG=v0.1.0 python scripts/package_release.py --check-tag
 
 CI 设置 `EMBODIED_CACHE_LIMIT_MIB=1024`，受管理的构建会在下一次开始前按此阈值回收缓存；本地默认值为 2048。这是构建之间的回收阈值，单次构建仍可能超过它，也不会限制所有并行 runner 或整个仓库的总占用。
 
-当前没有使用跨运行的 `actions/cache`。保留需要交付的最终产物，确认没有构建在使用缓存后，再按需删除 `target/`。详见[存储说明](../storage.md)。
+`actions/cache` 只保存参考 PDF，不保存 Rust 编译产物。缓存键包含来源清单的哈希；普通 CI 中，H723 前置作业成功后，后续型号可复用它保存的 PDF。手动全矩阵使用相同的缓存。无论缓存是否命中，下载脚本都会检查文件的 SHA-256；网络错误、临时服务故障或内容不匹配最多尝试 3 次，持续不匹配仍然失败，原哈希不会自动更新。
+
+保留需要交付的最终产物，确认没有构建在使用缓存后，再按需删除 `target/`。详见[存储说明](../storage.md)。
 
 ---
 

@@ -76,6 +76,8 @@ RTT 通过调试探针传日志，不需要 UART 接线。最小固件没有点�
 
 ## 下载依赖卡住或缓存太大
 
+若 `fetch_source_documents.py` 报 `Downloaded document SHA-256 differs`，说明参考资料的下载内容与固定版本不一致，此时还没有开始外设编译。日志会列出预期和实际哈希、字节数、HTTP 状态及内容类型。脚本最多尝试 3 次；若仍失败，检查镜像站是否返回错误页或更换了文件，不要直接修改预期哈希，也不要关闭校验。
+
 TLS 或代理报错时，检查网络、系统时间、Git/Cargo 代理和证书环境，保留 TLS 校验。出现 `Blocking waiting for file lock on package cache`，通常是另一个 Cargo 进程正在使用包缓存。先查看那个进程是否还在下载或构建；为同一次下载再开多个任务，只会增加等待。离线模式需要所需依赖已完整缓存。
 
 开发目录除了源码，还包含工具链、Cargo 的 Git/registry 下载内容和 target 编译结果。源码及必要来源数据低于 1 GB，其余占用需分别查看，见[存储管理](../storage.md)。

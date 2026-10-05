@@ -47,6 +47,11 @@ jobs:
           rustup toolchain install 1.98.1 --profile minimal
           rustup target add --toolchain 1.98.1 thumbv6m-none-eabi thumbv7m-none-eabi thumbv7em-none-eabihf thumbv8m.main-none-eabihf
       - run: cargo fetch --locked
+      - name: Restore pinned document cache
+        uses: actions/cache@v5
+        with:
+          path: data/sources/**/*.pdf
+          key: source-documents-v1-${{ hashFiles('data/patches/**/sources.json') }}
       - name: Restore pinned source documents required by PAC verification
         run: python3 xtask/scripts/fetch_source_documents.py
       - name: Link seven independent peripheral constructors for every selected chip

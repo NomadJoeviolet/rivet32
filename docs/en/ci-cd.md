@@ -32,7 +32,7 @@ ci.yml defines eight job types. A job can repeat for several operating systems, 
 | Job | Checks performed |
 |---|---|
 | workflow-lint | Uses actionlint to check workflow syntax, expressions and action inputs; verifies the tool download's SHA |
-| host | Checks formatting, documentation links, workspace compilation and USB feature compilation on Ubuntu and Windows, then runs Clippy |
+| host | Checks formatting, documentation links, workspace and USB compilation, and Clippy on Ubuntu and Windows; runs host contract, async task and document retrieval tests, plus hardware-free examples |
 | peripheral-smoke | Checks minimal firmware and seven peripheral types on H723 first, covering dependency preparation, builds and the ELF inspection tool on Linux |
 | firmware | Links minimal firmware, inspects ELF files and constructs seven peripheral types for the remaining 25 representative configurations |
 | reference-boards | Links release firmware and runs ARM Clippy for five reference boards |
@@ -44,7 +44,7 @@ The firmware matrix starts only after peripheral-smoke and both generated-dual-p
 
 Generated dual-core projects use `cargo fmt --check -p ...` for both App packages and their build tool; the host job checks framework source formatting. Using `--all` here would also follow local path dependencies and demand changes to the pinned PAC sources in `Framework/vendor/`.
 
-Clippy is Rust's static code analysis tool. These jobs check compilation, linking, code patterns and source integrity. They do not run phase-specific unit tests, C/C++ comparison projects or dedicated test firmware, so they cannot substitute for behavioral regression tests.
+Clippy is Rust's static code analysis tool. Host tests also check behavior such as queues, task cancellation and download failures. Document retrieval tests use a local HTTP server without depending on the external mirror. These checks do not connect to a board and cannot replace hardware validation.
 
 ## What to run locally before submitting code
 
@@ -110,7 +110,9 @@ Only `stm32h723vg` minimal firmware is currently packaged; its BIN cannot be use
 
 CI sets `EMBODIED_CACHE_LIMIT_MIB=1024`. Managed builds use this threshold to reclaim caches before the next build starts; the local default is 2048. A single build can still exceed it, and it does not limit the combined space of all parallel runners or the whole repository.
 
-There is no cross-run `actions/cache`. Keep the final artifacts you need to deliver, then remove `target/` as needed after confirming that no build is using it. See [storage](../storage.md).
+`actions/cache` stores reference PDFs only, not Rust build output. Its key includes a hash of the source manifests. In ordinary CI, later chip jobs can reuse the PDFs saved by the successful H723 prerequisite job. The manual full matrix uses the same cache. The download script checks each file's SHA-256 even on a cache hit. Network errors, temporary service failures and content mismatches get at most three attempts; persistent mismatches still fail, and the recorded hash is never updated automatically.
+
+Keep the final artifacts you need to deliver, then remove `target/` as needed after confirming that no build is using it. See [storage](../storage.md).
 
 ---
 

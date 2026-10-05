@@ -76,6 +76,8 @@ RTT sends logs through the debug probe and needs no UART wiring. Minimal firmwar
 
 ## Dependency downloads stall or caches grow too large
 
+If `fetch_source_documents.py` reports `Downloaded document SHA-256 differs`, the downloaded reference does not match the pinned version; peripheral compilation has not started yet. The log includes expected and actual hashes, byte count, HTTP status and content type. The script makes at most three attempts. If it still fails, check whether the mirror returned an error page or replaced the file. Do not simply change the expected hash or disable verification.
+
 For TLS or proxy errors, check connectivity, system time, Git/Cargo proxy settings and certificates while keeping TLS validation enabled. A package-cache lock message usually means another Cargo process is using the cache. Check whether that process is still downloading or building. Starting more jobs for the same download adds waiting. Offline mode requires all needed dependencies to be cached.
 
 A development directory includes toolchains, Cargo Git/registry downloads and target build output in addition to sources. Sources and required provenance data are below 1 GB; check other categories separately using the [storage guide](../storage.md).

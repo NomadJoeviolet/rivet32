@@ -38,6 +38,8 @@ jobs:
         run: rustc -Vv
       - run: cargo fmt --all --check
       - run: python scripts/check_docs.py
+      - name: Test pinned document retrieval without external network
+        run: python -B -m unittest discover -s scripts/tests -p 'test_*.py'
       - run: cargo check --workspace --locked
       - run: cargo check -p embodied-stm32 --features usb --locked
       - run: cargo clippy --workspace --lib --bins --locked -- -D warnings
@@ -68,10 +70,15 @@ jobs:
         run: cargo xtask build --chip ${{ matrix.chip }}
       - name: Fetch all locked dependencies for offline helper projects
         run: cargo fetch --locked
+      - name: Restore pinned document cache
+        uses: actions/cache@v5
+        with:
+          path: data/sources/**/*.pdf
+          key: source-documents-v1-${{ hashFiles('data/patches/**/sources.json') }}
+      - name: Fetch and verify pinned source documents
+        run: python3 xtask/scripts/fetch_source_documents.py
       - name: Link actual peripheral constructors with the reviewed clock profiles
-        run: |
-          python3 xtask/scripts/fetch_source_documents.py
-          cargo xtask peripherals --chip ${{ matrix.chip }}
+        run: cargo xtask peripherals --chip ${{ matrix.chip }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -102,10 +109,15 @@ jobs:
         run: cargo xtask build --chip ${{ matrix.chip }}
       - name: Fetch all locked dependencies for offline helper projects
         run: cargo fetch --locked
+      - name: Restore pinned document cache
+        uses: actions/cache@v5
+        with:
+          path: data/sources/**/*.pdf
+          key: source-documents-v1-${{ hashFiles('data/patches/**/sources.json') }}
+      - name: Fetch and verify pinned source documents
+        run: python3 xtask/scripts/fetch_source_documents.py
       - name: Link actual peripheral constructors with the reviewed clock profiles
-        run: |
-          python3 xtask/scripts/fetch_source_documents.py
-          cargo xtask peripherals --chip ${{ matrix.chip }}
+        run: cargo xtask peripherals --chip ${{ matrix.chip }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
