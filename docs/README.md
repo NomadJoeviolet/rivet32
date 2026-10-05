@@ -8,6 +8,7 @@ For a first application, open the English handbook, install the tools and build 
 
 - [支持范围 / Support scope](support-scope.md)
 - [可复现 PoC / Reproducible PoC](poc.md)
+- [运行控制与设计依据 / Runtime control and design evidence](runtime-control.md)
 - [参考板 / Reference boards](reference-boards.md)
 - [算法 / Algorithms](algorithms.md)
 - [设备 / Devices](devices.md)

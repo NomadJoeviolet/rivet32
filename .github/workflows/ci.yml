@@ -45,6 +45,12 @@ jobs:
         run: cargo test -p embodied-framework --test host_contracts --locked
       - name: Run hardware-free control pipeline PoC
         run: cargo run -p embodied-framework --example host_poc --locked
+      - name: Test runtime lifecycle and cancellation contracts
+        run: cargo test -p embodied-runtime --tests --locked
+      - name: Lint runtime tests and examples
+        run: cargo clippy -p embodied-runtime --tests --examples --locked -- -D warnings
+      - name: Run controlled CAN worker PoC
+        run: cargo run -p embodied-runtime --example controlled_can --locked
   peripheral-smoke:
     needs: workflow-lint
     runs-on: ubuntu-24.04

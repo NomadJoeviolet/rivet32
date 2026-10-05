@@ -150,15 +150,17 @@ Cargo 管理依赖并调用 Rust 编译器。编译后，链接器按照链接�
 
 ## 从 Dynamo 和 Warp 借鉴什么
 
-对照源码的固定版本：Dynamo [`519e735`](https://github.com/ai-dynamo/dynamo/tree/519e735550c1a4aac67c2fd37d4a56ed0a014653)，Warp [`b865631`](https://github.com/warpdotdev/warp/tree/b865631c9a0e46b548c7ec7dc32e228a148171d1)。下面先描述可核对的实现，再给出针对本框架的设计建议；这些建议不表示已完成运行时改造。
+对照源码的固定版本：Dynamo [`519e735`](https://github.com/ai-dynamo/dynamo/tree/519e735550c1a4aac67c2fd37d4a56ed0a014653)，Warp [`b865631`](https://github.com/warpdotdev/warp/tree/b865631c9a0e46b548c7ec7dc32e228a148171d1)。下面描述可核对的实现及其在本框架中的对应；具体采用范围以实现说明为准。
+
+已落地的部分见[运行控制与设计依据](../runtime-control.md)：新增 `RunControl` 将停止/中止请求从 CAN 数据分离，`run_controlled` 在明确的帧边界处理这些请求，并用取消与手动时钟测试验证。该说明逐项区分了外部思想、本次代码和原有机制。
 
 | 可核对的设计 | 在 rivet32 中的对应与建议 |
 |---|---|
 | Dynamo 的 [AsyncEngine](https://github.com/ai-dynamo/dynamo/blob/519e735550c1a4aac67c2fd37d4a56ed0a014653/lib/runtime/src/engine.rs) 区分请求、响应、错误类型与执行上下文；Warp 的 [warpui 入口](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warpui/src/lib.rs) 重新导出 core，并组织平台、窗口和渲染模块。 | 保持 `core` 中的通信 trait、`devices/algorithms` 中的纯逻辑与 `stm32` 硬件适配分离；App 负责把它们组装起来。只有存在多个真实实现时才提炼新 trait，优先使用静态泛型和有界消息，不引入云服务式动态注册表。 |
-| Warp 的 [OnCancelFuture](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warp_util/src/on_cancel.rs) 区分正常完成与完成前被 Drop，并有[对应测试](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warp_util/src/on_cancel_tests.rs)。Dynamo 的执行上下文另外区分停止生成与终止请求。 | 本框架已有 [MessageLease 的 Drop](../../crates/embodied-runtime/src/pool.rs) 和 [CAN worker 的保留/重试约定](../../crates/embodied-runtime/src/can.rs)。下一步应测试 Future 首次 poll 前取消、Pending 后取消、正常完成和驱动失败，证明资源只归还一次、未发送帧按约定保留。逻辑取消并不等于已经撤销硬件传输。 |
-| Warp 的 [time.rs](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warpui_core/src/time.rs) 在测试中提供可推进的时间值，生产代码读取真实时间。 | 沿用本框架的 [Clock trait](../../crates/embodied-runtime/src/clock.rs)，为异步测试实现手动推进的单调时钟和假总线。用确定的输入检查超时边界、队列溢出与重试，而不靠真实 sleep。当前 [PoC](../poc.md) 已使用显式时间戳验证同步链路；可控异步时钟仍是后续工作。 |
+| Warp 的 [OnCancelFuture](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warp_util/src/on_cancel.rs) 区分正常完成与完成前被 Drop，并有[对应测试](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warp_util/src/on_cancel_tests.rs)。Dynamo 的执行上下文另外区分停止生成与终止请求。 | 本框架已有 [MessageLease 的 Drop](../../crates/embodied-runtime/src/pool.rs) 和 [CAN worker 的保留/重试约定](../../crates/embodied-runtime/src/can.rs)。新增主机测试覆盖 Future 首次 poll 前取消、Pending 后取消、正常完成和驱动失败，检查资源只归还一次、未发送帧按约定保留。逻辑取消并不等于已经撤销硬件传输。 |
+| Warp 的 [time.rs](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warpui_core/src/time.rs) 在测试中提供可推进的时间值，生产代码读取真实时间。 | 沿用本框架的 [Clock trait](../../crates/embodied-runtime/src/clock.rs)，在异步测试中使用手动推进的单调时钟和假总线。用确定的输入检查超时边界、队列溢出与重试，而不靠真实 sleep。当前 [PoC](../poc.md) 使用显式时间戳验证同步链路；[运行控制测试](../runtime-control.md) 另外使用手动时钟验证异步超时。 |
 
-适合立即落地的是可执行 PoC、行为测试和清晰的 feature 边界，本次已补入；随后优先补取消与故障注入测试，再做板上时序测量。可以利用已有 `CanTxStats` 和 `Tick.missed` 记录溢出、驱动错误与错过周期，通过 RTT 输出诊断，不必先引入完整遥测服务。
+可执行 PoC、行为测试、清晰的 feature 边界，以及运行控制、取消、驱动失败与可控时钟测试已经补入。后续需要验证真实驱动和板上时序。可以利用已有 `CanTxStats` 和 `Tick.missed` 记录溢出、驱动错误与错过周期，通过 RTT 输出诊断，不必先引入完整遥测服务。
 
 Dynamo 面向有操作系统的分布式推理，Warp 面向桌面应用；其线程、堆分配、网络或 UI 运行时不能直接作为裸机方案。这里借鉴接口与测试方法，固件继续使用 `no_std`、固定容量存储和 Embassy；没有导入这两个项目的代码或依赖。
 

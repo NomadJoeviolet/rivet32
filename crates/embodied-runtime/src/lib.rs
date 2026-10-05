@@ -12,6 +12,7 @@
 
 pub mod can;
 pub mod clock;
+pub mod control;
 pub mod hardware_timer;
 pub mod mutex;
 pub mod pool;

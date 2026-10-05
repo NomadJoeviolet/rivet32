@@ -53,6 +53,15 @@ host PoC passed: 9 init stages, bounded CAN queue, DJI validation, PID output=20
 
 The host pipeline uses the owned `Queue`. It does not exercise `SharedQueue`, interrupts, async waiting/cancellation, the Embassy executor or a physical bus. Default-feature workspace checks do not cover chip-specific HAL paths; cross-compile those separately.
 
+运行控制有独立的异步测试与示例，覆盖协作停止、中止、保留帧恢复和可控 deadline。它们使用假驱动和主机时钟；源码依据、接口语义和预期输出见[运行控制说明](runtime-control.md)。
+
+Lifecycle control has separate async tests and a demo covering graceful stop, abort, retained-frame recovery and controlled deadlines. They use fake drivers and a host test clock; see [runtime control](runtime-control.md) for source evidence, contracts and expected output.
+
+```text
+cargo test -p embodied-runtime --tests --locked
+cargo run -p embodied-runtime --example controlled_can --locked
+```
+
 ## 2. H723 最小固件 / H723 minimal firmware
 
 ```text
