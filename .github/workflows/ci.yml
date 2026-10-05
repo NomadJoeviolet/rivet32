@@ -41,6 +41,10 @@ jobs:
       - run: cargo check --workspace --locked
       - run: cargo check -p embodied-stm32 --features usb --locked
       - run: cargo clippy --workspace --lib --bins --locked -- -D warnings
+      - name: Test host contracts
+        run: cargo test -p embodied-framework --test host_contracts --locked
+      - name: Run hardware-free control pipeline PoC
+        run: cargo run -p embodied-framework --example host_poc --locked
   peripheral-smoke:
     needs: workflow-lint
     runs-on: ubuntu-24.04

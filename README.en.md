@@ -8,6 +8,8 @@ The firmware uses `no_std`, which means it does not depend on Rust's operating-s
 
 ## Quick start
 
+Without a board, start with the [host PoC](docs/poc.md) to exercise initialization, a CAN frame queue, protocol decoding and PID control before cross-compiling the minimal firmware.
+
 ### 1. Prepare the tools
 
 On a new machine or with a fresh source download, follow the [toolchain guide](docs/en/toolchain.md) to install Rust 1.98.1, a matching host linker and the compilation target for your MCU. The project uses Edition 2024, Rust's 2024 language rules. The source does not include the local `.tools/` directory.
@@ -61,14 +63,17 @@ The available configurations cover 895 models and 921 chip/core configurations, 
 
 ```mermaid
 flowchart LR
-    A[App: board and tasks] --> F[core / runtime / algorithms / devices]
-    A --> E[Embassy executor and time]
-    F --> S[STM32 adapters]
-    S --> H[embassy-stm32 HAL]
+    A[App: firmware and boards] --> F[embodied-framework]
+    F --> C[core / runtime / algorithms / devices]
+    A -. firmware .-> E[Embassy executor and time]
+    F -. stm32 feature .-> S[STM32 adapters]
+    S -. hal + chip feature .-> H[embassy-stm32 HAL]
     H --> P[PAC / MCU registers]
 ```
 
 Clocks, pins, DMA and interrupts are configured directly in Rust board modules. `embedded-hal` defines the common interfaces for device drivers, `embassy-stm32` implements them for STM32, and the PAC provides register access. Application behavior belongs in App. Framework crates do not depend on App.
+
+See [architecture](docs/en/architecture.md) for the full crate dependencies, feature boundaries and startup sequence.
 
 | Directory | Responsibility |
 |---|---|

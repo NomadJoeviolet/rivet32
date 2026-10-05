@@ -8,6 +8,8 @@
 
 ## 快速开始
 
+没有开发板时，也可以先运行[主机 PoC](docs/poc.md)，验证初始化、CAN 数据队列、协议解析和 PID，再交叉编译最小固件。
+
 ### 1. 准备工具
 
 新电脑或刚下载的源码：先按[工具链手册](docs/zh-CN/toolchain.md)安装 Rust 1.98.1、匹配的主机链接器，以及 MCU 的编译目标（target）。项目使用 Edition 2024，也就是 Rust 2024 版的语言规则。源码不附带本机工具目录 `.tools/`。
@@ -61,14 +63,17 @@ cargo app-check
 
 ```mermaid
 flowchart LR
-    A[App: board and tasks] --> F[core / runtime / algorithms / devices]
-    A --> E[Embassy executor and time]
-    F --> S[STM32 adapters]
-    S --> H[embassy-stm32 HAL]
+    A[App: firmware and boards] --> F[embodied-framework]
+    F --> C[core / runtime / algorithms / devices]
+    A -. firmware .-> E[Embassy executor and time]
+    F -. stm32 feature .-> S[STM32 adapters]
+    S -. hal + chip feature .-> H[embassy-stm32 HAL]
     H --> P[PAC / MCU registers]
 ```
 
 时钟、引脚、DMA 和中断直接写在 Rust 板级模块中。`embedded-hal` 规定设备驱动通用的接口，`embassy-stm32` 提供 STM32 的具体实现，PAC 则提供寄存器访问。应用逻辑放在 App，框架不依赖 App。
+
+完整的 crate 依赖、feature 边界和上电时序见[架构设计](docs/zh-CN/architecture.md)。
 
 | 目录 | 职责 |
 |---|---|
