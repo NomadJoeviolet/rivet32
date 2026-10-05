@@ -62,6 +62,33 @@ cargo test -p embodied-runtime --tests --locked
 cargo run -p embodied-runtime --example controlled_can --locked
 ```
 
+### 重复测试与报告 / Repeated tests and reports
+
+使用 [test_host.py](../scripts/test_host.py) 在本机重复运行 runtime 和 framework 的全部原生测试。每种构建模式只编译一次；下面的命令在 Debug、Release 各执行 100 轮，每轮依次轮换 1、4、16 个测试线程。此命令执行完即结束；后续提交由 CI 自动执行短轮次回归。
+
+Use [test_host.py](../scripts/test_host.py) to repeat all native runtime and framework tests. Each profile builds once. This command runs 100 rounds each in Debug and Release, rotating 1, 4 and 16 test threads between rounds. It finishes after those rounds; subsequent PR commits trigger shorter CI regressions.
+
+```text
+python3 scripts/test_host.py --rounds 100 --profiles debug release --test-threads 1 4 16 --offline
+```
+
+报告默认保存在新建的 `target/test-reports/<UTC时间>/`，包含 `summary.md`、`summary.json`、编译日志和每个测试程序的逐轮日志。脚本核对发现的测试数与真实通过数，并将崩溃、超时、结果缺失或测试期间源码变化判为失败；默认每个测试程序限时 30 秒，可用 `--timeout` 调整。首次依赖下载需去掉 `--offline`。Linux/Windows CI 各执行两种模式各 3 轮，并上传名为 `host-tests-<OS>` 的日志 artifact，保留 14 天。
+
+Reports default to a fresh `target/test-reports/<UTC timestamp>/` directory: `summary.md`, `summary.json`, build logs and per-executable logs for every round. The runner checks discovered counts against actual results and fails on crashes, timeouts, missing results or changed source inputs. Each executable has a 30-second timeout, configurable with `--timeout`. Omit `--offline` for the first dependency download. Linux/Windows CI each run three rounds per profile and retain the `host-tests-<OS>` log artifact for 14 days.
+
+| 测试入口 / Test suite | 检查的行为 / Contract |
+|---|---|
+| [runtime_async.rs](../crates/embodied-runtime/tests/runtime_async.rs) | 停止、中止、取消归还、接受后提交、deadline 边界 / Stop, abort, cancellation cleanup, acceptance commit and deadline boundaries |
+| [control_concurrency.rs](../crates/embodied-runtime/tests/control_concurrency.rs) | 请求与首次注册竞争、stop/abort 竞争、广播和 Waker 替换 / Request/registration races, stop/abort races, broadcast and waker replacement |
+| [can_lifecycle_matrix.rs](../crates/embodied-runtime/tests/can_lifecycle_matrix.rs) | 控制请求与驱动结果排列、恢复无重复、溢出保护、等待槽耗尽 / Request/driver orderings, recovery without duplication, overflow protection and waiter exhaustion |
+| [resource_contracts.rs](../crates/embodied-runtime/tests/resource_contracts.rs) | 锁、许可、消息池的所有权归还；队列超时和析构重入 / Lock, permit and pool ownership return; queue timeouts and reentrant destruction |
+| [timer_contracts.rs](../crates/embodied-runtime/tests/timer_contracts.rs) | 改期、停止、取消、旧事件失效、错过周期、溢出不改状态 / Rearming, stop, cancellation, stale events, missed periods and overflow without mutation |
+| [host_contracts.rs](../crates/embodied-framework/tests/host_contracts.rs) | 初始化失败、反馈校验和周期溢出 / Initialization failure, feedback validation and periodic overflow |
+
+异步测试使用显式 poll、可控时钟和假驱动，不依赖真实睡眠；线程竞争测试另外使用主机线程、屏障和有界通知等待。反复通过有助于发现主机调度下的不稳定行为，但不能证明穷尽线程交错、分支覆盖或 MCU 实时性，也不替代真实 CAN 和 Embassy 执行器验证。Dynamo/Warp 的设计依据仍见[运行控制说明](runtime-control.md)。
+
+Async tests use explicit polls, a manual clock and fake drivers, without real sleeps. Thread-race tests additionally use host threads, barriers and bounded notification waits. Repetition helps expose instability under host scheduling; it does not establish exhaustive interleaving exploration, branch coverage or MCU timing, and does not replace physical CAN or Embassy executor validation. The Dynamo/Warp design evidence remains in [runtime control](runtime-control.md).
+
 ## 2. H723 最小固件 / H723 minimal firmware
 
 ```text
