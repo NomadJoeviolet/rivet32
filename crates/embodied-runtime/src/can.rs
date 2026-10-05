@@ -3,8 +3,15 @@
 //! `try_enqueue` is the ISR-facing path. It never waits for a resource and never
 //! invokes a driver; it briefly enters a platform critical section and wakes the
 //! worker. That platform implementation and the executor's waker must be ISR-safe.
-use crate::wait::{WaitError, WaitQueue};
-use core::{cell::RefCell, future::poll_fn, task::Poll};
+use crate::{
+    control::{RunControl, RunExit, RunState},
+    wait::{WaitError, WaitQueue},
+};
+use core::{
+    cell::RefCell,
+    future::{Future, poll_fn},
+    task::Poll,
+};
 use critical_section::Mutex;
 use embodied_core::{
     can::CanFrame,
@@ -200,9 +207,53 @@ impl<const N: usize> CanTxService<N> {
             yield_once().await;
         }
     }
+
+    /// Run with separate graceful-stop and abort requests.
+    ///
+    /// A stop observed before selecting a frame exits immediately, retaining all
+    /// queued/retry frames. Otherwise, finish the selected frame's driver acceptance
+    /// and exit before selecting another. This does not drain the queue or wait for
+    /// physical transmission. A driver that remains Pending can delay graceful
+    /// stop indefinitely; request abort to cancel that attempt instead.
+    ///
+    /// Abort is checked before each driver poll. If observed, drop the transmit
+    /// future and retain the in-flight frame for a later worker, relying on
+    /// [`AsyncCanTx`]'s cancellation contract. An abort concurrent with an executing
+    /// poll cannot preempt it: Ready(Ok) still commits acceptance before the next
+    /// control check, and Ready(Err) returns a driver error. Accepted hardware work
+    /// cannot be recalled. No critical section is held while polling driver code.
+    ///
+    /// Control checks and frame selection share a critical section; this is the
+    /// boundary deciding which frame a graceful stop permits to finish. Idle
+    /// control changes wake the worker without requiring an enqueue. Errors and
+    /// Future Drop release worker ownership and retain unaccepted frames just as
+    /// [`Self::run`] does. A restart after stop/abort needs a new [`RunControl`].
+    pub async fn run_controlled(
+        &self,
+        driver: &mut impl AsyncCanTx,
+        control: &RunControl,
+    ) -> Result<RunExit, CanWorkerError> {
+        let worker = self.claim()?;
+        loop {
+            if let Some(exit) = worker.send_controlled(driver, control).await? {
+                return Ok(exit);
+            }
+            match control.state() {
+                RunState::Stopping => return Ok(RunExit::Stopped),
+                RunState::Aborted => return Ok(RunExit::Aborted),
+                RunState::Running => {}
+            }
+            yield_once().await;
+        }
+    }
 }
 
 struct Worker<'a, const N: usize>(&'a CanTxService<N>);
+
+enum ControlledFrame {
+    Frame(CanFrame),
+    Exit(RunExit),
+}
 
 impl<const N: usize> Worker<'_, N> {
     async fn send(&self, driver: &mut impl AsyncCanTx) -> Result<CanTxOutcome, CanWorkerError> {
@@ -227,6 +278,82 @@ impl<const N: usize> Worker<'_, N> {
         // Release the waiter before calling user driver code, outside any CS.
         drop(registration);
         let result = driver.transmit(&frame).await;
+        self.commit(result)
+    }
+
+    async fn send_controlled(
+        &self,
+        driver: &mut impl AsyncCanTx,
+        control: &RunControl,
+    ) -> Result<Option<RunExit>, CanWorkerError> {
+        let frame = {
+            let mut registration = self.0.available.registration();
+            let mut changed = core::pin::pin!(control.changed_since(RunState::Running));
+            poll_fn(|cx| {
+                critical_section::with(|cs| {
+                    match changed.as_mut().poll(cx) {
+                        Poll::Ready(Ok(RunState::Stopping)) => {
+                            return Poll::Ready(Ok(ControlledFrame::Exit(RunExit::Stopped)));
+                        }
+                        Poll::Ready(Ok(RunState::Aborted)) => {
+                            return Poll::Ready(Ok(ControlledFrame::Exit(RunExit::Aborted)));
+                        }
+                        Poll::Ready(Err(error)) => {
+                            return Poll::Ready(Err(CanWorkerError::Wait(error)));
+                        }
+                        _ => {}
+                    }
+                    let frame = {
+                        let mut state = self.0.inner.borrow(cs).borrow_mut();
+                        if state.in_flight.is_none() {
+                            state.in_flight = state.pop_front();
+                        }
+                        state.in_flight
+                    };
+                    match frame {
+                        Some(frame) => Poll::Ready(Ok(ControlledFrame::Frame(frame))),
+                        None => registration.pending(cx).map_err(CanWorkerError::Wait),
+                    }
+                })
+            })
+            .await?
+        };
+        // Both selection waiters are dropped before creating a driver future.
+        let frame = match frame {
+            ControlledFrame::Frame(frame) => frame,
+            ControlledFrame::Exit(exit) => return Ok(Some(exit)),
+        };
+        let mut changed = core::pin::pin!(control.changed_since(RunState::Running));
+        let mut transmit = core::pin::pin!(driver.transmit(&frame));
+        poll_fn(|cx| {
+            loop {
+                match changed.as_mut().poll(cx) {
+                    Poll::Ready(Ok(RunState::Aborted)) => {
+                        return Poll::Ready(Ok(Some(RunExit::Aborted)));
+                    }
+                    Poll::Ready(Ok(state)) => {
+                        // A graceful stop leaves this attempt alive, but re-arm
+                        // notification so a later abort can wake a stuck driver.
+                        changed.set(control.changed_since(state));
+                    }
+                    Poll::Ready(Err(error)) => {
+                        return Poll::Ready(Err(CanWorkerError::Wait(error)));
+                    }
+                    Poll::Pending => break,
+                }
+            }
+            transmit
+                .as_mut()
+                .poll(cx)
+                .map(|result| self.commit(result).map(|_| None))
+        })
+        .await
+    }
+
+    fn commit(
+        &self,
+        result: Result<CanTxOutcome, CanError>,
+    ) -> Result<CanTxOutcome, CanWorkerError> {
         // No await between driver acceptance and committing the service state.
         critical_section::with(|cs| {
             let mut state = self.0.inner.borrow(cs).borrow_mut();

@@ -9,27 +9,30 @@ Rust calls a compilation unit a crate; it can be a library or an executable. A w
 
 ## From App to the registers
 
-Arrows mean "uses/depends on." App uses framework crates, which do not depend on App. The diagram omits third-party numerical libraries and build-time dependencies; solid edges show the main runtime dependencies.
+Arrows mean "uses/depends on." App uses framework crates, which do not depend on App. The diagram omits some third-party libraries and build-time dependencies. Solid edges indicate unconditional dependencies; dashed edges indicate dependencies enabled by Cargo features. These are component relationships, not task execution order.
 
 ```mermaid
 flowchart TD
-    A[App: board and business tasks] --> F[embodied-framework: re-exports]
-    A --> EX[embassy-executor]
+    A[App: firmware entry points and boards] --> F[embodied-framework: re-exports]
+    A -. firmware .-> EX[embassy-executor]
+    A -. firmware .-> ET[embassy-time]
+    A -. firmware .-> ST[embodied-stm32]
     F --> C[embodied-core]
     F --> R[embodied-runtime]
     F --> AL[embodied-algorithms]
     F --> D[embodied-devices]
-    F --> ST[embodied-stm32: optional]
+    F -. stm32 feature .-> ST
     R --> C
     D --> C
     D --> AL
     ST --> C
     ST --> D
     ST --> R
-    ST --> HAL[embassy-stm32]
+    ST -. hal + chip feature .-> HAL[embassy-stm32]
     ST --> EH[embedded-hal / embedded-io traits]
-    ST --> USB[embassy-usb: optional]
-    R -. embassy feature .-> ET[embassy-time / embassy-sync]
+    ST -. usb feature .-> USB[embassy-usb]
+    R -. embassy feature .-> ET
+    R -. embassy feature .-> ES[embassy-sync]
     HAL --> PAC[stm32-metapac]
     PAC --> MCU[Registers]
 ```
@@ -37,6 +40,21 @@ flowchart TD
 Each crate's Cargo manifest, its dependency configuration file, lists the full dependencies. The [application facade](../../crates/embodied-framework/src/lib.rs) mainly re-exports modules so App can reach them through one entry point. It adds no scheduler. `embodied-stm32` accepts configured HAL instances; App selects clocks, pins, DMA memory and the supply configuration.
 
 In the diagram, embedded-hal / embedded-io define common operation interfaces. Rust describes the operations a type must provide through a trait, for example an interface for reading and writing data. stm32-metapac supplies register access code and data for specific STM32 devices. The HAL builds peripheral drivers on top of it.
+
+## Host and firmware build boundaries
+
+The root [Cargo.toml](../../Cargo.toml) groups `App`, six framework crates and `xtask` into one workspace. Its `default-members` include the five framework crates that do not require a specific MCU, plus `xtask`; they exclude `App` and `embodied-stm32`. A default Cargo check at the root and a chip-specific firmware build therefore cover different code.
+
+| Configuration entry | What it enables | What the caller still supplies |
+|---|---|---|
+| Default framework features | `no_std` core/runtime/algorithms/devices, re-exported by framework | A platform `critical-section` implementation when executing runtime synchronization primitives |
+| `embodied-runtime/embassy` | Embassy clock and synchronization adapters | A time driver and an executor to run async tasks |
+| `embodied-framework/stm32` | STM32 adapter crate and runtime's Embassy adapters | This feature alone neither selects a chip nor enables the STM32 HAL |
+| `App/stm32…` | `firmware`, the corresponding STM32 HAL/chip feature, executor, time, RTT logging and panic support | Matching Rust target, bank configuration and hardware validation |
+| `App/board-stm32…` | A chip, reference board module and optional dependencies required by reference boards | Matching PCB, oscillator and peripheral connections |
+| `xtask` | A host command-line tool using `std` | `data/chips.json`, memory metadata, Cargo toolchain and required script environment |
+
+A firmware build must select exactly one chip/core feature. `--all-features` enables mutually exclusive chips and boards, so it cannot replace a build matrix. `embodied-stm32/build.rs` uses the selected chip's PAC metadata to expose UART, CAN, USB and timer capabilities. Checking only the generic layer on a host does not verify these conditionally compiled paths.
 
 ## Where to put new code
 
@@ -55,6 +73,37 @@ For BMI088, App chooses the SPI instance, two chip-selects and whether the bus i
 ## What happens at startup and when data arrives
 
 Cortex-M/Embassy components provide the reset entry and runtime startup. App then uses the nine-stage initialization registry to run platform and device setup in order. Only successful completion returns Ready, which App uses to start its tasks. This depends on App following that startup order; a direct Embassy spawner call can still bypass Ready.
+
+The following sequence follows the current single-core [minimal entry point](../../App/src/bin/minimal.rs). The registry runs `PreCore → PostCore → PreEnv → Env → PostEnv → PreDevice → Device → PostDevice → Late`. At each stage it runs the platform callback first, then that stage's hooks in registration order. The first error stops initialization, and the same registry cannot be retried.
+
+```mermaid
+sequenceDiagram
+    participant Entry as Cortex-M / Embassy entry
+    participant App as minimal::main
+    participant Init as InitRegistry
+    participant HAL as STM32 HAL
+    participant Exec as Embassy executor
+    participant Task as heartbeat
+    Entry->>App: Start async main
+    App->>Init: run(context, before_stage)
+    loop Nine ordered stages
+        Init->>App: before_stage(stage, context)
+        opt Env stage
+            App->>HAL: init(Default::default())
+            HAL-->>App: Peripherals
+        end
+        Init->>Init: Run registered hooks for this stage
+    end
+    Init-->>App: Ok(Ready)
+    App->>Exec: Ready.start(spawn heartbeat)
+    Exec->>Task: Poll heartbeat
+    loop Every scheduled second
+        Task->>Task: next_tick / EmbassyClock
+        Task->>Task: Log count and missed ticks via RTT
+    end
+```
+
+`minimal` currently starts only an RTT heartbeat once per second; it does not initialize sensors or drive motors. Dual-core builds call [dual_core::init](../../App/src/dual_core.rs) at `Env` instead and use separate firmware images and memory layouts for each core. The [reference-board entry point](../../App/src/bin/reference_board.rs) configures board clocks at `Env`, constructs peripheral resources at `Device`, then keeps them alive while logging idle messages. It does not automatically start receive, parser or control tasks.
 
 An async task waiting for UART or a timer stores its progress in a Future. A peripheral interrupt (IRQ) or the time service sends a wakeup, and the executor checks whether that Future can continue. This check is called poll. The driver delivers bytes or frames, a parser validates the message, and App updates state, runs algorithms and produces output. Synchronous Signal callbacks run in the caller's context without starting another task.
 
@@ -98,6 +147,22 @@ When changing chips, review the Rust toolchain file, Cargo.lock, App features, R
 `vendor` stores pinned `embassy-stm32`, `stm32-metapac` and the source produced by applying local patches. The Embassy revision is `ae9e6f0672af84cec8e200a94c574041844396f0`. Ordinary GPIO/UART/SPI/PWM/CAN/USB drivers and the executor mainly reuse upstream implementations.
 
 This framework provides App organization, initialization and communication interfaces, task coordination, algorithms, device protocols and STM32 adapters. Local low-level code mainly adds missing devices, fixes confirmed defects and implements exclusive compare timers. See [provenance and licenses](../../THIRD_PARTY_NOTICES.md) for sources and licensing. Historical patches include excluded devices; their status still follows the current support policy.
+
+## Lessons from Dynamo and Warp
+
+The source comparison uses fixed revisions: Dynamo [`519e735`](https://github.com/ai-dynamo/dynamo/tree/519e735550c1a4aac67c2fd37d4a56ed0a014653) and Warp [`b865631`](https://github.com/warpdotdev/warp/tree/b865631c9a0e46b548c7ec7dc32e228a148171d1). The table separates observable implementations from their mapping to this framework; the implementation note defines the adopted scope.
+
+Implemented changes are detailed in [runtime control and design evidence](../runtime-control.md): `RunControl` separates stop/abort requests from CAN data, `run_controlled` handles them at defined frame boundaries, and cancellation/manual-clock tests verify behavior. That note distinguishes external principles, new code and pre-existing mechanisms.
+
+| Observable design | Mapping and recommendation for rivet32 |
+|---|---|
+| Dynamo's [AsyncEngine](https://github.com/ai-dynamo/dynamo/blob/519e735550c1a4aac67c2fd37d4a56ed0a014653/lib/runtime/src/engine.rs) separates request, response and error types from execution context. Warp's [warpui entry point](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warpui/src/lib.rs) re-exports core and organizes platform, windowing and rendering modules. | Keep communication traits in `core`, pure logic in `devices/algorithms` and hardware adapters in `stm32`; App composes them. Extract new traits when multiple real implementations justify them. Prefer static generics and bounded messages over a cloud-style dynamic registry. |
+| Warp's [OnCancelFuture](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warp_util/src/on_cancel.rs) distinguishes completion from Drop before completion, with [dedicated tests](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warp_util/src/on_cancel_tests.rs). Dynamo's context separately models stopping generation and terminating a request. | This framework already has [MessageLease Drop](../../crates/embodied-runtime/src/pool.rs) and [CAN worker retention/retry contracts](../../crates/embodied-runtime/src/can.rs). New host tests cover cancellation before first poll, after Pending, normal completion and driver failure, checking that resources return once and unsent frames remain as specified. Logical cancellation does not necessarily undo a hardware transfer. |
+| Warp's [time.rs](https://github.com/warpdotdev/warp/blob/b865631c9a0e46b548c7ec7dc32e228a148171d1/crates/warpui_core/src/time.rs) exposes an advanceable time value in tests while production reads real time. | Use this framework's [Clock trait](../../crates/embodied-runtime/src/clock.rs) for a manually advanced monotonic test clock and fake buses. Check timeout boundaries, queue overflow and retries with deterministic inputs instead of real sleeps. The current [PoC](../poc.md) uses explicit timestamps for synchronous behavior; [runtime control tests](../runtime-control.md) additionally drive async timeouts with a manual clock. |
+
+The additions now include an executable PoC, behavior tests, explicit feature boundaries, lifecycle control, cancellation, driver-failure and controlled-clock tests. Real-driver validation and on-board timing measurements remain. Existing `CanTxStats` and `Tick.missed` can expose overflow, driver errors and missed periods over RTT without first adding a full telemetry service.
+
+Dynamo targets distributed inference on an operating system and Warp targets desktop applications. Their thread, allocation, network and UI runtimes are not drop-in bare-metal designs. Transfer the interface and testing principles while retaining `no_std`, fixed-capacity storage and Embassy. No code or dependencies from either project are imported here.
 
 ## Choices to make in your application
 

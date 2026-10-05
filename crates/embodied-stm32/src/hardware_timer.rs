@@ -1,4 +1,4 @@
-//! Exclusive hardware compare timer; HAL implementation and contract tests below.
+//! Exclusive hardware compare timer with a chip-specific HAL implementation.
 #![cfg(any(test, all(feature = "hal", stm32_has_timer)))]
 
 use core::{
